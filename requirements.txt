@@ -1,0 +1,6 @@
+django==1.6
+django-debug-toolbar==1.2.2
+django-modeltranslation==0.8
+pillow
+South
+psycopg2
