@@ -1,0 +1,22 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Freedom Vote</title>
+
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="container">
+            {% block 'content' %}{% endblock %}
+        </div>
+    </body>
+</html>

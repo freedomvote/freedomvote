@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the freedomvote package.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-05 11:06+0000\n"
+"PO-Revision-Date: 2015-02-05 12:09+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.7.3\n"
+
+#: core/admin.py:25 core/models.py:49 core/models.py:126
+msgid "category"
+msgstr "Kategorie"
+
+#: core/models.py:10 core/models.py:24 core/models.py:42
+msgid "name"
+msgstr "Name"
+
+#: core/models.py:17 core/models.py:89
+msgid "state"
+msgstr "Kanton"
+
+#: core/models.py:18
+msgid "states"
+msgstr "Kantone"
+
+#: core/models.py:28
+msgid "shortname"
+msgstr "Abkürzung"
+
+#: core/models.py:35 core/models.py:95
+msgid "party"
+msgstr "Partei"
+
+#: core/models.py:36
+msgid "parties"
+msgstr "Parteien"
+
+#: core/models.py:50
+msgid "categories"
+msgstr "Kategorien"
+
+#: core/models.py:56
+msgid "first_name"
+msgstr "Vorname"
+
+#: core/models.py:60
+msgid "last_name"
+msgstr "Nachname"
+
+#: core/models.py:63
+msgid "email"
+msgstr "Email"
+
+#: core/models.py:69
+msgid "image"
+msgstr "Bild"
+
+#: core/models.py:72
+msgid "is_member_of_parliament"
+msgstr "Bisheriges Ratsmitglied"
+
+#: core/models.py:76
+msgid "past_contributions"
+msgstr "Bisherige Beiträge zum Thema"
+
+#: core/models.py:80
+msgid "future_plans"
+msgstr "Absichten und Pläne"
+
+#: core/models.py:84
+msgid "unique_url"
+msgstr "Zugangslink"
+
+#: core/models.py:101
+msgid "party_other"
+msgstr "Andere Partei"
+
+#: core/models.py:113
+msgid "politician"
+msgstr "Politiker"
+
+#: core/models.py:114
+msgid "politicians"
+msgstr "Politiker"
+
+#: core/models.py:119
+msgid "preferred_answer"
+msgstr "Bevorzugte Antwort"
+
+#: core/models.py:122
+msgid "question_number"
+msgstr "Fragenummer"
+
+#: core/models.py:129
+msgid "text"
+msgstr "Text"
+
+#: core/models.py:133
+msgid "question"
+msgstr "Frage"
+
+#: core/models.py:134
+msgid "questions"
+msgstr "Fragen"
+
+#: freedomvote/settings.py:90
+msgid "German"
+msgstr "Deutsch"
+
+#: freedomvote/settings.py:91
+msgid "French"
+msgstr "Französisch"
+
+#: freedomvote/settings.py:92
+msgid "Italian"
+msgstr "Italienisch"

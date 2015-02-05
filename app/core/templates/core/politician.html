@@ -1,0 +1,77 @@
+{% extends 'core/index.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block 'content' %}
+    <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
+    <form>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" class="form-control" id="first_name" value="{{politician.first_name}}" disabled>
+                <label for="first_name" class="pull-right">{% trans "first_name" %}</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" value="{{politician.email}}">
+                <label for="email" class="pull-right">{% trans "email" %}</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="is_member_of_parliament" id="is_member_of_parliament" checked="{{politician.is_member_of_parliament}}">
+                    {% trans "is_member_of_parliament" %}
+                </label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control">
+                        {% for state in states %}
+                        <option value="{{state.id}}" {% if state == politician.state %}selected{% endif %}>{{state.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="state" class="pull-right">{% trans "state" %}</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control">
+                        {% for party in parties %}
+                            <option value="{{party.id}}" {% if party == politician.party %}selected{% endif %}>{{party.name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="party" class="pull-right">{% trans "party" %}</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="text" class="form-control" id="last_name" value="{{politician.last_name}}" disabled>
+                <label for="last_name" class="pull-right">{% trans "last_name" %}</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <textarea class="form-control" id="past_contributions" value="{{politician.past_contributions}}"></textarea>
+                <label for="past_contributions" class="pull-right">{% trans "past_contributions" %}</label>
+            </div>
+            <br>
+            <div class="form-group">
+                <textarea class="form-control" id="future_plans" value="{{politician.future_plans}}"></textarea>
+                <label for="future_plans" class="pull-right">{% trans "future_plans" %}</label>
+            </div>
+        </div>
+        <div class="col-md-4 text-right">
+            {% if politician.image %}
+            {% else %}
+            <svg version="1.1" id="uikit_placeholder" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="250px" height="250px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
+                <g>
+                    <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
+                    <polygon fill="#777777" points="199.715,282.865 223.088,258.295 231.847,262.088 259.477,232.661 270.358,245.676    275.262,242.711 301.827,282.865  "/>
+                    <circle fill="#777777" cx="226.719" cy="229.417" r="10.21"/>
+                </g>
+            </svg>
+            {% endif %}
+            <input type="file" id="image" class="pull-right">
+        </div>
+    </form>
+{% endblock %}
