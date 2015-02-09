@@ -48,14 +48,14 @@ class Migration(SchemaMigration):
             ('first_name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('last_name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('email', self.gf('django.db.models.fields.EmailField')(max_length=75)),
-            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True)),
+            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('is_member_of_parliament', self.gf('django.db.models.fields.BooleanField')()),
-            ('past_contributions', self.gf('django.db.models.fields.TextField')(null=True)),
-            ('future_plans', self.gf('django.db.models.fields.TextField')(null=True)),
-            ('unique_url', self.gf('django.db.models.fields.CharField')(default='w1cCW8w__g5cDGs0nDom', max_length=20)),
-            ('state', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.State'])),
-            ('party', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Party'], null=True)),
-            ('party_other', self.gf('django.db.models.fields.CharField')(max_length=50, null=True)),
+            ('past_contributions', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('future_plans', self.gf('django.db.models.fields.TextField')(blank=True)),
+            ('unique_url', self.gf('django.db.models.fields.CharField')(default='bhwSN5cbOqAW0f_LfetP', max_length=20)),
+            ('state', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.State'], null=True, blank=True)),
+            ('party', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Party'], null=True, blank=True)),
+            ('party_other', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
         ))
         db.send_create_signal(u'core', ['Politician'])
 
@@ -71,6 +71,16 @@ class Migration(SchemaMigration):
             ('text_it', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
         ))
         db.send_create_signal(u'core', ['Question'])
+
+        # Adding model 'Answer'
+        db.create_table(u'core_answer', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('question', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Question'])),
+            ('politician', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Politician'])),
+            ('agreement_level', self.gf('django.db.models.fields.IntegerField')()),
+            ('note', self.gf('django.db.models.fields.TextField')()),
+        ))
+        db.send_create_signal(u'core', ['Answer'])
 
 
     def backwards(self, orm):
@@ -89,8 +99,19 @@ class Migration(SchemaMigration):
         # Deleting model 'Question'
         db.delete_table(u'core_question')
 
+        # Deleting model 'Answer'
+        db.delete_table(u'core_answer')
+
 
     models = {
+        u'core.answer': {
+            'Meta': {'object_name': 'Answer'},
+            'agreement_level': ('django.db.models.fields.IntegerField', [], {}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'note': ('django.db.models.fields.TextField', [], {}),
+            'politician': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Politician']"}),
+            'question': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Question']"})
+        },
         u'core.category': {
             'Meta': {'object_name': 'Category'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
@@ -115,16 +136,16 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Politician'},
             'email': ('django.db.models.fields.EmailField', [], {'max_length': '75'}),
             'first_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'future_plans': ('django.db.models.fields.TextField', [], {'null': 'True'}),
+            'future_plans': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True'}),
+            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'is_member_of_parliament': ('django.db.models.fields.BooleanField', [], {}),
             'last_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'party': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Party']", 'null': 'True'}),
-            'party_other': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True'}),
-            'past_contributions': ('django.db.models.fields.TextField', [], {'null': 'True'}),
-            'state': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.State']"}),
-            'unique_url': ('django.db.models.fields.CharField', [], {'default': "'tKqQs7enwEcm6vhGRPgJ'", 'max_length': '20'})
+            'party': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Party']", 'null': 'True', 'blank': 'True'}),
+            'party_other': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
+            'past_contributions': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
+            'state': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.State']", 'null': 'True', 'blank': 'True'}),
+            'unique_url': ('django.db.models.fields.CharField', [], {'default': "'PpCjxHWiBzrQ0mC8tGjZ'", 'max_length': '20'})
         },
         u'core.question': {
             'Meta': {'object_name': 'Question'},
