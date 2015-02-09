@@ -65,15 +65,14 @@ function prepare_django() {
     # Now run all DB migrations for all installed apps
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py syncdb --noinput"
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py migrate"
+    mkdir /data/
+    chown -R vagrant:vagrant /data/
 }
 
 function configure_apache() {
     echo "Setting up Apache config..."
-    cp /vagrant/tools/vagrant/vhost.conf /etc/apache2/sites-available/000-default.conf
     cp /vagrant/tools/vagrant/phppgadmin /etc/apache2/conf.d/phppgadmin
     ln -fs /etc/apache2/conf.d/phppgadmin /etc/apache2/conf-enabled/phppgadmin.conf
-    usermod -a -G vagrant www-data
-    a2enmod rewrite
     service apache2 restart
 }
 
