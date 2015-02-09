@@ -86,6 +86,8 @@ class Politician(models.Model):
     )
     state                   = models.ForeignKey(
         State,
+        null                = True,
+        blank               = True,
         verbose_name        = _('state')
     )
     party                   = models.ForeignKey(
@@ -132,3 +134,24 @@ class Question(models.Model):
     class Meta:
         verbose_name        = _('question')
         verbose_name_plural = _('questions')
+
+
+class Answer(models.Model):
+    question                = models.ForeignKey(
+        Question,
+        verbose_name        = _('question')
+    )
+    politician              = models.ForeignKey(
+        Politician,
+        verbose_name        = _('politician')
+    )
+    agreement_level         = models.IntegerField(
+        verbose_name        = _('agreement_level')
+    )
+    note                    = models.TextField(
+        verbose_name        = _('note')
+    )
+
+    class Meta:
+        verbose_name        = _('answer')
+        verbose_name_plural = _('answers')
