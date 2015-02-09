@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^$', views.citizen_view),
     url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view),
     url(r'^answer/$', views.answer_view),
     url(r'^admin/', include(admin.site.urls)),

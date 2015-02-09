@@ -4,3 +4,4 @@ django-modeltranslation==0.8
 pillow
 South
 psycopg2
+easy-thumbnails

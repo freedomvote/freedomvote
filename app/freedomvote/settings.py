@@ -23,6 +23,7 @@ SECRET_KEY = '%xky6n0ak0m*97&3o=zd45_w7o(q(1)o^54y(6)c34rl1u4m^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+THUMBNAIL_DEBUG = True
 
 TEMPLATE_DEBUG = True
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'modeltranslation',
     'debug_toolbar',
+    'easy_thumbnails',
     'south',
     'core'
 )

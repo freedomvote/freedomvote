@@ -30,7 +30,8 @@ function install_packages() {
     apt-get -q -y install postgresql phppgadmin python python-virtualenv \
                           postgresql-server-dev-all python-psycopg2 lsof \
                           postgresql-contrib ssl-cert python-dev openssl \
-                          libcurl4-openssl-dev libapache2-mod-wsgi gettext
+                          libcurl4-openssl-dev libapache2-mod-wsgi gettext \
+                          libjpeg-dev
 }
 
 function install_requirements() {

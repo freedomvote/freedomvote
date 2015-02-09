@@ -70,3 +70,14 @@ def answer_view(request):
             pass
 
     return HttpResponse('')
+
+def citizen_view(request):
+    politicians = Politician.objects.all()
+
+    return render(
+        request,
+        'core/citizen.html',
+        {
+            'politicians' : politicians,
+        }
+    )
