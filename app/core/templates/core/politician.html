@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label>
-                        <input type="checkbox" name="is_member_of_parliament" checked="{{politician.is_member_of_parliament}}">
+                        <input type="checkbox" name="is_member_of_parliament" {% if politician.is_member_of_parliament %}checked="checked"{% endif %}>
                         {% trans "is_member_of_parliament" %}
                     </label>
                 </div>
@@ -106,37 +106,22 @@
             <tr>
                 <td>{{question.text}}</td>
                 <td>
-                    <input
-                     class="slider"
-                     id="slider_{{question.id}}"
-                     type="text"
-                     data-slider="true"
-                     data-slider-range="0,10"
-                     data-slider-theme="volume"
-                     data-slider-step="2"
-                     data-slider-snap="true"
-                    />
+                    <form>
+                        <input type="hidden" name="question" value="{{ question.id }}">
+                        <input type="hidden" name="politician" value="{{ politician.id }}">
+                        <input type="hidden" name="agreement_level" value="">
+                          <div
+                           class="slider"
+                           id="slider_{{question.id}}"
+                           data-value={%for answer in answers%}{%if answer.question == question%}{{answer.agreement_level}}{%endif%}{%endfor%}
+                          ></div>
+                          <br>
+                        <textarea name="note" class="form-control note" placeholder="{% trans "note" %}">{%for answer in answers%}{%if answer.question == question%}{{answer.note}}{%endif%}{%endfor%}</textarea>
+                    </form>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
-        <script>
-            $('.slider').simpleSlider()
-
-            if ($('select[name="party"]').val() != 'party_other') {
-                $('input[name="party_other"]').val('')
-                $('input[name="party_other"]').hide()
-            }
-
-            $('select[name="party"]').on('change', function(){
-                if ($(this).val() == 'party_other') {
-                    $('input[name="party_other"]').show()
-                }
-                else {
-                    $('input[name="party_other"]').val('')
-                    $('input[name="party_other"]').hide()
-                }
-            })
-        </script>
     </table>
+    <script src="{% static 'politician.js' %}"></script>
 {% endblock %}

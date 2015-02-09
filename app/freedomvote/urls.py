@@ -8,6 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view),
+    url(r'^answer/$', views.answer_view),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
