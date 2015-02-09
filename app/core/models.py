@@ -63,7 +63,7 @@ class Politician(models.Model):
         verbose_name        = _('email')
     )
     image                   = models.ImageField(
-        upload_to           = '/media/',
+        upload_to           = 'politicians/',
         null                = True,
         blank               = True,
         verbose_name        = _('image')

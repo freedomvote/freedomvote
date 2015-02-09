@@ -18,3 +18,7 @@ def politician_view(request, unique_url):
             'parties'    : parties,
         }
     )
+
+def politician_update_view(request):
+    if request.POST:
+        pass
