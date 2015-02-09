@@ -4,7 +4,7 @@
 
 {% block 'content' %}
     <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             <div class="col-md-4">
@@ -45,8 +45,11 @@
                                     <option value="{{party.id}}" {% if party == politician.party %}selected{% endif %}>{{party.name}}</option>
                                 {% endfor %}
                                 <option disabled>──────────</option>
-                                <option value="other_party" {% if politician.party_other %}selected{% endif %}>{% trans "other" %}</option>
+                                <option value="party_other" {% if politician.party_other %}selected{% endif %}>{% trans "other" %}</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" name="party_other" value="{{politician.party_other}}">
                         </div>
                     </div>
                 </div>
@@ -81,6 +84,7 @@
                 <input type="file" name="image" style="margin-top: 10px;">
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-md-12">
                 <input type="submit" class="btn btn-primary pull-right" value="{% trans "save" %}">
@@ -118,6 +122,21 @@
         </tbody>
         <script>
             $('.slider').simpleSlider()
+
+            if ($('select[name="party"]').val() != 'party_other') {
+                $('input[name="party_other"]').val('')
+                $('input[name="party_other"]').hide()
+            }
+
+            $('select[name="party"]').on('change', function(){
+                if ($(this).val() == 'party_other') {
+                    $('input[name="party_other"]').show()
+                }
+                else {
+                    $('input[name="party_other"]').val('')
+                    $('input[name="party_other"]').hide()
+                }
+            })
         </script>
     </table>
 {% endblock %}
