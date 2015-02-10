@@ -1,0 +1,39 @@
+{% extends 'core/index.html' %}
+
+{% load thumbnail %}
+{% load i18n %}
+
+{% block 'content' %}
+<div class="row">
+    <br>
+    <div class="form-group col-md-3 pull-right">
+        <input type="text" class="form-control" placeholder="{% trans "search" %}...">
+    </div>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        {% for politician in politicians %}
+        <tr>
+            <td class="col-md-2">
+                {% thumbnail politician.image 180x180 crop as thumb %}
+                <img class="img-thumbnail img-responsive" src="{{thumb.url}}">
+            </td>
+            <td class="col-md-4">
+                <h4>{{politician.first_name}} {{politician.last_name}}</h4>
+                <div class="row">
+                    <p class="col-md-4">{% trans "state" %}</p>
+                    <p class="col-md-8">{{ politician.state }}</p>
+                </div>
+                <div class="row">
+                    <p class="col-md-4">{% trans "party" %}</p>
+                    <p class="col-md-8">{{ politician.party }}</p>
+                </div>
+                <a href="/details/{{politician.id}}">{% trans "details" %}...</a>
+            </td>
+            <td class="col-md-6">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
