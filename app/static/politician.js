@@ -1,4 +1,4 @@
-(function (){
+jQuery(function ($){
   "use strict";
 
   $.ajaxSetup({
@@ -60,4 +60,4 @@
     $.post('/answer/', form.serialize())
   }
 
-})();
+});

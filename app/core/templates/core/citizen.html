@@ -2,6 +2,12 @@
 
 {% load thumbnail %}
 {% load i18n %}
+{% load staticfiles %}
+
+{% block 'scripts' %}
+<script src="{% static 'highcharts/highcharts.js' %}"></script>
+<script src="{% static 'citizen.js' %}"></script>
+{% endblock %}
 
 {% block 'content' %}
 <div class="row">
@@ -22,15 +28,16 @@
                 <h4>{{politician.first_name}} {{politician.last_name}}</h4>
                 <div class="row">
                     <p class="col-md-4">{% trans "state" %}</p>
-                    <p class="col-md-8">{{ politician.state }}</p>
+                    <p class="col-md-8">{% if politician.state %}{{ politician.state }}{% else %}{% trans "none_m" %}{% endif %}</p>
                 </div>
                 <div class="row">
                     <p class="col-md-4">{% trans "party" %}</p>
-                    <p class="col-md-8">{{ politician.party }}</p>
+                    <p class="col-md-8">{% if politician.party %}{{ politician.party }}{% elif politician.party_other %}{{ politician.party_other }}{% else %}{% trans "none_f" %}{% endif %}</p>
                 </div>
                 <a href="/details/{{politician.id}}">{% trans "details" %}...</a>
             </td>
             <td class="col-md-6">
+                <div class="statistic" id="statistic-{{politician.id}}" style="height:185px;width:100%"></div>
             </td>
         </tr>
         {% endfor %}

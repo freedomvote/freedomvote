@@ -155,3 +155,21 @@ class Answer(models.Model):
     class Meta:
         verbose_name        = _('answer')
         verbose_name_plural = _('answers')
+
+
+class Statistic(models.Model):
+    politician              = models.ForeignKey(
+        Politician,
+        verbose_name        = _('politician')
+    )
+    category                = models.ForeignKey(
+        Category,
+        verbose_name        = _('category')
+    )
+    value                   = models.FloatField(
+        verbose_name        = _('value')
+    )
+
+    class Meta:
+        verbose_name        = _('statistic')
+        verbose_name_plural = _('statistics')

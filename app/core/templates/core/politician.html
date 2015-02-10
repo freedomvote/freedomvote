@@ -2,6 +2,10 @@
 {% load i18n %}
 {% load static %}
 
+{% block 'scripts' %}
+<script src="{% static 'politician.js' %}"></script>
+{% endblock %}
+
 {% block 'content' %}
     <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
     <form method="post" enctype="multipart/form-data">
@@ -123,5 +127,8 @@
             {% endfor %}
         </tbody>
     </table>
-    <script src="{% static 'politician.js' %}"></script>
+    <div class="text-right" style="margin: 20px 0">
+        <a href="/retract/{{politician.unique_url}}" type="button" class="btn btn-default">{% trans "retract_answers" %}</a>
+        <a href="/share/{{politician.unique_url}}" type="button" class="btn btn-primary">{% trans "share_answers" %}</a>
+    </div>
 {% endblock %}
