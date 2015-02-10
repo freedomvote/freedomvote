@@ -88,19 +88,20 @@ def calculate_statistic_view(request, unique_url):
 
     for category in categories:
         answers = Answer.objects.filter(question__category=category, politician=politician)
-        diffs = []
-        for answer in answers:
-            diffs.append(abs(answer.question.preferred_answer - answer.agreement_level))
+        if answers:
+            diffs = []
+            for answer in answers:
+                diffs.append(abs(answer.question.preferred_answer - answer.agreement_level))
 
-        diff = 10 - sum(diffs) / float(len(diffs))
+            diff = 10 - sum(diffs) / float(len(diffs))
 
-        stat, created = Statistic.objects.get_or_create(
-            politician=politician,
-            category=category,
-            defaults={'value': diff}
-        )
-        stat.value = diff
-        stat.save()
+            stat, created = Statistic.objects.get_or_create(
+                politician=politician,
+                category=category,
+                defaults={'value': diff}
+            )
+            stat.value = diff
+            stat.save()
 
     return HttpResponseRedirect('/parlamentarier/%s' % unique_url)
 

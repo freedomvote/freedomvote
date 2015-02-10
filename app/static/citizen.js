@@ -8,8 +8,9 @@ jQuery(function ($){
     .success(function(data){
       $('#statistic-' + id).highcharts({
         chart: {
-          type: 'column',
-          backgroundColor: 'transparent'
+          type: 'bar',
+          backgroundColor: 'transparent',
+          height: 180
         },
         title: {
           text: ' '
@@ -19,9 +20,6 @@ jQuery(function ($){
         },
         xAxis: {
           categories: data.categories,
-          labels: {
-            rotation: 320,
-          }
         },
         credits: {
           enabled: false
