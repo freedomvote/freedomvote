@@ -10,7 +10,7 @@ class State(models.Model):
         verbose_name        = _('name')
     )
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     class Meta:
@@ -28,7 +28,7 @@ class Party(models.Model):
         verbose_name        = _('shortname')
     )
 
-    def __str__(self):
+    def __unicode__(self):
         return self.shortname
 
     class Meta:
@@ -42,7 +42,7 @@ class Category(models.Model):
         verbose_name        = _('name')
     )
 
-    def __str__(self):
+    def __unicode__(self):
         return self.name
 
     class Meta:
@@ -103,8 +103,8 @@ class Politician(models.Model):
         verbose_name        = _('party_other')
     )
 
-    def __str__(self):
-        return '%s %s' % (self.first_name, self.last_name)
+    def __unicode__(self):
+        return u'%s %s' % (self.first_name, self.last_name)
 
     @staticmethod
     def generate_url():
