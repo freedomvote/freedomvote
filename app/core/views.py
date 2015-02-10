@@ -51,7 +51,7 @@ def answer_view(request):
     if request.POST:
         try:
             question = get_object_or_404(Question, pk=request.POST['question'])
-            politician = get_object_or_404(Politician, pk=request.POST['politician'])
+            politician = get_object_or_404(Politician, unique_url=request.POST['unique_url'])
             try:
                 answer = Answer.objects.get(
                     question=question,
