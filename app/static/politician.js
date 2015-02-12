@@ -34,8 +34,7 @@ jQuery(function ($){
   })
 
   if ($('select[name="party"]').val() != 'party_other') {
-    $('input[name="party_other"]').val('')
-    $('input[name="party_other"]').hide()
+    $('input[name="party_other"]').val('').hide()
   }
 
   $('select[name="party"]').on('change', function(){
@@ -43,8 +42,7 @@ jQuery(function ($){
       $('input[name="party_other"]').show()
     }
     else {
-      $('input[name="party_other"]').val('')
-      $('input[name="party_other"]').hide()
+      $('input[name="party_other"]').val('').hide()
     }
   })
 

@@ -12,7 +12,7 @@ class PartyAdmin(admin.ModelAdmin):
 
 class PoliticianAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'last_name', 'email']
-    readonly_fields = ('unique_url',)
+    readonly_fields = ('full_unique_url',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

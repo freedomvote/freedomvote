@@ -2,6 +2,9 @@ from django.db import models
 import os
 import base64
 from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from django.conf import settings
+
 
 
 class State(models.Model):
@@ -110,6 +113,13 @@ class Politician(models.Model):
     def generate_url():
         key = base64.urlsafe_b64encode(os.urandom(16))[:20]
         return key
+    
+    @property
+    def full_unique_url(self):
+        return '%s%s' % (
+            settings.BASE_URL,
+            reverse('politician', args=(self.unique_url,))
+        )
 
     class Meta:
         verbose_name        = _('politician')
