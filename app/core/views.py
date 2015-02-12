@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from core.models import Politician, Question, State, Party, Answer, Statistic, Category
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 import json
 
 
@@ -71,14 +73,49 @@ def answer_view(request):
     return HttpResponse('')
 
 def citizen_view(request):
-    ids = Statistic.objects.values_list('politician__id', flat=True)
-    politicians = Politician.objects.filter(id__in=ids)
+    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
+
+    states          = State.objects.all().order_by('name')
+    categories      = Category.objects.all().order_by('name')
+
+    category = request.GET.get('category', None)
+    state    = request.GET.get('state', None)
+    search   = request.GET.get('search', None)
+
+    per_site = request.GET.get('per_page', 10)
+    page     = request.GET.get('page',      1)
+
+    if category and category != '0':
+        politician_list = Politician.objects.filter(statistic__category__id=category).order_by('-statistic__value')
+
+    if state and state != '0':
+        politician_list = politician_list.filter(state=state)
+
+    if search:
+        politician_list = politician_list.filter(
+            Q(last_name__icontains=search) |
+            Q(first_name__icontains=search) |
+            Q(state__name__icontains=search) |
+            Q(party__name__icontains=search) |
+            Q(party__shortname__icontains=search)
+        )
+
+    paginator = Paginator(politician_list, per_site)
+
+    try:
+        politicians = paginator.page(page)
+    except PageNotAnInteger:
+        politicians = paginator.page(1)
+    except EmptyPage:
+        politicians = paginator.page(paginator.num_pages)
 
     return render(
         request,
         'core/citizen.html',
         {
             'politicians' : politicians,
+            'categories'  : categories,
+            'states'      : states,
         }
     )
 

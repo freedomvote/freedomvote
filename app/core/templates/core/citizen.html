@@ -10,19 +10,61 @@
 {% endblock %}
 
 {% block 'content' %}
-<div class="row">
-    <br>
-    <div class="form-group col-md-3 pull-right">
-        <input type="text" class="form-control" placeholder="{% trans "search" %}...">
+<form method="get">
+    <div class="row">
+        <br>
+        <input type="submit" class="btn btn-primary pull-right" value="{% trans "filter" %}">
+        <div class="form-group col-md-2 pull-right">
+            <select name="state" class="form-control">
+                <option value="0">{% trans "please_choose" %}</option>
+                <option disabled>──────────</option>
+                {% for state in states %}
+                <option value="{{ state.id }}" {% if request.GET.state == state.id|slugify %}selected{% endif %}>
+                    {{state.name}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-md-3 pull-right">
+            <input
+             name="search"
+             type="text"
+             class="form-control"
+             placeholder="{% trans "search" %}..."
+             value="{{request.GET.search}}"
+            >
+        </div>
+        <div class="form-group col-md-2 pull-right">
+            <select name="category" class="form-control">
+                <option value="0">{% trans "please_choose" %}</option>
+                <option disabled>──────────</option>
+                {% for category in categories %}
+                <option value="{{ category.id }}" {% if request.GET.category == category.id|slugify %}selected{% endif %}>
+                    {{category.name}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
     </div>
-</div>
+</form>
 <div class="row">
     <table class="table table-striped">
         {% for politician in politicians %}
         <tr>
             <td class="col-md-2">
-                {% thumbnail politician.image 180x180 crop as thumb %}
-                <img class="img-thumbnail img-responsive" src="{{thumb.url}}">
+                {% if politician.image %}
+                    {% thumbnail politician.image 120x120 crop as thumb %}
+                    <img class="img-thumbnail img-responsive" src="{{thumb.url}}">
+                {% else %}
+                    <svg version="1.1" class="img-thumbnail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="130px" height="130px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                        <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
+                        <g>
+                            <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
+                            <polygon fill="#777777" points="199.715,282.865 223.088,258.295 231.847,262.088 259.477,232.661 270.358,245.676    275.262,242.711 301.827,282.865  "/>
+                            <circle fill="#777777" cx="226.719" cy="229.417" r="10.21"/>
+                        </g>
+                    </svg>
+                {% endif %}
             </td>
             <td class="col-md-4">
                 <h4>{{politician.first_name}} {{politician.last_name}}</h4>
@@ -42,5 +84,28 @@
         </tr>
         {% endfor %}
     </table>
+    <nav>
+        <ul class="pagination">
+            <li {% if not politicians.has_previous %}class="disabled"{% endif %}>
+                {% if politicians.has_previous %}
+                    <a href="?page={{ politicians.previous_page_number }}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}"><span aria-hidden="true">&laquo;</span></a>
+                {% else %}
+                    <a href="#"><span aria-hidden="true">&laquo;</span></a>
+                {% endif %}
+            </li>
+            {% for num in politicians.paginator.page_range %}
+            <li {% if politicians.number == num %}class="active"{% endif %}>
+              <a href="?page={{num}}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}">{{num}}{% if politicians.number == num %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            {% endfor %}
+            <li {% if not politicians.has_next %}class="disabled"{% endif %}>
+                {% if politicians.has_next %}
+                <a href="?page={{ politicians.next_page_number }}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}"><span aria-hidden="true">&raquo;</span></a>
+                {% else %}
+                <a href="#"><span aria-hidden="true">&raquo;</span></a>
+                {% endif %}
+            </li>
+        </ul>
+    </nav>
 </div>
 {% endblock %}

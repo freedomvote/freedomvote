@@ -10,7 +10,7 @@ jQuery(function ($){
         chart: {
           type: 'bar',
           backgroundColor: 'transparent',
-          height: 180
+          height: 120
         },
         title: {
           text: ' '
