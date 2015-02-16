@@ -90,8 +90,7 @@
                 <input type="file" name="image">
             </div>
         </div>
-        <br>
-        <div class="row">
+        <div class="row buttons">
             <div class="col-md-12">
                 <input type="submit" class="btn btn-primary pull-right" value="{% trans "save" %}">
             </div>
@@ -121,7 +120,6 @@
                            id="slider_{{question.id}}"
                            data-value={%for answer in answers%}{%if answer.question == question%}{{answer.agreement_level}}{%endif%}{%endfor%}
                           ></div>
-                          <br>
                         <textarea name="note" class="form-control note" placeholder="{% trans "note" %}">{%for answer in answers%}{%if answer.question == question%}{{answer.note}}{%endif%}{%endfor%}</textarea>
                     </form>
                 </td>

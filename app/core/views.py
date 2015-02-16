@@ -109,6 +109,11 @@ def citizen_view(request):
     except EmptyPage:
         politicians = paginator.page(paginator.num_pages)
 
+    # remove the page parameter from url
+    request.GET = request.GET.copy()
+    if request.GET.get('page', None):
+        request.GET.pop('page')
+
     return render(
         request,
         'core/citizen.html',

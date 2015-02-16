@@ -9,41 +9,35 @@
 {% endblock %}
 
 {% block 'content' %}
-<form method="get">
-    <div class="row">
-        <br>
-        <input type="submit" class="btn btn-primary pull-right" value="{% trans "filter" %}">
-        <div class="form-group col-md-2 pull-right">
-            <select name="state" class="form-control">
-                <option value="0">{% trans "please_choose" %}</option>
-                <option disabled>──────────</option>
-                {% for state in states %}
-                <option value="{{ state.id }}" {% if request.GET.state == state.id|slugify %}selected{% endif %}>
-                    {{state.name}}
-                </option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="form-group col-md-3 pull-right">
-            <input
-             name="search"
-             type="text"
-             class="form-control"
-             placeholder="{% trans "search" %}..."
-             value="{{request.GET.search}}"
-            >
-        </div>
-        <div class="form-group col-md-2 pull-right">
-            <select name="category" class="form-control">
-                <option value="0">{% trans "please_choose" %}</option>
-                <option disabled>──────────</option>
-                {% for category in categories %}
-                <option value="{{ category.id }}" {% if request.GET.category == category.id|slugify %}selected{% endif %}>
-                    {{category.name}}
-                </option>
-                {% endfor %}
-            </select>
-        </div>
+
+<form method="get" class="form-inline text-right">
+    <div class="row filter">
+        <select name="category" class="form-control">
+            <option value="0">{% trans "please_choose" %}</option>
+            <option disabled>──────────</option>
+            {% for category in categories %}
+            <option value="{{ category.id }}" {% if request.GET.category == category.id|slugify %}selected{% endif %}>
+                {{category.name}}
+            </option>
+            {% endfor %}
+        </select>
+        <input
+         name="search"
+         type="text"
+         class="form-control"
+         placeholder="{% trans "search" %}..."
+         value="{{request.GET.search}}"
+        >
+        <select name="state" class="form-control">
+            <option value="0">{% trans "please_choose" %}</option>
+            <option disabled>──────────</option>
+            {% for state in states %}
+            <option value="{{ state.id }}" {% if request.GET.state == state.id|slugify %}selected{% endif %}>
+                {{state.name}}
+            </option>
+            {% endfor %}
+        </select>
+        <input type="submit" class="btn btn-primary" value="{% trans "filter" %}">
     </div>
 </form>
 <div class="row">
@@ -83,25 +77,25 @@
         </tr>
         {% endfor %}
     </table>
-    <nav>
+    <nav class="text-center">
         <ul class="pagination">
             <li {% if not politicians.has_previous %}class="disabled"{% endif %}>
                 {% if politicians.has_previous %}
-                    <a href="?page={{ politicians.previous_page_number }}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}"><span aria-hidden="true">&laquo;</span></a>
+                    <a href="?page={{ politicians.previous_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&laquo;</span></a>
                 {% else %}
-                    <a href="#"><span aria-hidden="true">&laquo;</span></a>
+                    <a><span aria-hidden="true">&laquo;</span></a>
                 {% endif %}
             </li>
             {% for num in politicians.paginator.page_range %}
             <li {% if politicians.number == num %}class="active"{% endif %}>
-              <a href="?page={{num}}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}">{{num}}{% if politicians.number == num %} <span class="sr-only">(current)</span>{% endif %}</a>
+              <a href="?page={{num}}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}">{{num}}{% if politicians.number == num %} <span class="sr-only">(current)</span>{% endif %}</a>
             </li>
             {% endfor %}
             <li {% if not politicians.has_next %}class="disabled"{% endif %}>
                 {% if politicians.has_next %}
-                <a href="?page={{ politicians.next_page_number }}{% if request.GET.per_page %}&per_page={{request.GET.per_page}}{%endif%}"><span aria-hidden="true">&raquo;</span></a>
+                    <a href="?page={{ politicians.next_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&raquo;</span></a>
                 {% else %}
-                <a href="#"><span aria-hidden="true">&raquo;</span></a>
+                    <a><span aria-hidden="true">&raquo;</span></a>
                 {% endif %}
             </li>
         </ul>

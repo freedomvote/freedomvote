@@ -8,6 +8,7 @@ input[type="file"] {
 
 .buttons {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .ui-slider {
@@ -24,4 +25,17 @@ input[type="file"] {
 
 .chart {
   margin-top: 20px;
+}
+
+.filter {
+  margin-bottom: 20px;
+}
+
+textarea.note {
+  margin-top: 10px;
+  resize: vertical;
+}
+
+.details .row {
+  margin-bottom: 5px;
 }
