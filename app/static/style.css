@@ -39,3 +39,7 @@ textarea.note {
 .details .row {
   margin-bottom: 5px;
 }
+
+svg.img-thumbnail {
+  margin-bottom: -5px;
+}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-16 10:58+0000\n"
+"POT-Creation-Date: 2015-02-16 11:04+0000\n"
 "PO-Revision-Date: 2015-02-05 12:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.3\n"
 
-#: core/admin.py:25 core/models.py:52 core/models.py:154 core/models.py:193
+#: core/admin.py:26 core/models.py:52 core/models.py:157 core/models.py:196
 msgid "category"
 msgstr "Kategorie"
 
@@ -91,59 +91,63 @@ msgstr "Zugangslink"
 msgid "party_other"
 msgstr "Andere Partei"
 
-#: core/models.py:141 core/models.py:172 core/models.py:189
+#: core/models.py:141
+msgid "full_unique_url"
+msgstr "Zugangslink"
+
+#: core/models.py:144 core/models.py:175 core/models.py:192
 msgid "politician"
 msgstr "Politiker"
 
-#: core/models.py:142
+#: core/models.py:145
 msgid "politicians"
 msgstr "Politiker"
 
-#: core/models.py:147
+#: core/models.py:150
 msgid "preferred_answer"
 msgstr "Bevorzugte Antwort"
 
-#: core/models.py:150
+#: core/models.py:153
 msgid "question_number"
 msgstr "Fragenummer"
 
-#: core/models.py:157
+#: core/models.py:160
 msgid "text"
 msgstr "Text"
 
-#: core/models.py:161 core/models.py:168
+#: core/models.py:164 core/models.py:171
 msgid "question"
 msgstr "Frage"
 
-#: core/models.py:162
+#: core/models.py:165
 msgid "questions"
 msgstr "Fragen"
 
-#: core/models.py:175
+#: core/models.py:178
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:178 core/templates/core/politician.html:127
+#: core/models.py:181 core/templates/core/politician.html:127
 msgid "note"
 msgstr "Bemerkung"
 
-#: core/models.py:182
+#: core/models.py:185
 msgid "answer"
 msgstr "Antwort"
 
-#: core/models.py:183
+#: core/models.py:186
 msgid "answers"
 msgstr "Antworten"
 
-#: core/models.py:196
+#: core/models.py:199
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:200
+#: core/models.py:203
 msgid "statistic"
 msgstr "Statistik"
 
-#: core/models.py:201
+#: core/models.py:204
 msgid "statistics"
 msgstr "Statistiken"
 
