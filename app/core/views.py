@@ -161,3 +161,17 @@ def statistic_view(request, politician_id):
     }
 
     return HttpResponse(json.dumps(response), content_type="application/json")
+
+
+def detail_view(request, politician_id):
+    politician = get_object_or_404(Politician, id=politician_id)
+    answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
+
+    return render(
+        request,
+        'core/detail.html',
+        {
+            'politician' : politician,
+            'answers'    : answers
+        }
+    )

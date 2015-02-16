@@ -8,10 +8,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', views.citizen_view),
-    url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view),
+    url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view, name='politician'),
     url(r'^share/(?P<unique_url>.+)/$', views.calculate_statistic_view),
     url(r'^retract/(?P<unique_url>.+)/$', views.retract_statistic_view),
     url(r'^statistic/(?P<politician_id>\d+)/$', views.statistic_view),
+    url(r'^detail/(?P<politician_id>\d+)/$', views.detail_view),
     url(r'^answer/$', views.answer_view),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

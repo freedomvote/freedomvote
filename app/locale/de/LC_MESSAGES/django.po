@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-10 12:47+0000\n"
+"POT-Creation-Date: 2015-02-16 10:14+0000\n"
 "PO-Revision-Date: 2015-02-05 12:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,193 +18,189 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.3\n"
 
-#: core/admin.py:25 core/models.py:49 core/models.py:128 core/models.py:167
+#: core/admin.py:25 core/models.py:52 core/models.py:154 core/models.py:193
 msgid "category"
 msgstr "Kategorie"
 
-#: core/models.py:10 core/models.py:24 core/models.py:42
+#: core/models.py:13 core/models.py:27 core/models.py:45
 msgid "name"
 msgstr "Name"
 
-#: core/models.py:17 core/models.py:91 core/templates/core/citizen.html:30
-#: core/templates/core/politician.html:32
+#: core/models.py:20 core/models.py:94 core/templates/core/citizen.html:71
+#: core/templates/core/detail.html:26 core/templates/core/politician.html:33
 msgid "state"
 msgstr "Kanton"
 
-#: core/models.py:18
+#: core/models.py:21
 msgid "states"
 msgstr "Kantone"
 
-#: core/models.py:28
+#: core/models.py:31
 msgid "shortname"
 msgstr "Abkürzung"
 
-#: core/models.py:35 core/models.py:97 core/templates/core/citizen.html:34
-#: core/templates/core/politician.html:44
+#: core/models.py:38 core/models.py:100 core/templates/core/citizen.html:75
+#: core/templates/core/detail.html:30 core/templates/core/politician.html:45
 msgid "party"
 msgstr "Partei"
 
-#: core/models.py:36
+#: core/models.py:39
 msgid "parties"
 msgstr "Parteien"
 
-#: core/models.py:50
+#: core/models.py:53
 msgid "categories"
 msgstr "Kategorien"
 
-#: core/models.py:56 core/templates/core/politician.html:16
+#: core/models.py:59 core/templates/core/politician.html:17
 msgid "first_name"
 msgstr "Vorname"
 
-#: core/models.py:60 core/templates/core/politician.html:63
+#: core/models.py:63 core/templates/core/politician.html:64
 msgid "last_name"
 msgstr "Nachname"
 
-#: core/models.py:63 core/templates/core/politician.html:20
+#: core/models.py:66 core/templates/core/politician.html:21
 msgid "email"
 msgstr "Email"
 
-#: core/models.py:69
+#: core/models.py:72
 msgid "image"
 msgstr "Bild"
 
-#: core/models.py:72 core/templates/core/politician.html:26
+#: core/models.py:75 core/templates/core/detail.html:42
+#: core/templates/core/politician.html:27
 msgid "is_member_of_parliament"
 msgstr "Bisheriges Ratsmitglied"
 
-#: core/models.py:76 core/templates/core/politician.html:67
+#: core/models.py:79 core/templates/core/detail.html:34
+#: core/templates/core/politician.html:68
 msgid "past_contributions"
 msgstr "Bisherige Beiträge zum Thema"
 
-#: core/models.py:80 core/templates/core/politician.html:71
+#: core/models.py:83 core/templates/core/detail.html:38
+#: core/templates/core/politician.html:72
 msgid "future_plans"
 msgstr "Absichten und Pläne"
 
-#: core/models.py:84
+#: core/models.py:87
 msgid "unique_url"
 msgstr "Zugangslink"
 
-#: core/models.py:103
+#: core/models.py:106
 msgid "party_other"
 msgstr "Andere Partei"
 
-#: core/models.py:115 core/models.py:146 core/models.py:163
+#: core/models.py:141 core/models.py:172 core/models.py:189
 msgid "politician"
 msgstr "Politiker"
 
-#: core/models.py:116
+#: core/models.py:142
 msgid "politicians"
 msgstr "Politiker"
 
-#: core/models.py:121
+#: core/models.py:147
 msgid "preferred_answer"
 msgstr "Bevorzugte Antwort"
 
-#: core/models.py:124
+#: core/models.py:150
 msgid "question_number"
 msgstr "Fragenummer"
 
-#: core/models.py:131
+#: core/models.py:157
 msgid "text"
 msgstr "Text"
 
-#: core/models.py:135 core/models.py:142
+#: core/models.py:161 core/models.py:168
 msgid "question"
 msgstr "Frage"
 
-#: core/models.py:136
+#: core/models.py:162
 msgid "questions"
 msgstr "Fragen"
 
-#: core/models.py:149
+#: core/models.py:175
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:152 core/templates/core/politician.html:123
+#: core/models.py:178 core/templates/core/politician.html:125
 msgid "note"
 msgstr "Bemerkung"
 
-#: core/models.py:156
+#: core/models.py:182
 msgid "answer"
 msgstr "Antwort"
 
-#: core/models.py:157
+#: core/models.py:183
 msgid "answers"
 msgstr "Antworten"
 
-#: core/models.py:170
+#: core/models.py:196
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:174
-#, fuzzy
+#: core/models.py:200
 msgid "statistic"
-msgstr "Kantone"
+msgstr "Statistik"
 
-#: core/models.py:175
-#, fuzzy
+#: core/models.py:201
 msgid "statistics"
-msgstr "Kantone"
+msgstr "Statistiken"
 
-#: core/templates/core/citizen.html:16
-msgid "search"
-msgstr "Suchen"
+#: core/templates/core/citizen.html:15
+msgid "filter"
+msgstr "Filtern"
 
-#: core/templates/core/citizen.html:31
-msgid "none_m"
-msgstr "Keiner"
-
-#: core/templates/core/citizen.html:35
-msgid "none_f"
-msgstr "Keine"
-
-#: core/templates/core/citizen.html:37
-msgid "details"
-msgstr "Details"
-
-#: core/templates/core/politician.html:34
-#: core/templates/core/politician.html:46
+#: core/templates/core/citizen.html:18 core/templates/core/citizen.html:38
+#: core/templates/core/politician.html:35
+#: core/templates/core/politician.html:47
 msgid "please_choose"
 msgstr "Bitte wählen..."
 
-#: core/templates/core/politician.html:52
-msgid "other"
-msgstr "Andere"
+#: core/templates/core/citizen.html:32
+msgid "search"
+msgstr "Suchen"
 
-#: core/templates/core/politician.html:94
-msgid "save"
-msgstr "Speichern"
+#: core/templates/core/citizen.html:78
+msgid "details"
+msgstr "Details"
 
-#: core/templates/core/politician.html:99
+#: core/templates/core/detail.html:50 core/templates/core/politician.html:101
 msgid "your_opinion_to"
 msgstr "Wie stehen Sie zu..."
 
-#: core/templates/core/politician.html:104
+#: core/templates/core/detail.html:55 core/templates/core/politician.html:106
 msgid "applies_not"
 msgstr "Trifft gar nicht zu"
 
-#: core/templates/core/politician.html:105
+#: core/templates/core/detail.html:56 core/templates/core/politician.html:107
 msgid "applies"
 msgstr "Trifft voll und ganz zu"
 
-#: core/templates/core/politician.html:131
-#, fuzzy
+#: core/templates/core/politician.html:53
+msgid "other"
+msgstr "Andere"
+
+#: core/templates/core/politician.html:96
+msgid "save"
+msgstr "Speichern"
+
+#: core/templates/core/politician.html:133
 msgid "retract_answers"
 msgstr "Antworten zurückziehen"
 
-#: core/templates/core/politician.html:132
-#, fuzzy
+#: core/templates/core/politician.html:134
 msgid "share_answers"
 msgstr "Antworten freigeben"
 
-#: freedomvote/settings.py:94
+#: freedomvote/settings.py:107
 msgid "German"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:95
+#: freedomvote/settings.py:108
 msgid "French"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:96
+#: freedomvote/settings.py:109
 msgid "Italian"
 msgstr "Italienisch"

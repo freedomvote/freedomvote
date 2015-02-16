@@ -1,6 +1,7 @@
 {% extends 'core/index.html' %}
 {% load i18n %}
 {% load static %}
+{% load thumbnail %}
 
 {% block 'scripts' %}
 <script src="{% static 'politician.js' %}"></script>
@@ -74,9 +75,10 @@
             </div>
             <div class="col-md-3 pull-right">
                 {% if politician.image %}
-                    <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{politician.image.url}}" class="img-thumbnail img-responsive">
+                    {% thumbnail politician.image 300x300 crop as thumb %}
+                    <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{thumb.url}}" class="img-thumbnail img-responsive">
                 {% else %}
-                    <svg version="1.1" id="uikit_placeholder" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="250px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                    <svg version="1.1" class="img-thumbnail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="250px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
                         <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
                         <g>
                             <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
@@ -85,7 +87,7 @@
                         </g>
                     </svg>
                 {% endif %}
-                <input type="file" name="image" style="margin-top: 10px;">
+                <input type="file" name="image">
             </div>
         </div>
         <br>
@@ -127,7 +129,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="text-right" style="margin: 20px 0">
+    <div class="text-right buttons">
         <a href="/retract/{{politician.unique_url}}" type="button" class="btn btn-default">{% trans "retract_answers" %}</a>
         <a href="/share/{{politician.unique_url}}" type="button" class="btn btn-primary">{% trans "share_answers" %}</a>
     </div>

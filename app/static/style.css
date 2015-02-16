@@ -1,0 +1,27 @@
+.container {
+  padding-top: 20px;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.ui-slider {
+  background: none;
+  background-color: #555555 !important;
+  opacity: 1;
+}
+
+.ui-slider .ui-slider-handle {
+  border: 1px solid #2e6da4;
+  background: none;
+  background-color: #337ab7;
+}
+
+.chart {
+  margin-top: 20px;
+}

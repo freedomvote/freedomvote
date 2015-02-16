@@ -113,7 +113,23 @@ class Politician(models.Model):
     def generate_url():
         key = base64.urlsafe_b64encode(os.urandom(16))[:20]
         return key
-    
+
+    @property
+    def get_party(self):
+        if self.party:
+            return self.party.name
+        elif self.party_other:
+            return self.party_other
+        else:
+            return '-'
+
+    @property
+    def get_state(self):
+        if self.state:
+            return self.state.name
+        else:
+            return '-'
+
     @property
     def full_unique_url(self):
         return '%s%s' % (
