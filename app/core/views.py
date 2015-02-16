@@ -32,6 +32,8 @@ def politician_view(request, unique_url):
                 politician.party = Party.objects.get(id=request.POST['party'])
             except:
                 politician.party = None
+            if request.POST.get('remove_image', None):
+                politician.image = None
             politician.save()
 
         except:

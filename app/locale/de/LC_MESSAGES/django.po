@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-16 10:14+0000\n"
+"POT-Creation-Date: 2015-02-16 10:58+0000\n"
 "PO-Revision-Date: 2015-02-05 12:09+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Kategorie"
 msgid "name"
 msgstr "Name"
 
-#: core/models.py:20 core/models.py:94 core/templates/core/citizen.html:71
+#: core/models.py:20 core/models.py:94 core/templates/core/citizen.html:65
 #: core/templates/core/detail.html:26 core/templates/core/politician.html:33
 msgid "state"
 msgstr "Kanton"
@@ -39,7 +39,7 @@ msgstr "Kantone"
 msgid "shortname"
 msgstr "Abkürzung"
 
-#: core/models.py:38 core/models.py:100 core/templates/core/citizen.html:75
+#: core/models.py:38 core/models.py:100 core/templates/core/citizen.html:69
 #: core/templates/core/detail.html:30 core/templates/core/politician.html:45
 msgid "party"
 msgstr "Partei"
@@ -123,7 +123,7 @@ msgstr "Fragen"
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:178 core/templates/core/politician.html:125
+#: core/models.py:178 core/templates/core/politician.html:127
 msgid "note"
 msgstr "Bemerkung"
 
@@ -147,33 +147,33 @@ msgstr "Statistik"
 msgid "statistics"
 msgstr "Statistiken"
 
-#: core/templates/core/citizen.html:15
-msgid "filter"
-msgstr "Filtern"
-
-#: core/templates/core/citizen.html:18 core/templates/core/citizen.html:38
+#: core/templates/core/citizen.html:16 core/templates/core/citizen.html:32
 #: core/templates/core/politician.html:35
 #: core/templates/core/politician.html:47
 msgid "please_choose"
 msgstr "Bitte wählen..."
 
-#: core/templates/core/citizen.html:32
+#: core/templates/core/citizen.html:28
 msgid "search"
 msgstr "Suchen"
 
-#: core/templates/core/citizen.html:78
+#: core/templates/core/citizen.html:40
+msgid "filter"
+msgstr "Filtern"
+
+#: core/templates/core/citizen.html:72
 msgid "details"
 msgstr "Details"
 
-#: core/templates/core/detail.html:50 core/templates/core/politician.html:101
+#: core/templates/core/detail.html:50 core/templates/core/politician.html:104
 msgid "your_opinion_to"
 msgstr "Wie stehen Sie zu..."
 
-#: core/templates/core/detail.html:55 core/templates/core/politician.html:106
+#: core/templates/core/detail.html:55 core/templates/core/politician.html:109
 msgid "applies_not"
 msgstr "Trifft gar nicht zu"
 
-#: core/templates/core/detail.html:56 core/templates/core/politician.html:107
+#: core/templates/core/detail.html:56 core/templates/core/politician.html:110
 msgid "applies"
 msgstr "Trifft voll und ganz zu"
 
@@ -181,15 +181,19 @@ msgstr "Trifft voll und ganz zu"
 msgid "other"
 msgstr "Andere"
 
-#: core/templates/core/politician.html:96
+#: core/templates/core/politician.html:93
+msgid "remove_image"
+msgstr "Bild löschen"
+
+#: core/templates/core/politician.html:99
 msgid "save"
 msgstr "Speichern"
 
-#: core/templates/core/politician.html:133
+#: core/templates/core/politician.html:135
 msgid "retract_answers"
 msgstr "Antworten zurückziehen"
 
-#: core/templates/core/politician.html:134
+#: core/templates/core/politician.html:136
 msgid "share_answers"
 msgstr "Antworten freigeben"
 
