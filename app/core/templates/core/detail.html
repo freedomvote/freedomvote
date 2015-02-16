@@ -40,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-4"><strong>{% trans "is_member_of_parliament" %}</strong></div>
-            <div class="col-md-8"><span class="glyphicon glyphicon-{% if politician.is_member_of_parliament %}ok{%else%}remove{%endif%}"></span></div>
+            <div class="col-md-8">{% if politician.is_member_of_parliament %}{% trans "yes" %}{%else%}{% trans "no" %}{%endif%}</div>
         </div>
         <div class="row chart" id="{{politician.id}}">
         </div>

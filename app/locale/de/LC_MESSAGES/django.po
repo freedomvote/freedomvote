@@ -7,10 +7,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-16 11:04+0000\n"
+"POT-Creation-Date: 2015-02-16 12:33+0000\n"
 "PO-Revision-Date: 2015-02-05 12:09+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
+"Language-Team: German <de@li.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,148 +18,150 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.3\n"
 
-#: core/admin.py:26 core/models.py:52 core/models.py:157 core/models.py:196
+#: core/admin.py:21
+msgid "full_unique_url"
+msgstr "Zugangslink"
+
+#: core/admin.py:35 core/models.py:49 core/models.py:144 core/models.py:183
 msgid "category"
 msgstr "Kategorie"
 
-#: core/models.py:13 core/models.py:27 core/models.py:45
+#: core/models.py:10 core/models.py:24 core/models.py:42
 msgid "name"
 msgstr "Name"
 
-#: core/models.py:20 core/models.py:94 core/templates/core/citizen.html:65
+#: core/models.py:17 core/models.py:91 core/templates/core/citizen.html:65
 #: core/templates/core/detail.html:26 core/templates/core/politician.html:33
 msgid "state"
 msgstr "Kanton"
 
-#: core/models.py:21
+#: core/models.py:18
 msgid "states"
 msgstr "Kantone"
 
-#: core/models.py:31
+#: core/models.py:28
 msgid "shortname"
 msgstr "Abkürzung"
 
-#: core/models.py:38 core/models.py:100 core/templates/core/citizen.html:69
+#: core/models.py:35 core/models.py:97 core/templates/core/citizen.html:69
 #: core/templates/core/detail.html:30 core/templates/core/politician.html:45
 msgid "party"
 msgstr "Partei"
 
-#: core/models.py:39
+#: core/models.py:36
 msgid "parties"
 msgstr "Parteien"
 
-#: core/models.py:53
+#: core/models.py:50
 msgid "categories"
 msgstr "Kategorien"
 
-#: core/models.py:59 core/templates/core/politician.html:17
+#: core/models.py:56 core/templates/core/politician.html:17
 msgid "first_name"
 msgstr "Vorname"
 
-#: core/models.py:63 core/templates/core/politician.html:64
+#: core/models.py:60 core/templates/core/politician.html:64
 msgid "last_name"
 msgstr "Nachname"
 
-#: core/models.py:66 core/templates/core/politician.html:21
+#: core/models.py:63 core/templates/core/politician.html:21
 msgid "email"
 msgstr "Email"
 
-#: core/models.py:72
+#: core/models.py:69
 msgid "image"
 msgstr "Bild"
 
-#: core/models.py:75 core/templates/core/detail.html:42
+#: core/models.py:72 core/templates/core/detail.html:42
 #: core/templates/core/politician.html:27
 msgid "is_member_of_parliament"
 msgstr "Bisheriges Ratsmitglied"
 
-#: core/models.py:79 core/templates/core/detail.html:34
+#: core/models.py:76 core/templates/core/detail.html:34
 #: core/templates/core/politician.html:68
 msgid "past_contributions"
 msgstr "Bisherige Beiträge zum Thema"
 
-#: core/models.py:83 core/templates/core/detail.html:38
+#: core/models.py:80 core/templates/core/detail.html:38
 #: core/templates/core/politician.html:72
 msgid "future_plans"
 msgstr "Absichten und Pläne"
 
-#: core/models.py:87
+#: core/models.py:84
 msgid "unique_url"
 msgstr "Zugangslink"
 
-#: core/models.py:106
+#: core/models.py:103
 msgid "party_other"
 msgstr "Andere Partei"
 
-#: core/models.py:141
-msgid "full_unique_url"
-msgstr "Zugangslink"
-
-#: core/models.py:144 core/models.py:175 core/models.py:192
+#: core/models.py:131 core/models.py:162 core/models.py:179
 msgid "politician"
 msgstr "Politiker"
 
-#: core/models.py:145
+#: core/models.py:132
 msgid "politicians"
 msgstr "Politiker"
 
-#: core/models.py:150
+#: core/models.py:137
 msgid "preferred_answer"
 msgstr "Bevorzugte Antwort"
 
-#: core/models.py:153
+#: core/models.py:140
 msgid "question_number"
 msgstr "Fragenummer"
 
-#: core/models.py:160
+#: core/models.py:147
 msgid "text"
 msgstr "Text"
 
-#: core/models.py:164 core/models.py:171
+#: core/models.py:151 core/models.py:158
 msgid "question"
 msgstr "Frage"
 
-#: core/models.py:165
+#: core/models.py:152
 msgid "questions"
 msgstr "Fragen"
 
-#: core/models.py:178
+#: core/models.py:165
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:181 core/templates/core/politician.html:127
+#: core/models.py:168 core/templates/core/politician.html:127
 msgid "note"
 msgstr "Bemerkung"
 
-#: core/models.py:185
+#: core/models.py:172
 msgid "answer"
 msgstr "Antwort"
 
-#: core/models.py:186
+#: core/models.py:173
 msgid "answers"
 msgstr "Antworten"
 
-#: core/models.py:199
+#: core/models.py:186
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:203
+#: core/models.py:190
 msgid "statistic"
 msgstr "Statistik"
 
-#: core/models.py:204
+#: core/models.py:191
 msgid "statistics"
 msgstr "Statistiken"
 
-#: core/templates/core/citizen.html:16 core/templates/core/citizen.html:32
-#: core/templates/core/politician.html:35
-#: core/templates/core/politician.html:47
-msgid "please_choose"
-msgstr "Bitte wählen..."
+#: core/templates/core/citizen.html:16
+msgid "sort_by_category"
+msgstr "Nach Kategorie sortieren"
 
 #: core/templates/core/citizen.html:28
 msgid "search"
 msgstr "Suchen"
+
+#: core/templates/core/citizen.html:32
+msgid "filter_by_state"
+msgstr "Auf Kanton einschränken"
 
 #: core/templates/core/citizen.html:40
 msgid "filter"
@@ -168,6 +170,14 @@ msgstr "Filtern"
 #: core/templates/core/citizen.html:72
 msgid "details"
 msgstr "Details"
+
+#: core/templates/core/detail.html:43
+msgid "yes"
+msgstr "Ja"
+
+#: core/templates/core/detail.html:43
+msgid "no"
+msgstr "Nein"
 
 #: core/templates/core/detail.html:50 core/templates/core/politician.html:104
 msgid "your_opinion_to"
@@ -180,6 +190,11 @@ msgstr "Trifft gar nicht zu"
 #: core/templates/core/detail.html:56 core/templates/core/politician.html:110
 msgid "applies"
 msgstr "Trifft voll und ganz zu"
+
+#: core/templates/core/politician.html:35
+#: core/templates/core/politician.html:47
+msgid "please_choose"
+msgstr "Bitte wählen..."
 
 #: core/templates/core/politician.html:53
 msgid "other"

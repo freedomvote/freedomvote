@@ -13,8 +13,8 @@
 <form method="get" class="form-inline text-right">
     <div class="row filter">
         <select name="category" class="form-control">
-            <option value="0">{% trans "please_choose" %}</option>
-            <option disabled>──────────</option>
+            <option value="0">{% trans "sort_by_category" %}...</option>
+            <option disabled>─────────────────</option>
             {% for category in categories %}
             <option value="{{ category.id }}" {% if request.GET.category == category.id|slugify %}selected{% endif %}>
                 {{category.name}}
@@ -29,8 +29,8 @@
          value="{{request.GET.search}}"
         >
         <select name="state" class="form-control">
-            <option value="0">{% trans "please_choose" %}</option>
-            <option disabled>──────────</option>
+            <option value="0">{% trans "filter_by_state" %}...</option>
+            <option disabled>─────────────────</option>
             {% for state in states %}
             <option value="{{ state.id }}" {% if request.GET.state == state.id|slugify %}selected{% endif %}>
                 {{state.name}}
