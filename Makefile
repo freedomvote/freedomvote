@@ -32,3 +32,9 @@ restart-services:
 
 runserver:
 	@vagrant ssh -c '/vagrant/envpy /vagrant/app/manage.py runserver 0.0.0.0:8000'
+
+makemessages:
+	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py makemessages -l de'
+
+compilemessages:
+	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py compilemessages'
