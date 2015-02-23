@@ -11,6 +11,10 @@ input[type="file"] {
   margin-bottom: 20px;
 }
 
+.buttons form {
+  display: inline;
+}
+
 .ui-slider {
   background: none;
   background-color: #555555 !important;

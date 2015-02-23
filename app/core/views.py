@@ -126,7 +126,8 @@ def citizen_view(request):
         }
     )
 
-def calculate_statistic_view(request, unique_url):
+def calculate_statistic_view(request):
+    unique_url = request.POST.get('unique_url')
     politician = get_object_or_404(Politician, unique_url=unique_url)
     categories = Category.objects.all()
 
@@ -150,7 +151,8 @@ def calculate_statistic_view(request, unique_url):
     return HttpResponseRedirect('/parlamentarier/%s' % unique_url)
 
 
-def retract_statistic_view(request, unique_url):
+def retract_statistic_view(request):
+    unique_url = request.POST.get('unique_url')
     politician = get_object_or_404(Politician, unique_url=unique_url)
     Statistic.objects.filter(politician=politician).delete()
 

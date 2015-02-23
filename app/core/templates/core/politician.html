@@ -78,7 +78,7 @@
                     {% thumbnail politician.image 300x300 crop as thumb %}
                     <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{thumb.url}}" class="img-thumbnail img-responsive">
                 {% else %}
-                    <svg version="1.1" class="img-thumbnail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+                    <svg class="img-thumbnail img-responsive" width="310px" height="310px" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
                         <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
                         <g>
                             <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
@@ -132,7 +132,15 @@
         </tbody>
     </table>
     <div class="text-right buttons">
-        <a href="/retract/{{politician.unique_url}}" type="button" class="btn btn-default">{% trans "retract_answers" %}</a>
-        <a href="/share/{{politician.unique_url}}" type="button" class="btn btn-primary">{% trans "share_answers" %}</a>
+        <form method="post" action="/retract/">
+            {% csrf_token %}
+            <input type="hidden" name="unique_url" value="{{politician.unique_url}}">
+            <input type="submit" class="btn btn-default" value="{% trans "retract_answers" %}">
+        </form>
+        <form method="post" action="/share/">
+            {% csrf_token %}
+            <input type="hidden" name="unique_url" value="{{politician.unique_url}}">
+            <input type="submit" class="btn btn-primary" value="{% trans "share_answers" %}">
+        </form>
     </div>
 {% endblock %}

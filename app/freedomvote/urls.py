@@ -7,14 +7,14 @@ from django.conf.urls.static import static
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', views.citizen_view),
-    url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view, name='politician'),
-    url(r'^share/(?P<unique_url>.+)/$', views.calculate_statistic_view),
-    url(r'^retract/(?P<unique_url>.+)/$', views.retract_statistic_view),
-    url(r'^statistic/(?P<politician_id>\d+)/$', views.statistic_view),
-    url(r'^detail/(?P<politician_id>\d+)/$', views.detail_view),
-    url(r'^answer/$', views.answer_view),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$',                                   views.citizen_view,             name='citizen'),
+    url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view,          name='politician'),
+    url(r'^detail/(?P<politician_id>\d+)/$',     views.detail_view,              name='detail'),
+    url(r'^statistic/(?P<politician_id>\d+)/$',  views.statistic_view,           name='statistic'),
+    url(r'^answer/$',                            views.answer_view,              name='answer'),
+    url(r'^share/$',                             views.calculate_statistic_view, name='share'),
+    url(r'^retract/$',                           views.retract_statistic_view,   name='retract'),
+    url(r'^admin/',                              include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
