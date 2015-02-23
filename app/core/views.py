@@ -53,24 +53,18 @@ def politician_view(request, unique_url):
 
 def answer_view(request):
     if request.POST:
-        try:
-            question = get_object_or_404(Question, pk=request.POST['question'])
-            politician = get_object_or_404(Politician, unique_url=request.POST['unique_url'])
-            try:
-                answer = Answer.objects.get(
-                    question=question,
-                    politician=politician
-                )
-            except:
-                answer = Answer(
-                    question=question,
-                    politician=politician
-                )
-            answer.agreement_level = request.POST.get('agreement_level', 0)
-            answer.note = request.POST['note']
-            answer.save()
-        except:
-            pass
+        question = get_object_or_404(Question, pk=request.POST.get('question'))
+        politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+        answer, created = Answer.objects.get_or_create(
+            question=question,
+            politician=politician,
+            defaults={
+                'agreement_level' : request.POST.get('agreement_level', 0)
+            }
+        )
+        answer.agreement_level = request.POST.get('agreement_level', 0)
+        answer.note = request.POST['note']
+        answer.save()
 
     return HttpResponse('')
 
