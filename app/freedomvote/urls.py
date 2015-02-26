@@ -8,6 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$',                                   views.citizen_view,             name='citizen'),
+    url(r'^form/$',                              views.citizen_form_view,        name='citizen_form'),
     url(r'^parlamentarier/(?P<unique_url>.+)/$', views.politician_view,          name='politician'),
     url(r'^detail/(?P<politician_id>\d+)/$',     views.detail_view,              name='detail'),
     url(r'^statistic/(?P<politician_id>\d+)/$',  views.statistic_view,           name='statistic'),

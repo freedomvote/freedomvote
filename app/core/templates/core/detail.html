@@ -3,14 +3,19 @@
 {% load static %}
 {% load thumbnail %}
 
+{% block 'scripts' %}
+<script src="{% static 'highcharts/highcharts-more.js' %}"></script>
+<script src="{% static 'detail.js' %}"></script>
+{% endblock %}
+
 {% block 'content' %}
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
         {% if politician.image %}
-            {% thumbnail politician.image 400x400 crop as thumb %}
+            {% thumbnail politician.image 250x250 crop as thumb %}
             <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{thumb.url}}" class="img-thumbnail img-responsive">
         {% else %}
-            <svg class="img-thumbnail img-responsive" width="410px" height="410px" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
+            <svg class="img-thumbnail img-responsive" width="260px" height="260px" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
                 <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
                 <g>
                     <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
@@ -20,7 +25,7 @@
             </svg>
         {% endif %}
     </div>
-    <div class="col-md-8 details">
+    <div class="col-md-9 details">
         <h2>{{ politician.first_name }} {{ politician.last_name }}</h2>
         <div class="row">
             <div class="col-md-4"><strong>{% trans "state" %}</strong></div>
@@ -42,7 +47,9 @@
             <div class="col-md-4"><strong>{% trans "is_member_of_parliament" %}</strong></div>
             <div class="col-md-8">{% if politician.is_member_of_parliament %}{% trans "yes" %}{%else%}{% trans "no" %}{%endif%}</div>
         </div>
-        <div class="row chart" id="{{politician.id}}">
+        <div class="row">
+            <div class="col-md-4"><label><input type="checkbox" id="show_citizen">{% trans "show_own_spider" %}</label></div>
+            <div class="col-md-8" id="chart" data-politician-id="{{politician.id}}"></div>
         </div>
     </div>
 </div>
@@ -72,64 +79,4 @@
             {% endfor %}
         </tbody>
     </table>
-    <script>
-        $('.slider').each(function() {
-            var value = $(this).data('value')
-            $(this).slider({
-              max: 10,
-              min: 0,
-              value: value,
-              step: 2,
-              disabled: true
-            })
-        })
-
-        var item = $('.chart')
-
-        $.getJSON('/statistic/' + item.attr('id') + '/')
-        .success(function(data){
-          item.highcharts({
-            chart: {
-              type: 'bar',
-              backgroundColor: 'transparent',
-              height: 120
-            },
-            title: {
-              text: ' '
-            },
-            subtitle: {
-              text: ' '
-            },
-            xAxis: {
-              categories: data.categories,
-            },
-            credits: {
-              enabled: false
-            },
-            yAxis: {
-              min: 0,
-              max: 10,
-              title: ' ',
-              minorTickInterval: 1,
-              labels: {
-                enabled: false
-              }
-            },
-            tooltip: false,
-            plotOptions: {
-              column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-              }
-            },
-            legend: {
-              enabled: false
-            },
-            series: [{
-              colorByPoint: true,
-              data: data.values
-            }]
-          });
-        })
-    </script>
 {% endblock %}

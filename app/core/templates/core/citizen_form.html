@@ -1,0 +1,42 @@
+{% extends 'core/index.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block 'scripts' %}
+<script src="{% static 'citizen_form.js' %}"></script>
+{% endblock %}
+
+{% block 'content' %}
+<form method="post" id="citizen_form">
+    {% csrf_token %}
+    <h2>{% trans "your_opinion_to" %}</h2>
+    <table class="table table-striped">
+        <thead>
+            <th></th>
+            <th class="col-md-4">
+                <span class="pull-left">{% trans "applies_not" %}</span>
+                <span class="pull-right">{% trans "applies" %}</span>
+            </th>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>{{d.question.text}}</td>
+                <td>
+                  <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
+                    <div
+                     class="slider"
+                     id="slider_{{d.question.id}}"
+                     data-value={{d.value}}
+                    ></div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-right buttons">
+        <a href="/evaluate/" class="btn btn-default">{% trans 'evaluate' %}</a>
+        <input type="submit" class="btn btn-primary" value="{% trans 'save' %}">
+    </div>
+</form>
+{% endblock %}

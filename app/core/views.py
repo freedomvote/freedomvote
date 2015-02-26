@@ -156,7 +156,16 @@ def statistic_view(request, politician_id):
     statistics = Statistic.objects.filter(politician__id=politician_id)
 
     categories = [s.category.name for s in statistics]
-    values     = [s.value for s in statistics]
+    if not request.GET.get('citizen', False):
+        values = [s.value for s in statistics]
+    else:
+        stats = request.session.get('statistics', {})
+        values = {
+            'politician' : [s.value for s in statistics],
+            'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
+        }
+
+
 
     response = {
         'categories' : categories,
@@ -176,5 +185,44 @@ def detail_view(request, politician_id):
         {
             'politician' : politician,
             'answers'    : answers
+        }
+    )
+
+def citizen_form_view(request):
+    questions = Question.objects.all()
+    data      = []
+    if not request.session.has_key('answers'):
+        request.session['answers'] = {}
+    if not request.session.has_key('statistics'):
+        request.session['statistics'] = {}
+
+    if request.POST:
+        for question in questions:
+            qid = 'question_%d' % question.id
+            request.session['answers'][qid] = request.POST.get(qid,0)
+
+        categories = Category.objects.all()
+
+        for category in categories:
+            cq = Question.objects.filter(category=category)
+            values = []
+            for question in cq:
+                values.append(abs(question.preferred_answer - int(request.session['answers'].get('question_%d' % question.id, 0))))
+                request.session['statistics']['category_%d' % category.id] = 10 - sum(values) / float(len(cq))
+
+        request.session.modified = True
+
+    for question in questions:
+        item = {
+            'question' : question,
+            'value'    : request.session['answers'].get('question_%d' % question.id, 0)
+        }
+        data.append(item)
+
+    return render(
+        request,
+        'core/citizen_form.html',
+        {
+            'data' : data
         }
     )
