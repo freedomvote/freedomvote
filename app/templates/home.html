@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load cms_tags %}
+
+{% block 'content' %}
+    <div class="row">
+        <div class="col-md-9">
+        {% placeholder intro %}
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+        {% placeholder desc %}
+        </div>
+    </div>
+{% endblock %}

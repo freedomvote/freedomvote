@@ -33,7 +33,7 @@ jQuery(function ($){
     var value = slider.slider('value')
     form.find('input[name="agreement_level"]').val(value)
 
-    $.post('/answer/', form.serialize())
+    $.post(Urls.politician_answer(), form.serialize())
   }
 
 });

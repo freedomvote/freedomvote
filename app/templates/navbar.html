@@ -1,0 +1,24 @@
+{% load menu_tags %}
+{% load i18n %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+              <span class="sr-only">{% trans "toggle_navigation" %}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Freedom Vote</a>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse">
+            <ul class="nav navbar-nav">
+                {% for child in children %}
+                <li class="{% if child.selected %} active{% endif %}">
+                <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+                {% endfor %}
+            </ul>
+        </div>
+  </div>
+</nav>

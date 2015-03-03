@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
 from core.models import Politician, Question, State, Party, Answer, Statistic, Category
-from django.http import HttpResponse, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.urlresolvers import reverse
 from django.db.models import Q
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 import json
 
 
@@ -51,7 +52,7 @@ def politician_view(request, unique_url):
         }
     )
 
-def answer_view(request):
+def politician_answer_view(request):
     if request.POST:
         question = get_object_or_404(Question, pk=request.POST.get('question'))
         politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
@@ -68,7 +69,7 @@ def answer_view(request):
 
     return HttpResponse('')
 
-def citizen_view(request):
+def search_view(request):
     politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
 
     states          = State.objects.all().order_by('name')
@@ -112,7 +113,7 @@ def citizen_view(request):
 
     return render(
         request,
-        'core/citizen.html',
+        'core/search.html',
         {
             'politicians' : politicians,
             'categories'  : categories,
@@ -120,7 +121,7 @@ def citizen_view(request):
         }
     )
 
-def calculate_statistic_view(request):
+def publish_view(request):
     unique_url = request.POST.get('unique_url')
     politician = get_object_or_404(Politician, unique_url=unique_url)
     categories = Category.objects.all()
@@ -142,17 +143,17 @@ def calculate_statistic_view(request):
             stat.value = diff
             stat.save()
 
-    return HttpResponseRedirect('/parlamentarier/%s' % unique_url)
+    return HttpResponseRedirect(reverse('politician', args=[unique_url]))
 
 
-def retract_statistic_view(request):
+def unpublish_view(request):
     unique_url = request.POST.get('unique_url')
     politician = get_object_or_404(Politician, unique_url=unique_url)
     Statistic.objects.filter(politician=politician).delete()
 
-    return HttpResponseRedirect('/parlamentarier/%s' % unique_url)
+    return HttpResponseRedirect(reverse('politician', args=[unique_url]))
 
-def statistic_view(request, politician_id):
+def profile_info_view(request, politician_id):
     statistics = Statistic.objects.filter(politician__id=politician_id)
 
     categories = [s.category.name for s in statistics]
@@ -175,20 +176,20 @@ def statistic_view(request, politician_id):
     return HttpResponse(json.dumps(response), content_type="application/json")
 
 
-def detail_view(request, politician_id):
+def profile_view(request, politician_id):
     politician = get_object_or_404(Politician, id=politician_id)
     answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
 
     return render(
         request,
-        'core/detail.html',
+        'core/profile.html',
         {
             'politician' : politician,
             'answers'    : answers
         }
     )
 
-def citizen_form_view(request):
+def compare_view(request):
     questions = Question.objects.all()
     data      = []
     if not request.session.has_key('answers'):
@@ -221,7 +222,7 @@ def citizen_form_view(request):
 
     return render(
         request,
-        'core/citizen_form.html',
+        'core/compare.html',
         {
             'data' : data
         }

@@ -11,7 +11,7 @@ jQuery(function ($){
     })
   })
 
-  $('#citizen_form').submit(function(e){
+  $('#form').submit(function(e){
     $('.slider').each(function(){
       var input = $(this).parent().children('input:hidden')
       input.val($(this).slider('value'))

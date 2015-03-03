@@ -26,6 +26,7 @@ DEBUG = True
 THUMBNAIL_DEBUG = True
 
 TEMPLATE_DEBUG = True
+SITE_ID = 1
 
 ALLOWED_HOSTS = []
 
@@ -46,12 +47,20 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'modeltranslation',
     'debug_toolbar',
     'easy_thumbnails',
     'south',
-    'core'
+    'mptt',
+    'sekizai',
+    'djangocms_admin_style',
+    'djangocms_text_ckeditor',
+    'cms',
+    'menus',
+    'core',
+    'django_js_reverse',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -62,6 +71,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -72,8 +85,16 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages'
+    'django.contrib.messages.context_processors.messages',
+    'cms.context_processors.cms_settings',
+    'sekizai.context_processors.sekizai',
 )
+
+MIGRATION_MODULES = {
+    'cms': 'cms.migrations_django',
+    'menus': 'menus.migrations_django',
+    'editor': 'djangocms_text_ckeditor.migrations_django'
+}
 
 ROOT_URLCONF = 'freedomvote.urls'
 
@@ -81,6 +102,11 @@ WSGI_APPLICATION = 'freedomvote.wsgi.application'
 
 INTERNAL_IPS = ['127.0.0.1']
 
+TEMPLATE_DIRS = (
+    # The docs say it should be absolute path: BASE_DIR is precisely one.
+    # Life is wonderful!
+    os.path.join(BASE_DIR, "templates"),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -116,6 +142,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+CMS_TEMPLATES = (
+    ('home.html', 'Home'),
+)
 
 
 # Static files (CSS, JavaScript, Images)

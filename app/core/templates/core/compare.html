@@ -1,4 +1,4 @@
-{% extends 'core/index.html' %}
+{% extends 'index.html' %}
 {% load i18n %}
 {% load static %}
 
@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block 'content' %}
-<form method="post" id="citizen_form">
+<form method="post" id="form">
     {% csrf_token %}
     <h2>{% trans "your_opinion_to" %}</h2>
     <table class="table table-striped">
@@ -35,7 +35,6 @@
         </tbody>
     </table>
     <div class="text-right buttons">
-        <a href="/evaluate/" class="btn btn-default">{% trans 'evaluate' %}</a>
         <input type="submit" class="btn btn-primary" value="{% trans 'save' %}">
     </div>
 </form>

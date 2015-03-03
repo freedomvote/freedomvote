@@ -5,3 +5,11 @@ pillow
 South
 psycopg2
 easy-thumbnails
+django-mptt
+django-sekizai
+django-classy-tags
+djangocms-admin-style
+html5lib
+six
+django-cms
+django-js-reverse

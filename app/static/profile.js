@@ -14,7 +14,7 @@ jQuery(function ($){
 
   var item = $('#chart')
 
-  $.getJSON('/statistic/' + item.data('politician-id') + '/?citizen=1', function(data){
+  $.getJSON(Urls.politician_info() + item.data('politician-id') + '/?citizen=1', function(data){
     item.highcharts({
       chart: {
         polar: true,
