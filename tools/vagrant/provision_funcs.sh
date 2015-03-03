@@ -66,8 +66,7 @@ function prepare_django() {
     # Now run all DB migrations for all installed apps
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py syncdb --noinput"
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py migrate"
-    mkdir /data/
-    chown -R vagrant:vagrant /data/
+    chmod -R 777 /media/
 }
 
 function configure_apache() {
