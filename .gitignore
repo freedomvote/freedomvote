@@ -1,8 +1,7 @@
 *.swp
 *.pyc
-.vagrant/
-bin/
-media/
-include/
-lib/
-local/
+/.vagrant/
+/bin/
+/include/
+/lib/
+/local/
