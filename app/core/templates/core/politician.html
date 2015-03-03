@@ -133,12 +133,12 @@
         </tbody>
     </table>
     <div class="text-right buttons">
-        <form method="post" action="/retract/">
+        <form method="post" action="{% url 'unpublish' %}">
             {% csrf_token %}
             <input type="hidden" name="unique_url" value="{{politician.unique_url}}">
             <input type="submit" class="btn btn-default" value="{% trans "retract_answers" %}">
         </form>
-        <form method="post" action="/share/">
+        <form method="post" action="{% url 'publish' %}">
             {% csrf_token %}
             <input type="hidden" name="unique_url" value="{{politician.unique_url}}">
             <input type="submit" class="btn btn-primary" value="{% trans "share_answers" %}">

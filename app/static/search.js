@@ -4,7 +4,7 @@ jQuery(function ($){
   $('.statistic').each(function(){
     var id = $(this).attr('id').replace('statistic-', '')
 
-    $.getJSON(Urls.politician_info() + id + '/')
+    $.getJSON(Urls.profile_info(id))
     .success(function(data){
       $('#statistic-' + id).highcharts({
         chart: {
