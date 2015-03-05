@@ -36,4 +36,23 @@ jQuery(function ($){
     $.post(Urls.politician_answer(), form.serialize())
   }
 
+  $('#publish').click(function(e) {
+    // save all questions responded with zero
+    // this happens if someone doesnt use the slider
+    e.preventDefault()
+
+    $('.slider').each(function(){
+      var form = $(this).closest('form')
+      var slider = form.children('.slider')
+      var value = slider.slider('value')
+      var input = form.find('input[name="agreement_level"]')
+
+      if (input.val() === '') {
+        input.val(value)
+        $.post(Urls.politician_answer(), form.serialize())
+      }
+    })
+
+    $.post(Urls.publish(), $(e.target).closest('form').serialize())
+  })
 });

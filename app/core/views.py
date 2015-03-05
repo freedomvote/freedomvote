@@ -56,14 +56,16 @@ def politician_answer_view(request):
     if request.POST:
         question = get_object_or_404(Question, pk=request.POST.get('question'))
         politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+        agreement_level = int(request.POST.get('agreement_level', 0))
+
         answer, created = Answer.objects.get_or_create(
             question=question,
             politician=politician,
             defaults={
-                'agreement_level' : request.POST.get('agreement_level', 0)
+                'agreement_level' : agreement_level,
             }
         )
-        answer.agreement_level = request.POST.get('agreement_level', 0)
+        answer.agreement_level = agreement_level
         answer.note = request.POST['note']
         answer.save()
 
@@ -143,7 +145,7 @@ def publish_view(request):
             stat.value = diff
             stat.save()
 
-    return HttpResponseRedirect(reverse('politician', args=[unique_url]))
+    return HttpResponse('')
 
 
 def unpublish_view(request):
