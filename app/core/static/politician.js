@@ -36,6 +36,11 @@ jQuery(function ($){
     $.post(Urls.politician_answer(), form.serialize())
   }
 
+  $('#unpublish').click(function(e) {
+    e.preventDefault()
+    $.post(Urls.unpublish(), $(e.target).closest('form').serialize())
+  })
+
   $('#publish').click(function(e) {
     // save all questions responded with zero
     // this happens if someone doesnt use the slider

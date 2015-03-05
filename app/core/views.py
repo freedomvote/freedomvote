@@ -1,8 +1,7 @@
 from core.models import Politician, Question, State, Party, Answer, Statistic, Category
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
 from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import json
 
@@ -153,7 +152,7 @@ def unpublish_view(request):
     politician = get_object_or_404(Politician, unique_url=unique_url)
     Statistic.objects.filter(politician=politician).delete()
 
-    return HttpResponseRedirect(reverse('politician', args=[unique_url]))
+    return HttpResponse('')
 
 def profile_info_view(request, politician_id):
     statistics = Statistic.objects.filter(politician__id=politician_id)
