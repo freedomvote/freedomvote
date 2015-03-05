@@ -38,3 +38,11 @@ makemessages:
 
 compilemessages:
 	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py compilemessages'
+
+collectstatic:
+	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic'
+	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic_js_reverse'
+
+dev-collectstatic:
+	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic_js_reverse'
+	@vagrant ssh -c 'mv /vagrant/app/static/django_js_reverse/ /vagrant/app/core/static/django_js_reverse/'
