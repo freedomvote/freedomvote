@@ -157,7 +157,7 @@ def profile_info_view(request, politician_id):
     statistics = Statistic.objects.filter(politician__id=politician_id)
 
     categories = [s.category.name for s in statistics]
-    if not request.GET.get('citizen', False):
+    if not request.GET.get('compare', False):
         values = [s.value for s in statistics]
     else:
         stats = request.session.get('statistics', {})
