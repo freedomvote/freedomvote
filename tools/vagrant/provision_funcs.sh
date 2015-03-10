@@ -66,6 +66,7 @@ function prepare_django() {
     # Now run all DB migrations for all installed apps
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py syncdb --noinput"
     su vagrant -c "/vagrant/envpy /vagrant/app/manage.py migrate"
+    su vagrant -c "/vagrant/envpy /vagrant/app/manage.py loaddata /vagrant/tools/vagrant/user.json"
     chmod -R 777 /media/
 }
 
