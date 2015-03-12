@@ -4,6 +4,8 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import json
+import datetime
+from django.conf import settings
 
 
 def politician_view(request, unique_url):
@@ -161,7 +163,7 @@ def profile_info_view(request, politician_id):
     if not request.GET.get('compare', False):
         values = [s.value for s in statistics]
     else:
-        stats = request.session.get('statistics', {})
+        stats = get_cookie(request, 'statistics', {})
         values = {
             'politician' : [s.value for s in statistics],
             'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
@@ -193,15 +195,14 @@ def profile_view(request, politician_id):
 def compare_view(request):
     questions = Question.objects.all()
     data      = []
-    if not request.session.has_key('answers'):
-        request.session['answers'] = {}
-    if not request.session.has_key('statistics'):
-        request.session['statistics'] = {}
+
+    session_answers    = get_cookie(request, 'answers',    {})
+    session_statistics = get_cookie(request, 'statistics', {})
 
     if request.POST:
         for question in questions:
             qid = 'question_%d' % question.id
-            request.session['answers'][qid] = request.POST.get(qid,0)
+            session_answers[qid] = request.POST.get(qid,0)
 
         categories = Category.objects.all()
 
@@ -209,22 +210,43 @@ def compare_view(request):
             cq = Question.objects.filter(category=category)
             values = []
             for question in cq:
-                values.append(abs(question.preferred_answer - int(request.session['answers'].get('question_%d' % question.id, 0))))
-                request.session['statistics']['category_%d' % category.id] = 10 - sum(values) / float(len(cq))
+                values.append(abs(question.preferred_answer - int(session_answers.get('question_%d' % question.id, 0))))
+                session_statistics['category_%d' % category.id] = 10 - sum(values) / float(len(cq))
 
-        request.session.modified = True
+        request.COOKIES['answers'] = session_answers
+        request.COOKIES['statistics'] = session_statistics
 
     for question in questions:
         item = {
             'question' : question,
-            'value'    : request.session['answers'].get('question_%d' % question.id, 0)
+            'value'    : session_answers.get('question_%d' % question.id, 0)
         }
         data.append(item)
 
-    return render(
+    response = render(
         request,
         'core/compare.html',
         {
             'data' : data
         }
     )
+
+    set_cookie(response, 'answers', session_answers, 30)
+    set_cookie(response, 'statistics', session_statistics, 30)
+
+    return response
+
+
+def set_cookie(response, key, value, days_expire = 7):
+    if days_expire is None:
+        max_age = 365 * 24 * 60 * 60  #one year
+    else:
+        max_age = days_expire * 24 * 60 * 60
+        expires = datetime.datetime.strftime(datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age), "%a, %d-%b-%Y %H:%M:%S GMT")
+        response.set_cookie(key, json.dumps(value), max_age=max_age, expires=expires, domain=settings.SESSION_COOKIE_DOMAIN, secure=settings.SESSION_COOKIE_SECURE or None)
+
+def get_cookie(request, key, default):
+    strval = request.COOKIES.get(key)
+    if strval:
+        return json.loads(strval)
+    return default
