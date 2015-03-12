@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^candidates/$',                          views.search_view,            name='search'),
+    url(r'^candidates/$',                          views.candidates_view,        name='candidates'),
     url(r'^compare/$',                             views.compare_view,           name='compare'),
     url(r'^edit/(?P<unique_url>.+)/$',             views.politician_view,        name='politician'),
     url(r'^profile/(?P<politician_id>\d+)/$',      views.profile_view,           name='profile'),

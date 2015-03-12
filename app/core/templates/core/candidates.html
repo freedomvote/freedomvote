@@ -5,13 +5,13 @@
 {% load staticfiles %}
 
 {% block 'scripts' %}
-<script src="{% static 'search.js' %}"></script>
+<script src="{% static 'candidates.js' %}"></script>
 {% endblock %}
 
 {% block 'content' %}
 
-<form method="get" class="form-inline text-right">
-    <div class="row filter">
+<form method="get" class="form-inline text-right row">
+    <div class="filter">
         <select name="category" class="form-control">
             <option value="0">{% trans "sort_by_category" %}...</option>
             <option disabled>─────────────────</option>
@@ -81,19 +81,19 @@
         <ul class="pagination">
             <li {% if not politicians.has_previous %}class="disabled"{% endif %}>
                 {% if politicians.has_previous %}
-                <a href="{% url 'search' %}?page={{ politicians.previous_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&laquo;</span></a>
+                <a href="{% url 'candidates' %}?page={{ politicians.previous_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&laquo;</span></a>
                 {% else %}
                     <a><span aria-hidden="true">&laquo;</span></a>
                 {% endif %}
             </li>
             {% for num in politicians.paginator.page_range %}
             <li {% if politicians.number == num %}class="active"{% endif %}>
-              <a href="{% url 'search' %}?page={{num}}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}">{{num}}{% if politicians.number == num %} <span class="sr-only">(current)</span>{% endif %}</a>
+              <a href="{% url 'candidates' %}?page={{num}}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}">{{num}}{% if politicians.number == num %} <span class="sr-only">(current)</span>{% endif %}</a>
             </li>
             {% endfor %}
             <li {% if not politicians.has_next %}class="disabled"{% endif %}>
                 {% if politicians.has_next %}
-                    <a href="{% url 'search' %}?page={{ politicians.next_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&raquo;</span></a>
+                    <a href="{% url 'candidates' %}?page={{ politicians.next_page_number }}{% for k, v in request.GET.iteritems %}&amp;{{k}}={{v}}{%endfor%}"><span aria-hidden="true">&raquo;</span></a>
                 {% else %}
                     <a><span aria-hidden="true">&raquo;</span></a>
                 {% endif %}

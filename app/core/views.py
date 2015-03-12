@@ -72,7 +72,7 @@ def politician_answer_view(request):
 
     return HttpResponse('')
 
-def search_view(request):
+def candidates_view(request):
     politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
 
     states          = State.objects.all().order_by('name')
@@ -116,7 +116,7 @@ def search_view(request):
 
     return render(
         request,
-        'core/search.html',
+        'core/candidates.html',
         {
             'politicians' : politicians,
             'categories'  : categories,
