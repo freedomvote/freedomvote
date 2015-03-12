@@ -160,7 +160,7 @@ def profile_info_view(request, politician_id):
     statistics = Statistic.objects.filter(politician__id=politician_id)
 
     categories = [s.category.name for s in statistics]
-    if not request.GET.get('compare', False):
+    if not request.GET.has_key('compare'):
         values = [s.value for s in statistics]
     else:
         stats = get_cookie(request, 'statistics', {})
@@ -168,8 +168,6 @@ def profile_info_view(request, politician_id):
             'politician' : [s.value for s in statistics],
             'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
         }
-
-
 
     response = {
         'categories' : categories,
