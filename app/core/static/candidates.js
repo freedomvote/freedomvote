@@ -2,10 +2,9 @@ jQuery(function ($){
   "use strict";
 
   $('.statistic').each(function(){
-    var id = $(this).attr('id').replace('statistic-', '')
+    var id = this.id.replace('statistic-', '')
 
-    $.getJSON(Urls.profile_info(id))
-    .success(function(data){
+    $.getJSON($(this).data('url'), function(data){
       $('#statistic-' + id).highcharts({
         chart: {
           type: 'bar',

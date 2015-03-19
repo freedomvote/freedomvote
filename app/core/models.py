@@ -106,6 +106,12 @@ class Politician(models.Model):
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
 
+    @classmethod
+    def get_politicians_by_category(cls, category_id, input_value, order='-accordance'):
+        return cls.objects.filter(statistic__category_id=category_id).extra(
+            select={'accordance':'core_statistic_compare(value::integer, %d)' % input_value}
+        ).order_by(order)
+
     @staticmethod
     def generate_url():
         key = base64.urlsafe_b64encode(os.urandom(16))[:20]
@@ -185,6 +191,33 @@ class Statistic(models.Model):
     value                   = models.FloatField(
         verbose_name        = _('value')
     )
+
+    @classmethod
+    def get_accordance(cls, politician_id, category_id, input_value):
+        statistic = cls.objects.filter(politician_id=politician_id, category_id=category_id).extra(
+            select={
+                'accordance' : 'core_statistic_compare(value::integer, %d)' % input_value
+            }
+        ).first()
+
+        return (statistic.accordance if statistic else 0)
+
+    @classmethod
+    def get_statistics_by_politician(cls, politician_id):
+        return cls.objects.raw('''
+            SELECT
+                s.*,
+                core_statistic_compare(s.value::integer, AVG(q.preferred_answer*10)::integer) AS accordance
+            FROM core_statistic AS s
+            JOIN core_category AS c ON (
+                s.category_id = c.id
+            )
+            JOIN core_question AS q ON (
+                c.id = q.category_id
+            )
+            WHERE s.politician_id = %s
+            GROUP BY s.id, q.category_id
+        ''', [politician_id])
 
     class Meta:
         verbose_name        = _('statistic')

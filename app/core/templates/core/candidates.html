@@ -12,6 +12,7 @@
 
 <form method="get" class="form-inline text-right row">
     <div class="filter">
+        {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate">{% endif %}
         <select name="category" class="form-control">
             <option value="0">{% trans "sort_by_category" %}...</option>
             <option disabled>─────────────────</option>
@@ -72,7 +73,7 @@
                 <a href="{% url 'profile' politician.id %}">{% trans "details" %}...</a>
             </td>
             <td class="col-md-6">
-                <div class="statistic" id="statistic-{{politician.id}}"></div>
+                <div class="statistic" id="statistic-{{politician.id}}" data-url="{% url 'profile_info' politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"></div>
             </td>
         </tr>
         {% endfor %}

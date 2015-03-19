@@ -11,9 +11,15 @@ jQuery(function ($){
     })
   })
 
+  $('.slider').slider({
+    'change': function(){
+      $('#evaluate').addClass('disabled')
+    }
+  })
+
   $('#form').submit(function(e){
     $('.slider').each(function(){
-      var input = $(this).parent().children('input:hidden')
+      var input = $(this).prev('input:hidden')
       input.val($(this).slider('value'))
     })
   })

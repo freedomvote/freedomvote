@@ -120,11 +120,11 @@
                         <input type="hidden" name="question" value="{{ question.id }}">
                         <input type="hidden" name="unique_url" value="{{ politician.unique_url }}">
                         <input type="hidden" name="agreement_level" value="">
-                          <div
-                           class="slider"
-                           id="slider_{{question.id}}"
-                           data-value={%for answer in answers%}{%if answer.question == question%}{{answer.agreement_level}}{%endif%}{%endfor%}
-                          ></div>
+                        <div
+                         class="slider"
+                         id="slider_{{question.id}}"
+                         data-value={%for answer in answers%}{%if answer.question == question%}{{answer.agreement_level}}{%endif%}{%endfor%}
+                        ></div>
                         <textarea name="note" class="form-control note" placeholder="{% trans "note" %}">{%for answer in answers%}{%if answer.question == question%}{{answer.note}}{%endif%}{%endfor%}</textarea>
                     </form>
                 </td>

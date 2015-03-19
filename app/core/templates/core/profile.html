@@ -53,30 +53,30 @@
         </div>
     </div>
 </div>
-    <hr>
-    <h2>{% trans "your_opinion_to" %}</h2>
-    <table class="table table-striped">
-        <thead>
-            <th></th>
-            <th class="col-md-4">
-                <span class="pull-left">{% trans "applies_not" %}</span>
-                <span class="pull-right">{% trans "applies" %}</span>
-            </th>
-        </thead>
-        <tbody>
-            {% for answer in answers %}
-            <tr>
-                <td>{{answer.question.text}}</td>
-                <td>
-                    <div
-                     class="slider"
-                     id="slider_{{answer.id}}"
-                     data-value={{answer.agreement_level}}
-                    ></div>
-                    <em>{{answer.note}}</em>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<hr>
+<h2>{% trans "your_opinion_to" %}</h2>
+<table class="table table-striped">
+    <thead>
+        <th></th>
+        <th class="col-md-4">
+            <span class="pull-left">{% trans "applies_not" %}</span>
+            <span class="pull-right">{% trans "applies" %}</span>
+        </th>
+    </thead>
+    <tbody>
+        {% for answer in answers %}
+        <tr>
+            <td>{{answer.question.text}}</td>
+            <td>
+                <div
+                 class="slider"
+                 id="slider_{{answer.id}}"
+                 data-value={{answer.agreement_level}}
+                ></div>
+                <em>{{answer.note}}</em>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
