@@ -111,13 +111,14 @@ TEMPLATE_DIRS = (
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+DB_PASS = 'vagrant'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'freedomvote',
         'USER': 'freedomvote',
-        'PASSWORD': os.getenv('db_password', 'vagrant'),
+        'PASSWORD': DB_PASS,
         'HOST': '127.0.0.1',
         'PORT': '',
     }
