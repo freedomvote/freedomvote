@@ -2,6 +2,7 @@ django==1.6
 django-debug-toolbar==1.2.2
 django-modeltranslation==0.8
 pillow
+django-cms==3.0.10
 South
 psycopg2
 easy-thumbnails
@@ -11,7 +12,6 @@ django-classy-tags
 djangocms-admin-style
 html5lib
 six
-django-cms
 django-js-reverse
 djangocms_text_ckeditor
 flup
