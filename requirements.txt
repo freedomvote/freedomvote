@@ -14,3 +14,4 @@ six
 django-cms
 django-js-reverse
 djangocms_text_ckeditor
+flup
