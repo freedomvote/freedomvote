@@ -1,7 +1,7 @@
 jQuery(function ($){
   "use strict";
 
-  $('.slider').each(function() {
+  $('.slider-readonly').each(function() {
     var value = $(this).data('value')
       $(this).slider({
         max: 10,

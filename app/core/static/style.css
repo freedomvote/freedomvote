@@ -74,6 +74,16 @@ input[type="file"] {
   background-color: #337ab7;
 }
 
+.slider-readonly .ui-slider-handle {
+  border: none;
+  background: none;
+  background-image: url("images/triangle.png");
+  background-size: 85% 85%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  border-radius: 0px;
+}
+
 .filter {
   margin-bottom: 10px;
 }
