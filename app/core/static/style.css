@@ -1,3 +1,50 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -200px;
+}
+
+footer, .push {
+  height: 200px;
+}
+
+footer {
+  border-top: 1px solid #E6E6E6;
+  background-color: #F5F5F5;
+  padding: 40px 0;
+}
+
+footer .logos {
+  height: 50px;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+footer .logos tr {
+  padding: 0 5%;
+}
+
+footer .logos tr td {
+  width: 30%;
+  text-align: center;
+}
+
+footer .logo {
+  height: 50px;
+}
+
+footer address {
+  font-style: italic;
+  text-align: center;
+}
+
 body {
   padding-top: 60px;
 }
