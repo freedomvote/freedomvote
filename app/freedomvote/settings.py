@@ -28,7 +28,7 @@ TEMPLATE_DEBUG = True
 SITE_ID = 1
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
