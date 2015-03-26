@@ -24,9 +24,9 @@ SECRET_KEY = '%xky6n0ak0m*97&3o=zd45_w7o(q(1)o^54y(6)c34rl1u4m^_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 THUMBNAIL_DEBUG = True
-
 TEMPLATE_DEBUG = True
 SITE_ID = 1
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 ALLOWED_HOSTS = []
 
@@ -42,25 +42,24 @@ MEDIA_URL  = '/media/'
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
+    'debug_toolbar',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'modeltranslation',
-    'debug_toolbar',
+    'djangocms_text_ckeditor',
     'easy_thumbnails',
-    'south',
+    'django_js_reverse',
+    'core',
+    'modeltranslation',
+    'django.contrib.admin',
+    'cms',
     'mptt',
+    'menus',
     'sekizai',
     'djangocms_admin_style',
-    'djangocms_text_ckeditor',
-    'cms',
-    'menus',
-    'core',
-    'django_js_reverse',
+    'django.contrib.messages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -91,16 +90,16 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIGRATION_MODULES = {
-    'cms': 'cms.migrations_django',
-    'menus': 'menus.migrations_django',
-    'editor': 'djangocms_text_ckeditor.migrations_django'
+    'cms'                     : 'cms.migrations_django',
+    'menus'                   : 'menus.migrations_django',
+    'djangocms_text_ckeditor' : 'djangocms_text_ckeditor.migrations_django'
 }
 
 ROOT_URLCONF = 'freedomvote.urls'
 
 WSGI_APPLICATION = 'freedomvote.wsgi.application'
 
-INTERNAL_IPS = ['127.0.0.1']
+INTERNAL_IPS = ['127.0.0.1',]
 
 TEMPLATE_DIRS = (
     # The docs say it should be absolute path: BASE_DIR is precisely one.
@@ -147,13 +146,9 @@ CMS_TEMPLATES = (
     ('home.html', 'Home'),
 )
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = (,)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-DEBUG_TOOLBAR_PATCH_SETTINGS = False

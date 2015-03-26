@@ -28,18 +28,18 @@ vagrant-restart-services:
 	@vagrant ssh -c 'sudo service postgresql restart'
 
 vagrant-runserver:
-	@vagrant ssh -c '/vagrant/envpy /vagrant/app/manage.py runserver 0.0.0.0:8000'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py runserver 0.0.0.0:8000'
 
 vagrant-makemessages:
-	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py makemessages -l de'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py makemessages -l de'
 
 vagrant-compilemessages:
-	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py compilemessages'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py compilemessages'
 
 vagrant-collectstatic:
-	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic'
-	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic_js_reverse'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py collectstatic'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py collectstatic_js_reverse'
 
 vagrant-collectstatic-dev:
-	@vagrant ssh -c 'cd /vagrant/app; /vagrant/envpy /vagrant/app/manage.py collectstatic_js_reverse'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py collectstatic_js_reverse'
 	@vagrant ssh -c 'mv /vagrant/app/static/django_js_reverse/ /vagrant/app/core/static/django_js_reverse/'

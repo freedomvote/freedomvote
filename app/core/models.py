@@ -69,6 +69,7 @@ class Politician(models.Model):
         verbose_name        = _('image')
     )
     is_member_of_parliament = models.BooleanField(
+        default             = False,
         verbose_name        = _('is_member_of_parliament')
     )
     past_contributions      = models.TextField(
