@@ -1,10 +1,10 @@
-django
+django==1.7
 django-debug-toolbar
 django-modeltranslation
 pillow
 psycopg2
 easy-thumbnails
-django-cms
+django-cms==3.0.10
 django-js-reverse
 djangocms_text_ckeditor
 flup
