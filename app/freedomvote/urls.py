@@ -5,9 +5,11 @@ from django.contrib import admin
 
 admin.autodiscover()
 
+urlpatterns = patterns('')
+
 if settings.DEBUG:
     import debug_toolbar
-    urlpatterns = patterns('',
+    urlpatterns += patterns('',
         url(r'^debug/', include(debug_toolbar.urls)),
     )
 
