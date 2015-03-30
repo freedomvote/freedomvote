@@ -10,4 +10,6 @@ urlpatterns = patterns('',
     url(r'^politician_answer/$',                   views.politician_answer_view, name='politician_answer'),
     url(r'^publish/$',                             views.publish_view,           name='publish'),
     url(r'^unpublish/$',                           views.unpublish_view,         name='unpublish'),
+    url(r'^link/add/$',                            views.add_link_view,          name='add_link'),
+    url(r'^link/delete/$',                         views.delete_link_view,       name='delete_link'),
 )

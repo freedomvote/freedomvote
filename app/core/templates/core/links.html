@@ -1,0 +1,30 @@
+{% load i18n thumbnail %}
+
+<div class="col-md-4">
+{% for link in links %}
+    {% thumbnail link.type.icon 16x16 crop as thumb %}
+    <p>
+        <form style="display:inline-block;">
+        <img class="img-circle" src="{{thumb.url}}">
+        <a href="{{link.url}}">{{link.type.name}}</a>
+            {% csrf_token %}
+            <input name="unique_url" type="hidden" value="{{politician.unique_url}}">
+            <input name="link_id" type="hidden" value="{{link.id}}">
+            <span class="glyphicon glyphicon-trash mouse"></span>
+        </form>
+    </p>
+{%endfor%}
+</div>
+<form id="link" class="form-inline col-md-8">
+    <input name="unique_url" type="hidden" value="{{politician.unique_url}}">
+    {% csrf_token %}
+    <select class="form-control" name="link_type">
+        {% for type in types %}
+        <option {% if type.id == link_type.id %}selected {% endif %}value="{{type.id}}">{{type.name}}</option>
+        {% endfor %}
+    </select>
+    <div class="form-group{% if error %} has-error{% endif %}">
+        <input name="url" class="form-control" type="text" placeholder="{% trans 'url' %}" value="{{ input }}"></input>
+    </div>
+    <input class="btn btn-default" type="submit" value="{% trans 'add_link' %}">
+</form>

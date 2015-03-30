@@ -38,7 +38,29 @@ jQuery(function ($){
 
   $('#unpublish').click(function(e) {
     e.preventDefault()
-    $.post(Urls.unpublish(), $(e.target).closest('form').serialize())
+    $.post(Urls.unpublish(), $(e.target).closest('form').serialize(), location.reload())
+  })
+
+  $('#links').on('click', '#link input[type="submit"]', function(e) {
+    e.preventDefault()
+    $.post(
+        Urls.add_link(),
+        $(e.target).closest('form').serialize(),
+        function(data){
+            $('#links').html(data)
+        }
+    )
+  })
+
+  $('#links').on('click', '.glyphicon-trash', function(e) {
+    e.preventDefault()
+    $.post(
+        Urls.delete_link(),
+        $(e.target).closest('form').serialize(),
+        function(data){
+            $('#links').html(data)
+        }
+    )
   })
 
   $('#publish').click(function(e) {
@@ -58,6 +80,6 @@ jQuery(function ($){
       }
     })
 
-    $.post(Urls.publish(), $(e.target).closest('form').serialize())
+    $.post(Urls.publish(), $(e.target).closest('form').serialize(), location.reload())
   })
 });

@@ -1,7 +1,7 @@
-from core.models import Politician, Question, State, Party, Answer, Statistic, Category
+from core.models import Politician, Question, State, Party, Answer, Statistic, Category, LinkType, Link
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q, Sum
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404
 import json
 import re
@@ -15,6 +15,8 @@ def politician_view(request, unique_url):
     answers    = Answer.objects.filter(politician=politician)
     states     = State.objects.all().order_by('name')
     parties    = Party.objects.all().order_by('name')
+    types      = LinkType.objects.all().order_by('name')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
 
     if request.POST:
         try:
@@ -51,6 +53,8 @@ def politician_view(request, unique_url):
             'answers'    : answers,
             'states'     : states,
             'parties'    : parties,
+            'types'      : types,
+            'links'      : links,
         }
     )
 
@@ -185,19 +189,21 @@ def profile_info_view(request, politician_id):
         'values'     : value_list
     }
 
-    return HttpResponse(json.dumps(response), content_type="application/json")
+    return JsonResponse(response)
 
 
 def profile_view(request, politician_id):
     politician = get_object_or_404(Politician, id=politician_id)
     answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
 
     return render(
         request,
         'core/profile.html',
         {
             'politician' : politician,
-            'answers'    : answers
+            'answers'    : answers,
+            'links'      : links
         }
     )
 
@@ -269,3 +275,46 @@ def get_cookie(request, key, default):
     if strval:
         return json.loads(strval)
     return default
+
+def add_link_view(request):
+    politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+    link_type  = get_object_or_404(LinkType, id=request.POST.get('link_type'))
+    url        = request.POST.get('url')
+    error      = False
+
+    if url.startswith(('http://', 'https://')):
+        l = Link(
+            type=link_type,
+            politician=politician,
+            url=url
+        )
+        l.save()
+        url = ''
+    else:
+        error = True
+
+    types      = LinkType.objects.all().order_by('name')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
+
+    return render(request, 'core/links.html', {
+        'links' : links,
+        'types' : types,
+        'politician' : politician,
+        'error' : error,
+        'input' : url,
+        'link_type' : link_type,
+    })
+
+def delete_link_view(request):
+    politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+    link = get_object_or_404(Link, id=request.POST.get('link_id'))
+    link.delete()
+
+    types      = LinkType.objects.all().order_by('name')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
+
+    return render(request, 'core/links.html', {
+        'links' : links,
+        'types' : types,
+        'politician' : politician
+    })

@@ -17,7 +17,13 @@ class CategoryTranslationOptions(TranslationOptions):
 class QuestionTranslationOptions(TranslationOptions):
     fields = ('text',)
 
+
+class LinkTypeTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+
 translator.register(models.State,    StateTranslationOptions)
 translator.register(models.Party,    PartyTranslationOptions)
 translator.register(models.Category, CategoryTranslationOptions)
 translator.register(models.Question, QuestionTranslationOptions)
+translator.register(models.LinkType, LinkTypeTranslationOptions)

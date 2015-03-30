@@ -15,6 +15,10 @@ footer, .push {
   height: 200px;
 }
 
+.mouse {
+  cursor: pointer;
+}
+
 footer {
   border-top: 1px solid #E6E6E6;
   background-color: #F5F5F5;

@@ -137,6 +137,31 @@ class Politician(models.Model):
         verbose_name_plural = _('politicians')
 
 
+class LinkType(models.Model):
+    icon                    = models.ImageField(
+        upload_to           = 'icons/',
+        verbose_name        = _('icon')
+    )
+    name                    = models.CharField(
+        max_length          = 50,
+        verbose_name        = _('name')
+    )
+
+
+class Link(models.Model):
+    type                    = models.ForeignKey(
+        LinkType,
+        verbose_name        = _('type')
+    )
+    politician              = models.ForeignKey(
+        Politician,
+        verbose_name        = _('politician')
+    )
+    url                     = models.URLField(
+        verbose_name        = _('url')
+    )
+
+
 class Question(models.Model):
     preferred_answer        = models.IntegerField(
         verbose_name        = _('preferred_answer')
