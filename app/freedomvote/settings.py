@@ -31,8 +31,13 @@ try:
     config = ConfigParser.ConfigParser()
     config.readfp(open(os.path.join(BASE_DIR, 'settings.ini')))
 
-    for section in config._sections:
-        DEFAULT_SETTINGS[section].update(config.items(section))
+    for key in config._sections:
+        DEFAULT_SETTINGS[key].update({
+                k.upper():v
+                for k,v
+                in config.items(key)
+        })
+
 except:
     pass
 
