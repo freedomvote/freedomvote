@@ -1,171 +1,183 @@
 # -*- coding: utf-8 -*-
-from south.utils import datetime_utils as datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+import core.models
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'State'
-        db.create_table(u'core_state', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('name_de', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_fr', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_it', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'core', ['State'])
+    dependencies = [
+    ]
 
-        # Adding model 'Party'
-        db.create_table(u'core_party', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('name_de', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_fr', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_it', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('shortname', self.gf('django.db.models.fields.CharField')(max_length=10)),
-            ('shortname_de', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
-            ('shortname_fr', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
-            ('shortname_it', self.gf('django.db.models.fields.CharField')(max_length=10, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'core', ['Party'])
-
-        # Adding model 'Category'
-        db.create_table(u'core_category', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('name_de', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_fr', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-            ('name_it', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'core', ['Category'])
-
-        # Adding model 'Politician'
-        db.create_table(u'core_politician', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('first_name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('last_name', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('email', self.gf('django.db.models.fields.EmailField')(max_length=75)),
-            ('image', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
-            ('is_member_of_parliament', self.gf('django.db.models.fields.BooleanField')()),
-            ('past_contributions', self.gf('django.db.models.fields.TextField')(blank=True)),
-            ('future_plans', self.gf('django.db.models.fields.TextField')(blank=True)),
-            ('unique_url', self.gf('django.db.models.fields.CharField')(default='bhwSN5cbOqAW0f_LfetP', max_length=20)),
-            ('state', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.State'], null=True, blank=True)),
-            ('party', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Party'], null=True, blank=True)),
-            ('party_other', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
-        ))
-        db.send_create_signal(u'core', ['Politician'])
-
-        # Adding model 'Question'
-        db.create_table(u'core_question', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('preferred_answer', self.gf('django.db.models.fields.IntegerField')()),
-            ('question_number', self.gf('django.db.models.fields.IntegerField')()),
-            ('category', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Category'])),
-            ('text', self.gf('django.db.models.fields.TextField')()),
-            ('text_de', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('text_fr', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('text_it', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-        ))
-        db.send_create_signal(u'core', ['Question'])
-
-        # Adding model 'Answer'
-        db.create_table(u'core_answer', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('question', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Question'])),
-            ('politician', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['core.Politician'])),
-            ('agreement_level', self.gf('django.db.models.fields.IntegerField')()),
-            ('note', self.gf('django.db.models.fields.TextField')()),
-        ))
-        db.send_create_signal(u'core', ['Answer'])
-
-
-    def backwards(self, orm):
-        # Deleting model 'State'
-        db.delete_table(u'core_state')
-
-        # Deleting model 'Party'
-        db.delete_table(u'core_party')
-
-        # Deleting model 'Category'
-        db.delete_table(u'core_category')
-
-        # Deleting model 'Politician'
-        db.delete_table(u'core_politician')
-
-        # Deleting model 'Question'
-        db.delete_table(u'core_question')
-
-        # Deleting model 'Answer'
-        db.delete_table(u'core_answer')
-
-
-    models = {
-        u'core.answer': {
-            'Meta': {'object_name': 'Answer'},
-            'agreement_level': ('django.db.models.fields.IntegerField', [], {}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'note': ('django.db.models.fields.TextField', [], {}),
-            'politician': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Politician']"}),
-            'question': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Question']"})
-        },
-        u'core.category': {
-            'Meta': {'object_name': 'Category'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'name_de': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_fr': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_it': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
-        },
-        u'core.party': {
-            'Meta': {'object_name': 'Party'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'name_de': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_fr': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_it': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'shortname': ('django.db.models.fields.CharField', [], {'max_length': '10'}),
-            'shortname_de': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
-            'shortname_fr': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'}),
-            'shortname_it': ('django.db.models.fields.CharField', [], {'max_length': '10', 'null': 'True', 'blank': 'True'})
-        },
-        u'core.politician': {
-            'Meta': {'object_name': 'Politician'},
-            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75'}),
-            'first_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'future_plans': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'is_member_of_parliament': ('django.db.models.fields.BooleanField', [], {}),
-            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'party': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Party']", 'null': 'True', 'blank': 'True'}),
-            'party_other': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'past_contributions': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
-            'state': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.State']", 'null': 'True', 'blank': 'True'}),
-            'unique_url': ('django.db.models.fields.CharField', [], {'default': "'PpCjxHWiBzrQ0mC8tGjZ'", 'max_length': '20'})
-        },
-        u'core.question': {
-            'Meta': {'object_name': 'Question'},
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['core.Category']"}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'preferred_answer': ('django.db.models.fields.IntegerField', [], {}),
-            'question_number': ('django.db.models.fields.IntegerField', [], {}),
-            'text': ('django.db.models.fields.TextField', [], {}),
-            'text_de': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'text_fr': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'text_it': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'})
-        },
-        u'core.state': {
-            'Meta': {'object_name': 'State'},
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'name_de': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_fr': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
-            'name_it': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
-        }
-    }
-
-    complete_apps = ['core']
+    operations = [
+        migrations.CreateModel(
+            name='Answer',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('agreement_level', models.IntegerField(verbose_name='agreement_level')),
+                ('note', models.TextField(verbose_name='note')),
+            ],
+            options={
+                'verbose_name': 'answer',
+                'verbose_name_plural': 'answers',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Category',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50, verbose_name='name')),
+                ('name_de', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_fr', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_it', models.CharField(max_length=50, null=True, verbose_name='name')),
+            ],
+            options={
+                'verbose_name': 'category',
+                'verbose_name_plural': 'categories',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Link',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('url', models.URLField(verbose_name='url')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='LinkType',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('icon', models.ImageField(upload_to=b'icons/', verbose_name='icon')),
+                ('name', models.CharField(max_length=50, verbose_name='name')),
+                ('name_de', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_fr', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_it', models.CharField(max_length=50, null=True, verbose_name='name')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Party',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50, verbose_name='name')),
+                ('name_de', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_fr', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_it', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('shortname', models.CharField(max_length=10, verbose_name='shortname')),
+                ('shortname_de', models.CharField(max_length=10, null=True, verbose_name='shortname')),
+                ('shortname_fr', models.CharField(max_length=10, null=True, verbose_name='shortname')),
+                ('shortname_it', models.CharField(max_length=10, null=True, verbose_name='shortname')),
+            ],
+            options={
+                'verbose_name': 'party',
+                'verbose_name_plural': 'parties',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Politician',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('first_name', models.CharField(max_length=100, verbose_name='first_name')),
+                ('last_name', models.CharField(max_length=100, verbose_name='last_name')),
+                ('email', models.EmailField(max_length=75, verbose_name='email')),
+                ('image', models.ImageField(upload_to=b'politicians/', null=True, verbose_name='image', blank=True)),
+                ('is_member_of_parliament', models.BooleanField(default=False, verbose_name='is_member_of_parliament')),
+                ('past_contributions', models.TextField(verbose_name='past_contributions', blank=True)),
+                ('future_plans', models.TextField(verbose_name='future_plans', blank=True)),
+                ('unique_url', models.CharField(default=core.models.generate_url, max_length=20, verbose_name='unique_url')),
+                ('party_other', models.CharField(max_length=50, null=True, verbose_name='party_other', blank=True)),
+                ('party', models.ForeignKey(verbose_name='party', blank=True, to='core.Party', null=True)),
+            ],
+            options={
+                'verbose_name': 'politician',
+                'verbose_name_plural': 'politicians',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Question',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('preferred_answer', models.IntegerField(verbose_name='preferred_answer')),
+                ('question_number', models.IntegerField(verbose_name='question_number')),
+                ('text', models.TextField(verbose_name='text')),
+                ('text_de', models.TextField(null=True, verbose_name='text')),
+                ('text_fr', models.TextField(null=True, verbose_name='text')),
+                ('text_it', models.TextField(null=True, verbose_name='text')),
+                ('category', models.ForeignKey(verbose_name='category', to='core.Category')),
+            ],
+            options={
+                'verbose_name': 'question',
+                'verbose_name_plural': 'questions',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='State',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=50, verbose_name='name')),
+                ('name_de', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_fr', models.CharField(max_length=50, null=True, verbose_name='name')),
+                ('name_it', models.CharField(max_length=50, null=True, verbose_name='name')),
+            ],
+            options={
+                'verbose_name': 'state',
+                'verbose_name_plural': 'states',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Statistic',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('value', models.FloatField(verbose_name='value')),
+                ('category', models.ForeignKey(verbose_name='category', to='core.Category')),
+                ('politician', models.ForeignKey(verbose_name='politician', to='core.Politician')),
+            ],
+            options={
+                'verbose_name': 'statistic',
+                'verbose_name_plural': 'statistics',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.AddField(
+            model_name='politician',
+            name='state',
+            field=models.ForeignKey(verbose_name='state', blank=True, to='core.State', null=True),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='link',
+            name='politician',
+            field=models.ForeignKey(verbose_name='politician', to='core.Politician'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='link',
+            name='type',
+            field=models.ForeignKey(verbose_name='type', to='core.LinkType'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='answer',
+            name='politician',
+            field=models.ForeignKey(verbose_name='politician', to='core.Politician'),
+            preserve_default=True,
+        ),
+        migrations.AddField(
+            model_name='answer',
+            name='question',
+            field=models.ForeignKey(verbose_name='question', to='core.Question'),
+            preserve_default=True,
+        ),
+    ]

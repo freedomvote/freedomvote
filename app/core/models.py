@@ -3,6 +3,9 @@ import os
 import base64
 from django.utils.translation import ugettext_lazy as _
 
+def generate_url():
+    key = base64.urlsafe_b64encode(os.urandom(16))[:20]
+    return key
 
 class State(models.Model):
     name                    = models.CharField(
@@ -83,7 +86,7 @@ class Politician(models.Model):
     unique_url              = models.CharField(
         max_length          = 20,
         verbose_name        = _('unique_url'),
-        default             = lambda: Politician.generate_url()
+        default             = generate_url
     )
     state                   = models.ForeignKey(
         State,
@@ -110,13 +113,8 @@ class Politician(models.Model):
     @classmethod
     def get_politicians_by_category(cls, category_id, input_value, order='-accordance'):
         return cls.objects.filter(statistic__category_id=category_id).extra(
-            select={'accordance':'core_statistic_compare(value::integer, %d)' % input_value}
+            select={'accordance':'core_statistic_compare(value::integer, %d::integer)' % input_value}
         ).order_by(order)
-
-    @staticmethod
-    def generate_url():
-        key = base64.urlsafe_b64encode(os.urandom(16))[:20]
-        return key
 
     @property
     def get_party(self):
@@ -197,7 +195,7 @@ class Statistic(models.Model):
     def get_accordance(cls, politician_id, category_id, input_value):
         statistic = cls.objects.filter(politician_id=politician_id, category_id=category_id).extra(
             select={
-                'accordance' : 'core_statistic_compare(value::integer, %d)' % input_value
+                'accordance' : 'core_statistic_compare(value::integer, %d::integer)' % input_value
             }
         ).first()
 

@@ -34,7 +34,7 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-BASE_URL = 'http://freedomvote.vm:8000'
+BASE_URL = 'http://freedomvote.vm'
 
 MEDIA_ROOT = '/media/'
 MEDIA_URL  = '/media/'

@@ -20,6 +20,7 @@ vagrant-up:
 vagrant:
 	@vagrant plugin install vagrant-hostsupdater
 	@vagrant up
+	@echo 'Please run "sudo make domains" in order to access db.freedomvote.vm'
 
 vagrant-restart: vagrant-destroy vagrant-up
 
@@ -33,6 +34,9 @@ vagrant-runserver:
 vagrant-makemessages:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py makemessages -l de'
 
+vagrant-migrate:
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py migrate'
+
 vagrant-compilemessages:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py compilemessages'
 
@@ -42,4 +46,9 @@ vagrant-collectstatic:
 
 vagrant-collectstatic-dev:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py collectstatic_js_reverse'
-	@vagrant ssh -c 'mv /vagrant/app/static/django_js_reverse/ /vagrant/app/core/static/django_js_reverse/'
+	@vagrant ssh -c 'rm -rf /vagrant/app/core/static/django_js_reverse'
+	@vagrant ssh -c 'mv /vagrant/app/static/django_js_reverse/ /vagrant/app/core/static/django_js_reverse'
+
+domains:
+	@echo '192.168.33.22 db.freedomvote.vm' >> /etc/hosts
+	@echo 'PhpPgAdmin is now accessible at "db.freedomvote.vm"'

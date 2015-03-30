@@ -91,7 +91,7 @@ def candidates_view(request):
             stats = get_cookie(request, 'statistics', {})
             val = stats.get('category_%s' % category, 0)
         else:
-            val = Question.objects.filter(category__id=category).aggregate(Sum('preferred_answer'))[0]
+            val = Question.objects.filter(category__id=category).aggregate(Sum('preferred_answer'))['preferred_answer__sum']
 
         politician_list = Politician.get_politicians_by_category(category, (int(val)*10))
 
@@ -139,7 +139,7 @@ def publish_view(request):
     for category in categories:
         answers = Answer.objects.filter(question__category=category, politician=politician)
         if answers:
-            value = int(answers.aggregate(Sum('agreement_level'))[0] / answers.count() * 10)
+            value = int(answers.aggregate(Sum('agreement_level'))['agreement_level__sum'] / answers.count() * 10)
             stat, created = Statistic.objects.get_or_create(
                 politician=politician,
                 category=category,
