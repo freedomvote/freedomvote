@@ -10,10 +10,31 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import ConfigParser
 from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+DEFAULT_SETTINGS = {
+    'DB': {
+        'NAME'  : 'freedomvote',
+        'USER'  : 'freedomvote',
+        'PASS'  : 'vagrant',
+    },
+    'GLOBAL': {
+        'DEBUG'    : True,
+        'BASE_URL' : 'http://freedomvote.vm',
+    }
+}
+
+try:
+    config = ConfigParser.ConfigParser()
+    config.readfp(open(os.path.join(BASE_DIR, 'settings.ini')))
+
+    for section in config._sections:
+        DEFAULT_SETTINGS[section].update(config.items(section))
+except:
+    pass
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -22,7 +43,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '%xky6n0ak0m*97&3o=zd45_w7o(q(1)o^54y(6)c34rl1u4m^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEFAULT_SETTINGS['GLOBAL']['DEBUG']
 THUMBNAIL_DEBUG = True
 TEMPLATE_DEBUG = True
 SITE_ID = 1
@@ -34,7 +55,7 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-BASE_URL = 'http://freedomvote.vm'
+BASE_URL = DEFAULT_SETTINGS['GLOBAL']['BASE_URL']
 
 MEDIA_ROOT = '/media/'
 MEDIA_URL  = '/media/'
@@ -115,9 +136,9 @@ DB_PASS = 'vagrant'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'freedomvote',
-        'USER': 'freedomvote',
-        'PASSWORD': DB_PASS,
+        'NAME':     DEFAULT_SETTINGS['DB']['NAME'],
+        'USER':     DEFAULT_SETTINGS['DB']['USER'],
+        'PASSWORD': DEFAULT_SETTINGS['DB']['PASS'],
         'HOST': '127.0.0.1',
         'PORT': '',
     }
