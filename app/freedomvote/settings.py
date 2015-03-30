@@ -22,7 +22,7 @@ DEFAULT_SETTINGS = {
         'PASS'  : 'vagrant',
     },
     'GLOBAL': {
-        'DEBUG'    : True,
+        'DEBUG'    : 'True',
         'BASE_URL' : 'http://freedomvote.vm',
     }
 }
@@ -48,7 +48,7 @@ except:
 SECRET_KEY = '%xky6n0ak0m*97&3o=zd45_w7o(q(1)o^54y(6)c34rl1u4m^_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = DEFAULT_SETTINGS['GLOBAL']['DEBUG']
+DEBUG = DEFAULT_SETTINGS['GLOBAL']['DEBUG'].lower() == 'true'
 THUMBNAIL_DEBUG = True
 TEMPLATE_DEBUG = True
 SITE_ID = 1
