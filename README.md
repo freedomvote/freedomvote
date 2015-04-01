@@ -12,7 +12,8 @@ A django politician portal app
 * django-cms >= 3.0.12
 * django-js-reverse >= 0.4.5
 * djangocms_text_ckeditor >= 2.4.3
-* flup >= 1.0.2
+* libjpeg
+* zlib
 
 ## Vagrant
 To run Freedomvote in a VM, you need to install vagrant and virtualbox and execute those commands:
