@@ -10,17 +10,9 @@
 <div class="row">
     <div class="col-md-3">
         {% if politician.image %}
-            {% thumbnail politician.image 250x250 crop as thumb %}
-            <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{thumb.url}}" class="img-thumbnail img-responsive">
+            <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{politician.image|thumbnail_url:'medium'}}" class="img-thumbnail img-responsive">
         {% else %}
-            <svg class="img-thumbnail img-responsive" width="260px" height="260px" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
-                <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
-                <g>
-                    <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
-                    <polygon fill="#777777" points="199.715,282.865 223.088,258.295 231.847,262.088 259.477,232.661 270.358,245.676    275.262,242.711 301.827,282.865  "/>
-                    <circle fill="#777777" cx="226.719" cy="229.417" r="10.21"/>
-                </g>
-            </svg>
+            <img class="img-thumbnail img-responsive" width="310px" src="{% static 'images/placeholder.svg' %}">
         {% endif %}
     </div>
     <div class="col-md-9 details">
@@ -31,11 +23,11 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4"><strong>{% trans 'state' %}</strong></div>
-                    <div class="col-md-8">{{politician.get_state}}</div>
+                    <div class="col-md-8">{{politician.state_name}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4"><strong>{% trans 'party' %}</strong></div>
-                    <div class="col-md-8">{{politician.get_party}}</div>
+                    <div class="col-md-8">{{politician.party_name}}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-4"><strong>{% trans 'past_contributions' %}</strong></div>

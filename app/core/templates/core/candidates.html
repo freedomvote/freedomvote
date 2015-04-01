@@ -1,8 +1,6 @@
 {% extends 'index.html' %}
 
-{% load thumbnail %}
-{% load i18n %}
-{% load staticfiles %}
+{% load i18n staticfiles %}
 
 {% block 'scripts' %}
 <script src="{% static 'candidates.js' %}"></script>
@@ -44,38 +42,7 @@
 <div class="row">
     <table class="table table-striped">
         {% for politician in politicians %}
-        <tr>
-            <td class="col-md-2">
-                {% if politician.image %}
-                    {% thumbnail politician.image 120x120 crop as thumb %}
-                    <img class="img-thumbnail img-responsive" src="{{thumb.url}}">
-                {% else %}
-                    <svg class="img-thumbnail img-responsive" width="130px" height="130px" viewBox="0 0 500 500" enable-background="new 0 0 500 500">
-                        <rect x="-0.5" y="1" fill="#F8F8F8" width="500.25" height="500"/>
-                        <g>
-                            <path fill="#777777" d="M182.315,196.75v106.5h135.37v-106.5H182.315L182.315,196.75z M306.78,291.703H193.864v-83.404H306.78   V291.703L306.78,291.703z"/>
-                            <polygon fill="#777777" points="199.715,282.865 223.088,258.295 231.847,262.088 259.477,232.661 270.358,245.676    275.262,242.711 301.827,282.865  "/>
-                            <circle fill="#777777" cx="226.719" cy="229.417" r="10.21"/>
-                        </g>
-                    </svg>
-                {% endif %}
-            </td>
-            <td class="col-md-4">
-                <h4>{{politician.first_name}} {{politician.last_name}}</h4>
-                <div class="row">
-                    <p class="col-md-4">{% trans 'state' %}</p>
-                    <p class="col-md-8">{{ politician.get_state }}</p>
-                </div>
-                <div class="row">
-                    <p class="col-md-4">{% trans 'party' %}</p>
-                    <p class="col-md-8">{{ politician.get_party }}</p>
-                </div>
-                <a href="{% url 'profile' politician.id %}">{% trans 'details' %}...</a>
-            </td>
-            <td class="col-md-6">
-                <div class="statistic" id="statistic-{{politician.id}}" data-url="{% url 'profile_info' politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"></div>
-            </td>
-        </tr>
+            {% include 'core/candidate_row.html' %}
         {% endfor %}
     </table>
     <nav class="text-center">
