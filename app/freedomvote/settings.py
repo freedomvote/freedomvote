@@ -16,15 +16,14 @@ from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
-    'DB'             : {
-        'NAME'       : 'freedomvote',
-        'USER'       : 'freedomvote',
-        'PASS'       : 'vagrant',
+    'DB'           : {
+        'NAME'     : 'freedomvote',
+        'USER'     : 'freedomvote',
+        'PASS'     : 'vagrant',
     },
-    'GLOBAL'         : {
-        'DEBUG'      : 'True',
-        'BASE_URL'   : 'http://freedomvote.vm',
-        'MEDIA_ROOT' : '/media/'
+    'GLOBAL'       : {
+        'DEBUG'    : 'True',
+        'BASE_URL' : 'http://freedomvote.vm',
     }
 }
 
@@ -63,7 +62,7 @@ LOCALE_PATHS = [
 
 BASE_URL = DEFAULT_SETTINGS['GLOBAL']['BASE_URL']
 
-MEDIA_ROOT = DEFAULT_SETTINGS['GLOBAL']['MEDIA_ROOT']
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL  = '/media/'
 
 # Application definition
