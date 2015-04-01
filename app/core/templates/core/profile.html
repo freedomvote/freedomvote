@@ -51,9 +51,8 @@
             <hr>
             <div class="col-md-4">
                 {% for link in links %}
-                    {% thumbnail link.type.icon 16x16 crop as thumb %}
                     <p>
-                        <img class="img-circle" src="{{thumb.url}}">
+                        <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
                         <a href="{{link.url}}">{{link.type.name}}</a>
                     </p>
                 {%endfor%}

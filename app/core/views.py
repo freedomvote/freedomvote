@@ -25,6 +25,7 @@ def edit_profile_view(request, unique_key):
     if request.POST:
         form = PoliticianForm(request.POST, request.FILES, instance=politician)
         if form.is_valid():
+            form.save()
             messages.success(request, _('profile_saved_successfully'))
     else:
         form = PoliticianForm(instance=politician)
@@ -286,7 +287,7 @@ def add_link_view(request):
     url        = request.POST.get('url')
     error      = False
 
-    if url.startswith(('http://', 'https://')):
+    if url.startswith(('http://', 'https://')) and '.' in url:
         l = Link(
             type=link_type,
             politician=politician,

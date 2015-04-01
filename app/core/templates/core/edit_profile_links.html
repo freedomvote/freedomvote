@@ -1,10 +1,10 @@
 {% load i18n thumbnail %}
 
+<div class="col-md-2">
 {% for link in links %}
-    {% thumbnail link.type.icon 16x16 crop as thumb %}
     <p>
         <form style="display:inline-block;">
-        <img class="img-circle" src="{{thumb.url}}">
+        <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
         <a href="{{link.url}}">{{link.type.name}}</a>
             {% csrf_token %}
             <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
@@ -13,16 +13,25 @@
         </form>
     </p>
 {%endfor%}
-<form id="link" class="form-inline">
+</div>
+<div class="col-md-10">
+<form id="link">
     <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
     {% csrf_token %}
-    <select class="form-control" name="link_type">
-        {% for type in link_types %}
-        <option {% if type.id == link_type.id %}selected {% endif %}value="{{type.id}}">{{type.name}}</option>
-        {% endfor %}
-    </select>
-    <div class="form-group{% if error %} has-error{% endif %}">
-        <input name="url" class="form-control" type="text" placeholder="{% trans 'url' %}" value="{{ input }}"></input>
+    <div class="col-md-3">
+        <label for="link_type">{% trans 'link_type' %}</label>
+        <select class="form-control" name="link_type">
+            {% for type in link_types %}
+            <option {% if type.id == link_type.id %}selected {% endif %}value="{{type.id}}">{{type.name}}</option>
+            {% endfor %}
+        </select>
     </div>
-    <input class="btn btn-default" type="submit" value="{% trans 'add_link' %}">
+    <div class="col-md-4{% if error %} has-error{% endif %}">
+        <label class="control-label" for="url">{% trans 'url' %}</label>
+        <input name="url" class="form-control" type="url" placeholder="http://www.example.com" value="{{ input }}"></input>
+    </div>
+    <div class="col-md-2" style="padding-top:25px">
+        <input class="btn btn-default" type="submit" value="{% trans 'add_link' %}">
+    </div>
 </form>
+</div>

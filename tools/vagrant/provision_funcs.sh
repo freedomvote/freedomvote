@@ -67,7 +67,8 @@ function prepare_django() {
     /vagrant/app/manage.py makemigrations
     /vagrant/app/manage.py migrate
     /vagrant/app/manage.py loaddata /vagrant/tools/vagrant/user.json
-    chmod -R 777 /media/
+    mkdir /vagrant/app/media
+    chmod -R 777 /vagrant/app/media
 }
 
 function configure_apache() {
