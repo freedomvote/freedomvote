@@ -1,67 +1,64 @@
-from core.models import Politician, Question, State, Party, Answer, Statistic, Category, LinkType, Link
+from core.models import Politician, Question, State, Answer, Statistic, Category, LinkType, Link
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q, Sum
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_unicode
+from django.contrib import messages
 import json
 import re
 import datetime
 from django.conf import settings
+from django.core.urlresolvers import reverse
+from core.forms import PoliticianForm
 
 
-def politician_view(request, unique_url):
-    politician = get_object_or_404(Politician, unique_url=unique_url)
-    questions  = Question.objects.all().order_by('question_number')
-    answers    = Answer.objects.filter(politician=politician)
-    states     = State.objects.all().order_by('name')
-    parties    = Party.objects.all().order_by('name')
-    types      = LinkType.objects.all().order_by('name')
-    links      = Link.objects.filter(politician=politician).order_by('type__name')
+def edit_redirect_view(request, unique_key):
+    return HttpResponseRedirect(reverse('edit_profile', args=[unique_key]))
+
+def edit_profile_view(request, unique_key):
+    politician = get_object_or_404(Politician, unique_key=unique_key)
+    link_types = LinkType.objects.all().order_by('name')
+    links      = Link.objects.filter(politician=politician).order_by('-type__name')
 
     if request.POST:
-        try:
-            politician.email = request.POST['email']
-            politician.future_plans = request.POST['future_plans']
-            politician.past_contributions = request.POST['past_contributions']
-            politician.is_member_of_parliament = bool(request.POST.get('is_member_of_parliament', False))
-            politician.party_other = request.POST['party_other']
-            try:
-                politician.image = request.FILES['image']
-            except:
-                pass
-            try:
-                politician.state = State.objects.get(id=request.POST['state'])
-            except:
-                politician.state = None
-            try:
-                politician.party = Party.objects.get(id=request.POST['party'])
-            except:
-                politician.party = None
-            if request.POST.get('remove_image', None):
-                politician.image = None
-            politician.save()
-
-        except:
-            pass
+        form = PoliticianForm(request.POST, request.FILES, instance=politician)
+        if form.is_valid():
+            messages.success(request, _('profile_saved_successfully'))
+    else:
+        form = PoliticianForm(instance=politician)
 
     return render(
         request,
-        'core/politician.html',
+        'core/edit_profile.html',
+        {
+            'politician' : politician,
+            'form'       : form,
+            'link_types' : link_types,
+            'links'      : links
+        }
+    )
+
+def edit_questions_view(request, unique_key):
+    politician = get_object_or_404(Politician, unique_key=unique_key)
+    questions  = Question.objects.all().order_by('question_number')
+    answers    = Answer.objects.filter(politician=politician)
+
+    return render(
+        request,
+        'core/edit_questions.html',
         {
             'politician' : politician,
             'questions'  : questions,
-            'answers'    : answers,
-            'states'     : states,
-            'parties'    : parties,
-            'types'      : types,
-            'links'      : links,
+            'answers'    : answers
         }
     )
 
 def politician_answer_view(request):
     if request.POST:
         question = get_object_or_404(Question, pk=request.POST.get('question'))
-        politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+        politician = get_object_or_404(Politician, unique_key=request.POST.get('unique_key'))
         agreement_level = int(request.POST.get('agreement_level', 0))
 
         answer, created = Answer.objects.get_or_create(
@@ -136,8 +133,8 @@ def candidates_view(request):
     )
 
 def publish_view(request):
-    unique_url = request.POST.get('unique_url')
-    politician = get_object_or_404(Politician, unique_url=unique_url)
+    unique_key = request.POST.get('unique_key')
+    politician = get_object_or_404(Politician, unique_key=unique_key)
     categories = Category.objects.all()
 
     for category in categories:
@@ -152,15 +149,21 @@ def publish_view(request):
             stat.value = value
             stat.save()
 
-    return HttpResponse('')
+    return JsonResponse({
+        'type': 'success',
+        'text': force_unicode(_('answers_published_successfully'))
+    })
 
 
 def unpublish_view(request):
-    unique_url = request.POST.get('unique_url')
-    politician = get_object_or_404(Politician, unique_url=unique_url)
+    unique_key = request.POST.get('unique_key')
+    politician = get_object_or_404(Politician, unique_key=unique_key)
     Statistic.objects.filter(politician=politician).delete()
 
-    return HttpResponse('')
+    return JsonResponse({
+        'type': 'success',
+        'text': force_unicode(_('answers_unpublished_successfully'))
+    })
 
 def profile_info_view(request, politician_id):
     statistics = Statistic.get_statistics_by_politician(politician_id)
@@ -230,6 +233,7 @@ def compare_view(request):
 
         request.COOKIES['answers'] = session_answers
         request.COOKIES['statistics'] = session_statistics
+        messages.success(request, _('answers_saved_successfully_evaluate'))
 
     for question in questions:
         item = {
@@ -277,7 +281,7 @@ def get_cookie(request, key, default):
     return default
 
 def add_link_view(request):
-    politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+    politician = get_object_or_404(Politician, unique_key=request.POST.get('unique_key'))
     link_type  = get_object_or_404(LinkType, id=request.POST.get('link_type'))
     url        = request.POST.get('url')
     error      = False
@@ -296,25 +300,25 @@ def add_link_view(request):
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
 
-    return render(request, 'core/links.html', {
-        'links' : links,
-        'types' : types,
+    return render(request, 'core/edit_profile_links.html', {
+        'links'      : links,
+        'link_types' : types,
         'politician' : politician,
-        'error' : error,
-        'input' : url,
-        'link_type' : link_type,
+        'error'      : error,
+        'input'      : url,
+        'link_type'  : link_type,
     })
 
 def delete_link_view(request):
-    politician = get_object_or_404(Politician, unique_url=request.POST.get('unique_url'))
+    politician = get_object_or_404(Politician, unique_key=request.POST.get('unique_key'))
     link = get_object_or_404(Link, id=request.POST.get('link_id'))
     link.delete()
 
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
 
-    return render(request, 'core/links.html', {
-        'links' : links,
-        'types' : types,
+    return render(request, 'core/edit_profile_links.html', {
+        'links'      : links,
+        'link_types' : types,
         'politician' : politician
     })

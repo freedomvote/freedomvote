@@ -6,6 +6,10 @@ html, body {
   height: 100%;
 }
 
+.content {
+  padding-bottom: 20px;
+}
+
 .wrapper {
   min-height: 100%;
   margin: 0 auto -200px;
@@ -23,6 +27,10 @@ footer {
   border-top: 1px solid #E6E6E6;
   background-color: #F5F5F5;
   padding: 40px 0;
+}
+
+input[name="image"] {
+  width: 200px !important;
 }
 
 footer .logos {
@@ -51,15 +59,6 @@ footer address {
 
 body {
   padding-top: 60px;
-}
-
-input[type="file"] {
-  margin-top: 10px;
-}
-
-.buttons {
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .buttons form {
@@ -103,4 +102,21 @@ textarea.note {
 
 svg.img-thumbnail {
   margin-bottom: -5px;
+}
+
+
+#messages {
+  z-index: 2000;
+  width: 250px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  height: 100%;
+}
+
+#messages .alert {
+  margin-top: 10px;
+  text-align: left;
+  margin: 0 0 10px 0;
 }

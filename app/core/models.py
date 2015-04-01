@@ -83,9 +83,9 @@ class Politician(models.Model):
         blank               = True,
         verbose_name        = _('future_plans')
     )
-    unique_url              = models.CharField(
+    unique_key              = models.CharField(
         max_length          = 20,
-        verbose_name        = _('unique_url'),
+        verbose_name        = _('unique_key'),
         default             = generate_url
     )
     state                   = models.ForeignKey(
@@ -117,7 +117,7 @@ class Politician(models.Model):
         ).order_by(order)
 
     @property
-    def get_party(self):
+    def party_name(self):
         if self.party:
             return self.party.name
         elif self.party_other:
@@ -126,7 +126,7 @@ class Politician(models.Model):
             return '-'
 
     @property
-    def get_state(self):
+    def state_name(self):
         if self.state:
             return self.state.name
         else:
@@ -147,6 +147,10 @@ class LinkType(models.Model):
         verbose_name        = _('name')
     )
 
+    class Meta:
+        verbose_name        = _('link_type')
+        verbose_name_plural = _('link_types')
+
 
 class Link(models.Model):
     type                    = models.ForeignKey(
@@ -160,6 +164,10 @@ class Link(models.Model):
     url                     = models.URLField(
         verbose_name        = _('url')
     )
+
+    class Meta:
+        verbose_name        = _('link')
+        verbose_name_plural = _('links')
 
 
 class Question(models.Model):

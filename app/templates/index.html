@@ -2,38 +2,41 @@
 
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-    <title>Freedom Vote</title>
+        <title>Freedomvote{% block 'title' %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.min.css' %}">
-    <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.theme.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    {% render_block "css" %}
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'jquery-ui/jquery-ui.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        {% render_block 'css' %}
 
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
 
-  <body>
-    <div class="wrapper">
-      {% cms_toolbar %}
-      {% show_menu 0 100 100 100 'navbar.html' %}
-      <div class="container">
-        {% block 'content' %}{% endblock %}
-      </div>
-      <div class="push"></div>
-    </div>
-    {% include 'footer.html' %}
-    <script src="{% static 'django_js_reverse/js/reverse.js' %}"></script>
-    <script src="{% static 'jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
-    <script src="{% static 'highcharts/highcharts.js' %}"></script>
-    {% block 'scripts' %}{% endblock %}
-    {% render_block "js" %}
-  </body>
+    <body>
+        <div class="wrapper">
+            {% cms_toolbar %}
+            {% show_menu 0 100 100 100 'navbar.html' %}
+            <div class="container content">
+                {% block 'content' %}{% endblock %}
+            </div>
+            <div class="push"></div>
+        </div>
+        {% include 'footer.html' %}
+        {% include 'messages.html' %}
+        <script src="{% static 'django_js_reverse/js/reverse.js' %}"></script>
+        <script src="{% static 'jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'notify.js' %}"></script>
+        <script src="{% static 'jquery-ui/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'highcharts/highcharts.js' %}"></script>
+        {% block 'scripts' %}{% endblock %}
+        {% render_block 'js' %}
+        <script>$(function(){$('#messages').children().each(function(){$(this).notify()})});</script>
+    </body>
 </html>

@@ -157,9 +157,9 @@ LANGUAGE_CODE = 'de'
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'de'
 
 LANGUAGES = (
-    ('de', _('German')),
-    ('fr', _('French')),
-    ('it', _('Italian')),
+    ('de', _('german')),
+    ('fr', _('french')),
+    ('it', _('italian')),
 )
 
 TIME_ZONE = 'UTC'
@@ -180,3 +180,11 @@ CMS_TEMPLATES = (
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+THUMBNAIL_ALIASES = {
+    '': {
+        'medium' : {'size' : (300, 300), 'crop' : True, 'quality' : 100},
+        'small'  : {'size' : (120, 120), 'crop' : True, 'quality' : 100},
+        'large'  : {'size' : (500, 500), 'crop' : True, 'quality' : 100},
+    },
+}

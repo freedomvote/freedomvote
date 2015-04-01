@@ -9,13 +9,13 @@
 {% block 'content' %}
 <form method="post" id="form">
     {% csrf_token %}
-    <h2>{% trans "your_opinion_to" %}</h2>
+    <h2>{% trans 'your_opinion_to' %}</h2>
     <table class="table table-striped">
         <thead>
             <th></th>
             <th class="col-md-4">
-                <span class="pull-left">{% trans "applies_not" %}</span>
-                <span class="pull-right">{% trans "applies" %}</span>
+                <span class="pull-left">{% trans 'applies_not' %}</span>
+                <span class="pull-right">{% trans 'applies' %}</span>
             </th>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@
         </tbody>
     </table>
     <div class="text-right buttons">
-        <a class="btn btn-default" id="evaluate" href="{% url 'candidates' %}?evaluate">{% trans "evaluate" %}</a>
+        <a class="btn btn-default" id="evaluate" href="{% url 'candidates' %}?evaluate">{% trans 'evaluate' %}</a>
         <input type="submit" class="btn btn-primary" value="{% trans 'save' %}">
     </div>
 </form>

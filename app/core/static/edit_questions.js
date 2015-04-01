@@ -20,9 +20,12 @@ jQuery(function ($){
     $.post(Urls.politician_answer(), form.serialize())
   }
 
+  $('.slider').on('slidechange', saveAnswer)
+  $('.note').on('focusout', saveAnswer)
+
   $('#unpublish').click(function(e) {
     e.preventDefault()
-    $.post(Urls.unpublish(), $(e.target).closest('form').serialize(), location.reload())
+    $.post(Urls.unpublish(), $(e.target).closest('form').serialize(), function(data){$.addNotification(data)})
   })
 
   $('#publish').click(function(e) {
@@ -42,6 +45,6 @@ jQuery(function ($){
       }
     })
 
-    $.post(Urls.publish(), $(e.target).closest('form').serialize(), location.reload())
+    $.post(Urls.publish(), $(e.target).closest('form').serialize(), function(data){$.addNotification(data)})
   })
 });

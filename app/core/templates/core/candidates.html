@@ -14,7 +14,7 @@
     <div class="filter">
         {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate">{% endif %}
         <select name="category" class="form-control">
-            <option value="0">{% trans "sort_by_category" %}...</option>
+            <option value="0">{% trans 'sort_by_category' %}...</option>
             <option disabled>─────────────────</option>
             {% for category in categories %}
             <option value="{{ category.id }}" {% if request.GET.category == category.id|slugify %}selected{% endif %}>
@@ -26,11 +26,11 @@
          name="search"
          type="text"
          class="form-control"
-         placeholder="{% trans "search" %}..."
+         placeholder="{% trans 'search' %}..."
          value="{{request.GET.search}}"
         >
         <select name="state" class="form-control">
-            <option value="0">{% trans "filter_by_state" %}...</option>
+            <option value="0">{% trans 'filter_by_state' %}...</option>
             <option disabled>─────────────────</option>
             {% for state in states %}
             <option value="{{ state.id }}" {% if request.GET.state == state.id|slugify %}selected{% endif %}>
@@ -38,7 +38,7 @@
             </option>
             {% endfor %}
         </select>
-        <input type="submit" class="btn btn-primary" value="{% trans "filter" %}">
+        <input type="submit" class="btn btn-primary" value="{% trans 'filter' %}">
     </div>
 </form>
 <div class="row">
@@ -63,14 +63,14 @@
             <td class="col-md-4">
                 <h4>{{politician.first_name}} {{politician.last_name}}</h4>
                 <div class="row">
-                    <p class="col-md-4">{% trans "state" %}</p>
+                    <p class="col-md-4">{% trans 'state' %}</p>
                     <p class="col-md-8">{{ politician.get_state }}</p>
                 </div>
                 <div class="row">
-                    <p class="col-md-4">{% trans "party" %}</p>
+                    <p class="col-md-4">{% trans 'party' %}</p>
                     <p class="col-md-8">{{ politician.get_party }}</p>
                 </div>
-                <a href="{% url 'profile' politician.id %}">{% trans "details" %}...</a>
+                <a href="{% url 'profile' politician.id %}">{% trans 'details' %}...</a>
             </td>
             <td class="col-md-6">
                 <div class="statistic" id="statistic-{{politician.id}}" data-url="{% url 'profile_info' politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"></div>
