@@ -24,5 +24,27 @@ $ make vagrant-runserver         # run development server
 ```
 Now you can access the frontend on http://freedomvote.vm/admin/ and PhpPgAdmin on http://db.freedomvote.vm/
 
+## Languages
+The whole application is multilingual. Per default the languages German, Italian and French are installed.
+The translation are located in app/locale/\<LANG_CODE\>/LC_MESSAGES/django.po. After editing the translation, run `python manage.py compilemessages`
+
+To install another language (English in this example) make the following steps:
+
+app/freedomvote/settings.py
+```
+LANGUAGES = (
+  ...
+  ...
+  ('en', _('english')),
+)
+```
+in your environment:
+```
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py makemessages -l en
+$ python manage.py compilemessages
+```
+
 # License
 GPLv3 see [LICENSE](https://github.com/adfinis-sygroup/freedomvote/blob/master/LICENSE)
