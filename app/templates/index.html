@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags menu_tags staticfiles %}
+{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags %}
 
 <!doctype html>
 <html lang="de">
@@ -37,6 +37,7 @@
         <script src="{% static 'highcharts/highcharts.js' %}"></script>
         {% block 'scripts' %}{% endblock %}
         {% render_block 'js' %}
+        {% if not debug %}{% tracking_code %}{% endif %}
         <script>$(function(){$('#messages').children().each(function(){$(this).notify()})});</script>
     </body>
 </html>

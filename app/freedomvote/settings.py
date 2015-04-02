@@ -24,6 +24,10 @@ DEFAULT_SETTINGS = {
     'GLOBAL'       : {
         'DEBUG'    : 'True',
         'BASE_URL' : 'http://freedomvote.vm',
+    },
+    'PIWIK'        : {
+        'SITE_ID'  : 0,
+        'URL'      : '',
     }
 }
 
@@ -86,6 +90,7 @@ INSTALLED_APPS = (
     'sekizai',
     'djangocms_admin_style',
     'django.contrib.messages',
+    'piwik',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -135,8 +140,6 @@ TEMPLATE_DIRS = (
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-
-DB_PASS = 'vagrant'
 
 DATABASES = {
     'default': {
@@ -189,3 +192,6 @@ THUMBNAIL_ALIASES = {
         'icon'   : {'size' : ( 16,  16),   'crop' : True, 'quality' : 100},
     },
 }
+
+PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']
+PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
