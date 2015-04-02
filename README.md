@@ -12,6 +12,7 @@ A django politician portal app
 * django-cms >= 3.0.12
 * django-js-reverse >= 0.4.5
 * djangocms_text_ckeditor >= 2.4.3
+* django-piwik>=0.1
 * libjpeg
 * zlib
 
