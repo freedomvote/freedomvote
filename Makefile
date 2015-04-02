@@ -48,7 +48,3 @@ vagrant-collectstatic-dev:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py collectstatic_js_reverse'
 	@vagrant ssh -c 'rm -rf /vagrant/app/core/static/django_js_reverse'
 	@vagrant ssh -c 'mv /vagrant/app/static/django_js_reverse/ /vagrant/app/core/static/django_js_reverse'
-
-domains:
-	@echo '192.168.33.22 db.freedomvote.vm' >> /etc/hosts
-	@echo 'PhpPgAdmin is now accessible at "db.freedomvote.vm"'
