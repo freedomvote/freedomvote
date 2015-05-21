@@ -21,7 +21,6 @@ To run Freedomvote in a VM, you need to install vagrant and virtualbox and execu
 ```
 $ make vagrant                   # build vagrant box
 $ make vagrant-collectstatic-dev # collect all staticfiles
-$ sudo make domains              # add subdomains to /etc/hosts
 $ make vagrant-runserver         # run development server
 ```
 Now you can access the frontend on http://freedomvote.vm/admin/ and PhpPgAdmin on http://db.freedomvote.vm/
