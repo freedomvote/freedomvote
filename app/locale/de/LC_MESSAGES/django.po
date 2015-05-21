@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-01 08:55+0000\n"
+"POT-Creation-Date: 2015-05-21 10:55+0000\n"
 "PO-Revision-Date: 2015-04-01 10:56+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "unique_url"
 msgstr "Zugangslink"
 
-#: core/admin.py:39 core/models.py:52 core/models.py:182 core/models.py:221
+#: core/admin.py:44 core/models.py:52 core/models.py:182 core/models.py:237
 msgid "category"
 msgstr "Kategorie"
 
@@ -38,8 +38,9 @@ msgstr "Kandidaten"
 msgid "name"
 msgstr "Name"
 
-#: core/models.py:20 core/models.py:95 core/templates/core/candidates.html:66
-#: core/templates/core/profile.html:33
+#: core/models.py:20 core/models.py:95
+#: core/templates/core/candidate_row.html:13
+#: core/templates/core/profile.html:25
 msgid "state"
 msgstr "Kanton"
 
@@ -51,8 +52,9 @@ msgstr "Kantone"
 msgid "shortname"
 msgstr "Abkürzung"
 
-#: core/models.py:38 core/models.py:101 core/templates/core/candidates.html:70
-#: core/templates/core/profile.html:37
+#: core/models.py:38 core/models.py:101
+#: core/templates/core/candidate_row.html:17
+#: core/templates/core/profile.html:29
 msgid "party"
 msgstr "Partei"
 
@@ -80,15 +82,15 @@ msgstr "Email"
 msgid "image"
 msgstr "Bild"
 
-#: core/models.py:76 core/templates/core/profile.html:49
+#: core/models.py:76 core/templates/core/profile.html:41
 msgid "is_member_of_parliament"
 msgstr "Bisheriges Ratsmitglied"
 
-#: core/models.py:80 core/templates/core/profile.html:41
+#: core/models.py:80 core/templates/core/profile.html:33
 msgid "past_contributions"
 msgstr "Bisherige Beiträge zum Thema"
 
-#: core/models.py:84 core/templates/core/profile.html:45
+#: core/models.py:84 core/templates/core/profile.html:37
 msgid "future_plans"
 msgstr "Absichten und Pläne"
 
@@ -100,7 +102,7 @@ msgstr "Zugangscode"
 msgid "party_other"
 msgstr "Andere Partei"
 
-#: core/models.py:136 core/models.py:162 core/models.py:200 core/models.py:217
+#: core/models.py:136 core/models.py:162 core/models.py:216 core/models.py:233
 msgid "politician"
 msgstr "Politiker"
 
@@ -112,7 +114,7 @@ msgstr "Politiker"
 msgid "icon"
 msgstr "Icon"
 
-#: core/models.py:151
+#: core/models.py:151 core/templates/core/edit_profile_links.html:22
 msgid "link_type"
 msgstr "Linktyp"
 
@@ -124,7 +126,7 @@ msgstr "Linktypen"
 msgid "type"
 msgstr "Typ"
 
-#: core/models.py:165 core/templates/core/edit_profile_links.html:25
+#: core/models.py:165 core/templates/core/edit_profile_links.html:30
 msgid "url"
 msgstr "URL"
 
@@ -133,7 +135,7 @@ msgid "link"
 msgstr "Link"
 
 #: core/models.py:170 core/templates/core/edit_profile.html:76
-#: core/templates/core/profile.html:58
+#: core/templates/core/profile.html:50
 msgid "links"
 msgstr "Links"
 
@@ -149,85 +151,97 @@ msgstr "Fragenummer"
 msgid "text"
 msgstr "Text"
 
-#: core/models.py:189 core/models.py:196
+#: core/models.py:190
+msgid "description"
+msgstr "Beschreibung"
+
+#: core/models.py:200
+msgid "no_question_description"
+msgstr "Keine Beschreibung vorhanden"
+
+#: core/models.py:202
+msgid "toggle_description"
+msgstr "Beschreibung umschalten"
+
+#: core/models.py:205 core/models.py:212
 msgid "question"
 msgstr "Frage"
 
-#: core/models.py:190 core/templates/core/edit.html:13
+#: core/models.py:206 core/templates/core/edit.html:13
 msgid "questions"
 msgstr "Fragen"
 
-#: core/models.py:203
+#: core/models.py:219
 msgid "agreement_level"
 msgstr "Einverständnis"
 
-#: core/models.py:206 core/templates/core/edit_questions.html:35
+#: core/models.py:222 core/templates/core/edit_questions.html:36
 msgid "note"
 msgstr "Bemerkung"
 
-#: core/models.py:210
+#: core/models.py:226
 msgid "answer"
 msgstr "Antwort"
 
-#: core/models.py:211
+#: core/models.py:227
 msgid "answers"
 msgstr "Antworten"
 
-#: core/models.py:224
+#: core/models.py:240
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:255
+#: core/models.py:271
 msgid "statistic"
 msgstr "Statistik"
 
-#: core/models.py:256
+#: core/models.py:272
 msgid "statistics"
 msgstr "Statistiken"
 
-#: core/templates/core/candidates.html:17
-msgid "sort_by_category"
-msgstr "Nach Kategorie sortieren"
-
-#: core/templates/core/candidates.html:29
-msgid "search"
-msgstr "Suchen"
-
-#: core/templates/core/candidates.html:33
-msgid "filter_by_state"
-msgstr "Auf Kanton einschränken"
-
-#: core/templates/core/candidates.html:41
-msgid "filter"
-msgstr "Filtern"
-
-#: core/templates/core/candidates.html:73
+#: core/templates/core/candidate_row.html:20
 msgid "details"
 msgstr "Details"
 
-#: core/templates/core/compare.html:12
-#: core/templates/core/edit_questions.html:11
-#: core/templates/core/profile.html:74
+#: core/templates/core/candidates.html:15
+msgid "sort_by_category"
+msgstr "Nach Kategorie sortieren"
+
+#: core/templates/core/candidates.html:27
+msgid "search"
+msgstr "Suchen"
+
+#: core/templates/core/candidates.html:31
+msgid "filter_by_state"
+msgstr "Auf Kanton einschränken"
+
+#: core/templates/core/candidates.html:39
+msgid "filter"
+msgstr "Filtern"
+
+#: core/templates/core/compare.html:13
+#: core/templates/core/edit_questions.html:12
+#: core/templates/core/profile.html:65
 msgid "your_opinion_to"
 msgstr "Wie stehen Sie zu..."
 
-#: core/templates/core/compare.html:17
-#: core/templates/core/edit_questions.html:16
-#: core/templates/core/profile.html:79
+#: core/templates/core/compare.html:18
+#: core/templates/core/edit_questions.html:17
+#: core/templates/core/profile.html:70
 msgid "applies_not"
 msgstr "Trifft gar nicht zu"
 
-#: core/templates/core/compare.html:18
-#: core/templates/core/edit_questions.html:17
-#: core/templates/core/profile.html:80
+#: core/templates/core/compare.html:19
+#: core/templates/core/edit_questions.html:18
+#: core/templates/core/profile.html:71
 msgid "applies"
 msgstr "Trifft voll und ganz zu"
 
-#: core/templates/core/compare.html:38
+#: core/templates/core/compare.html:39
 msgid "evaluate"
 msgstr "Auswerten"
 
-#: core/templates/core/compare.html:39
+#: core/templates/core/compare.html:40
 #: core/templates/core/edit_profile.html:69
 msgid "save"
 msgstr "Speichern"
@@ -240,58 +254,60 @@ msgstr "Profil"
 msgid "other"
 msgstr "Andere"
 
-#: core/templates/core/edit_profile_links.html:27
+#: core/templates/core/edit_profile_links.html:34
 msgid "add_link"
 msgstr "Link hinzufügen"
 
-#: core/templates/core/edit_questions.html:47
+#: core/templates/core/edit_questions.html:48
 msgid "unpublish_answers"
 msgstr "Antworten zurückziehen"
 
-#: core/templates/core/edit_questions.html:52
+#: core/templates/core/edit_questions.html:53
 msgid "publish_answers"
 msgstr "Antworten freigeben"
 
-#: core/templates/core/profile.html:50
+#: core/templates/core/profile.html:42
 msgid "yes"
 msgstr "Ja"
 
-#: core/templates/core/profile.html:50
+#: core/templates/core/profile.html:42
 msgid "no"
 msgstr "Nein"
 
-#: core/templates/core/profile.html:53
+#: core/templates/core/profile.html:45
 msgid "show_own_spider"
 msgstr "Eigene Meinung anzeigen"
 
-#: core/views.py:28
+#: core/views.py:29
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:154
+#: core/views.py:155
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:165
+#: core/views.py:166
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:236
+#: core/views.py:237
 msgid "answers_saved_successfully_evaluate"
-msgstr "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen auswerten."
+msgstr ""
+"Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
+"auswerten."
 
-#: freedomvote/settings.py:160
+#: freedomvote/settings.py:166
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:161
+#: freedomvote/settings.py:167
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:162
+#: freedomvote/settings.py:168
 msgid "italian"
 msgstr "Italienisch"
 
 #: templates/navbar.html:8
 msgid "toggle_navigation"
-msgstr "Menu unmschalten"
+msgstr "Menu umschalten"

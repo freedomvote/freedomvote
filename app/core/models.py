@@ -197,9 +197,9 @@ class Question(models.Model):
         '''
 
         if not self.description:
-            return tpl % ('no-desc', 'No description available', '')
+            return tpl % ('no-desc', _('no_question_description'), '')
         else:
-            return tpl % ('', 'Toggle description', self.description)
+            return tpl % ('', _('toggle_description'), self.description)
 
     class Meta:
         verbose_name        = _('question')
