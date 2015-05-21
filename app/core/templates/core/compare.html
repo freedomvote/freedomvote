@@ -4,6 +4,7 @@
 
 {% block 'scripts' %}
 <script src="{% static 'compare.js' %}"></script>
+<script src="{% static 'description_toggler.js' %}"></script>
 {% endblock %}
 
 {% block 'content' %}
@@ -21,7 +22,7 @@
         <tbody>
             {% for d in data %}
             <tr>
-                <td>{{d.question.text}}</td>
+                <td>{{d.question.text}} {{d.question.get_description_code|safe}}</td>
                 <td>
                   <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
                     <div

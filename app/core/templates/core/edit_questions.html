@@ -4,6 +4,7 @@
 
 {% block 'scripts' %}
 <script src="{% static 'edit_questions.js' %}"></script>
+<script src="{% static 'description_toggler.js' %}"></script>
 {% endblock %}
 
 {% block 'subcontent' %}
@@ -20,7 +21,7 @@
         <tbody>
             {% for question in questions %}
             <tr>
-                <td>{{question.text}}</td>
+                <td>{{question.text}} {{question.get_description_code|safe}}</td>
                 <td>
                     <form>
                         {% csrf_token %}

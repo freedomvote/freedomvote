@@ -184,6 +184,22 @@ class Question(models.Model):
     text                    = models.TextField(
         verbose_name        = _('text')
     )
+    description             = models.TextField(
+        null                = True,
+        blank               = True,
+        verbose_name        = _('description')
+    )
+
+    def get_description_code(self):
+        tpl = '''
+            <span class="glyphicon glyphicon-info-sign desc-toggler %s" title="%s"></span>
+            <div class="desc">%s</div>
+        '''
+
+        if not self.description:
+            return tpl % ('no-desc', 'No description available', '')
+        else:
+            return tpl % ('', 'Toggle description', self.description)
 
     class Meta:
         verbose_name        = _('question')

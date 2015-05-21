@@ -15,7 +15,7 @@ class CategoryTranslationOptions(TranslationOptions):
 
 
 class QuestionTranslationOptions(TranslationOptions):
-    fields = ('text',)
+    fields = ('text', 'description',)
 
 
 class LinkTypeTranslationOptions(TranslationOptions):
