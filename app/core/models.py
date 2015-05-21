@@ -2,6 +2,8 @@ from django.db import models
 import os
 import base64
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import force_unicode
+
 
 def generate_url():
     key = base64.urlsafe_b64encode(os.urandom(16))[:20]
