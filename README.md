@@ -3,18 +3,9 @@ A django politician portal app
 # Installation
 ## Requirements
 * python >= 2.7
-* django >= 1.7
-* django-debug-toolbar >= 1.3
-* django-modeltranslation >= 0.8
-* pillow >= 2.7
-* psycopg2 >= 2.4.5
-* easy-thumbnails >= 2.2
-* django-cms >= 3.0.12
-* django-js-reverse >= 0.4.5
-* djangocms_text_ckeditor >= 2.4.3
-* django-piwik>=0.1
-* libjpeg
-* zlib
+* python-pip
+
+Run `pip install -r requirements.txt` to install all requirements.
 
 ## Vagrant
 To run Freedomvote in a VM, you need to install vagrant and virtualbox and execute those commands:
