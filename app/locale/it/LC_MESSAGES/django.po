@@ -1,313 +1,311 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the freedomvote package.
-# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-04 07:14+0000\n"
-"PO-Revision-Date: 2015-04-01 10:56+0100\n"
-"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
-"Language-Team: German <de@li.org>\n"
-"Language: de\n"
+"POT-Creation-Date: 2015-06-04 07:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.4\n"
 
 #: core/admin.py:21
 msgid "unique_url"
-msgstr "Zugangslink"
+msgstr ""
 
 #: core/admin.py:44 core/models.py:54 core/models.py:184 core/models.py:239
 msgid "category"
-msgstr "Kategorie"
+msgstr ""
 
 #: core/menu.py:10
 msgid "compare"
-msgstr "Vergleichen"
+msgstr ""
 
 #: core/menu.py:11
 msgid "candidates"
-msgstr "Kandidaten"
+msgstr ""
 
 #: core/models.py:15 core/models.py:29 core/models.py:47 core/models.py:149
 msgid "name"
-msgstr "Name"
+msgstr ""
 
 #: core/models.py:22 core/models.py:97
 #: core/templates/core/candidate_row.html:13
 #: core/templates/core/profile.html:25
 msgid "state"
-msgstr "Kanton"
+msgstr ""
 
 #: core/models.py:23
 msgid "states"
-msgstr "Kantone"
+msgstr ""
 
 #: core/models.py:33
 msgid "shortname"
-msgstr "Abkürzung"
+msgstr ""
 
 #: core/models.py:40 core/models.py:103
 #: core/templates/core/candidate_row.html:17
 #: core/templates/core/profile.html:29
 msgid "party"
-msgstr "Partei"
+msgstr ""
 
 #: core/models.py:41
 msgid "parties"
-msgstr "Parteien"
+msgstr ""
 
 #: core/models.py:55
 msgid "categories"
-msgstr "Kategorien"
+msgstr ""
 
 #: core/models.py:61
 msgid "first_name"
-msgstr "Vorname"
+msgstr ""
 
 #: core/models.py:65
 msgid "last_name"
-msgstr "Nachname"
+msgstr ""
 
 #: core/models.py:68
 msgid "email"
-msgstr "Email"
+msgstr ""
 
 #: core/models.py:74
 msgid "image"
-msgstr "Bild"
+msgstr ""
 
 #: core/models.py:78 core/templates/core/profile.html:41
 msgid "is_member_of_parliament"
-msgstr "Bisheriges Ratsmitglied"
+msgstr ""
 
 #: core/models.py:82 core/templates/core/profile.html:33
 msgid "past_contributions"
-msgstr "Bisherige Beiträge zum Thema"
+msgstr ""
 
 #: core/models.py:86 core/templates/core/profile.html:37
 msgid "future_plans"
-msgstr "Absichten und Pläne"
+msgstr ""
 
 #: core/models.py:90
 msgid "unique_key"
-msgstr "Zugangscode"
+msgstr ""
 
 #: core/models.py:109
 msgid "party_other"
-msgstr "Andere Partei"
+msgstr ""
 
 #: core/models.py:138 core/models.py:164 core/models.py:218 core/models.py:235
 msgid "politician"
-msgstr "Politiker"
+msgstr ""
 
 #: core/models.py:139
 msgid "politicians"
-msgstr "Politiker"
+msgstr ""
 
 #: core/models.py:145
 msgid "icon"
-msgstr "Icon"
+msgstr ""
 
 #: core/models.py:153 core/templates/core/edit_profile_links.html:22
 msgid "link_type"
-msgstr "Linktyp"
+msgstr ""
 
 #: core/models.py:154
 msgid "link_types"
-msgstr "Linktypen"
+msgstr ""
 
 #: core/models.py:160
 msgid "type"
-msgstr "Typ"
+msgstr ""
 
 #: core/models.py:167 core/templates/core/edit_profile_links.html:30
 msgid "url"
-msgstr "URL"
+msgstr ""
 
 #: core/models.py:171
 msgid "link"
-msgstr "Link"
+msgstr ""
 
 #: core/models.py:172 core/templates/core/edit_profile.html:76
 #: core/templates/core/profile.html:50
 msgid "links"
-msgstr "Links"
+msgstr ""
 
 #: core/models.py:177
 msgid "preferred_answer"
-msgstr "Bevorzugte Antwort"
+msgstr ""
 
 #: core/models.py:180
 msgid "question_number"
-msgstr "Fragenummer"
+msgstr ""
 
 #: core/models.py:187
 msgid "text"
-msgstr "Text"
+msgstr ""
 
 #: core/models.py:192
 msgid "description"
-msgstr "Beschreibung"
+msgstr ""
 
 #: core/models.py:202
 msgid "no_question_description"
-msgstr "Keine Beschreibung vorhanden"
+msgstr ""
 
 #: core/models.py:204
 msgid "toggle_description"
-msgstr "Beschreibung umschalten"
+msgstr ""
 
 #: core/models.py:207 core/models.py:214
 msgid "question"
-msgstr "Frage"
+msgstr ""
 
 #: core/models.py:208 core/templates/core/edit.html:13
 msgid "questions"
-msgstr "Fragen"
+msgstr ""
 
 #: core/models.py:221
 msgid "agreement_level"
-msgstr "Einverständnis"
+msgstr ""
 
 #: core/models.py:224 core/templates/core/edit_questions.html:36
 msgid "note"
-msgstr "Bemerkung"
+msgstr ""
 
 #: core/models.py:228
 msgid "answer"
-msgstr "Antwort"
+msgstr ""
 
 #: core/models.py:229
 msgid "answers"
-msgstr "Antworten"
+msgstr ""
 
 #: core/models.py:242
 msgid "value"
-msgstr "Wert"
+msgstr ""
 
 #: core/models.py:273
 msgid "statistic"
-msgstr "Statistik"
+msgstr ""
 
 #: core/models.py:274
 msgid "statistics"
-msgstr "Statistiken"
+msgstr ""
 
 #: core/templates/core/candidate_row.html:20
 msgid "details"
-msgstr "Details"
+msgstr ""
 
 #: core/templates/core/candidates.html:15
 msgid "sort_by_category"
-msgstr "Nach Kategorie sortieren"
+msgstr ""
 
 #: core/templates/core/candidates.html:27
 msgid "search"
-msgstr "Suchen"
+msgstr ""
 
 #: core/templates/core/candidates.html:31
 msgid "filter_by_state"
-msgstr "Auf Kanton einschränken"
+msgstr ""
 
 #: core/templates/core/candidates.html:39
 msgid "filter"
-msgstr "Filtern"
+msgstr ""
 
 #: core/templates/core/compare.html:13
 #: core/templates/core/edit_questions.html:12
 #: core/templates/core/profile.html:65
 msgid "your_opinion_to"
-msgstr "Wie stehen Sie zu..."
+msgstr ""
 
 #: core/templates/core/compare.html:18
 #: core/templates/core/edit_questions.html:17
 #: core/templates/core/profile.html:70
 msgid "applies_not"
-msgstr "Trifft gar nicht zu"
+msgstr ""
 
 #: core/templates/core/compare.html:19
 #: core/templates/core/edit_questions.html:18
 #: core/templates/core/profile.html:71
 msgid "applies"
-msgstr "Trifft voll und ganz zu"
+msgstr ""
 
 #: core/templates/core/compare.html:39
 msgid "evaluate"
-msgstr "Auswerten"
+msgstr ""
 
 #: core/templates/core/compare.html:40
 #: core/templates/core/edit_profile.html:69
 msgid "save"
-msgstr "Speichern"
+msgstr ""
 
 #: core/templates/core/edit.html:10
 msgid "profile"
-msgstr "Profil"
+msgstr ""
 
 #: core/templates/core/edit_profile.html:42
 msgid "other"
-msgstr "Andere"
+msgstr ""
 
 #: core/templates/core/edit_profile_links.html:34
 msgid "add_link"
-msgstr "Link hinzufügen"
+msgstr ""
 
 #: core/templates/core/edit_questions.html:48
 msgid "unpublish_answers"
-msgstr "Antworten zurückziehen"
+msgstr ""
 
 #: core/templates/core/edit_questions.html:53
 msgid "publish_answers"
-msgstr "Antworten freigeben"
+msgstr ""
 
 #: core/templates/core/profile.html:42
 msgid "yes"
-msgstr "Ja"
+msgstr ""
 
 #: core/templates/core/profile.html:42
 msgid "no"
-msgstr "Nein"
+msgstr ""
 
 #: core/templates/core/profile.html:45
 msgid "show_own_spider"
-msgstr "Eigene Meinung anzeigen"
+msgstr ""
 
 #: core/views.py:29
 msgid "profile_saved_successfully"
-msgstr "Ihr Profil wurde erfolgreich gespeichert."
+msgstr ""
 
 #: core/views.py:155
 msgid "answers_published_successfully"
-msgstr "Ihre Antworten wurden erfolgreich freigegeben."
+msgstr ""
 
 #: core/views.py:166
 msgid "answers_unpublished_successfully"
-msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
+msgstr ""
 
 #: core/views.py:237
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
-"Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
-"auswerten."
 
 #: freedomvote/settings.py:166
 msgid "german"
-msgstr "Deutsch"
+msgstr ""
 
 #: freedomvote/settings.py:167
 msgid "french"
-msgstr "Französisch"
+msgstr ""
 
 #: freedomvote/settings.py:168
 msgid "italian"
-msgstr "Italienisch"
+msgstr ""
 
 #: templates/navbar.html:8
 msgid "toggle_navigation"
-msgstr "Menu umschalten"
+msgstr ""
