@@ -1,5 +1,5 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Freedomvote Translation
+# Copyright (C) Freedomvote
 # This file is distributed under the same license as the freedomvote package.
 # Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-04 07:14+0000\n"
+"POT-Creation-Date: 2015-06-04 08:53+0000\n"
 "PO-Revision-Date: 2015-04-01 10:56+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -308,6 +308,14 @@ msgstr "Französisch"
 msgid "italian"
 msgstr "Italienisch"
 
-#: templates/navbar.html:8
+#: templates/home.html:15
+msgid "parliament_building"
+msgstr "Bundeshaus"
+
+#: templates/home.html:16
+msgid "source"
+msgstr "Quelle"
+
+#: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu umschalten"

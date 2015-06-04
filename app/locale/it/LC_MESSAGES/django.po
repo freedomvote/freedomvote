@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-04 07:15+0000\n"
+"POT-Creation-Date: 2015-06-04 08:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -306,6 +306,14 @@ msgstr ""
 msgid "italian"
 msgstr ""
 
-#: templates/navbar.html:8
+#: templates/home.html:15
+msgid "parliament_building"
+msgstr ""
+
+#: templates/home.html:16
+msgid "source"
+msgstr ""
+
+#: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr ""

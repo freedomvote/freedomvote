@@ -1,5 +1,4 @@
-{% load menu_tags %}
-{% load i18n %}
+{% load menu_tags staticfiles i18n %}
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -10,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Freedomvote</a>
+	  <a href="/"><img class="navbar-logo" alt="Freedomvote" src="{% static 'images/logo.png' %}"></a>
         </div>
         <div class="collapse navbar-collapse" id="collapse">
             <ul class="nav navbar-nav">

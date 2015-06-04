@@ -149,3 +149,12 @@ svg.img-thumbnail {
   padding: 5px;
   overflow-y: auto;
 }
+
+.navbar-logo {
+  height: 30px;
+  margin: 10px 5px;
+}
+
+.source {
+  font-size: 10px;
+}
