@@ -11,11 +11,11 @@
         <h4>{{politician.first_name}} {{politician.last_name}}</h4>
         <div class="row">
             <p class="col-md-4">{% trans 'state' %}</p>
-            <p class="col-md-8">{{ politician.get_state }}</p>
+            <p class="col-md-8">{{ politician.state_name }}</p>
         </div>
         <div class="row">
             <p class="col-md-4">{% trans 'party' %}</p>
-            <p class="col-md-8">{{ politician.get_party }}</p>
+            <p class="col-md-8">{{ politician.party_name }}</p>
         </div>
         <a href="{% url 'profile' politician.id %}">{% trans 'details' %}...</a>
     </td>
