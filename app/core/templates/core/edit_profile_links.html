@@ -9,7 +9,7 @@
             {% csrf_token %}
             <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
             <input name="link_id" type="hidden" value="{{link.id}}">
-            <span class="glyphicon glyphicon-trash mouse"></span>
+            <span class="fa fa-trash mouse"></span>
         </form>
     </p>
 {%endfor%}

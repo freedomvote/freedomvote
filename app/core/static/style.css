@@ -30,7 +30,7 @@ footer, .push {
 footer {
   border-top: 1px solid #E6E6E6;
   background-color: #F5F5F5;
-  padding: 40px 0;
+  padding: 25px 0;
 }
 
 input[name="image"] {
@@ -40,7 +40,6 @@ input[name="image"] {
 footer .logos {
   height: 50px;
   width: 100%;
-  margin-bottom: 50px;
 }
 
 footer .logos tr {
@@ -57,7 +56,12 @@ footer .logo {
 }
 
 footer address {
+  margin: 25px 0 15px;
   font-style: italic;
+  text-align: center;
+}
+
+footer .github {
   text-align: center;
 }
 
