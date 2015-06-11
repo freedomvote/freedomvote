@@ -19,13 +19,14 @@ jQuery(function ($){
       chart: {
         polar: true,
         type: 'area',
-        backgroundColor: 'transparent'
+        backgroundColor: 'transparent',
+        spacing: [ 10, 90, 10, 90 ]
       },
       title: {
-        text: ' '
+        text: null
       },
       subtitle: {
-        text: ' '
+        text: null
       },
       xAxis: {
         categories: data.categories,
