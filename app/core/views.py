@@ -200,13 +200,21 @@ def profile_view(request, politician_id):
     politician = get_object_or_404(Politician, id=politician_id)
     answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
+    cookie     = get_cookie(request, 'answers', {})
+    answer_obs = []
+
+    for a in answers:
+        answer_obs.append({
+            'own_ans': cookie.get('question_%s' % a.question.id, None),
+            'politician_ans': a
+        })
 
     return render(
         request,
         'core/profile.html',
         {
             'politician' : politician,
-            'answers'    : answers,
+            'answers'    : answer_obs,
             'links'      : links
         }
     )
