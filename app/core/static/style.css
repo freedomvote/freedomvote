@@ -139,23 +139,14 @@ svg.img-thumbnail {
 }
 
 .desc {
-  padding: 0 5px;
-  margin-top: 5px;
-  border: 1px solid lightgrey;
   background-color: #DDDDDD;
-  transition: max-height 2s linear;
-  transition: padding 0.2s ease-out;
-  max-height: 0;
-  overflow: hidden;
-  border: none;
-}
-
-.desc-shown {
   border: 1px solid lightgrey;
-  display: block;
+  border: 1px solid lightgrey;
+  display: none;
+  margin-top: 5px;
   max-height: 200px;
-  padding: 5px;
   overflow-y: auto;
+  padding: 5px;
 }
 
 .navbar-logo {
