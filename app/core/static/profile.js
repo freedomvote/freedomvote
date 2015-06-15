@@ -19,8 +19,8 @@ jQuery(function ($){
 
   function createReadonlySlider(slider) {
     var barWidth = slider.width() - (sliderOffset * 2)
-    var svg = '<svg width="'+slider.width()+'" height="20">' +
-              '<rect x="'+sliderOffset+'" y="7" rx="3" ry="3" height="10" width="'+barWidth+'"'+
+    var svg = '<svg width="'+slider.width()+'" height="30">' +
+              '<rect x="'+sliderOffset+'" y="10" rx="3" ry="3" height="10" width="'+barWidth+'"'+
               'style="fill:rgb(200,200,200);stroke-width:1;stroke:rgb(150,150,150)" />'
 
     var values = slider.data('slider-value')
@@ -28,15 +28,16 @@ jQuery(function ($){
     var texts  = slider.data('slider-text')
 
     for (var i = 0; i < values.length; i++) {
-      var value = values[i]
-      var title = titles[i]
-      var text  = texts[i]
-      var ci    = i > (colors.length - 1) ? 0 : i
-      var color = colors[ci]
-      var pos   = sliderOffset + barWidth / 10 * value
+      var value  = values[i]
+      var title  = titles[i]
+      var text   = texts[i]
+      var ci     = i > (colors.length - 1) ? 0 : i
+      var color  = colors[ci]
+      var posX   = sliderOffset + barWidth / 10 * value
+      var posY   = i % 2 == 0 ? 0 : 30
 
       svg += '<polygon class="add-popover" data-title="'+title+'" data-text="'+text+'"'+
-             'points="'+pos+',13 '+(pos-7)+',0 '+(pos+7)+',0" style="fill:'+color.fill+';stroke-width:1;stroke:'+color.stroke+'" />'
+             'points="'+posX+',15 '+(posX-sliderOffset)+','+posY+' '+(posX+sliderOffset)+','+posY+'" style="fill:'+color.fill+';stroke-width:1;stroke:'+color.stroke+'" />'
     }
 
     slider.append(svg + '</svg>')
