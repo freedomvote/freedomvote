@@ -12,6 +12,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
+import csv
 import re
 
 
@@ -388,6 +389,26 @@ def party_politician_edit_view(request, party_name, politician_id):
         }
     )
     pass
+
+@require_party_login
+def party_export_view(request, party_name):
+    politicians = Politician.objects.filter(user=request.user)
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="freedomvote_export.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow([
+        force_unicode(_('first_name')),
+        force_unicode(_('last_name')),
+        force_unicode(_('state')),
+        force_unicode(_('unique_url'))
+    ])
+
+    for p in politicians:
+        writer.writerow([p.first_name, p.last_name, p.state, p.unique_url])
+
+    return response
 
 @require_party_login
 def party_politician_delete_view(request, party_name, politician_id):

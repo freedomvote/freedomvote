@@ -62,6 +62,10 @@ urlpatterns = patterns('',
         views.party_dashboard_view,
         name='party_dashboard'
     ),
+    url(r'^party/(?P<party_name>\w+)/export/$',
+        views.party_export_view,
+        name='party_export'
+    ),
     url(r'^party/(?P<party_name>\w+)/politician/add/$',
         views.party_politician_add_view,
         name='party_politician_add'
