@@ -17,6 +17,11 @@
                 <li><a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a></li>
                 {% endfor %}
             </ul>
+            {% if user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'party_dashboard' user.username %}">{% trans 'dashboard' %}</a></li>
+            </ul>
+            {% endif %}
         </div>
     </div>
 </nav>
