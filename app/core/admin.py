@@ -9,7 +9,7 @@ class StateAdmin(admin.ModelAdmin):
 
 
 class PartyAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'shortname']
 
 
 class PoliticianAdmin(admin.ModelAdmin):
