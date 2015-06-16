@@ -121,6 +121,7 @@ svg.img-thumbnail {
   right: 10px;
   text-align: right;
   height: 100%;
+  pointer-events: none;
 }
 
 #messages .alert {
