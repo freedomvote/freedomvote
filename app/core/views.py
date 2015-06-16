@@ -3,6 +3,7 @@ from core.forms import PoliticianForm, PartyPoliticianForm
 from core.models import Politician, Question, State, Answer, Statistic, Category, LinkType, Link
 from core.tools import set_cookie, get_cookie
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -15,6 +16,18 @@ from django.utils.translation import ugettext_lazy as _
 import csv
 import re
 
+def handler404(request):
+    response = render(request, '404.html')
+    response.status_code = 404
+
+    return response
+
+
+def handler500(request):
+    response = render(request, '500.html')
+    response.status_code = 500
+
+    return response
 
 def edit_redirect_view(request, unique_key):
     return redirect(reverse('edit_profile', args=[unique_key]))
@@ -310,6 +323,8 @@ def delete_link_view(request):
     })
 
 def party_login_view(request, party_name):
+    user = get_object_or_404(User, username=party_name)
+
     if request.user.is_authenticated() and request.user.username == party_name:
         return redirect(reverse('party_dashboard', args=[party_name]))
 
