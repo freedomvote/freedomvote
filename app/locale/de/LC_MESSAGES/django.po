@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-15 09:43+0000\n"
+"POT-Creation-Date: 2015-06-16 07:39+0000\n"
 "PO-Revision-Date: 2015-04-01 10:56+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "unique_url"
 msgstr "Zugangslink"
 
-#: core/admin.py:44 core/models.py:54 core/models.py:184 core/models.py:239
+#: core/admin.py:44 core/models.py:57 core/models.py:198 core/models.py:253
 msgid "category"
 msgstr "Kategorie"
 
@@ -34,169 +34,174 @@ msgstr "Vergleichen"
 msgid "candidates"
 msgstr "Kandidaten"
 
-#: core/models.py:15 core/models.py:29 core/models.py:47 core/models.py:149
+#: core/models.py:18 core/models.py:32 core/models.py:50 core/models.py:163
 msgid "name"
 msgstr "Name"
 
-#: core/models.py:22 core/models.py:97
+#: core/models.py:25 core/models.py:104
 #: core/templates/core/candidate_row.html:13
+#: core/templates/core/party/dashboard.html:53
 #: core/templates/core/profile.html:23
 msgid "state"
 msgstr "Kanton"
 
-#: core/models.py:23
+#: core/models.py:26
 msgid "states"
 msgstr "Kantone"
 
-#: core/models.py:33
+#: core/models.py:36
 msgid "shortname"
 msgstr "Abkürzung"
 
-#: core/models.py:40 core/models.py:103
+#: core/models.py:43 core/models.py:110
 #: core/templates/core/candidate_row.html:17
 #: core/templates/core/profile.html:28
 msgid "party"
 msgstr "Partei"
 
-#: core/models.py:41
+#: core/models.py:44
 msgid "parties"
 msgstr "Parteien"
 
-#: core/models.py:55
+#: core/models.py:58
 msgid "categories"
 msgstr "Kategorien"
 
-#: core/models.py:61
+#: core/models.py:64
+msgid "user"
+msgstr "Benutzer"
+
+#: core/models.py:68 core/templates/core/party/dashboard.html:51
 msgid "first_name"
 msgstr "Vorname"
 
-#: core/models.py:65
+#: core/models.py:72 core/templates/core/party/dashboard.html:52
 msgid "last_name"
 msgstr "Nachname"
 
-#: core/models.py:68
+#: core/models.py:75
 msgid "email"
 msgstr "Email"
 
-#: core/models.py:74
+#: core/models.py:81
 msgid "image"
 msgstr "Bild"
 
-#: core/models.py:78 core/templates/core/profile.html:43
+#: core/models.py:85 core/templates/core/profile.html:43
 msgid "is_member_of_parliament"
 msgstr "Bisheriges Ratsmitglied"
 
-#: core/models.py:82 core/templates/core/profile.html:33
+#: core/models.py:89 core/templates/core/profile.html:33
 msgid "past_contributions"
 msgstr "Bisherige Beiträge zum Thema"
 
-#: core/models.py:86 core/templates/core/profile.html:38
+#: core/models.py:93 core/templates/core/profile.html:38
 msgid "future_plans"
 msgstr "Absichten und Pläne"
 
-#: core/models.py:90
+#: core/models.py:97
 msgid "unique_key"
 msgstr "Zugangscode"
 
-#: core/models.py:109
+#: core/models.py:116
 msgid "party_other"
 msgstr "Andere Partei"
 
-#: core/models.py:138 core/models.py:164 core/models.py:218 core/models.py:235
+#: core/models.py:152 core/models.py:178 core/models.py:232 core/models.py:249
 msgid "politician"
 msgstr "Politiker"
 
-#: core/models.py:139
+#: core/models.py:153
 msgid "politicians"
 msgstr "Politiker"
 
-#: core/models.py:145
+#: core/models.py:159
 msgid "icon"
 msgstr "Icon"
 
-#: core/models.py:153 core/templates/core/edit_profile_links.html:22
+#: core/models.py:167 core/templates/core/edit_profile_links.html:22
 msgid "link_type"
 msgstr "Linktyp"
 
-#: core/models.py:154
+#: core/models.py:168
 msgid "link_types"
 msgstr "Linktypen"
 
-#: core/models.py:160
+#: core/models.py:174
 msgid "type"
 msgstr "Typ"
 
-#: core/models.py:167 core/templates/core/edit_profile_links.html:30
+#: core/models.py:181 core/templates/core/edit_profile_links.html:30
 msgid "url"
 msgstr "URL"
 
-#: core/models.py:171
+#: core/models.py:185
 msgid "link"
 msgstr "Link"
 
-#: core/models.py:172 core/templates/core/edit_profile.html:76
+#: core/models.py:186 core/templates/core/edit_profile.html:76
 #: core/templates/core/profile.html:53
 msgid "links"
 msgstr "Links"
 
-#: core/models.py:177
+#: core/models.py:191
 msgid "preferred_answer"
 msgstr "Bevorzugte Antwort"
 
-#: core/models.py:180
+#: core/models.py:194
 msgid "question_number"
 msgstr "Fragenummer"
 
-#: core/models.py:187
+#: core/models.py:201
 msgid "text"
 msgstr "Text"
 
-#: core/models.py:192
+#: core/models.py:206
 msgid "description"
 msgstr "Beschreibung"
 
-#: core/models.py:202
+#: core/models.py:216
 msgid "no_question_description"
 msgstr "Keine Beschreibung vorhanden"
 
-#: core/models.py:204
+#: core/models.py:218
 msgid "toggle_description"
 msgstr "Beschreibung umschalten"
 
-#: core/models.py:207 core/models.py:214 core/templates/core/profile.html:89
+#: core/models.py:221 core/models.py:228 core/templates/core/profile.html:89
 #: core/templates/core/profile.html:90
 msgid "question"
 msgstr "Frage"
 
-#: core/models.py:208 core/templates/core/edit.html:13
+#: core/models.py:222 core/templates/core/edit.html:13
 msgid "questions"
 msgstr "Fragen"
 
-#: core/models.py:221
+#: core/models.py:235
 msgid "agreement_level"
 msgstr "Einverständnis"
 
-#: core/models.py:224 core/templates/core/edit_questions.html:36
+#: core/models.py:238 core/templates/core/edit_questions.html:36
 msgid "note"
 msgstr "Bemerkung"
 
-#: core/models.py:228
+#: core/models.py:242
 msgid "answer"
 msgstr "Antwort"
 
-#: core/models.py:229
+#: core/models.py:243
 msgid "answers"
 msgstr "Antworten"
 
-#: core/models.py:242
+#: core/models.py:256
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:273
+#: core/models.py:287
 msgid "statistic"
 msgstr "Statistik"
 
-#: core/models.py:274
+#: core/models.py:288
 msgid "statistics"
 msgstr "Statistiken"
 
@@ -244,6 +249,7 @@ msgstr "Auswerten"
 
 #: core/templates/core/compare.html:40
 #: core/templates/core/edit_profile.html:69
+#: core/templates/core/party/politician_edit.html:33
 msgid "save"
 msgstr "Speichern"
 
@@ -267,6 +273,58 @@ msgstr "Antworten zurückziehen"
 msgid "publish_answers"
 msgstr "Antworten freigeben"
 
+#: core/templates/core/party/dashboard.html:17
+#: core/templates/core/party/menu.html:5
+#: core/templates/core/party/politician_edit.html:6
+msgid "add_politician"
+msgstr "Politiker hinzufügen"
+
+#: core/templates/core/party/dashboard.html:27
+#: core/templates/core/party/menu.html:6
+msgid "export"
+msgstr "Exportieren"
+
+#: core/templates/core/party/dashboard.html:37
+#: core/templates/core/party/menu.html:7
+msgid "logout"
+msgstr "Ausloggen"
+
+#: core/templates/core/party/dashboard.html:46
+msgid "created_politicians"
+msgstr "Erstellte Politiker"
+
+#: core/templates/core/party/dashboard.html:64
+msgid "copy_to_clipboard"
+msgstr "In die Zwischenablage kopieren"
+
+#: core/templates/core/party/dashboard.html:65
+msgid "edit_politician"
+msgstr "Politiker bearbeiten"
+
+#: core/templates/core/party/dashboard.html:66
+msgid "delete_politician"
+msgstr "Politiker löschen"
+
+#: core/templates/core/party/dashboard.html:79
+msgid "copy_url_text"
+msgstr "Kopieren Sie die URL in die Zwischenablage"
+
+#: core/templates/core/party/dashboard.html:83
+msgid "close"
+msgstr "Schliessen"
+
+#: core/templates/core/party/login.html:9
+msgid "login_label"
+msgstr "Bitte geben Sie Ihr Passwort ein"
+
+#: core/templates/core/party/login.html:12
+msgid "login"
+msgstr "Login"
+
+#: core/templates/core/party/menu.html:4
+msgid "dashboard"
+msgstr "Dashboard"
+
 #: core/templates/core/profile.html:44
 msgid "yes"
 msgstr "Ja"
@@ -287,23 +345,43 @@ msgstr "Politiker Antwort"
 msgid "own_answer"
 msgstr "Eigene Antwort"
 
-#: core/views.py:29
+#: core/views.py:30
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:155
+#: core/views.py:156
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:166
+#: core/views.py:167
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:245
+#: core/views.py:246
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
+
+#: core/views.py:319
+msgid "login_successful"
+msgstr "Sie wurden erfolgreich eingeloggt"
+
+#: core/views.py:322
+msgid "login_error"
+msgstr "Sie haben falsche Logindaten eingegeben"
+
+#: core/views.py:348
+msgid "politician_add_success"
+msgstr "Politiker wurde erfolgreich hinzugefügt"
+
+#: core/views.py:351
+msgid "politician_add_error"
+msgstr "Es gab einen Fehler beim Erstellen des Politikers"
+
+#: core/views.py:374
+msgid "politician_delete_success"
+msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
 #: freedomvote/settings.py:166
 msgid "german"

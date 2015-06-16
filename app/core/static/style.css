@@ -158,3 +158,23 @@ svg.img-thumbnail {
   font-size: 10px;
   float: right;
 }
+
+.login {
+  text-align: center;
+  margin: 150px auto auto;
+  width: 250px;
+}
+
+.dashboard-item {
+  text-align: center;
+}
+
+.dashboard-item p {
+  padding: 5px;
+  margin: 0;
+  color: #333;
+}
+
+.dashboard-link:hover {
+  text-decoration: none;
+}

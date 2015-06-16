@@ -1,21 +1,22 @@
+from core.decorators import require_party_login
+from core.forms import PoliticianForm, PartyPoliticianForm
 from core.models import Politician, Question, State, Answer, Statistic, Category, LinkType, Link
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Q, Sum
-from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
-from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import force_unicode
+from core.tools import set_cookie, get_cookie
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-import json
-import re
-import datetime
-from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
-from core.forms import PoliticianForm
+from django.db.models import Q, Sum
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils.encoding import force_unicode
+from django.utils.translation import ugettext_lazy as _
+import re
 
 
 def edit_redirect_view(request, unique_key):
-    return HttpResponseRedirect(reverse('edit_profile', args=[unique_key]))
+    return redirect(reverse('edit_profile', args=[unique_key]))
 
 def edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
@@ -264,31 +265,6 @@ def compare_view(request):
 
     return response
 
-
-def set_cookie(response, key, value, days_expire = 7):
-    if days_expire is None:
-        max_age = 365 * 24 * 60 * 60  #one year
-    else:
-        max_age = days_expire * 24 * 60 * 60
-        expires = datetime.datetime.strftime(
-            datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age),
-            '%a, %d-%b-%Y %H:%M:%S GMT'
-        )
-        response.set_cookie(
-            key,
-            json.dumps(value),
-            max_age=max_age,
-            expires=expires,
-            domain=settings.SESSION_COOKIE_DOMAIN,
-            secure=settings.SESSION_COOKIE_SECURE or None
-        )
-
-def get_cookie(request, key, default):
-    strval = request.COOKIES.get(key)
-    if strval:
-        return json.loads(strval)
-    return default
-
 def add_link_view(request):
     politician = get_object_or_404(Politician, unique_key=request.POST.get('unique_key'))
     link_type  = get_object_or_404(LinkType, id=request.POST.get('link_type'))
@@ -331,3 +307,92 @@ def delete_link_view(request):
         'link_types' : types,
         'politician' : politician
     })
+
+def party_login_view(request, party_name):
+    if request.user.is_authenticated() and request.user.username == party_name:
+        return redirect(reverse('party_dashboard', args=[party_name]))
+
+    if request.POST:
+        user = authenticate(username=party_name, password=request.POST.get('password'))
+        if user and user.is_active:
+            login(request, user)
+            messages.success(request, _('login_successful'))
+            return redirect(reverse('party_dashboard', args=[party_name]))
+        else:
+            messages.error(request, _('login_error'))
+
+    return render(request, 'core/party/login.html')
+
+def party_logout_view(request, party_name):
+    logout(request)
+
+    return redirect(reverse('party_login', args=[party_name]))
+
+@require_party_login
+def party_dashboard_view(request, party_name):
+    return render(
+        request,
+        'core/party/dashboard.html',
+        {
+            'politicians': Politician.objects.filter(user=request.user)
+        }
+    )
+
+@require_party_login
+def party_politician_add_view(request, party_name):
+    if request.POST:
+        form = PartyPoliticianForm(request.POST, request.FILES)
+        form.data['user'] = request.user.id
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('politician_add_success'))
+            return redirect(reverse('party_dashboard', args=[party_name]))
+        else:
+            messages.error(request, _('politician_add_error'))
+
+    else:
+        form = PartyPoliticianForm()
+
+    return render(
+        request,
+        'core/party/politician_edit.html',
+        {
+            'politician' : None,
+            'form'       : form
+        }
+    )
+
+@require_party_login
+def party_politician_edit_view(request, party_name, politician_id):
+    politician = get_object_or_404(Politician, id=politician_id)
+
+    if request.POST:
+        form = PartyPoliticianForm(request.POST, request.FILES, instance=politician)
+        form.data['user'] = request.user.id
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('politician_edit_success'))
+            return redirect(reverse('party_dashboard', args=[party_name]))
+        else:
+            messages.error(request, _('politician_edit_error'))
+
+    else:
+        form = PartyPoliticianForm(instance=politician)
+
+    return render(
+        request,
+        'core/party/politician_edit.html',
+        {
+            'politician' : None,
+            'form'       : form
+        }
+    )
+    pass
+
+@require_party_login
+def party_politician_delete_view(request, party_name, politician_id):
+    politician = get_object_or_404(Politician, id=politician_id)
+    politician.delete()
+    messages.success(request, _('politician_delete_success') % (politician.first_name, politician.last_name))
+
+    return redirect(reverse('party_dashboard', args=[party_name]))

@@ -1,0 +1,35 @@
+{% extends 'core/party/layout.html' %}
+
+{% load i18n filters %}
+
+{% block 'subcontent' %}
+{% if politician %}<h2>{{ politician.first_name }} {{ politician.last_name }}</h2>{% else %}<h2>{% trans 'add_politician' %}</h2>{% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group {% if form.first_name.errors %}has-error{% endif %}">
+                    {{ form.first_name|label_with_class:'control-label' }}
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group {% if form.last_name.errors %}has-error{% endif %}">
+                    {{ form.last_name|label_with_class:'control-label' }}
+                    {{ form.last_name }}
+                </div>
+                <div class="form-group {% if form.email.errors %}has-error{% endif %}">
+                    {{ form.email|label_with_class:'control-label' }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group {% if form.is_member_of_parliament.errors %}has-error{% endif %}">
+                    {{ form.state|label_with_class:'control-label' }}
+                    {{ form.state }}
+                </div>
+                <div class="form-group {% if form.is_member_of_parliament.errors %}has-error{% endif %}">
+                    {{ form.is_member_of_parliament }}
+                    {{ form.is_member_of_parliament|label_with_class:'control-label' }}
+                </div>
+            </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="{% trans 'save' %}">
+    </form>
+{% endblock %}

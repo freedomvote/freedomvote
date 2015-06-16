@@ -1,8 +1,11 @@
+from django.contrib.auth.models import User
 from django.db import models
-import os
-import base64
-from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import force_unicode
+from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from django.conf import settings
+import base64
+import os
 
 
 def generate_url():
@@ -56,6 +59,10 @@ class Category(models.Model):
 
 
 class Politician(models.Model):
+    user                    = models.ForeignKey(
+        User,
+        verbose_name        = _('user')
+    )
     first_name              = models.CharField(
         max_length          = 100,
         verbose_name        = _('first_name')
@@ -133,6 +140,13 @@ class Politician(models.Model):
             return self.state.name
         else:
             return '-'
+
+    @property
+    def unique_url(self):
+        return '%s%s' % (
+            settings.BASE_URL,
+            reverse('edit_profile', args=[self.unique_key])
+        )
 
     class Meta:
         verbose_name        = _('politician')

@@ -1,8 +1,8 @@
+from django.conf import settings
 from django.contrib import admin
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 import models
-from django.core.urlresolvers import reverse
-from django.conf import settings
 
 class StateAdmin(admin.ModelAdmin):
     list_display = ['name']
