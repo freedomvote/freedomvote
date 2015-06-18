@@ -3,27 +3,38 @@
 <h2>{% trans 'your_opinion_to' %}</h2>
 <table class="table table-striped">
     <thead>
-        <th></th>
-        <th class="col-md-4">
-            <span class="pull-left">{% trans 'applies_not' %}</span>
-            <span class="pull-right">{% trans 'applies' %}</span>
+        <th>
+            <div class="col-md-6 col-lg-4 col-xs-6 pull-right hidden-xs">
+                <span class="pull-left">{% trans 'applies_not' %}</span>
+                <span class="pull-right">{% trans 'applies' %}</span>
+            </div>
         </th>
     </thead>
     <tbody>
         {% for answer in answers %}
         <tr>
-            <td>{{answer.politician_ans.question.text}} {{answer.politician_ans.question.get_description_code|safe}}</td>
             <td>
-                <div
-                 class="slider-readonly"
-                 data-slider-value="[ {{answer.politician_ans.agreement_level}}
-                 {% if answer.own_ans %}, {{answer.own_ans}}{% endif %} ]"
-                 data-slider-title="[ &quot;{% trans 'politician_answer' %}&quot;
-                 {% if answer.own_ans %}, &quot;{% trans 'own_answer' %}&quot;{% endif %} ]"
-                 data-slider-text="[ &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.politician_ans.agreement_level}} / 10&quot;
-                 {% if answer.own_ans %}, &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.own_ans}} / 10&quot;{% endif %} ]"
-                ></div>
-                <em>{{answer.note}}</em>
+                <div class="row">
+                    <div class="col-md-6 col-lg-8 col-xs-12">
+                        {{answer.politician_ans.question.text}} {{answer.politician_ans.question.get_description_code|safe}}
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xs-12">
+                        <div class="row title-row-xs">
+                            <div class="col-xs-6 visible-xs">{% trans 'applies_not' %}</div>
+                            <div class="col-xs-6 visible-xs text-right">{% trans 'applies' %}</div>
+                        </div>
+                        <div
+                         class="slider-readonly"
+                         data-slider-value="[ {{answer.politician_ans.agreement_level}}
+                         {% if answer.own_ans %}, {{answer.own_ans}}{% endif %} ]"
+                         data-slider-title="[ &quot;{% trans 'politician_answer' %}&quot;
+                         {% if answer.own_ans %}, &quot;{% trans 'own_answer' %}&quot;{% endif %} ]"
+                         data-slider-text="[ &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.politician_ans.agreement_level}} / 10&quot;
+                         {% if answer.own_ans %}, &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.own_ans}} / 10&quot;{% endif %} ]"
+                        ></div>
+                        <em>{{answer.note}}</em>
+                    </div>
+                </div>
             </td>
         </tr>
         {% endfor %}

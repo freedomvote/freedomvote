@@ -4,12 +4,12 @@ jQuery(function ($){
   const sliderOffset = 7
   const colors = [
     {
-      fill : 'rgb(65,165,63)',
-      stroke : 'rgb(54,142,78)'
+      fill : 'rgba(124,181,236,0.75)',
+      stroke : '#7cb5ec'
     },
     {
-      fill : 'rgb(91,205,253)',
-      stroke : 'rgb(83,148,230)'
+      fill : 'rgba(67,67,72,0.75)',
+      stroke : '#434348'
     }
   ]
 
@@ -17,7 +17,14 @@ jQuery(function ($){
     createReadonlySlider($(this))
   })
 
+  $(window).resize(function() {
+    $('.slider-readonly').each(function() {
+      createReadonlySlider($(this))
+    })
+  })
+
   function createReadonlySlider(slider) {
+    slider.empty()
     var barWidth = slider.width() - (sliderOffset * 2)
     var svg = '<svg width="'+slider.width()+'" height="30">' +
               '<rect x="'+sliderOffset+'" y="10" rx="3" ry="3" height="10" width="'+barWidth+'"'+

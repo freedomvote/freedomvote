@@ -47,4 +47,8 @@ $(function() {
       $(this).fadeOut('fast')
     }.bind(this), options.timeout)
   }
+
+  $('#messages').children().each(function() {
+    $(this).notify()
+  })
 });
