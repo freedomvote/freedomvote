@@ -12,7 +12,7 @@
     <tbody>
         {% for answer in answers %}
         <tr>
-            <td>{{answer.politician_ans.question.text}}</td>
+            <td>{{answer.politician_ans.question.text}} {{answer.politician_ans.question.get_description_code|safe}}</td>
             <td>
                 <div
                  class="slider-readonly"

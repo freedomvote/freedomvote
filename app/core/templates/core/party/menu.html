@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills nav-stacked bottom-buffer">
     <li {% if request.resolver_match.view_name == 'party_dashboard' %}class="active"{% endif %}><a href="{% url 'party_dashboard' user.username %}"><i class="fa fa-dashboard"></i> {% trans 'dashboard' %}</a></li>
     <li {% if request.resolver_match.view_name == 'party_politician_add' %}class="active"{% endif %}><a href="{% url 'party_politician_add' user.username %}"><i class="fa fa-plus-square"></i> {% trans 'add_politician' %}</a></li>
     <li><a href="{% url 'party_export' user.username %}"><i class="fa fa-table"></i> {% trans 'export' %}</a></li>

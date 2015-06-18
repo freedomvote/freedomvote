@@ -189,4 +189,23 @@ svg.img-thumbnail {
     height: 30px;
     margin: 10px 16px
   }
+
+  .login {
+    margin: 50px auto auto;
+  }
+
+  .title-row-xs {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .title-row-xs div:first-child {
+    padding-right: 0;
+  }
+
+  .title-row-xs div:last-child {
+    padding-left: 0;
+  }
 }

@@ -1,7 +1,7 @@
 {% load i18n static thumbnail %}
 
 <div class="row">
-    <div class="col-md-3 picture-container">
+    <div class="col-md-3 picture-container bottom-buffer">
         {% if politician.image %}
             <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{politician.image|thumbnail_url:'medium'}}" class="img-thumbnail img-responsive">
         {% else %}
@@ -9,52 +9,50 @@
         {% endif %}
     </div>
     <div class="col-md-5 details">
-        <div class="row">
-            <h2 class="politician_name">{{ politician.first_name }} {{ politician.last_name }}</h2>
+        <h2 class="politician_name">{{ politician.first_name }} {{ politician.last_name }}</h2>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><strong>{% trans 'state' %}</strong></div>
             <div class="col-md-6">{{politician.state_name}}</div>
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><strong>{% trans 'party' %}</strong></div>
             <div class="col-md-6">{{politician.party_name}}</div>
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><strong>{% trans 'past_contributions' %}</strong></div>
             <div class="col-md-6">{{politician.past_contributions}}</div>
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><strong>{% trans 'future_plans' %}</strong></div>
             <div class="col-md-6">{{politician.future_plans}}</div>
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><strong>{% trans 'is_member_of_parliament' %}</strong></div>
             <div class="col-md-6">{% if politician.is_member_of_parliament %}{% trans 'yes' %}{%else%}{% trans 'no' %}{%endif%}</div>
-            </div>
+        </div>
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-6"><label> {% trans 'show_own_spider' %}</label></div>
             <div class="col-md-6"><input type="checkbox" id="show_citizen"></div>
-            </div>
-
-            {% if links %}
-            <strong>{% trans 'links' %}</strong>
-            <hr>
-            <div class="col-md-6">
-                {% for link in links %}
-                    <p>
-                        <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
-                        <a href="{{link.url}}">{{link.type.name}}</a>
-                    </p>
-                {%endfor%}
-            </div>
-            {% endif %}
         </div>
+
+        {% if links %}
+        <strong>{% trans 'links' %}</strong>
+        <hr>
+        <div class="col-md-6">
+            {% for link in links %}
+                <p>
+                    <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
+                    <a href="{{link.url}}">{{link.type.name}}</a>
+                </p>
+            {%endfor%}
+        </div>
+        {% endif %}
     </div>
     <div class="col-md-4 spider-container" id="chart" data-politician-id="{{politician.id}}"> </div>
 </div>
