@@ -11,10 +11,11 @@
 <form method="post" id="form">
     {% csrf_token %}
     <h2>{% trans 'your_opinion_to' %}</h2>
+    <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <th></th>
-            <th class="col-md-4">
+            <th class="col-md-6 col-lg-4 col-xs-6">
                 <span class="pull-left">{% trans 'applies_not' %}</span>
                 <span class="pull-right">{% trans 'applies' %}</span>
             </th>
@@ -35,6 +36,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
     <div class="text-right buttons">
         <a class="btn btn-default" id="evaluate" href="{% url 'candidates' %}?evaluate">{% trans 'evaluate' %}</a>
         <input type="submit" class="btn btn-primary" value="{% trans 'save' %}">

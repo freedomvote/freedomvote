@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% load i18n staticfiles %}
+
+{% block 'scripts' %}
+<script src="{% static 'candidates.js' %}"></script>
+{% endblock %}
+
+{% block 'content' %}
+
+<div class="row bottom-buffer">
+    <div class="pull-right text-right col-md-10 col-lg-8 col-xs-12">
+        {% include 'core/candidates/filter.html' %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        {% include 'core/candidates/list.html' %}
+    </div>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'core/edit.html' %}
+{% extends 'core/edit/index.html' %}
 
 {% load i18n static %}
 
@@ -8,12 +8,11 @@
 {% endblock %}
 
 {% block 'subcontent' %}
-<div class="row">
     <h2>{% trans 'your_opinion_to' %}</h2>
     <table class="table table-striped">
         <thead>
             <th></th>
-            <th class="col-md-4">
+            <th class="col-md-5">
                 <span class="pull-left">{% trans 'applies_not' %}</span>
                 <span class="pull-right">{% trans 'applies' %}</span>
             </th>
@@ -40,17 +39,16 @@
             {% endfor %}
         </tbody>
     </table>
-</div>
-<div class="row text-right buttons">
-    <form method="post" id="unpublish">
-        {% csrf_token %}
-        <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
-        <input type="submit" class="btn btn-default" value="{% trans 'unpublish_answers' %}">
-    </form>
-    <form method="post" id="publish">
-        {% csrf_token %}
-        <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
-        <input type="submit" class="btn btn-primary" value="{% trans 'publish_answers' %}">
-    </form>
-</div>
+    <div class="text-right buttons">
+        <form method="post" id="unpublish">
+            {% csrf_token %}
+            <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
+            <input type="submit" class="btn btn-default" value="{% trans 'unpublish_answers' %}">
+        </form>
+        <form method="post" id="publish">
+            {% csrf_token %}
+            <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
+            <input type="submit" class="btn btn-primary" value="{% trans 'publish_answers' %}">
+        </form>
+    </div>
 {% endblock %}

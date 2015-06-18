@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<form method="get" class="form-inline">
+    {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate">{% endif %}
+    <div class="form-group">
+        <select name="category" class="form-control">
+            <option value="0">{% trans 'sort_by_category' %}...</option>
+            <option disabled>─────────────────</option>
+            {% for category in categories %}
+            <option
+             value="{{ category.id }}"
+             {% if request.GET.category == category.id|slugify %}selected{% endif %}
+            >
+                {{category.name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <select name="state" class="form-control">
+            <option value="0">{% trans 'filter_by_state' %}...</option>
+            <option disabled>─────────────────</option>
+            {% for state in states %}
+            <option
+             value="{{ state.id }}"
+             {% if request.GET.state == state.id|slugify %}selected{% endif %}
+            >
+                {{state.name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <input
+         name="search"
+         type="text"
+         class="form-control"
+         placeholder="{% trans 'search' %}..."
+         value="{{request.GET.search}}"
+        >
+    </div>
+    <input type="submit" class="btn btn-primary form-control" value="{% trans 'filter' %}">
+</form>

@@ -47,7 +47,7 @@ def edit_profile_view(request, unique_key):
 
     return render(
         request,
-        'core/edit_profile.html',
+        'core/edit/profile.html',
         {
             'politician' : politician,
             'form'       : form,
@@ -63,7 +63,7 @@ def edit_questions_view(request, unique_key):
 
     return render(
         request,
-        'core/edit_questions.html',
+        'core/edit/questions.html',
         {
             'politician' : politician,
             'questions'  : questions,
@@ -140,7 +140,7 @@ def candidates_view(request):
 
     return render(
         request,
-        'core/candidates.html',
+        'core/candidates/index.html',
         {
             'politicians' : politicians,
             'categories'  : categories,
@@ -226,7 +226,7 @@ def profile_view(request, politician_id):
 
     return render(
         request,
-        'core/profile.html',
+        'core/profile/index.html',
         {
             'politician' : politician,
             'answers'    : answer_obs,
@@ -268,7 +268,7 @@ def compare_view(request):
 
     response = render(
         request,
-        'core/compare.html',
+        'core/compare/index.html',
         {
             'data' : data
         }
@@ -316,7 +316,7 @@ def delete_link_view(request):
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
 
-    return render(request, 'core/edit_profile_links.html', {
+    return render(request, 'core/edit/links.html', {
         'links'      : links,
         'link_types' : types,
         'politician' : politician

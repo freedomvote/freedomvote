@@ -95,7 +95,7 @@ body {
   border-radius: 0px;
 }
 
-.filter {
+.bottom-buffer {
   margin-bottom: 10px;
 }
 
@@ -178,4 +178,15 @@ svg.img-thumbnail {
 
 .dashboard-link:hover {
   text-decoration: none;
+}
+
+@media(max-width:767px){
+  .center-xs {
+    text-align: center;
+  }
+
+  .navbar-logo {
+    height: 30px;
+    margin: 10px 16px
+  }
 }

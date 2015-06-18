@@ -7,12 +7,12 @@ jQuery(function ($){
   other_party.toggle(party.val() === '' && other_party.val() !== '')
 
   toggler.on('click', function(){
-    other_party.fadeToggle()
+    other_party.slideToggle()
   })
 
   party.on('change', function(){
     if (party.val() !== '')
-      other_party.fadeOut()
+      other_party.slideUp()
   })
 
   $('#links').on('click', '#link input[type="submit"]', function(e) {
