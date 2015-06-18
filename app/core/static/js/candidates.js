@@ -65,7 +65,7 @@ jQuery(function ($){
       $('.statistic').each(function() {
         var chart = $(this).highcharts()
         var height = chart.series[0].data.length * 20 * (newDeviceWidth <= sizeXs ? 2.5 : 1)
-        var width = $(this).width
+        var width = $(this).width()
         chart.setSize(width, height, false)
       })
     }
