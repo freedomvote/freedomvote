@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 from core import views
 
 urlpatterns = patterns(
@@ -6,6 +6,10 @@ urlpatterns = patterns(
     # public urls
 
     '',
+    url(
+        r'^i18n/',
+        include('django.conf.urls.i18n')
+    ),
     url(r'^candidates/$',
         views.candidates_view,
         name='candidates'

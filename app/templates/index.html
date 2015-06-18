@@ -36,6 +36,7 @@
         <script src="{% static 'lib/jquery-ui/jquery-ui.min.js' %}"></script>
         <script src="{% static 'lib/highcharts/highcharts.js' %}"></script>
         <script src="{% static 'js/notify.js' %}"></script>
+        <script src="{% static 'js/language.js' %}"></script>
         {% block 'scripts' %}{% endblock %}
         {% render_block 'js' %}
         {% if not debug %}{% tracking_code %}{% endif %}

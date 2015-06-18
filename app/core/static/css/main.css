@@ -180,6 +180,14 @@ svg.img-thumbnail {
   text-decoration: none;
 }
 
+.language {
+  margin: 0;
+}
+
+.language ul li a {
+  padding: 15px 5px;
+}
+
 @media(max-width:767px){
   .center-xs {
     text-align: center;

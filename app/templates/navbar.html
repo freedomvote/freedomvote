@@ -19,9 +19,41 @@
             </ul>
             {% if user.is_authenticated %}
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'party_dashboard' user.username %}">{% trans 'dashboard' %}</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'party_dashboard' user.username %}"><i class="fa fa-dashboard"></i>
+                                {% trans 'dashboard' %}
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="{% url 'party_logout' user.username %}"><i class="fa fa-power-off"></i>
+                                {% trans 'logout' %}
+                            </a>
+                        </li>
+                  </ul>
+                </li>
             </ul>
             {% endif %}
+            <form action="{% url 'set_language' %}" class="navbar-right navbar-form language" method="post">
+                {% csrf_token %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                <input name="next" type="hidden" value="{{ request.path }}" />
+                <input name="language" type="hidden" value="{{ language.code }}" />
+                <ul class="navbar-nav nav">
+                {% for language in languages %}
+                    <li><a href="#" data-lang="{{language.code}}">
+                        {% if language.code == LANGUAGE_CODE %}<strong>{% endif %}
+                        {{language.code}}
+                        {% if language.code == LANGUAGE_CODE %}</strong>{% endif %}
+                    </a></li>
+                {% endfor %}
+                </ul>
+            </form>
         </div>
     </div>
 </nav>
