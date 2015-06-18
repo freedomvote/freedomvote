@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-16 09:34+0000\n"
+"POT-Creation-Date: 2015-06-18 10:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,9 +39,10 @@ msgid "name"
 msgstr ""
 
 #: core/models.py:25 core/models.py:104
-#: core/templates/core/candidate_row.html:13
+#: core/templates/core/candidates/row.html:15
+#: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile.html:23 core/views.py:419
+#: core/templates/core/profile/description.html:15 core/views.py:419
 msgid "state"
 msgstr ""
 
@@ -54,8 +55,9 @@ msgid "shortname"
 msgstr ""
 
 #: core/models.py:43 core/models.py:110
-#: core/templates/core/candidate_row.html:17
-#: core/templates/core/profile.html:28
+#: core/templates/core/candidates/row.html:16
+#: core/templates/core/candidates/row.html:23
+#: core/templates/core/profile/description.html:20
 msgid "party"
 msgstr ""
 
@@ -89,15 +91,15 @@ msgstr ""
 msgid "image"
 msgstr ""
 
-#: core/models.py:85 core/templates/core/profile.html:43
+#: core/models.py:85 core/templates/core/profile/description.html:35
 msgid "is_member_of_parliament"
 msgstr ""
 
-#: core/models.py:89 core/templates/core/profile.html:33
+#: core/models.py:89 core/templates/core/profile/description.html:25
 msgid "past_contributions"
 msgstr ""
 
-#: core/models.py:93 core/templates/core/profile.html:38
+#: core/models.py:93 core/templates/core/profile/description.html:30
 msgid "future_plans"
 msgstr ""
 
@@ -121,7 +123,7 @@ msgstr ""
 msgid "icon"
 msgstr ""
 
-#: core/models.py:167 core/templates/core/edit_profile_links.html:22
+#: core/models.py:167 core/templates/core/edit/links.html:21
 msgid "link_type"
 msgstr ""
 
@@ -133,7 +135,7 @@ msgstr ""
 msgid "type"
 msgstr ""
 
-#: core/models.py:181 core/templates/core/edit_profile_links.html:30
+#: core/models.py:181 core/templates/core/edit/links.html:29
 msgid "url"
 msgstr ""
 
@@ -141,8 +143,8 @@ msgstr ""
 msgid "link"
 msgstr ""
 
-#: core/models.py:186 core/templates/core/edit_profile.html:76
-#: core/templates/core/profile.html:53
+#: core/models.py:186 core/templates/core/edit/profile.html:75
+#: core/templates/core/profile/description.html:52
 msgid "links"
 msgstr ""
 
@@ -170,12 +172,13 @@ msgstr ""
 msgid "toggle_description"
 msgstr ""
 
-#: core/models.py:221 core/models.py:228 core/templates/core/profile.html:89
-#: core/templates/core/profile.html:90
+#: core/models.py:221 core/models.py:228
+#: core/templates/core/profile/questions.html:34
+#: core/templates/core/profile/questions.html:35
 msgid "question"
 msgstr ""
 
-#: core/models.py:222 core/templates/core/edit.html:13
+#: core/models.py:222 core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr ""
 
@@ -183,7 +186,7 @@ msgstr ""
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:238 core/templates/core/edit_questions.html:36
+#: core/models.py:238 core/templates/core/edit/questions.html:47
 msgid "note"
 msgstr ""
 
@@ -207,72 +210,78 @@ msgstr ""
 msgid "statistics"
 msgstr ""
 
-#: core/templates/core/candidate_row.html:20
-msgid "details"
-msgstr ""
-
-#: core/templates/core/candidates.html:15
+#: core/templates/core/candidates/filter.html:7
 msgid "sort_by_category"
 msgstr ""
 
-#: core/templates/core/candidates.html:27
-msgid "search"
-msgstr ""
-
-#: core/templates/core/candidates.html:31
+#: core/templates/core/candidates/filter.html:21
 msgid "filter_by_state"
 msgstr ""
 
-#: core/templates/core/candidates.html:39
+#: core/templates/core/candidates/filter.html:38
+msgid "search"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:42
 msgid "filter"
 msgstr ""
 
-#: core/templates/core/compare.html:13
-#: core/templates/core/edit_questions.html:12
-#: core/templates/core/profile.html:69
+#: core/templates/core/candidates/row.html:26
+msgid "details"
+msgstr ""
+
+#: core/templates/core/compare/index.html:13
+#: core/templates/core/edit/questions.html:11
+#: core/templates/core/profile/questions.html:3
 msgid "your_opinion_to"
 msgstr ""
 
-#: core/templates/core/compare.html:18
-#: core/templates/core/edit_questions.html:17
-#: core/templates/core/profile.html:74
+#: core/templates/core/compare/index.html:19
+#: core/templates/core/compare/index.html:35
+#: core/templates/core/edit/questions.html:17
+#: core/templates/core/edit/questions.html:33
+#: core/templates/core/profile/questions.html:9
+#: core/templates/core/profile/questions.html:25
 msgid "applies_not"
 msgstr ""
 
-#: core/templates/core/compare.html:19
-#: core/templates/core/edit_questions.html:18
-#: core/templates/core/profile.html:75
+#: core/templates/core/compare/index.html:20
+#: core/templates/core/compare/index.html:36
+#: core/templates/core/edit/questions.html:18
+#: core/templates/core/edit/questions.html:34
+#: core/templates/core/profile/questions.html:10
+#: core/templates/core/profile/questions.html:26
 msgid "applies"
 msgstr ""
 
-#: core/templates/core/compare.html:39
+#: core/templates/core/compare/index.html:53
 msgid "evaluate"
 msgstr ""
 
-#: core/templates/core/compare.html:40
-#: core/templates/core/edit_profile.html:69
+#: core/templates/core/compare/index.html:54
+#: core/templates/core/edit/profile.html:70
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
 msgstr ""
 
-#: core/templates/core/edit.html:10
-msgid "profile"
-msgstr ""
-
-#: core/templates/core/edit_profile.html:42
-msgid "other"
-msgstr ""
-
-#: core/templates/core/edit_profile_links.html:34
+#: core/templates/core/edit/links.html:33
 msgid "add_link"
 msgstr ""
 
-#: core/templates/core/edit_questions.html:48
-msgid "unpublish_answers"
+#: core/templates/core/edit/menu.html:5
+msgid "profile"
 msgstr ""
 
-#: core/templates/core/edit_questions.html:53
+#: core/templates/core/edit/profile.html:44
+msgid "other"
+msgstr ""
+
+#: core/templates/core/edit/questions.html:62
 msgid "publish_answers"
+msgstr ""
+
+#: core/templates/core/edit/questions.html:69
+msgid "unpublish_answers"
 msgstr ""
 
 #: core/templates/core/party/dashboard.html:17
@@ -327,23 +336,27 @@ msgstr ""
 msgid "dashboard"
 msgstr ""
 
-#: core/templates/core/profile.html:44
+#: core/templates/core/profile/description.html:36
 msgid "yes"
 msgstr ""
 
-#: core/templates/core/profile.html:44
+#: core/templates/core/profile/description.html:36
 msgid "no"
 msgstr ""
 
-#: core/templates/core/profile.html:48
+#: core/templates/core/profile/description.html:40
 msgid "show_own_spider"
 msgstr ""
 
-#: core/templates/core/profile.html:87
+#: core/templates/core/profile/description.html:45
+msgid "add_own_opinion"
+msgstr ""
+
+#: core/templates/core/profile/questions.html:32
 msgid "politician_answer"
 msgstr ""
 
-#: core/templates/core/profile.html:88
+#: core/templates/core/profile/questions.html:33
 msgid "own_answer"
 msgstr ""
 
