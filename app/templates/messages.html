@@ -1,4 +1,4 @@
-<div id="messages">
+<div id="messages" class="col-md-4 col-lg-2 col-xs-12">
 {% if messages %}
     {% for message in messages %}
     <div class="alert alert-{%if message.tags == 'error'%}danger{%else%}{{message.tags}}{%endif%}">{{message}}</div>
