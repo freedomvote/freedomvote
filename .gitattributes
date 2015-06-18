@@ -1,5 +1,4 @@
-/app/core/static/bootstrap/* linguist-vendored
-/app/core/static/django_js_reverse/* linguist-vendored
-/app/core/static/highcharts/* linguist-vendored
-/app/core/static/jquery/* linguist-vendored
-/app/core/static/jquery-ui/* linguist-vendored
+/app/core/static/lib/bootstrap/* linguist-vendored
+/app/core/static/lib/highcharts/* linguist-vendored
+/app/core/static/lib/jquery/* linguist-vendored
+/app/core/static/lib/jquery-ui/* linguist-vendored

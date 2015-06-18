@@ -34,7 +34,7 @@
                          data-slider-text="[ &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.politician_ans.agreement_level}} / 10&quot;
                          {% if answer.own_ans %}, &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.own_ans}} / 10&quot;{% endif %} ]"
                         ></div>
-                        <em>{{answer.note}}</em>
+                        <em>{{answer.politician_ans.note}}</em>
                     </div>
                 </div>
             </td>

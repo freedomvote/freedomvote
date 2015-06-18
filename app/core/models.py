@@ -145,7 +145,7 @@ class Politician(models.Model):
     def unique_url(self):
         return '%s%s' % (
             settings.BASE_URL,
-            reverse('edit', args=[self.unique_key])
+            reverse('politician_edit', args=[self.unique_key])
         )
 
     class Meta:

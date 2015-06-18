@@ -62,7 +62,7 @@ jQuery(function ($){
 
   var item = $('#chart')
 
-  $.getJSON(Urls.profile_info(item.data('politician-id')) + '?compare', function(data){
+  $.getJSON(item.data('url'), function(data){
     item.highcharts({
       chart: {
         polar: true,

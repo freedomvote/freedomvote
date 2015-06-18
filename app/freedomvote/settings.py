@@ -80,7 +80,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangocms_text_ckeditor',
     'easy_thumbnails',
-    'django_js_reverse',
     'core',
     'modeltranslation',
     'django.contrib.admin',

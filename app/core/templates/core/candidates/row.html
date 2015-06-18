@@ -23,10 +23,15 @@
                     <p class="col-md-4">{% trans 'party' %}</p>
                     <p class="col-md-8">{{ politician.party_name }}</p>
                 </div>
-                <a href="{% url 'profile' politician.id %}">{% trans 'details' %}...</a>
+                <a href="{% url 'politician' politician_id=politician.id %}">{% trans 'details' %}...</a>
             </div>
             <div class="col-md-6">
-                <div class="statistic" id="statistic-{{politician.id}}" data-url="{% url 'profile_info' politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"></div>
+                <div
+                 class="statistic"
+                 id="statistic-{{politician.id}}"
+                 data-url="{% url 'politician_statistic' politician_id=politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"
+                >
+                </div>
             </div>
         </div>
     </td>

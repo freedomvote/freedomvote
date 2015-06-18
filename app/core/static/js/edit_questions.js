@@ -17,7 +17,7 @@ jQuery(function ($){
     var value = slider.slider('value')
     form.find('input[name="agreement_level"]').val(value)
 
-    $.post(Urls.politician_answer(), form.serialize())
+    $.post(form.attr('action'), form.serialize())
   }
 
   $('.slider').on('slidechange', saveAnswer)
@@ -25,7 +25,9 @@ jQuery(function ($){
 
   $('#unpublish').click(function(e) {
     e.preventDefault()
-    $.post(Urls.unpublish(), $(e.target).closest('form').serialize(), function(data){$.addNotification(data)})
+
+    var form = $(e.target).closest('form')
+    $.post(form.attr('action'), form.serialize(), function(data){$.addNotification(data)})
   })
 
   $('#publish').click(function(e) {
@@ -41,10 +43,12 @@ jQuery(function ($){
 
       if (input.val() === '') {
         input.val(value)
-        $.post(Urls.politician_answer(), form.serialize())
+        $.post(form.attr('action'), form.serialize())
       }
     })
 
-    $.post(Urls.publish(), $(e.target).closest('form').serialize(), function(data){$.addNotification(data)})
+    var form = $(e.target).closest('form')
+
+    $.post(form.attr('action'), form.serialize(), function(data){$.addNotification(data)})
   })
 });

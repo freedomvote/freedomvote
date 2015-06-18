@@ -1,7 +1,11 @@
 from django.conf.urls import patterns, url
 from core import views
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+
+    # public urls
+
+    '',
     url(r'^candidates/$',
         views.candidates_view,
         name='candidates'
@@ -10,46 +14,55 @@ urlpatterns = patterns('',
         views.compare_view,
         name='compare'
     ),
-    url(r'^edit/(?P<unique_key>[^/]+)/$',
-        views.edit_redirect_view,
-        name='edit'
+
+    # private politician urls
+
+    url(r'^politician/(?P<unique_key>[^/]+)/edit/$',
+        views.politician_edit_view,
+        name='politician_edit'
     ),
-    url(r'^edit/(?P<unique_key>[^/].+)/profile/$',
-        views.edit_profile_view,
-        name='edit_profile'
+    url(r'^politician/(?P<unique_key>[^/]+)/edit/profile/$',
+        views.politician_edit_profile_view,
+        name='politician_edit_profile'
     ),
-    url(r'^edit/(?P<unique_key>[^/].+)/questions/$',
-        views.edit_questions_view,
-        name='edit_questions'
+    url(r'^politician/(?P<unique_key>[^/]+)/edit/questions/$',
+        views.politician_edit_questions_view,
+        name='politician_edit_questions'
     ),
-    url(r'^profile/(?P<politician_id>\d+)/$',
-        views.profile_view,
-        name='profile'
-    ),
-    url(r'^profile_info/(?P<politician_id>\d+)/$',
-        views.profile_info_view,
-        name='profile_info'
-    ),
-    url(r'^politician_answer/$',
+    url(r'^politician/(?P<unique_key>[^/]+)/answer/$',
         views.politician_answer_view,
         name='politician_answer'
     ),
-    url(r'^publish/$',
-        views.publish_view,
-        name='publish'
+    url(r'^politician/(?P<unique_key>[^/]+)/publish/$',
+        views.politician_publish_view,
+        name='politician_publish'
     ),
-    url(r'^unpublish/$',
-        views.unpublish_view,
-        name='unpublish'
+    url(r'^politician/(?P<unique_key>[^/]+)/unpublish/$',
+        views.politician_unpublish_view,
+        name='politician_unpublish'
     ),
-    url(r'^link/add/$',
-        views.add_link_view,
-        name='add_link'
+    url(r'^politician/(?P<unique_key>[^/]+)/link/add/$',
+        views.politician_link_add_view,
+        name='politician_link_add'
     ),
-    url(r'^link/delete/$',
-        views.delete_link_view,
-        name='delete_link'
+    url(r'^politician/(?P<unique_key>[^/]+)/link/(?P<link_id>\d+)/delete/$',
+        views.politician_link_delete_view,
+        name='politician_link_delete'
     ),
+
+    # public politician urls
+
+    url(r'^politician/(?P<politician_id>\d+)/$',
+        views.politician_view,
+        name='politician'
+    ),
+    url(r'^politician/(?P<politician_id>\d+)/statistic/$',
+        views.politician_statistic_view,
+        name='politician_statistic'
+    ),
+
+    # party urls
+
     url(r'^party/(?P<party_name>\w+)/login/$',
         views.party_login_view,
         name='party_login'

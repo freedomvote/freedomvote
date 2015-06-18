@@ -61,5 +61,9 @@
         </div>
         {% endif %}
     </div>
-    <div class="col-md-4 spider-container" id="chart" data-politician-id="{{politician.id}}"> </div>
+    <div
+     class="col-md-4 spider-container"
+     id="chart"
+     data-url="{% url 'politician_statistic' politician_id=politician.id %}?compare"
+    ></div>
 </div>

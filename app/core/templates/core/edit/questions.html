@@ -34,10 +34,9 @@
                                 <div class="col-xs-6 visible-xs text-right">{% trans 'applies' %}</div>
                             </div>
                             <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
-                            <form>
+                            <form action="{% url 'politician_answer' unique_key=politician.unique_key %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="question" value="{{ question.id }}">
-                                <input type="hidden" name="unique_key" value="{{ politician.unique_key }}">
                                 <input type="hidden" name="agreement_level" value="">
                                 <div
                                     class="slider"
@@ -56,16 +55,14 @@
     </table>
     <div class="row">
         <div class="col-md-4 col-lg-3 col-xs-12 bottom-buffer pull-right">
-            <form method="post" id="publish">
+            <form method="post" id="publish" action="{% url 'politician_publish' unique_key=politician.unique_key %}">
                 {% csrf_token %}
-                <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
                 <input type="submit" class="btn btn-primary form-control" value="{% trans 'publish_answers' %}">
             </form>
         </div>
         <div class="col-md-4 col-lg-3 col-xs-12 pull-right">
-            <form method="post" id="unpublish">
+            <form method="post" id="unpublish" action="{% url 'politician_unpublish' unique_key=politician.unique_key %}">
                 {% csrf_token %}
-                <input type="hidden" name="unique_key" value="{{politician.unique_key}}">
                 <input type="submit" class="btn btn-default form-control" value="{% trans 'unpublish_answers' %}">
             </form>
         </div>

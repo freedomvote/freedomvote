@@ -3,7 +3,7 @@
 <div class="col-md-2">
 {% for link in links %}
     <p>
-        <form style="display:inline-block;" action="{% url 'delete_link' %}">
+        <form style="display:inline-block;" action="{% url 'politician_link_delete' unique_key=politician.unique_key link_id=link.id %}">
             <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
             <a href="{{link.url}}">{{link.type.name}}</a>
             {% csrf_token %}
@@ -14,7 +14,7 @@
     </p>
 {%endfor%}
 </div>
-<form id="link" action="{% url 'add_link' %}">
+<form id="link" action="{% url 'politician_link_add' unique_key=politician.unique_key %}">
     {% csrf_token %}
     <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
     <div class="col-md-3">
