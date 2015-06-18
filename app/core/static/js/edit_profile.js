@@ -17,20 +17,24 @@ jQuery(function ($){
 
   $('#links').on('click', '#link input[type="submit"]', function(e) {
     e.preventDefault()
+
+    var form = $(e.target).closest('form')
     $.post(
-        Urls.add_link(),
-        $(e.target).closest('form').serialize(),
+        form.attr('action'),
+        form.serialize(),
         function(data){
             $('#links').html(data)
         }
     )
   })
 
-  $('#links').on('click', '.glyphicon-trash', function(e) {
+  $('#links').on('click', '.fa-trash', function(e) {
     e.preventDefault()
+
+    var form = $(e.target).closest('form')
     $.post(
-        Urls.delete_link(),
-        $(e.target).closest('form').serialize(),
+        form.attr('action'),
+        form.serialize(),
         function(data){
             $('#links').html(data)
         }

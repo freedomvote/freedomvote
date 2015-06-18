@@ -299,7 +299,7 @@ def add_link_view(request):
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
 
-    return render(request, 'core/edit_profile_links.html', {
+    return render(request, 'core/edit/links.html', {
         'links'      : links,
         'link_types' : types,
         'politician' : politician,

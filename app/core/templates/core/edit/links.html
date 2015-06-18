@@ -3,9 +3,9 @@
 <div class="col-md-2">
 {% for link in links %}
     <p>
-        <form style="display:inline-block;">
-        <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
-        <a href="{{link.url}}">{{link.type.name}}</a>
+        <form style="display:inline-block;" action="{% url 'delete_link' %}">
+            <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
+            <a href="{{link.url}}">{{link.type.name}}</a>
             {% csrf_token %}
             <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
             <input name="link_id" type="hidden" value="{{link.id}}">
@@ -14,10 +14,9 @@
     </p>
 {%endfor%}
 </div>
-<div class="col-md-10">
-<form id="link">
-    <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
+<form id="link" action="{% url 'add_link' %}">
     {% csrf_token %}
+    <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
     <div class="col-md-3">
         <label for="link_type">{% trans 'link_type' %}</label>
         <select class="form-control" name="link_type">
@@ -28,10 +27,9 @@
     </div>
     <div class="col-md-4{% if error %} has-error{% endif %}">
         <label class="control-label" for="url">{% trans 'url' %}</label>
-        <input name="url" class="form-control" type="url" placeholder="http://www.example.com" value="{{ input }}"></input>
+        <input name="url" class="form-control" type="url" placeholder="http://www.example.com" value="{{ input }}">
     </div>
-    <div class="col-md-2" style="padding-top:25px">
-        <input class="btn btn-default" type="submit" value="{% trans 'add_link' %}">
+    <div class="col-md-3" style="padding-top:25px">
+        <input class="btn btn-default form-control" type="submit" value="{% trans 'add_link' %}">
     </div>
 </form>
-</div>
