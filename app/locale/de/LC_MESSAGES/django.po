@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 13:52+0000\n"
-"PO-Revision-Date: 2015-06-22 15:29+0100\n"
+"POT-Creation-Date: 2015-06-22 14:35+0000\n"
+"PO-Revision-Date: 2015-06-22 16:36+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.1\n"
 
-#: core/admin.py:21 core/views.py:444
+#: core/admin.py:21 core/views.py:458
 msgid "unique_url"
 msgstr "Zugangslink"
 
@@ -42,7 +42,7 @@ msgstr "Name"
 #: core/templates/core/candidates/row.html:15
 #: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:15 core/views.py:443
+#: core/templates/core/profile/description.html:15 core/views.py:457
 msgid "state"
 msgstr "Kanton"
 
@@ -74,12 +74,12 @@ msgid "user"
 msgstr "Benutzer"
 
 #: core/models.py:68 core/templates/core/party/dashboard.html:51
-#: core/views.py:441
+#: core/views.py:455
 msgid "first_name"
 msgstr "Vorname"
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:52
-#: core/views.py:442
+#: core/views.py:456
 msgid "last_name"
 msgstr "Nachname"
 
@@ -259,6 +259,10 @@ msgid "evaluate"
 msgstr "Auswerten"
 
 #: core/templates/core/compare/index.html:52
+msgid "reset_answers"
+msgstr "Antworten zurücksetzen"
+
+#: core/templates/core/compare/index.html:53
 #: core/templates/core/edit/profile.html:70
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
@@ -358,49 +362,53 @@ msgstr "Politiker Antwort"
 msgid "own_answer"
 msgstr "Eigene Antwort"
 
-#: core/views.py:128
+#: core/views.py:132
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
 
-#: core/views.py:166
+#: core/views.py:155
+msgid "answers_resetted"
+msgstr "Ihre Antworten wurden zurückgesetzt"
+
+#: core/views.py:180
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:233
+#: core/views.py:247
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:243
+#: core/views.py:257
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:359
+#: core/views.py:373
 msgid "login_successful"
 msgstr "Sie wurden erfolgreich eingeloggt"
 
-#: core/views.py:362
+#: core/views.py:376
 msgid "login_error"
 msgstr "Sie haben falsche Logindaten eingegeben"
 
-#: core/views.py:388
+#: core/views.py:402
 msgid "politician_add_success"
 msgstr "Politiker wurde erfolgreich hinzugefügt"
 
-#: core/views.py:391
+#: core/views.py:405
 msgid "politician_add_error"
 msgstr "Es gab einen Fehler beim Erstellen des Politikers"
 
-#: core/views.py:414
+#: core/views.py:428
 msgid "politician_edit_success"
 msgstr "Politiker wurde erfolgreich bearbeitet"
 
-#: core/views.py:417
+#: core/views.py:431
 msgid "politician_edit_error"
 msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 
-#: core/views.py:456
+#: core/views.py:470
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 

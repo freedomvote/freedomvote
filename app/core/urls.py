@@ -18,6 +18,10 @@ urlpatterns = patterns(
         views.compare_view,
         name='compare'
     ),
+    url(r'^compare/reset/$',
+        views.compare_reset_view,
+        name='compare_reset'
+    ),
 
     # private politician urls
 

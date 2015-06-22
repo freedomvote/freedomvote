@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 13:52+0000\n"
+"POT-Creation-Date: 2015-06-22 14:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: core/admin.py:21 core/views.py:444
+#: core/admin.py:21 core/views.py:458
 msgid "unique_url"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 #: core/templates/core/candidates/row.html:15
 #: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:15 core/views.py:443
+#: core/templates/core/profile/description.html:15 core/views.py:457
 msgid "state"
 msgstr ""
 
@@ -74,12 +74,12 @@ msgid "user"
 msgstr ""
 
 #: core/models.py:68 core/templates/core/party/dashboard.html:51
-#: core/views.py:441
+#: core/views.py:455
 msgid "first_name"
 msgstr ""
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:52
-#: core/views.py:442
+#: core/views.py:456
 msgid "last_name"
 msgstr ""
 
@@ -259,6 +259,10 @@ msgid "evaluate"
 msgstr ""
 
 #: core/templates/core/compare/index.html:52
+msgid "reset_answers"
+msgstr ""
+
+#: core/templates/core/compare/index.html:53
 #: core/templates/core/edit/profile.html:70
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
@@ -358,47 +362,51 @@ msgstr ""
 msgid "own_answer"
 msgstr ""
 
-#: core/views.py:128
+#: core/views.py:132
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 
-#: core/views.py:166
+#: core/views.py:155
+msgid "answers_resetted"
+msgstr ""
+
+#: core/views.py:180
 msgid "profile_saved_successfully"
 msgstr ""
 
-#: core/views.py:233
+#: core/views.py:247
 msgid "answers_published_successfully"
 msgstr ""
 
-#: core/views.py:243
+#: core/views.py:257
 msgid "answers_unpublished_successfully"
 msgstr ""
 
-#: core/views.py:359
+#: core/views.py:373
 msgid "login_successful"
 msgstr ""
 
-#: core/views.py:362
+#: core/views.py:376
 msgid "login_error"
 msgstr ""
 
-#: core/views.py:388
+#: core/views.py:402
 msgid "politician_add_success"
 msgstr ""
 
-#: core/views.py:391
+#: core/views.py:405
 msgid "politician_add_error"
 msgstr ""
 
-#: core/views.py:414
+#: core/views.py:428
 msgid "politician_edit_success"
 msgstr ""
 
-#: core/views.py:417
+#: core/views.py:431
 msgid "politician_edit_error"
 msgstr ""
 
-#: core/views.py:456
+#: core/views.py:470
 msgid "politician_delete_success"
 msgstr ""
 

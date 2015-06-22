@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 from django.db.models import Q, Sum
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
@@ -50,6 +50,11 @@ def candidates_view(request):
     per_site = request.GET.get('per_page', 10)
     page     = request.GET.get('page',      1)
 
+
+    request.GET = request.GET.copy()
+    if request.GET.has_key('evaluate') and get_cookie(request, 'statistics', {}) == {}:
+        request.GET.pop('evaluate')
+
     if category and category != '0':
         if request.GET.has_key('evaluate'):
             stats = get_cookie(request, 'statistics', {})
@@ -83,7 +88,6 @@ def candidates_view(request):
         politicians = paginator.page(paginator.num_pages)
 
     # remove the page parameter from url
-    request.GET = request.GET.copy()
     if request.GET.get('page', None):
         request.GET.pop('page')
 
@@ -144,6 +148,16 @@ def compare_view(request):
 
     set_cookie(response, 'answers', session_answers, 30)
     set_cookie(response, 'statistics', session_statistics, 30)
+
+    return response
+
+def compare_reset_view(request):
+    messages.success(request, _('answers_resetted'))
+
+    response = HttpResponseRedirect(reverse('compare'))
+
+    set_cookie(response, 'answers', {}, 30)
+    set_cookie(response, 'statistics', {}, 30)
 
     return response
 
