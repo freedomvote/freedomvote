@@ -1,5 +1,3 @@
-LANG=de
-
 vagrant-halt:
 	@vagrant halt
 
@@ -27,7 +25,7 @@ vagrant-runserver:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py runserver 0.0.0.0:8000'
 
 vagrant-makemessages:
-	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py makemessages -l ${LANG}'
+	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py makemessages -a'
 
 vagrant-migrate:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py migrate'

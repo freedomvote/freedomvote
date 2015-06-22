@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-18 10:37+0000\n"
-"PO-Revision-Date: 2015-04-01 10:56+0100\n"
+"POT-Creation-Date: 2015-06-22 13:27+0000\n"
+"PO-Revision-Date: 2015-06-22 15:29+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.1\n"
 
-#: core/admin.py:21 core/views.py:420
+#: core/admin.py:21 core/views.py:444
 msgid "unique_url"
 msgstr "Zugangslink"
 
@@ -42,7 +42,7 @@ msgstr "Name"
 #: core/templates/core/candidates/row.html:15
 #: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:15 core/views.py:419
+#: core/templates/core/profile/description.html:15 core/views.py:443
 msgid "state"
 msgstr "Kanton"
 
@@ -74,12 +74,12 @@ msgid "user"
 msgstr "Benutzer"
 
 #: core/models.py:68 core/templates/core/party/dashboard.html:51
-#: core/views.py:417
+#: core/views.py:441
 msgid "first_name"
 msgstr "Vorname"
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:52
-#: core/views.py:418
+#: core/views.py:442
 msgid "last_name"
 msgstr "Nachname"
 
@@ -173,8 +173,8 @@ msgid "toggle_description"
 msgstr "Beschreibung umschalten"
 
 #: core/models.py:221 core/models.py:228
-#: core/templates/core/profile/questions.html:34
-#: core/templates/core/profile/questions.html:35
+#: core/templates/core/profile/questions.html:32
+#: core/templates/core/profile/questions.html:33
 msgid "question"
 msgstr "Frage"
 
@@ -186,7 +186,7 @@ msgstr "Fragen"
 msgid "agreement_level"
 msgstr "Einverständnis"
 
-#: core/models.py:238 core/templates/core/edit/questions.html:47
+#: core/models.py:238 core/templates/core/edit/questions.html:46
 msgid "note"
 msgstr "Bemerkung"
 
@@ -202,29 +202,47 @@ msgstr "Antworten"
 msgid "value"
 msgstr "Wert"
 
-#: core/models.py:287
+#: core/models.py:288
 msgid "statistic"
 msgstr "Statistik"
 
-#: core/models.py:288
+#: core/models.py:289
 msgid "statistics"
 msgstr "Statistiken"
 
-#: core/templates/core/candidates/filter.html:7
+#: core/templates/core/candidates/filter.html:8
 msgid "sort_by_category"
 msgstr "Nach Kategorie sortieren"
 
-#: core/templates/core/candidates/filter.html:21
+#: core/templates/core/candidates/filter.html:22
 msgid "filter_by_state"
 msgstr "Auf Kanton einschränken"
 
-#: core/templates/core/candidates/filter.html:38
+#: core/templates/core/candidates/filter.html:39
 msgid "search"
 msgstr "Suchen"
 
-#: core/templates/core/candidates/filter.html:42
+#: core/templates/core/candidates/filter.html:44
 msgid "filter"
 msgstr "Filtern"
+
+#: core/templates/core/candidates/index.html:14
+msgid "opinion_fsfe_chopen"
+msgstr "FSFE & /ch/open"
+
+#: core/templates/core/candidates/index.html:19
+#: core/templates/core/candidates/index.html:28
+msgid "own_opinion"
+msgstr "Eigene Meinung"
+
+#: core/templates/core/candidates/index.html:26
+#: core/templates/core/profile/description.html:45
+msgid "add_own_opinion"
+msgstr "Eigene Meinung erfassen"
+
+#: core/templates/core/candidates/index.html:27
+msgid "add_own_opinion_here"
+msgstr "Klicken Sie hier um Ihre eigene Meinung zu erfassen"
 
 #: core/templates/core/candidates/row.html:26
 msgid "details"
@@ -240,8 +258,6 @@ msgstr "Wie stehen Sie zu..."
 #: core/templates/core/compare/index.html:35
 #: core/templates/core/edit/questions.html:17
 #: core/templates/core/edit/questions.html:33
-#: core/templates/core/profile/questions.html:9
-#: core/templates/core/profile/questions.html:25
 msgid "applies_not"
 msgstr "Trifft gar nicht zu"
 
@@ -249,8 +265,6 @@ msgstr "Trifft gar nicht zu"
 #: core/templates/core/compare/index.html:36
 #: core/templates/core/edit/questions.html:18
 #: core/templates/core/edit/questions.html:34
-#: core/templates/core/profile/questions.html:10
-#: core/templates/core/profile/questions.html:26
 msgid "applies"
 msgstr "Trifft voll und ganz zu"
 
@@ -276,13 +290,23 @@ msgstr "Profil"
 msgid "other"
 msgstr "Andere"
 
-#: core/templates/core/edit/questions.html:62
+#: core/templates/core/edit/questions.html:60
 msgid "publish_answers"
 msgstr "Antworten freigeben"
 
-#: core/templates/core/edit/questions.html:69
+#: core/templates/core/edit/questions.html:66
 msgid "unpublish_answers"
 msgstr "Antworten zurückziehen"
+
+#: core/templates/core/helpers/scale.html:5
+#: core/templates/core/profile/description.html:36
+msgid "no"
+msgstr "Nein"
+
+#: core/templates/core/helpers/scale.html:10
+#: core/templates/core/profile/description.html:36
+msgid "yes"
+msgstr "Ja"
 
 #: core/templates/core/party/dashboard.html:17
 #: core/templates/core/party/menu.html:5
@@ -296,7 +320,7 @@ msgid "export"
 msgstr "Exportieren"
 
 #: core/templates/core/party/dashboard.html:37
-#: core/templates/core/party/menu.html:7
+#: core/templates/core/party/menu.html:7 templates/navbar.html:33
 msgid "logout"
 msgstr "Ausloggen"
 
@@ -332,89 +356,77 @@ msgstr "Bitte geben Sie Ihr Passwort ein"
 msgid "login"
 msgstr "Login"
 
-#: core/templates/core/party/menu.html:4 templates/navbar.html:22
+#: core/templates/core/party/menu.html:4 templates/navbar.html:27
 msgid "dashboard"
 msgstr "Dashboard"
-
-#: core/templates/core/profile/description.html:36
-msgid "yes"
-msgstr "Ja"
-
-#: core/templates/core/profile/description.html:36
-msgid "no"
-msgstr "Nein"
 
 #: core/templates/core/profile/description.html:40
 msgid "show_own_spider"
 msgstr "Eigene Meinung anzeigen"
 
-#: core/templates/core/profile/description.html:45
-msgid "add_own_opinion"
-msgstr "Eigene Meinung erfassen"
-
-#: core/templates/core/profile/questions.html:32
+#: core/templates/core/profile/questions.html:30
 msgid "politician_answer"
 msgstr "Politiker Antwort"
 
-#: core/templates/core/profile/questions.html:33
+#: core/templates/core/profile/questions.html:31
 msgid "own_answer"
 msgstr "Eigene Antwort"
 
-#: core/views.py:44
-msgid "profile_saved_successfully"
-msgstr "Ihr Profil wurde erfolgreich gespeichert."
-
-#: core/views.py:170
-msgid "answers_published_successfully"
-msgstr "Ihre Antworten wurden erfolgreich freigegeben."
-
-#: core/views.py:181
-msgid "answers_unpublished_successfully"
-msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
-
-#: core/views.py:260
+#: core/views.py:128
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
 
-#: core/views.py:335
+#: core/views.py:166
+msgid "profile_saved_successfully"
+msgstr "Ihr Profil wurde erfolgreich gespeichert."
+
+#: core/views.py:233
+msgid "answers_published_successfully"
+msgstr "Ihre Antworten wurden erfolgreich freigegeben."
+
+#: core/views.py:243
+msgid "answers_unpublished_successfully"
+msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
+
+#: core/views.py:359
 msgid "login_successful"
 msgstr "Sie wurden erfolgreich eingeloggt"
 
-#: core/views.py:338
+#: core/views.py:362
 msgid "login_error"
 msgstr "Sie haben falsche Logindaten eingegeben"
 
-#: core/views.py:364
+#: core/views.py:388
 msgid "politician_add_success"
 msgstr "Politiker wurde erfolgreich hinzugefügt"
 
-#: core/views.py:367
+#: core/views.py:391
 msgid "politician_add_error"
 msgstr "Es gab einen Fehler beim Erstellen des Politikers"
 
-#: core/views.py:390
+#: core/views.py:414
 msgid "politician_edit_success"
 msgstr "Politiker wurde erfolgreich bearbeitet"
 
-#: core/views.py:393
+#: core/views.py:417
 msgid "politician_edit_error"
 msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 
-#: core/views.py:432
+#: core/views.py:456
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: freedomvote/settings.py:166
+#: freedomvote/settings.py:167
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:167
+#: freedomvote/settings.py:168
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:168
+#: freedomvote/settings.py:169
 msgid "italian"
 msgstr "Italienisch"
 

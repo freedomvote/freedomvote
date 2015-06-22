@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-18 10:37+0000\n"
+"POT-Creation-Date: 2015-06-22 13:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: core/admin.py:21 core/views.py:420
+#: core/admin.py:21 core/views.py:444
 msgid "unique_url"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 #: core/templates/core/candidates/row.html:15
 #: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:15 core/views.py:419
+#: core/templates/core/profile/description.html:15 core/views.py:443
 msgid "state"
 msgstr ""
 
@@ -74,12 +74,12 @@ msgid "user"
 msgstr ""
 
 #: core/models.py:68 core/templates/core/party/dashboard.html:51
-#: core/views.py:417
+#: core/views.py:441
 msgid "first_name"
 msgstr ""
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:52
-#: core/views.py:418
+#: core/views.py:442
 msgid "last_name"
 msgstr ""
 
@@ -173,8 +173,8 @@ msgid "toggle_description"
 msgstr ""
 
 #: core/models.py:221 core/models.py:228
-#: core/templates/core/profile/questions.html:34
-#: core/templates/core/profile/questions.html:35
+#: core/templates/core/profile/questions.html:32
+#: core/templates/core/profile/questions.html:33
 msgid "question"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:238 core/templates/core/edit/questions.html:47
+#: core/models.py:238 core/templates/core/edit/questions.html:46
 msgid "note"
 msgstr ""
 
@@ -202,28 +202,46 @@ msgstr ""
 msgid "value"
 msgstr ""
 
-#: core/models.py:287
+#: core/models.py:288
 msgid "statistic"
 msgstr ""
 
-#: core/models.py:288
+#: core/models.py:289
 msgid "statistics"
 msgstr ""
 
-#: core/templates/core/candidates/filter.html:7
+#: core/templates/core/candidates/filter.html:8
 msgid "sort_by_category"
 msgstr ""
 
-#: core/templates/core/candidates/filter.html:21
+#: core/templates/core/candidates/filter.html:22
 msgid "filter_by_state"
 msgstr ""
 
-#: core/templates/core/candidates/filter.html:38
+#: core/templates/core/candidates/filter.html:39
 msgid "search"
 msgstr ""
 
-#: core/templates/core/candidates/filter.html:42
+#: core/templates/core/candidates/filter.html:44
 msgid "filter"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:14
+msgid "opinion_fsfe_chopen"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:19
+#: core/templates/core/candidates/index.html:28
+msgid "own_opinion"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:26
+#: core/templates/core/profile/description.html:45
+msgid "add_own_opinion"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:27
+msgid "add_own_opinion_here"
 msgstr ""
 
 #: core/templates/core/candidates/row.html:26
@@ -240,8 +258,6 @@ msgstr ""
 #: core/templates/core/compare/index.html:35
 #: core/templates/core/edit/questions.html:17
 #: core/templates/core/edit/questions.html:33
-#: core/templates/core/profile/questions.html:9
-#: core/templates/core/profile/questions.html:25
 msgid "applies_not"
 msgstr ""
 
@@ -249,8 +265,6 @@ msgstr ""
 #: core/templates/core/compare/index.html:36
 #: core/templates/core/edit/questions.html:18
 #: core/templates/core/edit/questions.html:34
-#: core/templates/core/profile/questions.html:10
-#: core/templates/core/profile/questions.html:26
 msgid "applies"
 msgstr ""
 
@@ -276,12 +290,22 @@ msgstr ""
 msgid "other"
 msgstr ""
 
-#: core/templates/core/edit/questions.html:62
+#: core/templates/core/edit/questions.html:60
 msgid "publish_answers"
 msgstr ""
 
-#: core/templates/core/edit/questions.html:69
+#: core/templates/core/edit/questions.html:66
 msgid "unpublish_answers"
+msgstr ""
+
+#: core/templates/core/helpers/scale.html:5
+#: core/templates/core/profile/description.html:36
+msgid "no"
+msgstr ""
+
+#: core/templates/core/helpers/scale.html:10
+#: core/templates/core/profile/description.html:36
+msgid "yes"
 msgstr ""
 
 #: core/templates/core/party/dashboard.html:17
@@ -296,7 +320,7 @@ msgid "export"
 msgstr ""
 
 #: core/templates/core/party/dashboard.html:37
-#: core/templates/core/party/menu.html:7
+#: core/templates/core/party/menu.html:7 templates/navbar.html:33
 msgid "logout"
 msgstr ""
 
@@ -332,87 +356,75 @@ msgstr ""
 msgid "login"
 msgstr ""
 
-#: core/templates/core/party/menu.html:4 templates/navbar.html:22
+#: core/templates/core/party/menu.html:4 templates/navbar.html:27
 msgid "dashboard"
-msgstr ""
-
-#: core/templates/core/profile/description.html:36
-msgid "yes"
-msgstr ""
-
-#: core/templates/core/profile/description.html:36
-msgid "no"
 msgstr ""
 
 #: core/templates/core/profile/description.html:40
 msgid "show_own_spider"
 msgstr ""
 
-#: core/templates/core/profile/description.html:45
-msgid "add_own_opinion"
-msgstr ""
-
-#: core/templates/core/profile/questions.html:32
+#: core/templates/core/profile/questions.html:30
 msgid "politician_answer"
 msgstr ""
 
-#: core/templates/core/profile/questions.html:33
+#: core/templates/core/profile/questions.html:31
 msgid "own_answer"
 msgstr ""
 
-#: core/views.py:44
-msgid "profile_saved_successfully"
-msgstr ""
-
-#: core/views.py:170
-msgid "answers_published_successfully"
-msgstr ""
-
-#: core/views.py:181
-msgid "answers_unpublished_successfully"
-msgstr ""
-
-#: core/views.py:260
+#: core/views.py:128
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 
-#: core/views.py:335
+#: core/views.py:166
+msgid "profile_saved_successfully"
+msgstr ""
+
+#: core/views.py:233
+msgid "answers_published_successfully"
+msgstr ""
+
+#: core/views.py:243
+msgid "answers_unpublished_successfully"
+msgstr ""
+
+#: core/views.py:359
 msgid "login_successful"
 msgstr ""
 
-#: core/views.py:338
+#: core/views.py:362
 msgid "login_error"
 msgstr ""
 
-#: core/views.py:364
+#: core/views.py:388
 msgid "politician_add_success"
 msgstr ""
 
-#: core/views.py:367
+#: core/views.py:391
 msgid "politician_add_error"
 msgstr ""
 
-#: core/views.py:390
+#: core/views.py:414
 msgid "politician_edit_success"
 msgstr ""
 
-#: core/views.py:393
+#: core/views.py:417
 msgid "politician_edit_error"
 msgstr ""
 
-#: core/views.py:432
+#: core/views.py:456
 msgid "politician_delete_success"
 msgstr ""
 
-#: freedomvote/settings.py:166
+#: freedomvote/settings.py:167
 msgid "german"
 msgstr ""
 
-#: freedomvote/settings.py:167
+#: freedomvote/settings.py:168
 msgid "french"
 msgstr ""
 
-#: freedomvote/settings.py:168
+#: freedomvote/settings.py:169
 msgid "italian"
 msgstr ""
 
