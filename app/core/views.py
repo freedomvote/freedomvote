@@ -338,13 +338,18 @@ def politician_statistic_view(request, politician_id):
             'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
         }
     elif request.GET.has_key('evaluate'):
-        value_list    = []
-        category_list = []
+        pairs = []
         statistics    = get_cookie(request, 'statistics', {})
         for k, v in statistics.iteritems():
             category_id = int(re.sub('category_', '', k))
-            value_list.append(Statistic.get_accordance(politician_id, category_id, (int(v)*10)))
-            category_list.append(Category.objects.get(id=category_id).name)
+            pairs.append({
+                'category': Category.objects.get(id=category_id).name,
+                'value':    Statistic.get_accordance(politician_id, category_id, (int(v)*10))
+            })
+
+        sorted_pairs = sorted(pairs, key=lambda k: k['category'])
+        value_list = [i['value'] for i in sorted_pairs]
+        category_list = [i['category'] for i in sorted_pairs]
 
     else:
         value_list = [s.accordance for s in statistics]
