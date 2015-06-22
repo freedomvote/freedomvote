@@ -85,16 +85,6 @@ body {
   background-color: #337ab7;
 }
 
-.slider-readonly .ui-slider-handle {
-  border: none;
-  background: none;
-  background-image: url("images/triangle.png");
-  background-size: 85% 85%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  border-radius: 0px;
-}
-
 .bottom-buffer {
   margin-bottom: 10px;
 }
@@ -188,7 +178,18 @@ svg.img-thumbnail {
   padding: 15px 5px;
 }
 
+.scale {
+  padding: 0 7px;
+  height: 25px;
+}
+
 @media(max-width:767px){
+
+  .scale {
+    height: 15px;
+    margin-top: 5px;
+  }
+
   .center-xs {
     text-align: center;
   }
