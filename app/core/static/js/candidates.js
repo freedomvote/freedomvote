@@ -1,7 +1,11 @@
-jQuery(function ($){
+jQuery(function() {
   'use strict'
 
-  const sizeXs = 767
+  $('.add-popover').each(function() {
+    $(this).popover({container:'body', html:true})
+  })
+
+  const size = 992
 
   function initChart(data) {
     $('.statistic').each(function(){
@@ -12,7 +16,7 @@ jQuery(function ($){
           chart: {
             type: 'bar',
             backgroundColor: 'transparent',
-            height: data.values.length * 20 * (deviceWidth <= sizeXs ? 2.5 : 1)
+            height: data.values.length * 20 * (deviceWidth <= size ? 2.5 : 1)
           },
           title: {
             text: ' '
@@ -61,10 +65,10 @@ jQuery(function ($){
   $(window).resize(function() {
     var newDeviceWidth = $(window).width()
 
-    if ((deviceWidth <= sizeXs && newDeviceWidth > sizeXs) || (deviceWidth > sizeXs && newDeviceWidth <= sizeXs)) {
+    if ((deviceWidth <= size && newDeviceWidth > size) || (deviceWidth > size && newDeviceWidth <= size)) {
       $('.statistic').each(function() {
         var chart = $(this).highcharts()
-        var height = chart.series[0].data.length * 20 * (newDeviceWidth <= sizeXs ? 2.5 : 1)
+        var height = chart.series[0].data.length * 20 * (newDeviceWidth <= size ? 2.5 : 1)
         var width = $(this).width()
         chart.setSize(width, height, false)
       })

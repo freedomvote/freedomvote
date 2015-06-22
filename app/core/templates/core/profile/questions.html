@@ -5,7 +5,7 @@
     <thead>
         <th>
             <div class="row">
-                <div class="col-md-6 col-lg-4 pull-right hidden-xs">
+                <div class="col-md-6 col-lg-4 col-sm-6 pull-right hidden-xs">
                     {% include 'core/helpers/scale.html' %}
                 </div>
             </div>
@@ -16,10 +16,10 @@
         <tr>
             <td>
                 <div class="row">
-                    <div class="col-md-6 col-lg-8 col-xs-12">
+                    <div class="col-sm-6 col-md-6 col-lg-8 col-xs-12">
                         {{answer.politician_ans.question.text}} {{answer.politician_ans.question.get_description_code|safe}}
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xs-12">
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
                         <div class="visible-xs">
                             {% include 'core/helpers/scale.html' %}
                         </div>

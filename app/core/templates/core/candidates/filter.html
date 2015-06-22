@@ -1,8 +1,9 @@
 {% load i18n %}
 
-<form method="get" class="form-inline">
+<form method="get">
     {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate">{% endif %}
-    <div class="form-group">
+    <div class="row form-row">
+    <div class="col-md-4 col-lg-4">
         <select name="category" class="form-control">
             <option value="0">{% trans 'sort_by_category' %}...</option>
             <option disabled>─────────────────</option>
@@ -16,7 +17,7 @@
             {% endfor %}
         </select>
     </div>
-    <div class="form-group">
+    <div class="col-md-4 col-lg-4">
         <select name="state" class="form-control">
             <option value="0">{% trans 'filter_by_state' %}...</option>
             <option disabled>─────────────────</option>
@@ -30,7 +31,7 @@
             {% endfor %}
         </select>
     </div>
-    <div class="form-group">
+    <div class="col-md-2 col-lg-2">
         <input
          name="search"
          type="text"
@@ -39,5 +40,8 @@
          value="{{request.GET.search}}"
         >
     </div>
-    <input type="submit" class="btn btn-primary form-control" value="{% trans 'filter' %}">
+    <div class="col-md-2 col-lg-2">
+        <input type="submit" class="btn btn-primary btn-justified" value="{% trans 'filter' %}">
+    </div>
+    </div>
 </form>

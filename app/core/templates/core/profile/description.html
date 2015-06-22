@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-6"><label> {% trans 'show_own_spider' %}</label></div>
             <div class="col-md-6">
-                {% if request.COOKIES.statistics %}
+                {% if 'statistics' in request.COOKIES and request.COOKIES.statistics != '{}' %}
                 <input type="checkbox" id="show_citizen" checked>
                 {% else %}
                 <a href="{% url 'compare' %}">{% trans 'add_own_opinion' %}</a>
