@@ -85,12 +85,19 @@ body {
   background-color: #337ab7;
 }
 
+.slider {
+  margin: 0 7px;
+}
+
 .bottom-buffer {
   margin-bottom: 10px;
 }
 
-textarea.note {
-  margin-top: 10px;
+.note {
+  margin: 10px 7px 0;
+}
+
+.note textarea {
   resize: vertical;
 }
 
@@ -217,6 +224,10 @@ svg.img-thumbnail {
   .scale {
     height: 15px;
     margin-top: 5px;
+  }
+
+  .scale-slider {
+    margin: 5px 0 10px;
   }
 
   .center-xs {

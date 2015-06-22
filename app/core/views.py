@@ -157,7 +157,7 @@ def politician_edit_view(request, unique_key):
 def politician_edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
     link_types = LinkType.objects.all().order_by('name')
-    links      = Link.objects.filter(politician=politician).order_by('-type__name')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
 
     if request.POST:
         form = PoliticianForm(request.POST, request.FILES, instance=politician)

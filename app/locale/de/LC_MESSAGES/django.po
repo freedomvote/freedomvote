@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 13:27+0000\n"
+"POT-Creation-Date: 2015-06-22 13:52+0000\n"
 "PO-Revision-Date: 2015-06-22 15:29+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -186,7 +186,7 @@ msgstr "Fragen"
 msgid "agreement_level"
 msgstr "Einverständnis"
 
-#: core/models.py:238 core/templates/core/edit/questions.html:46
+#: core/models.py:238 core/templates/core/edit/questions.html:45
 msgid "note"
 msgstr "Bemerkung"
 
@@ -254,25 +254,11 @@ msgstr "Details"
 msgid "your_opinion_to"
 msgstr "Wie stehen Sie zu..."
 
-#: core/templates/core/compare/index.html:19
-#: core/templates/core/compare/index.html:35
-#: core/templates/core/edit/questions.html:17
-#: core/templates/core/edit/questions.html:33
-msgid "applies_not"
-msgstr "Trifft gar nicht zu"
-
-#: core/templates/core/compare/index.html:20
-#: core/templates/core/compare/index.html:36
-#: core/templates/core/edit/questions.html:18
-#: core/templates/core/edit/questions.html:34
-msgid "applies"
-msgstr "Trifft voll und ganz zu"
-
-#: core/templates/core/compare/index.html:53
+#: core/templates/core/compare/index.html:51
 msgid "evaluate"
 msgstr "Auswerten"
 
-#: core/templates/core/compare/index.html:54
+#: core/templates/core/compare/index.html:52
 #: core/templates/core/edit/profile.html:70
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
@@ -449,3 +435,9 @@ msgstr "Quelle"
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu umschalten"
+
+#~ msgid "applies_not"
+#~ msgstr "Trifft gar nicht zu"
+
+#~ msgid "applies"
+#~ msgstr "Trifft voll und ganz zu"
