@@ -280,7 +280,8 @@ class Statistic(models.Model):
                 c.id = q.category_id
             )
             WHERE s.politician_id = %s
-            GROUP BY s.id, q.category_id
+            GROUP BY s.id, q.category_id, c.name
+            ORDER BY c.name
         ''', [politician_id])
 
     class Meta:
