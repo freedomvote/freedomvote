@@ -69,10 +69,6 @@ body {
   padding-top: 60px;
 }
 
-.buttons form {
-  display: inline;
-}
-
 .ui-slider {
   background: none;
   background-color: #555555 !important;
@@ -103,6 +99,10 @@ body {
 
 .details .row {
   margin-bottom: 5px;
+}
+
+.picture {
+  padding-bottom: 10px;
 }
 
 svg.img-thumbnail {
@@ -207,7 +207,7 @@ svg.img-thumbnail {
   width: 100%;
 }
 
-@media(max-width:992px){
+@media only screen and (max-width:767px) {
 
   .form-row div {
     padding: 0 15px 15px;
@@ -215,10 +215,6 @@ svg.img-thumbnail {
 
   .form-row div:last-child {
     padding: 0 15px 0;
-  }
-
-  .switch {
-    margin-bottom: 15px;
   }
 
   .scale {
@@ -243,18 +239,91 @@ svg.img-thumbnail {
     margin: 50px auto auto;
   }
 
-  .title-row-xs {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 12px;
+  .switch {
+    padding-bottom: 15px;
   }
 
-  .title-row-xs div:first-child {
-    padding-right: 0;
+  .button-row div {
+    padding-bottom: 10px;
   }
 
-  .title-row-xs div:last-child {
-    padding-left: 0;
+  .button-row div:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .button-row div {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .button-row div:first-child {
+    padding-left: 15px;
+  }
+
+  .button-row div:last-child {
+    padding-right: 15px;
+  }
+
+  .form-row div:first-child {
+    padding-bottom: 10px;
+  }
+
+  .form-row div:nth-child(2) {
+    padding-bottom: 10px;
+  }
+
+  .form-row div:nth-child(odd) {
+    padding-right: 5px;
+    padding-left: 15px;
+  }
+
+  .form-row div:nth-child(even) {
+    padding-right: 15px;
+    padding-left: 5px;
+  }
+
+  .switch {
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .button-row div {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .button-row div:first-child {
+    padding-left: 15px;
+  }
+
+  .button-row div:last-child {
+    padding-right: 15px;
+  }
+
+  .form-row div {
+    padding-right: 5px;
+    padding-bottom: 0;
+  }
+
+  .switch {
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .button-row div {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+
+  .button-row div:first-child {
+    padding-left: 15px;
+  }
+
+  .button-row div:last-child {
+    padding-right: 15px;
   }
 }

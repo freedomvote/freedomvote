@@ -26,10 +26,10 @@
             <tr>
                 <td>
                     <div class="row">
-                        <div class="col-md-6 col-lg-8 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-lg-8 col-xs-12">
                             {{d.question.text}} {{d.question.get_description_code|safe}}
                         </div>
-                        <div class="col-md-6 col-lg-4 col-xs-12">
+                        <div class="col-md-6 col-sm-6 col-lg-4 col-xs-12">
                             <div class="visible-xs scale-slider">
                                 {% include 'core/helpers/scale.html' %}
                             </div>
@@ -47,10 +47,16 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="text-right buttons">
-        <a class="btn btn-default {% if 'answers' not in request.COOKIES or request.COOKIES.answers == '{}' %}disabled{% endif %}" id="evaluate" href="{% url 'candidates' %}?evaluate">{% trans 'evaluate' %}</a>
-        <a class="btn btn-default" href="{% url 'compare_reset' %}">{% trans 'reset_answers' %}</a>
-        <input type="submit" class="btn btn-primary" value="{% trans 'save' %}">
+    <div class="row button-row">
+        <div class="col-lg-3 col-sm-4 col-md-3 col-md-offset-3">
+            <a class="btn btn-default btn-justified {% if 'answers' not in request.COOKIES or request.COOKIES.answers == '{}' %}disabled{% endif %}" id="evaluate" href="{% url 'candidates' %}?evaluate">{% trans 'evaluate' %}</a>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-md-3">
+            <a class="btn btn-default btn-justified" href="{% url 'compare_reset' %}">{% trans 'reset_answers' %}</a>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-md-3">
+            <input type="submit" class="btn btn-primary btn-justified" value="{% trans 'save' %}">
+        </div>
     </div>
 </form>
 {% endblock %}
