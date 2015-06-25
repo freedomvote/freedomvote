@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 
-{% load i18n staticfiles %}
+{% load i18n staticfiles helpers %}
 
 {% block 'scripts' %}
 <script src="{% static 'js/candidates.js' %}"></script>
@@ -9,12 +9,12 @@
 {% block 'content' %}
 
 <div class="row bottom-buffer">
-    <div class="col-xs-12 col-md-3 col-lg-3">
-        <div class="btn-group btn-group-justified switch">
-            <a href="{% url 'candidates' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_fsfe_chopen' %}</a>
+    <div class="col-xs-12 col-md-4 col-lg-3 col-md-offset-8 col-lg-offset-0 switch">
+        <div class="btn-group btn-group-justified">
+            <a href="{% url 'candidates' %}{% get_params request 'evaluate' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_fsfe_chopen' %}</a>
             {% if 'statistics' in request.COOKIES and request.COOKIES.statistics != '{}' %}
                 <a
-                 href="{% url 'candidates' %}?evaluate"
+                    href="{% url 'candidates' %}{% get_params request 'evaluate' add='evaluate=1' %}"
                  class="btn btn-default {% if 'evaluate' in request.GET %}active{% endif %}"
                 >{% trans 'own_opinion' %}</a>
             {% else %}
@@ -29,7 +29,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="col-xs-12 col-md-9 col-lg-offset-1 col-lg-8">
+    <div class="col-xs-12 col-md-12 col-lg-offset-1 col-lg-8">
         {% include 'core/candidates/filter.html' %}
     </div>
 </div>

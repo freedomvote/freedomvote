@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-22 14:35+0000\n"
+"POT-Creation-Date: 2015-06-25 11:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: core/admin.py:21 core/views.py:458
+#: core/admin.py:21 core/views.py:508
 msgid "unique_url"
 msgstr ""
 
-#: core/admin.py:44 core/models.py:57 core/models.py:198 core/models.py:253
+#: core/admin.py:44 core/models.py:57 core/models.py:208 core/models.py:263
 msgid "category"
 msgstr ""
 
@@ -34,15 +34,13 @@ msgstr ""
 msgid "candidates"
 msgstr ""
 
-#: core/models.py:18 core/models.py:32 core/models.py:50 core/models.py:163
+#: core/models.py:18 core/models.py:32 core/models.py:50 core/models.py:173
 msgid "name"
 msgstr ""
 
 #: core/models.py:25 core/models.py:104
-#: core/templates/core/candidates/row.html:15
-#: core/templates/core/candidates/row.html:19
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:15 core/views.py:457
+#: core/templates/core/profile/description.html:15 core/views.py:507
 msgid "state"
 msgstr ""
 
@@ -55,8 +53,6 @@ msgid "shortname"
 msgstr ""
 
 #: core/models.py:43 core/models.py:110
-#: core/templates/core/candidates/row.html:16
-#: core/templates/core/candidates/row.html:23
 #: core/templates/core/profile/description.html:20
 msgid "party"
 msgstr ""
@@ -74,12 +70,12 @@ msgid "user"
 msgstr ""
 
 #: core/models.py:68 core/templates/core/party/dashboard.html:51
-#: core/views.py:455
+#: core/views.py:505
 msgid "first_name"
 msgstr ""
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:52
-#: core/views.py:456
+#: core/views.py:506
 msgid "last_name"
 msgstr ""
 
@@ -111,102 +107,102 @@ msgstr ""
 msgid "party_other"
 msgstr ""
 
-#: core/models.py:152 core/models.py:178 core/models.py:232 core/models.py:249
+#: core/models.py:162 core/models.py:188 core/models.py:242 core/models.py:259
 msgid "politician"
 msgstr ""
 
-#: core/models.py:153
+#: core/models.py:163
 msgid "politicians"
 msgstr ""
 
-#: core/models.py:159
+#: core/models.py:169
 msgid "icon"
 msgstr ""
 
-#: core/models.py:167 core/templates/core/edit/links.html:21
+#: core/models.py:177 core/templates/core/edit/links.html:21
 msgid "link_type"
 msgstr ""
 
-#: core/models.py:168
+#: core/models.py:178
 msgid "link_types"
 msgstr ""
 
-#: core/models.py:174
+#: core/models.py:184
 msgid "type"
 msgstr ""
 
-#: core/models.py:181 core/templates/core/edit/links.html:29
+#: core/models.py:191 core/templates/core/edit/links.html:29
 msgid "url"
 msgstr ""
 
-#: core/models.py:185
+#: core/models.py:195
 msgid "link"
 msgstr ""
 
-#: core/models.py:186 core/templates/core/edit/profile.html:75
+#: core/models.py:196 core/templates/core/edit/profile.html:75
 #: core/templates/core/profile/description.html:52
 msgid "links"
 msgstr ""
 
-#: core/models.py:191
+#: core/models.py:201
 msgid "preferred_answer"
 msgstr ""
 
-#: core/models.py:194
+#: core/models.py:204
 msgid "question_number"
 msgstr ""
 
-#: core/models.py:201
+#: core/models.py:211
 msgid "text"
 msgstr ""
 
-#: core/models.py:206
+#: core/models.py:216
 msgid "description"
 msgstr ""
 
-#: core/models.py:216
+#: core/models.py:226
 msgid "no_question_description"
 msgstr ""
 
-#: core/models.py:218
+#: core/models.py:228
 msgid "toggle_description"
 msgstr ""
 
-#: core/models.py:221 core/models.py:228
+#: core/models.py:231 core/models.py:238
 #: core/templates/core/profile/questions.html:32
 #: core/templates/core/profile/questions.html:33
 msgid "question"
 msgstr ""
 
-#: core/models.py:222 core/templates/core/edit/menu.html:8
+#: core/models.py:232 core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr ""
 
-#: core/models.py:235
+#: core/models.py:245
 msgid "agreement_level"
 msgstr ""
 
-#: core/models.py:238 core/templates/core/edit/questions.html:45
+#: core/models.py:248 core/templates/core/edit/questions.html:45
 msgid "note"
 msgstr ""
 
-#: core/models.py:242
+#: core/models.py:252
 msgid "answer"
 msgstr ""
 
-#: core/models.py:243
+#: core/models.py:253
 msgid "answers"
 msgstr ""
 
-#: core/models.py:256
+#: core/models.py:266
 msgid "value"
 msgstr ""
 
-#: core/models.py:288
+#: core/models.py:298
 msgid "statistic"
 msgstr ""
 
-#: core/models.py:289
+#: core/models.py:299
 msgid "statistics"
 msgstr ""
 
@@ -244,25 +240,21 @@ msgstr ""
 msgid "add_own_opinion_here"
 msgstr ""
 
-#: core/templates/core/candidates/row.html:26
-msgid "details"
-msgstr ""
-
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
 #: core/templates/core/profile/questions.html:3
 msgid "your_opinion_to"
 msgstr ""
 
-#: core/templates/core/compare/index.html:51
+#: core/templates/core/compare/index.html:52
 msgid "evaluate"
 msgstr ""
 
-#: core/templates/core/compare/index.html:52
+#: core/templates/core/compare/index.html:55
 msgid "reset_answers"
 msgstr ""
 
-#: core/templates/core/compare/index.html:53
+#: core/templates/core/compare/index.html:58
 #: core/templates/core/edit/profile.html:70
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
@@ -370,43 +362,47 @@ msgstr ""
 msgid "answers_resetted"
 msgstr ""
 
-#: core/views.py:180
+#: core/views.py:203
+msgid "total"
+msgstr ""
+
+#: core/views.py:286
 msgid "profile_saved_successfully"
 msgstr ""
 
-#: core/views.py:247
+#: core/views.py:353
 msgid "answers_published_successfully"
 msgstr ""
 
-#: core/views.py:257
+#: core/views.py:363
 msgid "answers_unpublished_successfully"
 msgstr ""
 
-#: core/views.py:373
+#: core/views.py:423
 msgid "login_successful"
 msgstr ""
 
-#: core/views.py:376
+#: core/views.py:426
 msgid "login_error"
 msgstr ""
 
-#: core/views.py:402
+#: core/views.py:452
 msgid "politician_add_success"
 msgstr ""
 
-#: core/views.py:405
+#: core/views.py:455
 msgid "politician_add_error"
 msgstr ""
 
-#: core/views.py:428
+#: core/views.py:478
 msgid "politician_edit_success"
 msgstr ""
 
-#: core/views.py:431
+#: core/views.py:481
 msgid "politician_edit_error"
 msgstr ""
 
-#: core/views.py:470
+#: core/views.py:520
 msgid "politician_delete_success"
 msgstr ""
 

@@ -190,10 +190,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 THUMBNAIL_ALIASES = {
     '': {
+        'small'  : {'size' : (50,   50), 'crop' : True, 'quality' : 100},
         'medium' : {'size' : (300, 300), 'crop' : True, 'quality' : 100},
-        'small'  : {'size' : (120, 120), 'crop' : True, 'quality' : 100},
         'large'  : {'size' : (500, 500), 'crop' : True, 'quality' : 100},
-        'icon'   : {'size' : ( 16,  16),   'crop' : True, 'quality' : 100},
+        'icon'   : {'size' : ( 16,  16), 'crop' : True, 'quality' : 100},
     },
 }
 

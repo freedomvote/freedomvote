@@ -1,37 +1,24 @@
-{% load thumbnail staticfiles i18n %}
+{% load thumbnail staticfiles i18n helpers %}
 <tr>
     <td>
-        <div class="row">
-            <div class="col-md-2 center-xs">
+        <div class="row candidate-row">
+            <div class="col-xs-12 col-md-5 col-sm-6 center-xs">
                 {% if politician.image %}
                     <img class="img-thumbnail img-responsive" src="{{politician.image|thumbnail_url:'small'}}">
                 {% else %}
-                    <img class="img-thumbnail img-responsive" width="130px" src="{% static 'images/placeholder.svg' %}">
+                    <img class="img-thumbnail img-responsive" width="60px" src="{% static 'images/placeholder.svg' %}">
                 {% endif %}
+                <br class="visible-xs">
+                <a href="{% url 'politician' politician_id=politician.id %}">{{politician.first_name}} {{politician.last_name}} {{politician.get_details}}</a>
             </div>
-            <div class="col-md-4 center-xs">
-                <h4>{{politician.first_name}} {{politician.last_name}}</h4>
-                <div class="visible-xs">
-                    <p>{% trans 'state' %}: {{ politician.state_name }}</p>
-                    <p>{% trans 'party' %}: {{ politician.party_name }}</p>
-                </div>
-                <div class="row hidden-xs">
-                    <p class="col-md-4">{% trans 'state' %}</p>
-                    <p class="col-md-8">{{ politician.state_name }}</p>
-                </div>
-                <div class="row hidden-xs">
-                    <p class="col-md-4">{% trans 'party' %}</p>
-                    <p class="col-md-8">{{ politician.party_name }}</p>
-                </div>
-                <a href="{% url 'politician' politician_id=politician.id %}">{% trans 'details' %}...</a>
-            </div>
-            <div class="col-md-6">
+            <div class="col-xs-12 col-md-7 col-sm-6 charts">
                 <div
                  class="statistic"
                  id="statistic-{{politician.id}}"
-                 data-url="{% url 'politician_statistic' politician_id=politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"
+                 data-url="{% url 'politician_statistic' politician_id=politician.id %}{% get_params request 'state' 'search' %}"
                 >
                 </div>
+                <div class="detail" id="detail-{{politician.id}}"></div>
             </div>
         </div>
     </td>

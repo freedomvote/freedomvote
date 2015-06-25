@@ -162,6 +162,112 @@ def compare_reset_view(request):
     return response
 
 ##
+# PUBLIC POLITICIAN VIEWS
+##
+
+def politician_view(request, politician_id):
+    politician = get_object_or_404(Politician, id=politician_id)
+    answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
+    links      = Link.objects.filter(politician=politician).order_by('type__name')
+    cookie     = get_cookie(request, 'answers', {})
+    answer_obs = []
+
+    for a in answers:
+        answer_obs.append({
+            'own_ans': cookie.get('question_%s' % a.question.id, None),
+            'politician_ans': a
+        })
+
+    return render(
+        request,
+        'core/profile/index.html',
+        {
+            'politician' : politician,
+            'answers'    : answer_obs,
+            'links'      : links
+        }
+    )
+def politician_statistic_spider_view(request, politician_id):
+    statistics = Statistic.get_statistics_by_politician(politician_id)
+    stats      = get_cookie(request, 'statistics', {})
+    values     = {
+        'politician' : [s.accordance for s in statistics],
+        'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
+    }
+
+    return JsonResponse({'categories':[s.category.name for s in statistics],'values':values})
+
+def politician_statistic_view(request, politician_id):
+    statistics = Statistic.get_statistics_by_politician(politician_id)
+    category_id = request.GET.get('category', False)
+    titles  = [force_unicode(_('total'))]
+
+    if category_id:
+        category = get_object_or_404(Category, id=category_id)
+        titles.append(category.name)
+
+    if request.GET.has_key('evaluate'):
+        pairs = []
+        statistics    = get_cookie(request, 'statistics', {})
+        for k, v in statistics.iteritems():
+            cid = int(re.sub('category_', '', k))
+            pairs.append({
+                'category': Category.objects.get(id=cid).name,
+                'value':    Statistic.get_accordance(politician_id, cid, (int(v)*10))
+            })
+
+        sorted_pairs = sorted(pairs, key=lambda k: k['category'])
+
+        detail = {
+            'categories' : [i['category'] for i in sorted_pairs],
+            'values'     : [i['value']    for i in sorted_pairs]
+        }
+
+        total = sum(detail['values']) / len(detail['values'])
+        pos     = [total]
+        neg     = [(10 - total)]
+
+        if category_id:
+            val = statistics.get('category_%s' % category_id)
+            pos.append(val)
+            neg.append(10 - val)
+
+        summary = {
+            'titles' : titles,
+            'values' : {
+                'positive' : pos,
+                'negative' : neg
+            }
+        }
+
+    else:
+        values  = [s.accordance for s in statistics]
+        total   = sum(values) / len(values)
+        pos     = [total]
+        neg     = [(10 - total)]
+
+        if category_id:
+            statistic = Statistic.objects.get(politician_id=politician_id, category=category)
+            pos.append(statistic.value / 10)
+            neg.append(10 - statistic.value / 10)
+
+        summary = {
+            'titles' : titles,
+            'values' : {
+                'positive' : pos,
+                'negative' : neg
+            }
+        }
+
+        detail  = {
+            'categories' : [s.category.name for s in statistics],
+            'values'     : values
+        }
+
+
+    return JsonResponse({'summary': summary, 'detail': detail})
+
+##
 # PRIVATE POLITICIAN VIEWS
 ##
 
@@ -299,62 +405,6 @@ def politician_link_delete_view(request, unique_key, link_id):
         'link_types' : types,
         'politician' : politician
     })
-
-##
-# PUBLIC POLITICIAN VIEWS
-##
-
-def politician_view(request, politician_id):
-    politician = get_object_or_404(Politician, id=politician_id)
-    answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
-    links      = Link.objects.filter(politician=politician).order_by('type__name')
-    cookie     = get_cookie(request, 'answers', {})
-    answer_obs = []
-
-    for a in answers:
-        answer_obs.append({
-            'own_ans': cookie.get('question_%s' % a.question.id, None),
-            'politician_ans': a
-        })
-
-    return render(
-        request,
-        'core/profile/index.html',
-        {
-            'politician' : politician,
-            'answers'    : answer_obs,
-            'links'      : links
-        }
-    )
-
-def politician_statistic_view(request, politician_id):
-    statistics = Statistic.get_statistics_by_politician(politician_id)
-
-    category_list = [s.category.name for s in statistics]
-    if request.GET.has_key('compare'):
-        stats = get_cookie(request, 'statistics', {})
-        value_list = {
-            'politician' : [s.accordance for s in statistics],
-            'citizen'    : [stats.get('category_%d' % s.category.id, 0) for s in statistics]
-        }
-    elif request.GET.has_key('evaluate'):
-        value_list    = []
-        category_list = []
-        statistics    = get_cookie(request, 'statistics', {})
-        for k, v in statistics.iteritems():
-            category_id = int(re.sub('category_', '', k))
-            value_list.append(Statistic.get_accordance(politician_id, category_id, (int(v)*10)))
-            category_list.append(Category.objects.get(id=category_id).name)
-
-    else:
-        value_list = [s.accordance for s in statistics]
-
-    response = {
-        'categories' : category_list,
-        'values'     : value_list
-    }
-
-    return JsonResponse(response)
 
 ##
 # PARTY VIEWS
