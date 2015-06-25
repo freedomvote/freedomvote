@@ -12,7 +12,6 @@ To run Freedomvote in a VM, you need to install vagrant and virtualbox and execu
 
 ```bash
 $ make vagrant                   # build vagrant box
-$ make vagrant-collectstatic-dev # collect all staticfiles
 $ make vagrant-runserver         # run development server
 ```
 
