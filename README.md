@@ -9,7 +9,7 @@ Run `pip install -r requirements.txt` to install all requirements.
 
 ## Vagrant
 To run Freedomvote in a VM, you need to install vagrant and virtualbox and execute those commands:
-```
+```bash
 $ make vagrant                   # build vagrant box
 $ make vagrant-collectstatic-dev # collect all staticfiles
 $ make vagrant-runserver         # run development server
@@ -23,7 +23,7 @@ The translation are located in app/locale/\<LANG_CODE\>/LC_MESSAGES/django.po. A
 To install another language (English in this example) make the following steps:
 
 app/freedomvote/settings.py
-```
+```bash
 LANGUAGES = (
   ...
   ...
@@ -31,7 +31,7 @@ LANGUAGES = (
 )
 ```
 in your environment:
-```
+```bash
 $ python manage.py makemigrations
 $ python manage.py migrate
 $ python manage.py makemessages -l en
