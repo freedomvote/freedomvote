@@ -141,6 +141,16 @@ class Politician(models.Model):
         else:
             return '-'
 
+    def get_details(self):
+        if not self.party and not self.state:
+            return ''
+        elif self.party and not self.state:
+            return '(%s)' % self.party_name
+        elif not self.party and self.state:
+            return '(%s)' % self.state_name
+        else:
+            return '(%s, %s)' % (self.state_name, self.party_name)
+
     @property
     def unique_url(self):
         return '%s%s' % (
@@ -252,7 +262,7 @@ class Statistic(models.Model):
         Category,
         verbose_name        = _('category')
     )
-    value                   = models.FloatField(
+    value                   = models.IntegerField(
         verbose_name        = _('value')
     )
 

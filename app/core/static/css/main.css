@@ -27,6 +27,10 @@ footer, .push {
   cursor: pointer;
 }
 
+.statistic .highcharts-series {
+  cursor: pointer;
+}
+
 footer {
   border-top: 1px solid #E6E6E6;
   background-color: #F5F5F5;
@@ -108,7 +112,6 @@ body {
 svg.img-thumbnail {
   margin-bottom: -5px;
 }
-
 
 #messages {
   z-index: 2000;
@@ -207,7 +210,48 @@ svg.img-thumbnail {
   width: 100%;
 }
 
+.candidate-row {
+  height: 60px;
+}
+
+.detail {
+  position: fixed;
+  display: none;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: 2px solid lightgrey;
+  z-index: 1000;
+}
+
+.detail:after, .detail:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.detail:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #FFFFFF;
+  border-width: 15px;
+  margin-left: -15px;
+}
+.detail:before {
+  border-color: rgba(211, 211, 211, 0);
+  border-bottom-color: #d3d3d3;
+  border-width: 17px;
+  margin-left: -17px;
+}
+
 @media only screen and (max-width:767px) {
+
+  .candidate-row {
+    height: 140px;
+  }
 
   .form-row div {
     padding: 0 15px 15px;
