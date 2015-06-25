@@ -1,4 +1,1 @@
-/app/core/static/lib/bootstrap/* linguist-vendored
-/app/core/static/lib/highcharts/* linguist-vendored
-/app/core/static/lib/jquery/* linguist-vendored
-/app/core/static/lib/jquery-ui/* linguist-vendored
+/app/core/static/lib/ linguist-vendored
