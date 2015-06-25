@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+
+{% load i18n staticfiles %}
+
+{% block 'scripts' %}
+<script src="{% static 'js/candidates.js' %}"></script>
+{% endblock %}
+
+{% block 'content' %}
+
+<div class="row bottom-buffer">
+    <div class="col-xs-12 col-md-3 col-lg-3">
+        <div class="btn-group btn-group-justified switch">
+            <a href="{% url 'candidates' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_fsfe_chopen' %}</a>
+            {% if 'statistics' in request.COOKIES and request.COOKIES.statistics != '{}' %}
+                <a
+                 href="{% url 'candidates' %}?evaluate"
+                 class="btn btn-default {% if 'evaluate' in request.GET %}active{% endif %}"
+                >{% trans 'own_opinion' %}</a>
+            {% else %}
+                <a
+                 href="#"
+                 class="btn btn-default add-popover"
+                 data-toggle="popover"
+                 data-placement="bottom"
+                 title="{% trans 'add_own_opinion' %}"
+                 data-content="<a href=&quot;{% url 'compare' %}&quot;>{% trans 'add_own_opinion_here' %}</a>"
+                 >{% trans 'own_opinion' %}</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-9 col-lg-offset-1 col-lg-8">
+        {% include 'core/candidates/filter.html' %}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        {% include 'core/candidates/list.html' %}
+    </div>
+</div>
+{% endblock %}

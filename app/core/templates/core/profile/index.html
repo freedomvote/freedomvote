@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block 'scripts' %}
+    <script src="{% static 'lib/highcharts/highcharts-more.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+    <script src="{% static 'js/description_toggler.js' %}"></script>
+{% endblock %}
+
+{% block 'content' %}
+    {% include 'core/profile/description.html' %}
+    <hr>
+    {% include 'core/profile/questions.html' %}
+{% endblock %}

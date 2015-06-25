@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+
+{% block 'content' %}
+    <form class="login" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="password">{% trans 'login_label' %}</label>
+            <input class="form-control" id="password" name="password" type="password" autofocus autocomplete="off">
+        </div>
+        <input type="submit" value="{% trans 'login' %}" class="btn btn-primary form-control">
+    </form>
+{% endblock %}

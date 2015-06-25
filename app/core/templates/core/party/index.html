@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+
+{% block 'content' %}
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'core/party/menu.html' %}
+        </div>
+        <div class="col-md-9">
+            {% block 'subcontent' %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

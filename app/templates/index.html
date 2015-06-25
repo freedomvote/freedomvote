@@ -1,0 +1,44 @@
+{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags %}
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Freedomvote{% block 'title' %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/jquery-ui/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/jquery-ui/jquery-ui.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        {% render_block 'css' %}
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="wrapper">
+            {% cms_toolbar %}
+            {% show_menu 0 100 100 100 'navbar.html' %}
+            <div class="container content">
+                {% block 'content' %}{% endblock %}
+            </div>
+            <div class="push"></div>
+        </div>
+        {% include 'footer.html' %}
+        {% include 'messages.html' %}
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'lib/jquery-ui/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'lib/highcharts/highcharts.js' %}"></script>
+        <script src="{% static 'js/notify.js' %}"></script>
+        <script src="{% static 'js/language.js' %}"></script>
+        {% block 'scripts' %}{% endblock %}
+        {% render_block 'js' %}
+        {% if not debug %}{% tracking_code %}{% endif %}
+    </body>
+</html>

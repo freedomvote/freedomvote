@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+h2.politician_name {
+  margin-top: 0px;
+}
+
+.content {
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -200px;
+}
+
+footer, .push {
+  height: 200px;
+}
+
+.mouse {
+  cursor: pointer;
+}
+
+footer {
+  border-top: 1px solid #E6E6E6;
+  background-color: #F5F5F5;
+  padding: 25px 0;
+}
+
+input[name="image"] {
+  width: 200px !important;
+}
+
+footer .logos {
+  height: 50px;
+  width: 100%;
+}
+
+footer .logos tr {
+  padding: 0 5%;
+}
+
+footer .logos tr td {
+  width: 30%;
+  text-align: center;
+}
+
+footer .logo {
+  height: 50px;
+}
+
+footer address {
+  margin: 25px 0 15px;
+  font-style: italic;
+  text-align: center;
+}
+
+footer .github {
+  text-align: center;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.buttons form {
+  display: inline;
+}
+
+.ui-slider {
+  background: none;
+  background-color: #555555 !important;
+  opacity: 1;
+}
+
+.ui-slider .ui-slider-handle {
+  border: 1px solid #2e6da4;
+  background: none;
+  background-color: #337ab7;
+}
+
+.slider {
+  margin: 0 7px;
+}
+
+.bottom-buffer {
+  margin-bottom: 10px;
+}
+
+.note {
+  margin: 10px 7px 0;
+}
+
+.note textarea {
+  resize: vertical;
+}
+
+.details .row {
+  margin-bottom: 5px;
+}
+
+svg.img-thumbnail {
+  margin-bottom: -5px;
+}
+
+
+#messages {
+  z-index: 2000;
+  position: fixed;
+  top: 10px;
+  right: 0;
+  text-align: right;
+  height: 100%;
+  pointer-events: none;
+}
+
+#messages .alert {
+  pointer-events: auto;
+  margin-top: 10px;
+  text-align: left;
+  margin: 0 0 10px 0;
+}
+
+.desc-toggler {
+  cursor: pointer;
+}
+
+.desc-toggler.no-desc {
+  color: #777777;
+  cursor: default;
+}
+
+.desc {
+  background-color: #DDDDDD;
+  border: 1px solid lightgrey;
+  border: 1px solid lightgrey;
+  display: none;
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.navbar-logo {
+  height: 25px;
+  margin: 9px 5px 16px;
+}
+
+.source {
+  font-size: 10px;
+  float: right;
+}
+
+.login {
+  text-align: center;
+  margin: 150px auto auto;
+  width: 250px;
+}
+
+.dashboard-item {
+  text-align: center;
+}
+
+.dashboard-item p {
+  padding: 5px;
+  margin: 0;
+  color: #333;
+}
+
+.dashboard-link:hover {
+  text-decoration: none;
+}
+
+.language {
+  margin: 0;
+}
+
+.language ul li a {
+  padding: 15px 5px;
+}
+
+.scale {
+  padding: 0 7px;
+  height: 25px;
+}
+
+.form-row div {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.form-row div:first-child {
+  padding-left: 15px;
+}
+
+.form-row div:last-child {
+  padding-right: 15px;
+}
+
+.btn-justified {
+  width: 100%;
+}
+
+@media(max-width:992px){
+
+  .form-row div {
+    padding: 0 15px 15px;
+  }
+
+  .form-row div:last-child {
+    padding: 0 15px 0;
+  }
+
+  .switch {
+    margin-bottom: 15px;
+  }
+
+  .scale {
+    height: 15px;
+    margin-top: 5px;
+  }
+
+  .scale-slider {
+    margin: 5px 0 10px;
+  }
+
+  .center-xs {
+    text-align: center;
+  }
+
+  .navbar-logo {
+    height: 30px;
+    margin: 10px 16px
+  }
+
+  .login {
+    margin: 50px auto auto;
+  }
+
+  .title-row-xs {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+
+  .title-row-xs div:first-child {
+    padding-right: 0;
+  }
+
+  .title-row-xs div:last-child {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,42 @@
+{% load i18n %}
+
+<h2>{% trans 'your_opinion_to' %}</h2>
+<table class="table table-striped">
+    <thead>
+        <th>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 col-sm-6 pull-right hidden-xs">
+                    {% include 'core/helpers/scale.html' %}
+                </div>
+            </div>
+        </th>
+    </thead>
+    <tbody>
+        {% for answer in answers %}
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-8 col-xs-12">
+                        {{answer.politician_ans.question.text}} {{answer.politician_ans.question.get_description_code|safe}}
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
+                        <div class="visible-xs">
+                            {% include 'core/helpers/scale.html' %}
+                        </div>
+                        <div
+                         class="slider-readonly"
+                         data-slider-value="[ {{answer.politician_ans.agreement_level}}
+                         {% if answer.own_ans %}, {{answer.own_ans}}{% endif %} ]"
+                         data-slider-title="[ &quot;{% trans 'politician_answer' %}&quot;
+                         {% if answer.own_ans %}, &quot;{% trans 'own_answer' %}&quot;{% endif %} ]"
+                         data-slider-text="[ &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.politician_ans.agreement_level}} / 10&quot;
+                         {% if answer.own_ans %}, &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.own_ans}} / 10&quot;{% endif %} ]"
+                        ></div>
+                        <em>{{answer.politician_ans.note}}</em>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

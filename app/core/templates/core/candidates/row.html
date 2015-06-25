@@ -1,0 +1,38 @@
+{% load thumbnail staticfiles i18n %}
+<tr>
+    <td>
+        <div class="row">
+            <div class="col-md-2 center-xs">
+                {% if politician.image %}
+                    <img class="img-thumbnail img-responsive" src="{{politician.image|thumbnail_url:'small'}}">
+                {% else %}
+                    <img class="img-thumbnail img-responsive" width="130px" src="{% static 'images/placeholder.svg' %}">
+                {% endif %}
+            </div>
+            <div class="col-md-4 center-xs">
+                <h4>{{politician.first_name}} {{politician.last_name}}</h4>
+                <div class="visible-xs">
+                    <p>{% trans 'state' %}: {{ politician.state_name }}</p>
+                    <p>{% trans 'party' %}: {{ politician.party_name }}</p>
+                </div>
+                <div class="row hidden-xs">
+                    <p class="col-md-4">{% trans 'state' %}</p>
+                    <p class="col-md-8">{{ politician.state_name }}</p>
+                </div>
+                <div class="row hidden-xs">
+                    <p class="col-md-4">{% trans 'party' %}</p>
+                    <p class="col-md-8">{{ politician.party_name }}</p>
+                </div>
+                <a href="{% url 'politician' politician_id=politician.id %}">{% trans 'details' %}...</a>
+            </div>
+            <div class="col-md-6">
+                <div
+                 class="statistic"
+                 id="statistic-{{politician.id}}"
+                 data-url="{% url 'politician_statistic' politician_id=politician.id %}{% if 'evaluate' in request.GET.keys %}?evaluate{% endif %}"
+                >
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>

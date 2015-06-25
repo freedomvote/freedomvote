@@ -1,0 +1,451 @@
+# Freedomvote Translation
+# Copyright (C) Freedomvote
+# This file is distributed under the same license as the freedomvote package.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-22 14:35+0000\n"
+"PO-Revision-Date: 2015-06-22 16:36+0100\n"
+"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.1\n"
+
+#: core/admin.py:21 core/views.py:458
+msgid "unique_url"
+msgstr "Zugangslink"
+
+#: core/admin.py:44 core/models.py:57 core/models.py:198 core/models.py:253
+msgid "category"
+msgstr "Kategorie"
+
+#: core/menu.py:10
+msgid "compare"
+msgstr "Vergleichen"
+
+#: core/menu.py:11
+msgid "candidates"
+msgstr "Kandidaten"
+
+#: core/models.py:18 core/models.py:32 core/models.py:50 core/models.py:163
+msgid "name"
+msgstr "Name"
+
+#: core/models.py:25 core/models.py:104
+#: core/templates/core/candidates/row.html:15
+#: core/templates/core/candidates/row.html:19
+#: core/templates/core/party/dashboard.html:53
+#: core/templates/core/profile/description.html:15 core/views.py:457
+msgid "state"
+msgstr "Kanton"
+
+#: core/models.py:26
+msgid "states"
+msgstr "Kantone"
+
+#: core/models.py:36
+msgid "shortname"
+msgstr "Abkürzung"
+
+#: core/models.py:43 core/models.py:110
+#: core/templates/core/candidates/row.html:16
+#: core/templates/core/candidates/row.html:23
+#: core/templates/core/profile/description.html:20
+msgid "party"
+msgstr "Partei"
+
+#: core/models.py:44
+msgid "parties"
+msgstr "Parteien"
+
+#: core/models.py:58
+msgid "categories"
+msgstr "Kategorien"
+
+#: core/models.py:64
+msgid "user"
+msgstr "Benutzer"
+
+#: core/models.py:68 core/templates/core/party/dashboard.html:51
+#: core/views.py:455
+msgid "first_name"
+msgstr "Vorname"
+
+#: core/models.py:72 core/templates/core/party/dashboard.html:52
+#: core/views.py:456
+msgid "last_name"
+msgstr "Nachname"
+
+#: core/models.py:75
+msgid "email"
+msgstr "Email"
+
+#: core/models.py:81
+msgid "image"
+msgstr "Bild"
+
+#: core/models.py:85 core/templates/core/profile/description.html:35
+msgid "is_member_of_parliament"
+msgstr "Bisheriges Ratsmitglied"
+
+#: core/models.py:89 core/templates/core/profile/description.html:25
+msgid "past_contributions"
+msgstr "Bisherige Beiträge zum Thema"
+
+#: core/models.py:93 core/templates/core/profile/description.html:30
+msgid "future_plans"
+msgstr "Absichten und Pläne"
+
+#: core/models.py:97
+msgid "unique_key"
+msgstr "Zugangscode"
+
+#: core/models.py:116
+msgid "party_other"
+msgstr "Andere Partei"
+
+#: core/models.py:152 core/models.py:178 core/models.py:232 core/models.py:249
+msgid "politician"
+msgstr "Politiker"
+
+#: core/models.py:153
+msgid "politicians"
+msgstr "Politiker"
+
+#: core/models.py:159
+msgid "icon"
+msgstr "Icon"
+
+#: core/models.py:167 core/templates/core/edit/links.html:21
+msgid "link_type"
+msgstr "Linktyp"
+
+#: core/models.py:168
+msgid "link_types"
+msgstr "Linktypen"
+
+#: core/models.py:174
+msgid "type"
+msgstr "Typ"
+
+#: core/models.py:181 core/templates/core/edit/links.html:29
+msgid "url"
+msgstr "URL"
+
+#: core/models.py:185
+msgid "link"
+msgstr "Link"
+
+#: core/models.py:186 core/templates/core/edit/profile.html:75
+#: core/templates/core/profile/description.html:52
+msgid "links"
+msgstr "Links"
+
+#: core/models.py:191
+msgid "preferred_answer"
+msgstr "Bevorzugte Antwort"
+
+#: core/models.py:194
+msgid "question_number"
+msgstr "Fragenummer"
+
+#: core/models.py:201
+msgid "text"
+msgstr "Text"
+
+#: core/models.py:206
+msgid "description"
+msgstr "Beschreibung"
+
+#: core/models.py:216
+msgid "no_question_description"
+msgstr "Keine Beschreibung vorhanden"
+
+#: core/models.py:218
+msgid "toggle_description"
+msgstr "Beschreibung umschalten"
+
+#: core/models.py:221 core/models.py:228
+#: core/templates/core/profile/questions.html:32
+#: core/templates/core/profile/questions.html:33
+msgid "question"
+msgstr "Frage"
+
+#: core/models.py:222 core/templates/core/edit/menu.html:8
+msgid "questions"
+msgstr "Fragen"
+
+#: core/models.py:235
+msgid "agreement_level"
+msgstr "Einverständnis"
+
+#: core/models.py:238 core/templates/core/edit/questions.html:45
+msgid "note"
+msgstr "Bemerkung"
+
+#: core/models.py:242
+msgid "answer"
+msgstr "Antwort"
+
+#: core/models.py:243
+msgid "answers"
+msgstr "Antworten"
+
+#: core/models.py:256
+msgid "value"
+msgstr "Wert"
+
+#: core/models.py:288
+msgid "statistic"
+msgstr "Statistik"
+
+#: core/models.py:289
+msgid "statistics"
+msgstr "Statistiken"
+
+#: core/templates/core/candidates/filter.html:8
+msgid "sort_by_category"
+msgstr "Nach Kategorie sortieren"
+
+#: core/templates/core/candidates/filter.html:22
+msgid "filter_by_state"
+msgstr "Auf Kanton einschränken"
+
+#: core/templates/core/candidates/filter.html:39
+msgid "search"
+msgstr "Suchen"
+
+#: core/templates/core/candidates/filter.html:44
+msgid "filter"
+msgstr "Filtern"
+
+#: core/templates/core/candidates/index.html:14
+msgid "opinion_fsfe_chopen"
+msgstr "FSFE & /ch/open"
+
+#: core/templates/core/candidates/index.html:19
+#: core/templates/core/candidates/index.html:28
+msgid "own_opinion"
+msgstr "Eigene Meinung"
+
+#: core/templates/core/candidates/index.html:26
+#: core/templates/core/profile/description.html:45
+msgid "add_own_opinion"
+msgstr "Eigene Meinung erfassen"
+
+#: core/templates/core/candidates/index.html:27
+msgid "add_own_opinion_here"
+msgstr "Klicken Sie hier um Ihre eigene Meinung zu erfassen"
+
+#: core/templates/core/candidates/row.html:26
+msgid "details"
+msgstr "Details"
+
+#: core/templates/core/compare/index.html:13
+#: core/templates/core/edit/questions.html:11
+#: core/templates/core/profile/questions.html:3
+msgid "your_opinion_to"
+msgstr "Wie stehen Sie zu..."
+
+#: core/templates/core/compare/index.html:51
+msgid "evaluate"
+msgstr "Auswerten"
+
+#: core/templates/core/compare/index.html:52
+msgid "reset_answers"
+msgstr "Antworten zurücksetzen"
+
+#: core/templates/core/compare/index.html:53
+#: core/templates/core/edit/profile.html:70
+#: core/templates/core/party/politician_edit.html:33
+msgid "save"
+msgstr "Speichern"
+
+#: core/templates/core/edit/links.html:33
+msgid "add_link"
+msgstr "Link hinzufügen"
+
+#: core/templates/core/edit/menu.html:5
+msgid "profile"
+msgstr "Profil"
+
+#: core/templates/core/edit/profile.html:44
+msgid "other"
+msgstr "Andere"
+
+#: core/templates/core/edit/questions.html:60
+msgid "publish_answers"
+msgstr "Antworten freigeben"
+
+#: core/templates/core/edit/questions.html:66
+msgid "unpublish_answers"
+msgstr "Antworten zurückziehen"
+
+#: core/templates/core/helpers/scale.html:5
+#: core/templates/core/profile/description.html:36
+msgid "no"
+msgstr "Nein"
+
+#: core/templates/core/helpers/scale.html:10
+#: core/templates/core/profile/description.html:36
+msgid "yes"
+msgstr "Ja"
+
+#: core/templates/core/party/dashboard.html:17
+#: core/templates/core/party/menu.html:5
+#: core/templates/core/party/politician_edit.html:6
+msgid "add_politician"
+msgstr "Politiker hinzufügen"
+
+#: core/templates/core/party/dashboard.html:27
+#: core/templates/core/party/menu.html:6
+msgid "export"
+msgstr "Exportieren"
+
+#: core/templates/core/party/dashboard.html:37
+#: core/templates/core/party/menu.html:7 templates/navbar.html:33
+msgid "logout"
+msgstr "Ausloggen"
+
+#: core/templates/core/party/dashboard.html:46
+msgid "created_politicians"
+msgstr "Erstellte Politiker"
+
+#: core/templates/core/party/dashboard.html:64
+msgid "copy_to_clipboard"
+msgstr "In die Zwischenablage kopieren"
+
+#: core/templates/core/party/dashboard.html:65
+msgid "edit_politician"
+msgstr "Politiker bearbeiten"
+
+#: core/templates/core/party/dashboard.html:66
+msgid "delete_politician"
+msgstr "Politiker löschen"
+
+#: core/templates/core/party/dashboard.html:79
+msgid "copy_url_text"
+msgstr "Kopieren Sie die URL in die Zwischenablage"
+
+#: core/templates/core/party/dashboard.html:83
+msgid "close"
+msgstr "Schliessen"
+
+#: core/templates/core/party/login.html:9
+msgid "login_label"
+msgstr "Bitte geben Sie Ihr Passwort ein"
+
+#: core/templates/core/party/login.html:12
+msgid "login"
+msgstr "Login"
+
+#: core/templates/core/party/menu.html:4 templates/navbar.html:27
+msgid "dashboard"
+msgstr "Dashboard"
+
+#: core/templates/core/profile/description.html:40
+msgid "show_own_spider"
+msgstr "Eigene Meinung anzeigen"
+
+#: core/templates/core/profile/questions.html:30
+msgid "politician_answer"
+msgstr "Politiker Antwort"
+
+#: core/templates/core/profile/questions.html:31
+msgid "own_answer"
+msgstr "Eigene Antwort"
+
+#: core/views.py:132
+msgid "answers_saved_successfully_evaluate"
+msgstr ""
+"Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
+"auswerten."
+
+#: core/views.py:155
+msgid "answers_resetted"
+msgstr "Ihre Antworten wurden zurückgesetzt"
+
+#: core/views.py:180
+msgid "profile_saved_successfully"
+msgstr "Ihr Profil wurde erfolgreich gespeichert."
+
+#: core/views.py:247
+msgid "answers_published_successfully"
+msgstr "Ihre Antworten wurden erfolgreich freigegeben."
+
+#: core/views.py:257
+msgid "answers_unpublished_successfully"
+msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
+
+#: core/views.py:373
+msgid "login_successful"
+msgstr "Sie wurden erfolgreich eingeloggt"
+
+#: core/views.py:376
+msgid "login_error"
+msgstr "Sie haben falsche Logindaten eingegeben"
+
+#: core/views.py:402
+msgid "politician_add_success"
+msgstr "Politiker wurde erfolgreich hinzugefügt"
+
+#: core/views.py:405
+msgid "politician_add_error"
+msgstr "Es gab einen Fehler beim Erstellen des Politikers"
+
+#: core/views.py:428
+msgid "politician_edit_success"
+msgstr "Politiker wurde erfolgreich bearbeitet"
+
+#: core/views.py:431
+msgid "politician_edit_error"
+msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
+
+#: core/views.py:470
+msgid "politician_delete_success"
+msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
+
+#: freedomvote/settings.py:167
+msgid "german"
+msgstr "Deutsch"
+
+#: freedomvote/settings.py:168
+msgid "french"
+msgstr "Französisch"
+
+#: freedomvote/settings.py:169
+msgid "italian"
+msgstr "Italienisch"
+
+#: templates/404.html:6
+msgid "page_not_found"
+msgstr "Seite nicht gefunden"
+
+#: templates/500.html:6
+msgid "server_error"
+msgstr "Serverfehler"
+
+#: templates/home.html:15
+msgid "parliament_building"
+msgstr "Bundeshaus"
+
+#: templates/home.html:16
+msgid "source"
+msgstr "Quelle"
+
+#: templates/navbar.html:7
+msgid "toggle_navigation"
+msgstr "Menu umschalten"
+
+#~ msgid "applies_not"
+#~ msgstr "Trifft gar nicht zu"
+
+#~ msgid "applies"
+#~ msgstr "Trifft voll und ganz zu"

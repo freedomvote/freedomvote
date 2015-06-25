@@ -1,0 +1,9 @@
+*.swp
+*.pyc
+/.vagrant/
+/bin/
+/include/
+/lib/
+/local/
+/app/static/
+/app/media/
