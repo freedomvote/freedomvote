@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
 <footer>
   <table class="logos hidden-xs">
@@ -16,7 +16,7 @@
     8000 Zürich
   </address>
   <div class="github">
-    <i class="fa fa-github fa-2x"></i><br>
-    <a href="https://github.com/adfinis-sygroup/freedomvote">Source on GitHub</a>
+      <img src="{% static 'images/gitlab.png' %}"><br>
+    <a href="https://freie.software/adfinis-sygroup/freedomvote">{% trans 'source_code' %}</a>
   </div>
 </footer>
