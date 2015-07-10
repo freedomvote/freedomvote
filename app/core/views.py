@@ -509,7 +509,8 @@ def party_export_view(request, party_name):
     ])
 
     for p in politicians:
-        writer.writerow([p.first_name, p.last_name, p.state, p.unique_url])
+        cols = [p.first_name, p.last_name, p.state.name, p.unique_url]
+        writer.writerow([c.encode('latin1') for c in cols])
 
     return response
 
