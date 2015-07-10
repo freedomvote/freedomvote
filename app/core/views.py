@@ -498,7 +498,10 @@ def party_export_view(request, party_name):
     politicians = Politician.objects.filter(user=request.user)
 
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="freedomvote_export.csv"'
+
+    response['Content-Disposition'] = (
+        'attachment; filename="freedomvote_export_%s.csv"' % party_name
+    )
 
     writer = csv.writer(response)
     writer.writerow([
