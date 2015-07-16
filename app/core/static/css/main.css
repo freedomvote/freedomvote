@@ -132,6 +132,7 @@ svg.img-thumbnail {
 
 .desc-toggler {
   cursor: pointer;
+  display: block;
 }
 
 .desc-toggler.no-desc {
