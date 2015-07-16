@@ -27,7 +27,7 @@
                 <td>
                     <div class="row">
                         <div class="col-md-6 col-sm-6 col-lg-8 col-xs-12">
-                            {{d.question.text}} {{d.question.get_description_code|safe}}
+                        {% include "core/helpers/question_text.html" with question=d.question %}
                         </div>
                         <div class="col-md-6 col-sm-6 col-lg-4 col-xs-12">
                             <div class="visible-xs scale-slider">

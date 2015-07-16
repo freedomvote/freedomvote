@@ -1,0 +1,8 @@
+{% load i18n %}
+{{question.text}}
+{% if question.description %}
+    <span class="glyphicon glyphicon-info-sign desc-toggler" title="{%trans "toggle_description"%}"></span>
+    <div class="desc">{{question.description}}</div>
+{% else %}
+    <span class="glyphicon glyphicon-info-sign desc-toggler no-desc" title="{%trans "no_question_description"%}"></span>
+{% endif %}

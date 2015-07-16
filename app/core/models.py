@@ -216,16 +216,6 @@ class Question(models.Model):
         verbose_name        = _('description')
     )
 
-    def get_description_code(self):
-        tpl = '''
-            <span class="glyphicon glyphicon-info-sign desc-toggler %s" title="%s"></span>
-            <div class="desc">%s</div>
-        '''
-
-        if not self.description:
-            return tpl % ('no-desc', force_unicode(_('no_question_description')), '')
-        else:
-            return tpl % ('', force_unicode(_('toggle_description')), self.description)
 
     class Meta:
         verbose_name        = _('question')
