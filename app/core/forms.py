@@ -1,5 +1,5 @@
 from django import forms
-from core.models import Politician
+from core.models import Politician, Party
 from core.widgets import ImagePreviewFileInput
 
 
@@ -31,6 +31,14 @@ class PoliticianForm(forms.ModelForm):
                 field.widget.attrs.update({
                     'readonly' : 'readonly'
                 })
+
+            if field_name == 'party':
+                field.choices = (
+                    (p.id, p.name)
+                    for p
+                    in Party.objects.order_by('name')
+                )
+
             if isinstance(field.widget, forms.Textarea):
                 field.widget.attrs.update({
                     'class': 'form-control',
