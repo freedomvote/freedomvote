@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-30 08:10+0000\n"
-"PO-Revision-Date: 2015-07-16 13:06+0200\n"
+"PO-Revision-Date: 2015-07-16 13:08+0200\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -166,7 +166,7 @@ msgstr "Keine Beschreibung vorhanden"
 
 #: core/models.py:228
 msgid "toggle_description"
-msgstr "Weitere Informationen…"
+msgstr "Erklärung…"
 
 #: core/models.py:231 core/models.py:238
 #: core/templates/core/profile/questions.html:32
