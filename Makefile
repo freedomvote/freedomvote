@@ -5,6 +5,7 @@ help:
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
+	@echo "  * docker-bash              - Run a bash in web docker container"
 	@echo "  * docker-migrate           - Apply migrations to docker env"
 	@echo "  * docker-makemessages      - Generate .po locale files"
 	@echo "  * docker-compilemessages   - Generate .mo locale files"
@@ -20,6 +21,9 @@ docker:
 docker-clean:
 	@docker-compose kill
 	@docker-compose rm -f
+
+docker-bash:
+	@docker-compose run web /bin/bash
 
 docker-init:
 	@docker-compose up -d --no-recreate
