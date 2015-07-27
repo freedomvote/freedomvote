@@ -7,15 +7,14 @@ A django politician portal app
 
 Run `pip install -r requirements.txt` to install all requirements.
 
-## Vagrant
-To run Freedomvote in a VM, you need to install vagrant and virtualbox and execute those commands:
+## Docker
+To run Freedomvote in a docker container, you need to install docker and docker-compose and execute those commands:
 
 ```bash
-$ make vagrant                   # build vagrant box
-$ make vagrant-runserver         # run development server
+$ make docker-init docker
 ```
 
-Now you can access the frontend on http://freedomvote.vm/admin/ and PhpPgAdmin on http://db.freedomvote.vm/
+Now you can access the frontend on http://localhost:8000
 
 ## Languages
 The whole application is multilingual. Per default the languages German, Italian and French are installed.
