@@ -89,7 +89,7 @@ msgstr "Bild"
 
 #: core/models.py:85 core/templates/core/profile/description.html:35
 msgid "is_member_of_parliament"
-msgstr "Bisheriges Ratsmitglied"
+msgstr "Bisheriges Mitglied National- oder Ständerat"
 
 #: core/models.py:89 core/templates/core/profile/description.html:25
 msgid "past_contributions"
