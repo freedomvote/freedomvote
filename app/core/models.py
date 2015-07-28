@@ -24,6 +24,7 @@ class State(models.Model):
     class Meta:
         verbose_name        = _('state')
         verbose_name_plural = _('states')
+        ordering            = ['name']
 
 
 class Party(models.Model):
@@ -42,6 +43,7 @@ class Party(models.Model):
     class Meta:
         verbose_name        = _('party')
         verbose_name_plural = _('parties')
+        ordering            = ['name']
 
 
 class Category(models.Model):
