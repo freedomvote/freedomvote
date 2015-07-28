@@ -312,7 +312,7 @@ msgstr "Erstellte Politiker"
 
 #: core/templates/core/party/dashboard.html:64
 msgid "copy_to_clipboard"
-msgstr "In die Zwischenablage kopieren"
+msgstr "URL in die Zwischenablage kopieren"
 
 #: core/templates/core/party/dashboard.html:65
 msgid "edit_politician"
