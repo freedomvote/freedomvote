@@ -222,6 +222,7 @@ class Question(models.Model):
     class Meta:
         verbose_name        = _('question')
         verbose_name_plural = _('questions')
+        ordering            = ['category__name']
 
 
 class Answer(models.Model):
