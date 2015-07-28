@@ -1,6 +1,6 @@
 .PHONY: help docker docker-clean docker-init docker-migrate docker-makemessages docker-compilemessages
 
-FILE=~/gitty/work/freedomvote-tools.src/tmp.prod.json
+FILE=tmp.prod.json
 
 help:
 	@echo "The following make targets are available:"
