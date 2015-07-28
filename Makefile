@@ -1,6 +1,7 @@
 .PHONY: help docker docker-clean docker-init docker-migrate docker-makemessages docker-compilemessages
 
 FILE=tmp.prod.json
+DJANGO_ADMIN_USER=admin
 
 help:
 	@echo "The following make targets are available:"
@@ -12,6 +13,7 @@ help:
 	@echo "  * docker-migrate           - Apply migrations to docker env"
 	@echo "  * docker-makemessages      - Generate .po locale files"
 	@echo "  * docker-compilemessages   - Generate .mo locale files"
+	@echo "  * docker-pw                - Change django admin pw"
 	@echo ""
 	@echo ""
 	@echo "If you're new to the project, run this to get started:"
@@ -46,3 +48,6 @@ docker-makemessages:
 
 docker-compilemessages:
 	@docker-compose run web python app/manage.py compilemessages
+
+docker-pw:
+	@docker-compose run web python app/manage.py changepassword ${DJANGO_ADMIN_USER}
