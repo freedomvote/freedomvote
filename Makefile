@@ -1,11 +1,14 @@
 .PHONY: help docker docker-clean docker-init docker-migrate docker-makemessages docker-compilemessages
 
+FILE=~/gitty/work/freedomvote-tools.src/tmp.prod.json
+
 help:
 	@echo "The following make targets are available:"
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
 	@echo "  * docker-bash              - Run a bash in web docker container"
+	@echo "  * docker-data              - Load dumped data"
 	@echo "  * docker-migrate           - Apply migrations to docker env"
 	@echo "  * docker-makemessages      - Generate .po locale files"
 	@echo "  * docker-compilemessages   - Generate .mo locale files"
@@ -30,6 +33,10 @@ docker-init:
 	@docker-compose run web python app/manage.py syncdb --noinput
 	@docker-compose run web python app/manage.py migrate
 	@docker-compose run web python app/manage.py loaddata tools/docker/user.json
+
+docker-data:
+	@docker-compose run web python app/manage.py flush --noinput
+	@docker-compose run web python app/manage.py loaddata ${FILE}
 
 docker-migrate:
 	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py migrate'
