@@ -39,10 +39,10 @@ docker-data:
 	@docker-compose run web python app/manage.py loaddata ${FILE}
 
 docker-migrate:
-	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py migrate'
+	@docker-compose run web python app/manage.py migrate
 
 docker-makemessages:
-	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py makemessages -a'
+	@docker-compose run web python app/manage.py makemessages -a
 
 docker-compilemessages:
-	@vagrant ssh -c 'cd /vagrant/app && sudo python manage.py compilemessages'
+	@docker-compose run web python app/manage.py compilemessages
