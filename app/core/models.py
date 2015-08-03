@@ -137,6 +137,15 @@ class Politician(models.Model):
             return '-'
 
     @property
+    def party_short(self):
+        if self.party:
+            return self.party.shortname
+        elif self.party_other:
+            return self.party_other
+        else:
+            return '-'
+
+    @property
     def state_name(self):
         if self.state:
             return self.state.name
@@ -147,11 +156,11 @@ class Politician(models.Model):
         if not self.party and not self.state:
             return ''
         elif self.party and not self.state:
-            return '(%s)' % self.party_name
+            return '(%s)' % self.party_short
         elif not self.party and self.state:
             return '(%s)' % self.state_name
         else:
-            return '(%s, %s)' % (self.state_name, self.party_name)
+            return '(%s, %s)' % (self.state_name, self.party_short)
 
     @property
     def unique_url(self):
