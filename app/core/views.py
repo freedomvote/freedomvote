@@ -379,6 +379,7 @@ def politician_link_add_view(request, unique_key):
         url = ''
     else:
         error = True
+        url = 'http://%s' % url
 
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
