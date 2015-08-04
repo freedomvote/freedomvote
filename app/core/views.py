@@ -38,7 +38,7 @@ def handler500(request):
 ##
 
 def candidates_view(request):
-    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
+    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct().order_by('first_name', 'last_name')
 
     states          = State.objects.all().order_by('name')
     categories      = Category.objects.filter(statistic__id__gt=0).order_by('name').distinct()
