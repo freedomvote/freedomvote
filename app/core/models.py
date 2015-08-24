@@ -67,13 +67,19 @@ class Politician(models.Model):
     )
     first_name              = models.CharField(
         max_length          = 100,
+        blank               = True,
+        null                = True,
         verbose_name        = _('first_name')
     )
     last_name               = models.CharField(
         max_length          = 100,
+        blank               = True,
+        null                = True,
         verbose_name        = _('last_name')
     )
     email                   = models.EmailField(
+        blank               = True,
+        null                = True,
         verbose_name        = _('email')
     )
     image                   = models.ImageField(

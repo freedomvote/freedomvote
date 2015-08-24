@@ -35,11 +35,6 @@ class PoliticianForm(forms.ModelForm):
                 field.widget.attrs.update({
                     'class': 'form-control'
                 })
-            if field_name in ['first_name', 'last_name']:
-                field.widget.attrs.update({
-                    'readonly' : 'readonly'
-                })
-
             if field_name == 'party':
                 field.choices = (
                     (p.id, p.name)
