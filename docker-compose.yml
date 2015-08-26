@@ -5,7 +5,7 @@ web:
     build: .
     command: python app/manage.py runserver 0.0.0.0:8000
     volumes:
-        - .:/code
+        - .:/usr/src/app
     ports:
         - "8000:8000"
     links:

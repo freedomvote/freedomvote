@@ -38,7 +38,7 @@ docker-init:
 
 docker-data:
 	@docker-compose run web python app/manage.py flush --noinput
-	@docker-compose run web python app/manage.py loaddata ${FILE}
+	@docker-compose run web python app/manage.py loaddata /usr/src/app/${FILE}
 
 docker-migrate:
 	@docker-compose run web python app/manage.py migrate

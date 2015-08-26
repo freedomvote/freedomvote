@@ -1,6 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.contrib.auth.models import User
-from django.db import transaction
 from core.models import Politician
 import csv
 
@@ -15,14 +14,8 @@ class Command(BaseCommand):
                     try:
                         username = row[0]
                         password = row[1]
-                        with transaction.atomic():
-
-                            user = User.objects.create_user(username, None, password)
-                            user.save()
-
-                            for i in range(1, 3):
-                                p = Politician(user=user, first_name='Vorname', last_name='Nachname', email='vorname.nachname@example.com')
-                                p.save()
+                        user = User.objects.create_user(username, None, password)
+                        user.save()
                     except:
                         print('User creation failed')
         except:
