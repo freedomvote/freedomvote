@@ -62,6 +62,14 @@
             </div>
         </div>
         <div class="col-md-4">
+            {% if form.image.errors %}
+                <div class="alert alert-danger">
+                    {% trans 'file_too_large' %}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endif %}
             {{ form.image }}
         </div>
     </div>

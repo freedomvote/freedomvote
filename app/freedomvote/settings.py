@@ -17,13 +17,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
     'DB'           : {
-        'NAME'     : 'freedomvote',
-        'USER'     : 'freedomvote',
-        'PASS'     : 'vagrant',
+        'HOST'     : 'db',
+        'NAME'     : 'postgres',
+        'USER'     : 'postgres',
+        'PASS'     : '',
+        'PORT'     : '5432',
     },
     'GLOBAL'       : {
         'DEBUG'    : 'True',
-        'BASE_URL' : 'http://freedomvote.vm',
+        'BASE_URL' : 'http://localhost:8000',
     },
     'PIWIK'        : {
         'SITE_ID'  : 0,
@@ -147,12 +149,12 @@ TEMPLATE_DIRS = (
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE':   'django.db.backends.postgresql_psycopg2',
         'NAME':     DEFAULT_SETTINGS['DB']['NAME'],
         'USER':     DEFAULT_SETTINGS['DB']['USER'],
         'PASSWORD': DEFAULT_SETTINGS['DB']['PASS'],
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'HOST':     DEFAULT_SETTINGS['DB']['HOST'],
+        'PORT':     DEFAULT_SETTINGS['DB']['PORT'],
     }
 }
 

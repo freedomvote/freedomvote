@@ -248,6 +248,11 @@ svg.img-thumbnail {
   margin-left: -17px;
 }
 
+.question-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 @media only screen and (max-width:767px) {
 
   .candidate-row {

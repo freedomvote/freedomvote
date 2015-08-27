@@ -24,6 +24,7 @@ class State(models.Model):
     class Meta:
         verbose_name        = _('state')
         verbose_name_plural = _('states')
+        ordering            = ['name']
 
 
 class Party(models.Model):
@@ -42,6 +43,7 @@ class Party(models.Model):
     class Meta:
         verbose_name        = _('party')
         verbose_name_plural = _('parties')
+        ordering            = ['name']
 
 
 class Category(models.Model):
@@ -65,13 +67,19 @@ class Politician(models.Model):
     )
     first_name              = models.CharField(
         max_length          = 100,
+        blank               = True,
+        null                = True,
         verbose_name        = _('first_name')
     )
     last_name               = models.CharField(
         max_length          = 100,
+        blank               = True,
+        null                = True,
         verbose_name        = _('last_name')
     )
     email                   = models.EmailField(
+        blank               = True,
+        null                = True,
         verbose_name        = _('email')
     )
     image                   = models.ImageField(
@@ -135,6 +143,15 @@ class Politician(models.Model):
             return '-'
 
     @property
+    def party_short(self):
+        if self.party:
+            return self.party.shortname
+        elif self.party_other:
+            return self.party_other
+        else:
+            return '-'
+
+    @property
     def state_name(self):
         if self.state:
             return self.state.name
@@ -145,11 +162,11 @@ class Politician(models.Model):
         if not self.party and not self.state:
             return ''
         elif self.party and not self.state:
-            return '(%s)' % self.party_name
+            return '(%s)' % self.party_short
         elif not self.party and self.state:
             return '(%s)' % self.state_name
         else:
-            return '(%s, %s)' % (self.state_name, self.party_name)
+            return '(%s, %s)' % (self.state_name, self.party_short)
 
     @property
     def unique_url(self):
@@ -220,6 +237,7 @@ class Question(models.Model):
     class Meta:
         verbose_name        = _('question')
         verbose_name_plural = _('questions')
+        ordering            = ['category__name']
 
 
 class Answer(models.Model):

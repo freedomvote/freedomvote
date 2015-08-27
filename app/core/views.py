@@ -38,7 +38,7 @@ def handler500(request):
 ##
 
 def candidates_view(request):
-    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
+    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct().order_by('first_name', 'last_name')
 
     states          = State.objects.all().order_by('name')
     categories      = Category.objects.filter(statistic__id__gt=0).order_by('name').distinct()
@@ -379,6 +379,7 @@ def politician_link_add_view(request, unique_key):
         url = ''
     else:
         error = True
+        url = 'http://%s' % url
 
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')

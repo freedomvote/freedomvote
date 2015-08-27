@@ -10,25 +10,16 @@
 {% block 'subcontent' %}
     <h2>{% trans 'your_opinion_to' %}</h2>
     <table class="table table-striped">
-        <thead>
-            <th>
-                <div class="row">
-                    <div class="col-md-6 col-lg-5 col-sm-6 pull-right hidden-xs">
-                        {% include 'core/helpers/scale.html' %}
-                    </div>
-                </div>
-            </th>
-        </thead>
         <tbody>
             {% for question in questions %}
             <tr>
                 <td>
-                    <div class="row">
+                    <div class="row question-row">
                         <div class="col-sm-6 col-md-6 col-lg-7 col-xs-12">
                             {% include "core/helpers/question_text.html" with question=question %}
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-5 col-xs-12">
-                            <div class="visible-xs scale-slider">
+                            <div class="scale-slider">
                                 {% include 'core/helpers/scale.html' %}
                             </div>
                             <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
