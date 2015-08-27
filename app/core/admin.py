@@ -16,7 +16,7 @@ class PoliticianAdmin(admin.ModelAdmin):
     def unique_url(self, obj):
         return '%s%s' % (
             settings.BASE_URL,
-            reverse('edit_profile', args=(obj.unique_key,))
+            reverse('politician_edit_profile', args=(obj.unique_key,))
         )
     unique_url.short_description = _('unique_url')
 

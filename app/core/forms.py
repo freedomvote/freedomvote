@@ -1,5 +1,5 @@
 from django import forms
-from core.models import Politician
+from core.models import Politician, Party
 from core.widgets import ImagePreviewFileInput
 
 
@@ -10,6 +10,14 @@ class PoliticianForm(forms.ModelForm):
         widgets = {
             'image': ImagePreviewFileInput()
         }
+
+    def clean_image(self):
+        image = self.cleaned_data.get('image')
+        if image:
+            if image._size > 5*1024*1024:
+                raise forms.ValidationError('Image file too large ( > 5MB )')
+
+        return image
 
     def clean_party_other(self):
         data = self.cleaned_data.get('party_other')
@@ -27,10 +35,13 @@ class PoliticianForm(forms.ModelForm):
                 field.widget.attrs.update({
                     'class': 'form-control'
                 })
-            if field_name in ['first_name', 'last_name']:
-                field.widget.attrs.update({
-                    'readonly' : 'readonly'
-                })
+            if field_name == 'party':
+                field.choices = (
+                    (p.id, p.name)
+                    for p
+                    in Party.objects.order_by('name')
+                )
+
             if isinstance(field.widget, forms.Textarea):
                 field.widget.attrs.update({
                     'class': 'form-control',

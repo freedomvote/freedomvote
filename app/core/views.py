@@ -38,7 +38,7 @@ def handler500(request):
 ##
 
 def candidates_view(request):
-    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct()
+    politician_list = Politician.objects.filter(statistic__id__gt=0).distinct().order_by('first_name', 'last_name')
 
     states          = State.objects.all().order_by('name')
     categories      = Category.objects.filter(statistic__id__gt=0).order_by('name').distinct()
@@ -379,6 +379,7 @@ def politician_link_add_view(request, unique_key):
         url = ''
     else:
         error = True
+        url = 'http://%s' % url
 
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
@@ -498,7 +499,10 @@ def party_export_view(request, party_name):
     politicians = Politician.objects.filter(user=request.user)
 
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename="freedomvote_export.csv"'
+
+    response['Content-Disposition'] = (
+        'attachment; filename="freedomvote_export_%s.csv"' % party_name
+    )
 
     writer = csv.writer(response)
     writer.writerow([
@@ -509,7 +513,10 @@ def party_export_view(request, party_name):
     ])
 
     for p in politicians:
-        writer.writerow([p.first_name, p.last_name, p.state, p.unique_url])
+        state = p.state.name if p.state else '-'
+
+        cols = [p.first_name, p.last_name, state, p.unique_url]
+        writer.writerow([c.encode('latin1') for c in cols])
 
     return response
 

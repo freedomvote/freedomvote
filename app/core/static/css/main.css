@@ -132,6 +132,7 @@ svg.img-thumbnail {
 
 .desc-toggler {
   cursor: pointer;
+  display: block;
 }
 
 .desc-toggler.no-desc {
@@ -245,6 +246,11 @@ svg.img-thumbnail {
   border-bottom-color: #d3d3d3;
   border-width: 17px;
   margin-left: -17px;
+}
+
+.question-row {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 @media only screen and (max-width:767px) {
