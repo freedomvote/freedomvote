@@ -1,21 +1,61 @@
 {% load staticfiles i18n %}
 
 <footer>
-  <table class="logos hidden-xs">
-    <tr>
-      <td><a href="http://ch-open.ch"><img class="logo" src="{% static 'images/chopen_logo.png' %}"></img></a></td>
-      <td><a href="http://fsfe.org"><img class="logo" src="{% static 'images/fsfe_logo.png' %}"></img></a></td>
-    </tr>
-  </table>
-  <address>
-    Swiss Open Systems User Group |
-    Nicolas Christener |
-    <a href="mailto:nicolas.christener@ch-open.ch">nicolas.christener@ch-open.ch</a> |
-    <a href="http://ch-open.ch">/ch/open</a> |
-    8000 Zürich
-  </address>
-  <div class="github">
-      <img src="{% static 'images/gitlab.png' %}"><br>
-    <a href="https://freie.software/adfinis-sygroup/freedomvote">{% trans 'source_code' %}</a>
-  </div>
+    <div class="row hidden-sm hidden-xs logos">
+        <div class="container center-content">
+            <div class="col-md-4 center-content">
+                <a href="http://ch-open.ch">
+                    <img class="logo" src="{% static 'images/chopen_logo.png' %}">
+                </a>
+            </div>
+            <div class="col-md-2 center-content">
+                <p style="line-height: 50px; margin: 0;"><a href="/partners">{% trans 'our_partners' %}</a></p>
+            </div>
+            <div class="col-md-4 center-content">
+                <a href="http://fsfe.org">
+                    <img class="logo" src="{% static 'images/fsfe_logo.png' %}">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row hidden-sm hidden-xs logos">
+        <div class="container center-content">
+            <div class="col-md-2 center-content">
+                <a href="http://www.digitale-nachhaltigkeit.ch/">
+                    <img class="logo" src="{% static 'images/partner_logos/parldigi_logo.jpg' %}">
+                </a>
+            </div>
+            <div class="col-md-2 center-content">
+                <a href="http://www.internetsociety.org/">
+                    <img class="logo" src="{% static 'images/partner_logos/isoc_logo.png' %}">
+                </a>
+            </div>
+            <div class="col-md-2 center-content">
+                <a href="http://opendata.ch/">
+                    <img class="logo" src="{% static 'images/partner_logos/opendata_logo.png' %}">
+                </a>
+            </div>
+            <div class="col-md-2 center-content">
+                <a href="http://allmend.ch/">
+                    <img class="logo" src="{% static 'images/partner_logos/allmend_logo.png' %}">
+                </a>
+            </div>
+            <div class="col-md-2 center-content">
+                <a href="http://www.wilhelmtux.ch/">
+                    <img class="logo" src="{% static 'images/partner_logos/wilhelmtux_logo.gif' %}">
+                </a>
+            </div>
+        </div>
+    </div>
+    <address>
+        Swiss Open Systems User Group |
+        Nicolas Christener |
+        <a href="mailto:nicolas.christener@ch-open.ch">nicolas.christener@ch-open.ch</a> |
+        <a href="http://ch-open.ch">/ch/open</a> |
+        8000 Zürich
+    </address>
+    <div class="github">
+        <img src="{% static 'images/gitlab.png' %}"><br>
+        <a href="https://freie.software/adfinis-sygroup/freedomvote">{% trans 'source_code' %}</a>
+    </div>
 </footer>
