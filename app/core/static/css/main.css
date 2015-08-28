@@ -50,8 +50,61 @@ footer .logos {
   margin: 0 0 30px;
 }
 
-footer .logo {
+.logo {
+  display: block;
+  width: 100%;
   height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.logo.logo-fsfe {
+  background-image: url('../images/fsfe_logo.png');
+}
+
+.logo.logo-chopen {
+  background-image: url('../images/chopen_logo.png');
+}
+
+.logo.logo-isoc {
+  background-image: url('../images/partner_logos/isoc_logo_sw.png');
+}
+
+.logo.logo-isoc:hover {
+  background-image: url('../images/partner_logos/isoc_logo.png');
+}
+
+.logo.logo-wilhelmtux {
+  background-image: url('../images/partner_logos/wilhelmtux_logo_sw.png');
+}
+
+.logo.logo-wilhelmtux:hover {
+  background-image: url('../images/partner_logos/wilhelmtux_logo.png');
+}
+
+.logo.logo-parldigi {
+  background-image: url('../images/partner_logos/parldigi_logo_sw.jpg');
+}
+
+.logo.logo-parldigi:hover {
+  background-image: url('../images/partner_logos/parldigi_logo.jpg');
+}
+
+.logo.logo-allmend {
+  background-image: url('../images/partner_logos/allmend_logo_sw.png');
+}
+
+.logo.logo-allmend:hover {
+  background-image: url('../images/partner_logos/allmend_logo.png');
+}
+
+.logo.logo-opendata {
+  background-image: url('../images/partner_logos/opendata_logo_sw.png');
+}
+
+.logo.logo-opendata:hover {
+  background-image: url('../images/partner_logos/opendata_logo.png');
 }
 
 footer address {
