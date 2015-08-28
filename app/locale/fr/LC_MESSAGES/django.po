@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 10:45+0000\n"
+"POT-Creation-Date: 2015-08-28 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,10 @@ msgstr ""
 
 #: app/core/menu.py:11
 msgid "candidates"
+msgstr ""
+
+#: app/core/menu.py:12
+msgid "partners"
 msgstr ""
 
 #: app/core/models.py:18 app/core/models.py:33 app/core/models.py:52
@@ -433,11 +437,11 @@ msgstr ""
 msgid "server_error"
 msgstr ""
 
-#: app/templates/footer.html:12 app/templates/partners.html:7
+#: app/templates/footer.html:10 app/templates/partners.html:7
 msgid "our_partners"
 msgstr ""
 
-#: app/templates/footer.html:59
+#: app/templates/footer.html:45
 msgid "source_code"
 msgstr ""
 

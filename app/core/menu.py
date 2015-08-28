@@ -9,8 +9,10 @@ class CoreMenu(Menu):
         nodes   = []
         compare = NavigationNode(_('compare'), reverse('compare'), 1, attr={'priority':1002})
         candidates  = NavigationNode(_('candidates'), reverse('candidates'), 2,   attr={'priority':1001})
+        partners = NavigationNode(_('partners'), reverse('partners'), 2,   attr={'priority':1003})
         nodes.append(candidates)
         nodes.append(compare)
+        nodes.append(partners)
         return nodes
 
 class CoreModifier(Modifier):

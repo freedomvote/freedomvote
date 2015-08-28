@@ -23,7 +23,10 @@ urlpatterns = patterns(
         views.compare_reset_view,
         name='compare_reset'
     ),
-    url(r'^partners/$', TemplateView.as_view(template_name='partners.html')),
+    url(r'^partners/$',
+        TemplateView.as_view(template_name='partners.html'),
+        name='partners'
+    ),
 
     # private politician urls
 

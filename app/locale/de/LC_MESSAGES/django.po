@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 10:45+0000\n"
+"POT-Creation-Date: 2015-08-28 12:07+0000\n"
 "PO-Revision-Date: 2015-07-16 13:08+0200\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -34,6 +34,10 @@ msgstr "Vergleichen"
 #: app/core/menu.py:11
 msgid "candidates"
 msgstr "Kandidaten"
+
+#: app/core/menu.py:12
+msgid "partners"
+msgstr "Partner"
 
 #: app/core/models.py:18 app/core/models.py:33 app/core/models.py:52
 #: app/core/models.py:190
@@ -435,11 +439,11 @@ msgstr "Seite nicht gefunden"
 msgid "server_error"
 msgstr "Serverfehler"
 
-#: app/templates/footer.html:12 app/templates/partners.html:7
+#: app/templates/footer.html:10 app/templates/partners.html:7
 msgid "our_partners"
 msgstr "Unsere Partner"
 
-#: app/templates/footer.html:59
+#: app/templates/footer.html:45
 msgid "source_code"
 msgstr "Quellcode"
 
