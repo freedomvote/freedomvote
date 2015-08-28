@@ -28,6 +28,8 @@ def v1(request):
         if Statistic.objects.filter(politician=x).exists():
             p = {
                 'id':                      x.id,
+                'first_name':              x.first_name if x.image else None,
+                'last_name':               x.last_name if x.image else None,
                 'is_member_of_parliament': x.is_member_of_parliament,
                 'image':                   x.image.url if x.image else None,
                 'state':                   x.state.name if x.state else None,
