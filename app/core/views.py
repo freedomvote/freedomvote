@@ -369,7 +369,13 @@ def politician_link_add_view(request, unique_key):
     url        = request.POST.get('url')
     error      = False
 
-    if url.startswith(('http://', 'https://')) and '.' in url:
+    if not url.startswith(('http://', 'https://')):
+        url = 'http://%s' % url
+
+    if '.' not in url:
+        error = True
+
+    if not error:
         l = Link(
             type=link_type,
             politician=politician,
@@ -377,9 +383,6 @@ def politician_link_add_view(request, unique_key):
         )
         l.save()
         url = ''
-    else:
-        error = True
-        url = 'http://%s' % url
 
     types      = LinkType.objects.all().order_by('name')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
