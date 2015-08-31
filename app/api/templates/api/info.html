@@ -2,7 +2,20 @@
 
 {% block 'content' %}
     <h1>API Documentation</h1>
-    <h2><a href="{% url 'v1' %}">v1 ({% url 'v1' %})</a></h2>
+    <p>
+        The data of this site is also available in a machine-readable format (JSON).
+        Our API serves the same data as the application; especially, no answers that
+        are visible in the API if they have not been published in the application.
+    </p>
+    <p>
+        Feel free to fetch this dataset and analyze it as you wish. If you've done
+        something interesting, consider dropping us a note :)
+    </p>
+    <h2>URL</h2>
+    <ul>
+        <li><a href="{% url 'v1' %}">{{ request.get_host }}{% url 'v1' %}</a></li>
+    </ul>
+    <h2>Data Structure</h2>
     <ul>
         <li>
             Politicians
