@@ -228,7 +228,7 @@ msgstr "FSFE & /ch/open"
 #: app/core/templates/core/candidates/index.html:19
 #: app/core/templates/core/candidates/index.html:28
 msgid "own_opinion"
-msgstr "Opinione personale"
+msgstr "Opinione pers."
 
 #: app/core/templates/core/candidates/index.html:26
 #: app/core/templates/core/profile/description.html:45
