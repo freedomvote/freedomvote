@@ -54,7 +54,7 @@ def v1(request):
             for a in Answer.objects.filter(politician=x).order_by('id'):
                 p['answers'].append({
                     'question_id': a.question.id,
-                    'agreement_level': a.agreement_level,
+                    'answer': a.agreement_level,
                     'note': a.note
                 })
 
