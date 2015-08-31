@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-28 12:07+0000\n"
+"POT-Creation-Date: 2015-08-31 09:19+0000\n"
 "PO-Revision-Date: 2015-07-16 13:08+0200\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -419,15 +419,15 @@ msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: app/freedomvote/settings.py:169
+#: app/freedomvote/settings.py:170
 msgid "german"
 msgstr "Deutsch"
 
-#: app/freedomvote/settings.py:170
+#: app/freedomvote/settings.py:171
 msgid "french"
 msgstr "Französisch"
 
-#: app/freedomvote/settings.py:171
+#: app/freedomvote/settings.py:172
 msgid "italian"
 msgstr "Italienisch"
 
@@ -439,11 +439,11 @@ msgstr "Seite nicht gefunden"
 msgid "server_error"
 msgstr "Serverfehler"
 
-#: app/templates/footer.html:10 app/templates/partners.html:7
+#: app/templates/footer.html:40 app/templates/partners.html:7
 msgid "our_partners"
 msgstr "Unsere Partner"
 
-#: app/templates/footer.html:45
+#: app/templates/footer.html:52
 msgid "source_code"
 msgstr "Quellcode"
 
