@@ -13,8 +13,9 @@ class PoliticianForm(forms.ModelForm):
 
     def clean_image(self):
         image = self.cleaned_data.get('image')
+
         if image:
-            if image._size > 5*1024*1024:
+            if image.size > 5*1024*1024:
                 raise forms.ValidationError('Image file too large ( > 5MB )')
 
         return image
@@ -36,11 +37,12 @@ class PoliticianForm(forms.ModelForm):
                     'class': 'form-control'
                 })
             if field_name == 'party':
-                field.choices = (
+                field.choices = [('', '---------')]
+                field.choices += [
                     (p.id, p.name)
                     for p
                     in Party.objects.order_by('name')
-                )
+                ]
 
             if isinstance(field.widget, forms.Textarea):
                 field.widget.attrs.update({

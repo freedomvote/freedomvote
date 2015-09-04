@@ -16,11 +16,11 @@ h2.politician_name {
 
 .wrapper {
   min-height: 100%;
-  margin: 0 auto -200px;
+  margin: 0 auto -300px;
 }
 
 footer, .push {
-  height: 200px;
+  height: 300px;
 }
 
 .mouse {
@@ -41,31 +41,94 @@ input[name="image"] {
   width: 200px !important;
 }
 
+.fully-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
 footer .logos {
-  height: 50px;
+  margin: 0 0 30px;
+}
+
+.footer-icon img {
+  height: 30px;
+}
+
+.footer-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  display: block;
   width: 100%;
-}
-
-footer .logos tr {
-  padding: 0 5%;
-}
-
-footer .logos tr td {
-  width: 30%;
-  text-align: center;
-}
-
-footer .logo {
   height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-footer address {
-  margin: 25px 0 15px;
-  font-style: italic;
-  text-align: center;
+.logo--small {
+  height: 30px;
 }
 
-footer .github {
+.logo.logo-fsfe {
+  background-image: url('../images/fsfe_logo.png');
+}
+
+.logo.logo-chopen {
+  background-image: url('../images/chopen_logo.png');
+}
+
+.logo.logo-isoc {
+  background-image: url('../images/partner_logos/isoc_logo_sw.png');
+}
+
+.logo.logo-isoc:hover {
+  background-image: url('../images/partner_logos/isoc_logo.png');
+}
+
+.logo.logo-wilhelmtux {
+  background-image: url('../images/partner_logos/wilhelmtux_logo_sw.png');
+}
+
+.logo.logo-wilhelmtux:hover {
+  background-image: url('../images/partner_logos/wilhelmtux_logo.png');
+}
+
+.logo.logo-parldigi {
+  background-image: url('../images/partner_logos/parldigi_logo_sw.png');
+}
+
+.logo.logo-parldigi:hover {
+  background-image: url('../images/partner_logos/parldigi_logo.png');
+}
+
+.logo.logo-allmend {
+  background-image: url('../images/partner_logos/allmend_logo_sw.png');
+}
+
+.logo.logo-allmend:hover {
+  background-image: url('../images/partner_logos/allmend_logo.png');
+}
+
+.logo.logo-opendata {
+  background-image: url('../images/partner_logos/opendata_logo_sw.png');
+}
+
+.logo.logo-opendata:hover {
+  background-image: url('../images/partner_logos/opendata_logo.png');
+}
+
+.address {
+  margin: 25px 0;
   text-align: center;
 }
 
@@ -253,6 +316,72 @@ svg.img-thumbnail {
   padding-bottom: 10px;
 }
 
+.partners > h1 {
+  text-align: center;
+  font-size: 4em;
+}
+
+.partner {
+  display: flex;
+  position: relative;
+  border: thin solid #eee;
+  border-radius: 5px;
+  height: 150px;
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform .3s ease;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.1);
+}
+
+.partner-logo {
+  margin: 10px;
+  flex-grow: 1;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.partner-description {
+  background: -webkit-linear-gradient(bottom, #f5f5f5, #eee);
+  background:    -moz-linear-gradient(bottom, #f5f5f5, #eee);
+  background:     -ms-linear-gradient(bottom, #f5f5f5, #eee);
+  background:      -o-linear-gradient(bottom, #f5f5f5, #eee);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+  transition: width .5s ease;
+}
+
+.partner-text {
+  width: 300px;
+  margin: 0 5px;
+  font-style: italic;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-title {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.partner-title > a {
+  color: #222;
+}
+
+.partner:hover .partner-description {
+  width: 100%;
+}
+
 @media only screen and (max-width:767px) {
 
   .candidate-row {
@@ -340,6 +469,12 @@ svg.img-thumbnail {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+  .center-content-lg {
+    display: flex;
+    justify-content: center;
+  }
+
   .button-row div {
     padding-right: 5px;
     padding-left: 5px;
@@ -364,6 +499,11 @@ svg.img-thumbnail {
 }
 
 @media only screen and (min-width: 1200px) {
+  .center-content-lg {
+    display: flex;
+    justify-content: center;
+  }
+
   .button-row div {
     padding-right: 5px;
     padding-left: 5px;

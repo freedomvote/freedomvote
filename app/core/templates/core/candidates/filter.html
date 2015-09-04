@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <form method="get">
-    {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate">{% endif %}
+    {% if 'evaluate' in request.GET.keys %}<input type="hidden" name="evaluate" value="1">{% endif %}
     <div class="row form-row">
     <div class="col-sm-6 col-md-3 col-lg-4">
         <select name="category" class="form-control">

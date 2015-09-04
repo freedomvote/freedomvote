@@ -92,6 +92,7 @@ INSTALLED_APPS = (
     'djangocms_admin_style',
     'django.contrib.messages',
     'piwik',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (

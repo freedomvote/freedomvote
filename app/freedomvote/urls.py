@@ -15,6 +15,7 @@ if settings.DEBUG:
 
 urlpatterns += patterns('',
     url(r'^admin/' , include(admin.site.urls)) ,
+    url(r'^api/'   , include('api.urls'))     ,
     url(r'^'       , include('core.urls'))     ,
     url(r'^'       , include('cms.urls'))      ,
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

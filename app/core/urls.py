@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, url, include
+from django.views.generic import TemplateView
 from core import views
 
 urlpatterns = patterns(
@@ -21,6 +22,10 @@ urlpatterns = patterns(
     url(r'^compare/reset/$',
         views.compare_reset_view,
         name='compare_reset'
+    ),
+    url(r'^partners/$',
+        TemplateView.as_view(template_name='partners.html'),
+        name='partners'
     ),
 
     # private politician urls
