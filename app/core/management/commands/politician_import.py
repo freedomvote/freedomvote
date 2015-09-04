@@ -44,7 +44,7 @@ class Command(BaseCommand):
                 with open('/tmp/export.csv', 'wb') as csvfile:
                     writer = csv.writer(csvfile)
                     for row in rows:
-                        writer.writerow([c.encode('latin1') for c in row])
+                        writer.writerow([c.encode('utf8') for c in row])
 
                     print('Export file is located in /tmp/export.csv')
 
