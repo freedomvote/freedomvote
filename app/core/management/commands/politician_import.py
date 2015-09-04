@@ -22,6 +22,7 @@ class Command(BaseCommand):
                         state      = State.objects.get(name=row[3])
                         party      = Party.objects.get(shortname=row[4])
                         user       = User.objects.get(username=row[5])
+                        member     = bool(row[6])
 
                         p = Politician(
                             user=user,
@@ -29,7 +30,8 @@ class Command(BaseCommand):
                             last_name=last_name,
                             email=email,
                             state=state,
-                            party=party
+                            party=party,
+                            is_member_of_parliament=member
                         )
                         p.save()
 
