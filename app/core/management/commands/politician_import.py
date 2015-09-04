@@ -41,10 +41,10 @@ class Command(BaseCommand):
                             rows.append([first_name, last_name, email, state.name, party.shortname, user.username, p.unique_url])
                         except:
                             print('Politician creation on line %d failed' % count)
-                with open(args[0], 'wb') as csvfile:
+                with open('/tmp/export.csv', 'wb') as csvfile:
                     writer = csv.writer(csvfile)
                     for row in rows:
-                        writer.writerow([c.encode('utf8') for c in row])
+                        writer.writerow([c.encode('latin1') for c in row])
 
                     print('Export file is located in /tmp/export.csv')
 
