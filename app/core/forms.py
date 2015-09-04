@@ -37,11 +37,12 @@ class PoliticianForm(forms.ModelForm):
                     'class': 'form-control'
                 })
             if field_name == 'party':
-                field.choices = (
+                field.choices = [('', '---------')]
+                field.choices += [
                     (p.id, p.name)
                     for p
                     in Party.objects.order_by('name')
-                )
+                ]
 
             if isinstance(field.widget, forms.Textarea):
                 field.widget.attrs.update({
