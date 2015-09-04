@@ -10,7 +10,7 @@ class Command(BaseCommand):
         try:
             rows = []
 
-            with open(args[0], 'rb') as csvfile:
+            with open(args[0], 'rt') as csvfile:
                 reader = csv.reader(csvfile)
                 count = 0
                 for row in reader:
