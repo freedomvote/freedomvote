@@ -16,6 +16,7 @@ class Command(BaseCommand):
                     reader = csv.reader(csvfile)
                     count = 0
                     for row in reader:
+                        row = [col.decode('utf-8') for col in row]
                         count += 1
                         try:
                             first_name = row[0]
@@ -40,11 +41,13 @@ class Command(BaseCommand):
                             rows.append([first_name, last_name, email, state.name, party.shortname, user.username, p.unique_url])
                         except:
                             print('Politician creation on line %d failed' % count)
-                with open('/tmp/export.csv', 'wb') as csvfile:
+                with open(args[0], 'wb') as csvfile:
                     writer = csv.writer(csvfile)
-                    writer.writerows(rows)
+                    for row in rows:
+                        writer.writerow([c.encode('utf8') for c in row])
 
                     print('Export file is located in /tmp/export.csv')
 
-        except:
+        except Exception as e:
+            print(str(e))
             print('Could not parse target file')
