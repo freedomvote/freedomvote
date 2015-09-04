@@ -166,7 +166,7 @@ def compare_reset_view(request):
 ##
 
 def politician_view(request, politician_id):
-    politician = get_object_or_404(Politician, id=politician_id)
+    politician = get_object_or_404(Politician.objects.filter(statistic__id__gt=0).distinct(), pk=politician_id)
     answers    = Answer.objects.filter(politician=politician).order_by('question__question_number')
     links      = Link.objects.filter(politician=politician).order_by('type__name')
     cookie     = get_cookie(request, 'answers', {})
