@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, url, include
+from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
 from core import views
 
@@ -12,7 +13,7 @@ urlpatterns = patterns(
         include('django.conf.urls.i18n')
     ),
     url(r'^candidates/$',
-        views.candidates_view,
+        cache_page(3600)(views.candidates_view),
         name='candidates'
     ),
     url(r'^compare/$',
@@ -24,7 +25,7 @@ urlpatterns = patterns(
         name='compare_reset'
     ),
     url(r'^partners/$',
-        TemplateView.as_view(template_name='partners.html'),
+        cache_page(3600)(TemplateView.as_view(template_name='partners.html')),
         name='partners'
     ),
 
@@ -66,7 +67,7 @@ urlpatterns = patterns(
     # public politician urls
 
     url(r'^politician/(?P<politician_id>\d+)/$',
-        views.politician_view,
+        cache_page(3600)(views.politician_view),
         name='politician'
     ),
     url(r'^politician/(?P<politician_id>\d+)/statistic/$',

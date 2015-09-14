@@ -187,6 +187,7 @@ def politician_view(request, politician_id):
             'links'      : links
         }
     )
+
 def politician_statistic_spider_view(request, politician_id):
     statistics = Statistic.get_statistics_by_politician(politician_id)
     stats      = get_cookie(request, 'statistics', {})

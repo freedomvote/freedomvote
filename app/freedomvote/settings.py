@@ -200,5 +200,12 @@ THUMBNAIL_ALIASES = {
     },
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cache_table',
+    }
+}
+
 PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']
 PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
