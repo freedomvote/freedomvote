@@ -5,6 +5,8 @@ DJANGO_ADMIN_USER=admin
 
 help:
 	@echo "The following make targets are available:"
+	@echo "  * less                     - Compile less to css"
+	@echo "  * less-watch               - Compile less to css on changes"
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
@@ -19,6 +21,12 @@ help:
 	@echo "If you're new to the project, run this to get started:"
 	@echo ""
 	@echo " make docker-init docker"
+
+less:
+	@gulp less
+
+less-watch:
+	@gulp less:watch
 
 docker:
 	@docker-compose up --no-recreate

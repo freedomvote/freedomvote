@@ -7,4 +7,5 @@
 /local/
 /app/static/
 /app/media/
+node_modules
 users.csv
