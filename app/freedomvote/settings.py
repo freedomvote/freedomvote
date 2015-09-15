@@ -147,12 +147,12 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
 
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-#        'LOCATION': 'cache_table',
-#    }
-#}
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cache_table',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
