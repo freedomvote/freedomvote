@@ -102,7 +102,7 @@ def candidates_view(request):
     )
 
 def compare_view(request):
-    questions = Question.objects.all()
+    questions = Question.objects.all().order_by('question_number')
     data      = []
 
     session_answers    = get_cookie(request, 'answers',    {})

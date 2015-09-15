@@ -67,7 +67,7 @@ urlpatterns = patterns(
     # public politician urls
 
     url(r'^politician/(?P<politician_id>\d+)/$',
-        cache_page(3600)(views.politician_view),
+        views.politician_view,
         name='politician'
     ),
     url(r'^politician/(?P<politician_id>\d+)/statistic/$',
