@@ -136,14 +136,23 @@ INTERNAL_IPS = [
     '0.0.0.0',
     '127.0.0.1',
 ]
+
 CMS_PLACEHOLDER_CACHE = False
 CMS_PAGE_CACHE = False
+CMS_PLUGIN_CACHE = False
 
 TEMPLATE_DIRS = (
     # The docs say it should be absolute path: BASE_DIR is precisely one.
     # Life is wonderful!
     os.path.join(BASE_DIR, "templates"),
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'cache_table',
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -198,13 +207,6 @@ THUMBNAIL_ALIASES = {
         'large'  : {'size' : (500, 500), 'crop' : True, 'quality' : 100},
         'icon'   : {'size' : ( 16,  16), 'crop' : True, 'quality' : 100},
     },
-}
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'cache_table',
-    }
 }
 
 PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']

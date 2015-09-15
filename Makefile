@@ -43,14 +43,12 @@ docker-clean:
 	@docker-compose rm -f
 
 docker-bash:
-	@docker-compose run --rm  web /bin/bash
+	@docker-compose run --rm web bash
 
 docker-init:
-	@docker-compose up -d --no-recreate
-	@docker-compose run --rm  web python app/manage.py syncdb --noinput
-	@docker-compose run --rm  web python app/manage.py migrate
-	@docker-compose run --rm  web python app/manage.py loaddata tools/docker/user.json
-	@docker-compose stop
+	@docker-compose run --rm web psql -h db -U postgres < tools/docker/cache_table.sql
+	@docker-compose run --rm web app/manage.py migrate
+	@docker-compose run --rm web app/manage.py loaddata tools/docker/user.json
 
 docker-data:
 	@docker-compose run --rm web python app/manage.py flush --noinput
