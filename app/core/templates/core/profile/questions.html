@@ -14,15 +14,23 @@
                         <div>
                             {% include 'core/helpers/scale.html' %}
                         </div>
-                        <div
-                         class="slider-readonly"
-                         data-slider-value="[ {{answer.politician_ans.agreement_level}}
-                         {% if answer.own_ans %}, {{answer.own_ans}}{% endif %} ]"
-                         data-slider-title="[ &quot;{% trans 'politician_answer' %}&quot;
-                         {% if answer.own_ans %}, &quot;{% trans 'own_answer' %}&quot;{% endif %} ]"
-                         data-slider-text="[ &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.politician_ans.agreement_level}} / 10&quot;
-                         {% if answer.own_ans %}, &quot;{% trans 'question' %} {{answer.politician_ans.question.question_number}}: {{answer.own_ans}} / 10&quot;{% endif %} ]"
-                        ></div>
+                        <div class="readonly-slider">
+                            <div class="readonly-slider-bar"></div>
+                            {% if answer.own_ans %}
+                            <div
+                             class="readonly-slider-marker readonly-slider-own"
+                             data-title="{% trans 'own_answer' %}"
+                             data-value="{{answer.own_ans}}"
+                             data-text="{% include 'core/helpers/readonly-slider-text.html' with number=answer.politician_ans.question.question_number answer=answer.own_ans %}"
+                            ></div>
+                            {% endif %}
+                            <div
+                             class="readonly-slider-marker readonly-slider-politician"
+                             data-title="{% trans 'politician_answer' %}"
+                             data-value="{{answer.politician_ans.agreement_level}}"
+                             data-text="{% include 'core/helpers/readonly-slider-text.html' with number=answer.politician_ans.question.question_number answer=answer.politician_ans.agreement_level %}"
+                            ></div>
+                        </div>
                         <em>{{answer.politician_ans.note}}</em>
                     </div>
                 </div>

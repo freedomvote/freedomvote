@@ -1,0 +1,10 @@
+{
+  "name": "freedomvote.src",
+  "license": "GPLv3",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-less": "^3.0.3",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}

@@ -1,10 +1,7 @@
 *.swp
 *.pyc
-/.vagrant/
-/bin/
-/include/
-/lib/
-/local/
-/app/static/
-/app/media/
-users.csv
+bin/
+include/
+lib/
+local/
+node_modules/

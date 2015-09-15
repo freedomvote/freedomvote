@@ -15,22 +15,17 @@ def generate_password(length=12):
 def add_user_for_parties(apps, schema_editor):
     parties = Party.objects.all()
 
-    with open('users.csv', 'wb') as csvfile:
-        writer = csv.writer(csvfile, delimiter=';', quotechar='"', quoting=csv.QUOTE_ALL)
-        writer.writerow(['Username', 'Passwort'])
+    for party in parties:
+        username_raw = re.sub('ö', 'oe', re.sub('ü', 'ue', re.sub('ä', 'ae', party.shortname.encode('utf8').lower())))
+        username = re.sub('[^a-zA-Z]', '', username_raw)
 
-        for party in parties:
-            username_raw = re.sub('ö', 'oe', re.sub('ü', 'ue', re.sub('ä', 'ae', party.shortname.encode('utf8').lower())))
-            username = re.sub('[^a-zA-Z]', '', username_raw)
+        password = generate_password()
 
-            password = generate_password()
-
-            if not User.objects.filter(username=username).exists():
-                user = User.objects.create_user(username=username, password=password)
-                user.save()
-                writer.writerow([username, password])
-            else:
-                continue
+        if not User.objects.filter(username=username).exists():
+            user = User.objects.create_user(username=username, password=password)
+            user.save()
+        else:
+            continue
 
 class Migration(migrations.Migration):
     dependencies = [

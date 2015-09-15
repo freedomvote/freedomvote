@@ -102,7 +102,7 @@ def candidates_view(request):
     )
 
 def compare_view(request):
-    questions = Question.objects.all()
+    questions = Question.objects.all().order_by('question_number')
     data      = []
 
     session_answers    = get_cookie(request, 'answers',    {})
@@ -187,6 +187,7 @@ def politician_view(request, politician_id):
             'links'      : links
         }
     )
+
 def politician_statistic_spider_view(request, politician_id):
     statistics = Statistic.get_statistics_by_politician(politician_id)
     stats      = get_cookie(request, 'statistics', {})

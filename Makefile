@@ -5,6 +5,8 @@ DJANGO_ADMIN_USER=admin
 
 help:
 	@echo "The following make targets are available:"
+	@echo "  * less                     - Compile less to css"
+	@echo "  * less-watch               - Compile less to css on changes"
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
@@ -19,6 +21,19 @@ help:
 	@echo "If you're new to the project, run this to get started:"
 	@echo ""
 	@echo " make docker-init docker"
+	@echo ""
+	@echo "If you want to change any less files run this command:"
+	@echo ""
+	@echo " make dev-env less-watch"
+
+less:
+	@gulp less
+
+less-watch:
+	@gulp less:watch
+
+dev-env:
+	@npm i
 
 docker:
 	@docker-compose up --no-recreate
@@ -28,26 +43,25 @@ docker-clean:
 	@docker-compose rm -f
 
 docker-bash:
-	@docker-compose run web /bin/bash
+	@docker-compose run --rm web bash
 
 docker-init:
-	@docker-compose up -d --no-recreate
-	@docker-compose run web python app/manage.py syncdb --noinput
-	@docker-compose run web python app/manage.py migrate
-	@docker-compose run web python app/manage.py loaddata tools/docker/user.json
+	@docker-compose run --rm web psql -h db -U postgres < tools/docker/cache_table.sql
+	@docker-compose run --rm web app/manage.py migrate
+	@docker-compose run --rm web app/manage.py loaddata tools/docker/user.json
 
 docker-data:
-	@docker-compose run web python app/manage.py flush --noinput
-	@docker-compose run web python app/manage.py loaddata /usr/src/app/${FILE}
+	@docker-compose run --rm web python app/manage.py flush --noinput
+	@docker-compose run --rm web python app/manage.py loaddata /usr/src/app/${FILE}
 
 docker-migrate:
-	@docker-compose run web python app/manage.py migrate
+	@docker-compose run --rm web python app/manage.py migrate
 
 docker-makemessages:
-	@docker-compose run web python app/manage.py makemessages -a
+	@docker-compose run --rm web python app/manage.py makemessages -a
 
 docker-compilemessages:
-	@docker-compose run web python app/manage.py compilemessages
+	@docker-compose run --rm web python app/manage.py compilemessages
 
 docker-pw:
-	@docker-compose run web python app/manage.py changepassword ${DJANGO_ADMIN_USER}
+	@docker-compose run --rm web python app/manage.py changepassword ${DJANGO_ADMIN_USER}
