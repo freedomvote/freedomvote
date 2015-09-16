@@ -13,7 +13,7 @@ urlpatterns = patterns(
         include('django.conf.urls.i18n')
     ),
     url(r'^candidates/$',
-        cache_page(3600)(views.candidates_view),
+        views.candidates_view,
         name='candidates'
     ),
     url(r'^compare/$',
