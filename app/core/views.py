@@ -231,22 +231,37 @@ def politician_statistic_spider_view(request, politician_id):
 
 
 def politician_statistic_view(request, politician_id):
-    statistics = Statistic.get_statistics_by_politician(politician_id)
-    category_id = request.GET.get('category', False)
+    category_id = int(request.GET.get('category', False))
     titles  = [force_unicode(_('total'))]
 
     if category_id:
         category = get_object_or_404(Category, id=category_id)
         titles.append(category.name)
 
-    if request.GET.has_key('evaluate'):
+    if 'evaluate' in request.GET:
+        cat_by_id = {
+            cat.id: cat
+            for cat
+            in Category.objects.all()
+        }
+
+        pol_answers = Answer.objects.filter(politician_id=politician_id)
         pairs = []
-        statistics    = get_cookie(request, 'statistics', {})
-        for k, v in statistics.iteritems():
-            cid = int(re.sub('category_', '', k))
+        answers    = get_cookie(request, 'answers',    {})
+
+        delta_by_cat = collections.defaultdict(lambda: [])
+        for ans in pol_answers:
+            voter_value = int(answers.get('question_%s' % ans.question_id, 0))
+            delta       = abs(ans.agreement_level - voter_value)
+            delta_by_cat[ans.question.category_id].append(delta)
+
+        for cid, cat in cat_by_id.iteritems():
             pairs.append({
-                'category': Category.objects.get(id=cid).name,
-                'value':    Statistic.get_accordance(politician_id, cid, (int(v)*10))
+                'category': cat.name,
+                'value':    (
+                    10 - sum(delta_by_cat[cid]) /
+                    float(len(delta_by_cat[cid]))
+                )
             })
 
         sorted_pairs = sorted(pairs, key=lambda k: k['category'])
@@ -261,7 +276,9 @@ def politician_statistic_view(request, politician_id):
         neg     = [(10 - total)]
 
         if category_id:
-            val = statistics.get('category_%s' % category_id)
+            val = 10 - (
+                sum(delta_by_cat[category_id]) /
+                float(len(delta_by_cat[category_id])))
             pos.append(val)
             neg.append(10 - val)
 
@@ -274,13 +291,20 @@ def politician_statistic_view(request, politician_id):
         }
 
     else:
+        statistics = Statistic.get_statistics_by_politician(politician_id)
         values  = [s.accordance for s in statistics]
         total   = sum(values) / len(values)
+
+        # pos is the green part (agreement level) of the graph,
+        # neg is the "rest" (red)
         pos     = [total]
         neg     = [(10 - total)]
 
         if category_id:
-            statistic = Statistic.objects.get(politician_id=politician_id, category=category)
+            # if category_id is given, the graph should display this
+            # category in addition to the summary view
+            statistic = Statistic.objects.get(
+                politician_id=politician_id, category=category)
             pos.append(statistic.value / 10)
             neg.append(10 - statistic.value / 10)
 
