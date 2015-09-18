@@ -1,12 +1,10 @@
-.PHONY: help docker docker-clean docker-init docker-migrate docker-makemessages docker-compilemessages
-
 FILE=tmp.prod.json
 DJANGO_ADMIN_USER=admin
 
 help:
 	@echo "The following make targets are available:"
-	@echo "  * less                     - Compile less to css"
-	@echo "  * less-watch               - Compile less to css on changes"
+	@echo "  * sass                     - Compile sass to css"
+	@echo "  * sass-watch               - Compile sass to css on changes"
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
@@ -26,11 +24,11 @@ help:
 	@echo ""
 	@echo " make dev-env less-watch"
 
-less:
-	@gulp less
+sass:
+	@gulp sass
 
-less-watch:
-	@gulp less:watch
+sass-watch:
+	@gulp sass:watch
 
 dev-env:
 	@npm i
