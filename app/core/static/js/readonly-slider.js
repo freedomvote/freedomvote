@@ -6,8 +6,8 @@ jQuery(function() {
   })
 
   function initSlider(obj) {
-    var own        = obj.children('.readonly-slider-own')
-    var politician = obj.children('.readonly-slider-politician')
+    var own        = obj.children('.readonly-slider-own').show()
+    var politician = obj.children('.readonly-slider-politician').show()
 
     var politicianLeft = parseInt(politician.data('value')) * 10
 

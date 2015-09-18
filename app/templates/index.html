@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags %}
+{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags i18n %}
 
 <!doctype html>
 <html lang="de">
@@ -23,6 +23,13 @@
     </head>
 
     <body>
+        <noscript>
+            <div class="noscript alert-danger">
+                <div class="container">
+                    {% trans 'noscript' %}
+                </div>
+            </div>
+        </noscript>
         <div class="wrapper">
             {% cms_toolbar %}
             {% show_menu 0 100 100 100 'navbar.html' %}
