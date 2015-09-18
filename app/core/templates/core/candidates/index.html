@@ -8,7 +8,7 @@
 
 {% block 'content' %}
 
-<div class="row bottom-buffer">
+<div class="row mbs">
     <div class="col-xs-12 col-md-4 col-lg-3 col-md-offset-8 col-lg-offset-0 switch">
         <div class="btn-group btn-group-justified">
             <a href="{% url 'candidates' %}{% get_params request 'evaluate' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_fsfe_chopen' %}</a>

@@ -10,7 +10,7 @@
 {% block 'content' %}
 <form method="post" id="form">
     {% csrf_token %}
-    <h2>{% trans 'your_opinion_to' %}</h2>
+    <h1>{% trans 'your_opinion_to' %}</h1>
     <table class="table table-striped">
         <tbody>
             {% for d in data %}

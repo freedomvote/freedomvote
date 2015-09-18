@@ -1,7 +1,7 @@
 {% load i18n static thumbnail %}
 
 <div class="row">
-    <div class="col-md-3 col-lg-3 picture">
+    <div class="col-md-3 col-lg-3">
         {% if politician.image %}
             <img alt="{{ politician.first_name }} {{ politician.last_name }}" src="{{politician.image|thumbnail_url:'medium'}}" class="img-thumbnail img-responsive">
         {% else %}
@@ -9,7 +9,7 @@
         {% endif %}
     </div>
     <div class="col-md-5 col-lg-5 details">
-        <h2 class="politician_name">{{ politician.first_name }} {{ politician.last_name }}</h2>
+        <h2 class="mt0">{{ politician.first_name }} {{ politician.last_name }}</h2>
 
         <div class="row">
             <div class="col-md-6"><strong>{% trans 'state' %}</strong></div>
