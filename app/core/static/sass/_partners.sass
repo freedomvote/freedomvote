@@ -1,0 +1,61 @@
+@import 'devices'
+
+.partners > h1
+  text-align: center
+  font-size: 4em
+
+.partner
+  display: flex
+  position: relative
+  border: thin solid #eee
+  border-radius: 5px
+  height: 150px
+  width: 300px
+  margin: 20px auto
+  cursor: pointer
+  transition: transform .3s ease
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.1)
+
+  &:hover .partner-description
+    width: 100%
+
+.partner-logo
+  margin: 10px
+  flex-grow: 1
+  background-size: contain
+  background-position: center center
+  background-repeat: no-repeat
+
+.partner-description
+  background: linear-gradient(to top, #f5f5f5, #eee)
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  width: 0
+  overflow: hidden
+  transition: width .5s ease
+
+.partner-text
+  width: 300px
+  margin: 0 5px
+  font-style: italic
+  height: 80px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.partner-title
+  margin: 0
+  height: 50px
+  line-height: 50px
+  text-align: center
+  overflow: hidden
+
+  > a
+    color: #222
+
+@media #{$lg}
+  .center-content-lg
+    display: flex
+    justify-content: center
