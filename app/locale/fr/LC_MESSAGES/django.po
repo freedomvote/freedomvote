@@ -455,10 +455,8 @@ msgid "source"
 msgstr "Source"
 
 #: app/templates/index.html:29
-#, fuzzy
-#| msgid "description"
 msgid "noscript"
-msgstr "Description"
+msgstr "Ce site ne sera complète que si javascript est activé."
 
 #: app/templates/navbar.html:7
 msgid "toggle_navigation"
