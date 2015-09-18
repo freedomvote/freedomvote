@@ -23,15 +23,13 @@
     </head>
 
     <body>
-        <noscript>
-            <div class="noscript alert-danger">
-                <div class="container">
-                    {% trans 'noscript' %}
-                </div>
-            </div>
-        </noscript>
         {% show_menu 0 100 100 100 'navbar.html' %}
         <div class="container content">
+            <noscript>
+                <div class="alert alert-danger">
+                    {% trans 'noscript' %}
+                </div>
+            </noscript>
             {% block 'content' %}{% endblock %}
         </div>
         {% include 'footer.html' %}
