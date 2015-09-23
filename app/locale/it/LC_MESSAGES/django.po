@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-31 09:19+0000\n"
+"POT-Creation-Date: 2015-09-18 08:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/core/admin.py:21 app/core/views.py:515
+#: app/core/admin.py:21 app/core/views.py:516
 msgid "unique_url"
 msgstr "Link di accesso"
 
@@ -46,7 +46,7 @@ msgstr "Nome"
 
 #: app/core/models.py:25 app/core/models.py:112
 #: app/core/templates/core/party/dashboard.html:53
-#: app/core/templates/core/profile/description.html:15 app/core/views.py:514
+#: app/core/templates/core/profile/description.html:15 app/core/views.py:515
 msgid "state"
 msgstr "Cantone"
 
@@ -76,12 +76,12 @@ msgid "user"
 msgstr "Utente"
 
 #: app/core/models.py:72 app/core/templates/core/party/dashboard.html:51
-#: app/core/views.py:512
+#: app/core/views.py:513
 msgid "first_name"
 msgstr "Nome"
 
 #: app/core/models.py:78 app/core/templates/core/party/dashboard.html:52
-#: app/core/views.py:513
+#: app/core/views.py:514
 msgid "last_name"
 msgstr "Cognome"
 
@@ -168,8 +168,7 @@ msgid "description"
 msgstr "Descrizione"
 
 #: app/core/models.py:238 app/core/models.py:246
-#: app/core/templates/core/profile/questions.html:23
-#: app/core/templates/core/profile/questions.html:24
+#: app/core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
 msgstr "Domanda"
 
@@ -291,12 +290,12 @@ msgstr "Spiegazione"
 msgid "no_question_description"
 msgstr "Nessuna descrizione"
 
-#: app/core/templates/core/helpers/scale.html:5
+#: app/core/templates/core/helpers/scale.html:4
 #: app/core/templates/core/profile/description.html:36
 msgid "no"
 msgstr "No"
 
-#: app/core/templates/core/helpers/scale.html:10
+#: app/core/templates/core/helpers/scale.html:9
 #: app/core/templates/core/profile/description.html:36
 msgid "yes"
 msgstr "Si"
@@ -357,13 +356,13 @@ msgstr "Cruscotto"
 msgid "show_own_spider"
 msgstr "Visualizzare la propria opinione"
 
-#: app/core/templates/core/profile/questions.html:21
-msgid "politician_answer"
-msgstr "Risposta del politico"
-
 #: app/core/templates/core/profile/questions.html:22
 msgid "own_answer"
 msgstr "Propria risposta"
+
+#: app/core/templates/core/profile/questions.html:29
+msgid "politician_answer"
+msgstr "Risposta del politico"
 
 #: app/core/views.py:132
 msgid "answers_saved_successfully_evaluate"
@@ -374,59 +373,59 @@ msgstr ""
 msgid "answers_resetted"
 msgstr "Le sue risposte sono state annullate"
 
-#: app/core/views.py:203
+#: app/core/views.py:204
 msgid "total"
 msgstr "Totale"
 
-#: app/core/views.py:286
+#: app/core/views.py:287
 msgid "profile_saved_successfully"
 msgstr "Il suo profilo è stato memorizzato"
 
-#: app/core/views.py:353
+#: app/core/views.py:354
 msgid "answers_published_successfully"
 msgstr "Le sue risposte sono state rilasciate"
 
-#: app/core/views.py:363
+#: app/core/views.py:364
 msgid "answers_unpublished_successfully"
 msgstr "Le sue risposte sono state annullate"
 
-#: app/core/views.py:427
+#: app/core/views.py:428
 msgid "login_successful"
 msgstr "Connessione corretta"
 
-#: app/core/views.py:430
+#: app/core/views.py:431
 msgid "login_error"
 msgstr "Ha inserito dei dati di accesso erronei"
 
-#: app/core/views.py:456
+#: app/core/views.py:457
 msgid "politician_add_success"
 msgstr "Politico aggiunto correttamente"
 
-#: app/core/views.py:459
+#: app/core/views.py:460
 msgid "politician_add_error"
 msgstr "Ci sono stati degli errori nello aggiungere il politico"
 
-#: app/core/views.py:482
+#: app/core/views.py:483
 msgid "politician_edit_success"
 msgstr "Politico è stato aggiunto correttamente"
 
-#: app/core/views.py:485
+#: app/core/views.py:486
 msgid "politician_edit_error"
 msgstr "Ci sono stati degli errori nel modificare il politico"
 
-#: app/core/views.py:530
+#: app/core/views.py:531
 msgid "politician_delete_success"
 msgstr "Politico \"%s %s\" è stato annullato correttamente"
 
-#: app/freedomvote/settings.py:170
+#: app/freedomvote/settings.py:179
 msgid "german"
 msgstr "Tedesco"
 
-#: app/freedomvote/settings.py:171
+#: app/freedomvote/settings.py:180
 msgid "french"
 msgstr "Francese"
 
-#: app/freedomvote/settings.py:172
+#: app/freedomvote/settings.py:181
 msgid "italian"
 msgstr "Italiano"
 
@@ -453,6 +452,10 @@ msgstr "Palazzo federale"
 #: app/templates/home.html:16
 msgid "source"
 msgstr "Fonte"
+
+#: app/templates/index.html:29
+msgid "noscript"
+msgstr "Questo sito sarà completa solo se javascript è abilitato."
 
 #: app/templates/navbar.html:7
 msgid "toggle_navigation"

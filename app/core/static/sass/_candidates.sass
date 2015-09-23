@@ -1,0 +1,88 @@
+.detail
+  position: fixed
+  display: none
+  background-color: #FFFFFF
+  border-radius: 10px
+  border: 2px solid lightgrey
+  z-index: 1000
+
+  &::after, &::before
+    bottom: 100%
+    left: 50%
+    border: solid transparent
+    content: ' '
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+
+  &::after
+    border-color: rgba(255, 255, 255, 0)
+    border-bottom-color: #FFFFFF
+    border-width: 15px
+    margin-left: -15px
+
+  &::before
+    border-color: rgba(211, 211, 211, 0)
+    border-bottom-color: #d3d3d3
+    border-width: 17px
+    margin-left: -17px
+
+.candidate-row
+  height: 60px
+
+  @media #{$xs}
+    height: 140px
+
+.statistic .highcharts-series
+  cursor: pointer
+
+svg.img-thumbnail
+  margin-bottom: -5px
+
+.switch
+  @media #{$xs}
+    padding-bottom: 15px
+  @media #{$sm}
+    padding-bottom: 10px
+  @media #{$md}
+    padding-bottom: 10px
+
+@media #{$xs}
+  .center-xs
+    text-align: center
+
+.form-row div
+  padding-left: 2px
+  padding-right: 2px
+
+  &:first-child
+    padding-left: 15px
+
+  &:last-child
+    padding-right: 15px
+    padding: 0 15px 0
+
+  @media #{$xs}
+    padding: 0 15px 15px
+    &:last-child
+      padding: 0 15px 0
+
+  @media #{$sm}
+    &:last-child
+      padding-bottom: 10px
+      &:nth-child(2)
+        padding-bottom: 10px
+      &:nth-child(odd)
+        padding-right: 5px
+        padding-left: 15px
+      &:nth-child(even)
+        padding-right: 15px
+        padding-left: 5px
+
+  @media #{$md}
+    padding-right: 5px
+    padding-bottom: 0
+
+.details .row
+  margin-bottom: 5px
