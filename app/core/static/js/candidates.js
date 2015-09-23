@@ -1,14 +1,8 @@
-jQuery(function() {
+jQuery(function($) {
   'use strict'
-
-  var mousePos = { x: 0, y: 0 }
 
   $('.add-popover').each(function() {
     $(this).popover({container:'body', html:true})
-  })
-
-  $(window).on('mousemove', function(e) {
-    mousePos = { x: e.pageX, y: e.pageY }
   })
 
   $('.statistic').each(function(){
@@ -54,15 +48,20 @@ jQuery(function() {
             point: {
               events: {
                 mouseOver: function(e) {
-                  var rect = $(this.graphic.element)
-                  var detail = rect.parents('.charts').children('.detail')
-                  detail.css({
-                    top: rect.offset().top + rect.height() + 30,
-                    left: mousePos.x - detail.width() / 2 + 'px'
-                  }).fadeIn()
+                  var rect   = $(this.graphic.element)
+                  var charts = rect.closest('.charts')
+                  var detail = charts.children('.detail')
+
+                  detail.show().position({
+                    'my': 'center top',
+                    'at': 'center bottom',
+                    'of': charts.children('.statistic')
+                  })
                 },
                 mouseOut: function(e) {
-                  $(this.graphic.element).parents('.charts').children('.detail').fadeOut()
+                  $(this.graphic.element).closest('.charts')
+                                         .children('.detail')
+                                         .hide()
                 }
               }
             }
@@ -92,7 +91,7 @@ jQuery(function() {
           text: ' '
         },
         xAxis: {
-          categories: data.detail.categories,
+          categories: data.detail.categories
         },
         credits: {
           enabled: false
