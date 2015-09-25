@@ -47,21 +47,16 @@ jQuery(function($) {
           series: {
             point: {
               events: {
-                mouseOver: function(e) {
+                click: function(e) {
                   var rect   = $(this.graphic.element)
                   var charts = rect.closest('.charts')
                   var detail = charts.children('.detail')
 
-                  detail.show().position({
-                    'my': 'center top',
-                    'at': 'center bottom',
-                    'of': charts.children('.statistic')
-                  })
-                },
-                mouseOut: function(e) {
-                  $(this.graphic.element).closest('.charts')
-                                         .children('.detail')
-                                         .hide()
+                  var effect = 'drop'
+
+                  $('.detail').not(detail).hide(effect)
+
+                  detail.toggle(effect)
                 }
               }
             }
