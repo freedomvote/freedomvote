@@ -3,11 +3,7 @@
     <td>
         <div class="row candidate-row">
             <div class="col-xs-12 col-md-5 col-sm-6 center-xs">
-                {% if politician.image %}
-                    <img class="img-thumbnail img-responsive" src="{{politician.image|thumbnail_url:'small'}}">
-                {% else %}
-                    <img class="img-thumbnail img-responsive" width="60px" src="{% static 'images/placeholder.svg' %}">
-                {% endif %}
+                <img class="img-thumbnail" width="60px" src="{% if politician.image %}{{politician.image|thumbnail_url:'large'}}{% else %}{% static 'images/placeholder.svg' %}{% endif %}">
                 <br class="visible-xs">
                 <a href="{% url 'politician' politician_id=politician.id %}">{{politician.first_name}} {{politician.last_name}} {{politician.get_details}}</a>
             </div>
