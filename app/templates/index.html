@@ -1,0 +1,47 @@
+{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags i18n %}
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Adfinis SyGroup AG">
+        <meta name="keywords" content="Wahlen 2015,Parlament,Open Source,Freie Software">
+
+        <title>Freedomvote{% block 'title' %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/jquery-ui/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'lib/jquery-ui/jquery-ui.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+        {% render_block 'css' %}
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        {% show_menu 0 100 100 100 'navbar.html' %}
+        <div class="container content">
+            <noscript>
+                <div class="alert alert-danger">
+                    {% trans 'noscript' %}
+                </div>
+            </noscript>
+            {% block 'content' %}{% endblock %}
+        </div>
+        {% include 'footer.html' %}
+        {% include 'messages.html' %}
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'lib/jquery-ui/jquery-ui.min.js' %}"></script>
+        <script src="{% static 'lib/highcharts/highcharts.js' %}"></script>
+        <script src="{% static 'js/notify.js' %}"></script>
+        <script src="{% static 'js/language.js' %}"></script>
+        {% block 'scripts' %}{% endblock %}
+        {% render_block 'js' %}
+        {% if not debug %}{% tracking_code %}{% endif %}
+    </body>
+</html>

@@ -1,0 +1,472 @@
+# Freedomvote Translation
+# Copyright (C) Freedomvote
+# This file is distributed under the same license as the freedomvote package.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-18 08:03+0000\n"
+"PO-Revision-Date: 2015-07-16 13:08+0200\n"
+"Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.2\n"
+
+#: app/core/admin.py:21 app/core/views.py:516
+msgid "unique_url"
+msgstr "Zugangslink"
+
+#: app/core/admin.py:44 app/core/models.py:59 app/core/models.py:225
+#: app/core/models.py:271
+msgid "category"
+msgstr "Kategorie"
+
+#: app/core/menu.py:10
+msgid "compare"
+msgstr "Vergleichen"
+
+#: app/core/menu.py:11
+msgid "candidates"
+msgstr "Kandidaten"
+
+#: app/core/menu.py:12
+msgid "partners"
+msgstr "Partner"
+
+#: app/core/models.py:18 app/core/models.py:33 app/core/models.py:52
+#: app/core/models.py:190
+msgid "name"
+msgstr "Name"
+
+#: app/core/models.py:25 app/core/models.py:112
+#: app/core/templates/core/party/dashboard.html:53
+#: app/core/templates/core/profile/description.html:15 app/core/views.py:515
+msgid "state"
+msgstr "Kanton"
+
+#: app/core/models.py:26
+msgid "states"
+msgstr "Kantone"
+
+#: app/core/models.py:37
+msgid "shortname"
+msgstr "Abkürzung"
+
+#: app/core/models.py:44 app/core/models.py:118
+#: app/core/templates/core/profile/description.html:20
+msgid "party"
+msgstr "Partei"
+
+#: app/core/models.py:45
+msgid "parties"
+msgstr "Parteien"
+
+#: app/core/models.py:60
+msgid "categories"
+msgstr "Kategorien"
+
+#: app/core/models.py:66
+msgid "user"
+msgstr "Benutzer"
+
+#: app/core/models.py:72 app/core/templates/core/party/dashboard.html:51
+#: app/core/views.py:513
+msgid "first_name"
+msgstr "Vorname"
+
+#: app/core/models.py:78 app/core/templates/core/party/dashboard.html:52
+#: app/core/views.py:514
+msgid "last_name"
+msgstr "Nachname"
+
+#: app/core/models.py:83
+msgid "email"
+msgstr "Email"
+
+#: app/core/models.py:89
+msgid "image"
+msgstr "Bild"
+
+#: app/core/models.py:93 app/core/templates/core/profile/description.html:35
+msgid "is_member_of_parliament"
+msgstr "Bisheriges Mitglied National- oder Ständerat"
+
+#: app/core/models.py:97 app/core/templates/core/profile/description.html:25
+msgid "past_contributions"
+msgstr "Bisherige Beiträge zum Thema"
+
+#: app/core/models.py:101 app/core/templates/core/profile/description.html:30
+msgid "future_plans"
+msgstr "Absichten und Pläne"
+
+#: app/core/models.py:105
+msgid "unique_key"
+msgstr "Zugangscode"
+
+#: app/core/models.py:124
+msgid "party_other"
+msgstr "Andere Partei"
+
+#: app/core/models.py:179 app/core/models.py:205 app/core/models.py:250
+#: app/core/models.py:267
+msgid "politician"
+msgstr "Politiker"
+
+#: app/core/models.py:180
+msgid "politicians"
+msgstr "Politiker"
+
+#: app/core/models.py:186
+msgid "icon"
+msgstr "Icon"
+
+#: app/core/models.py:194 app/core/templates/core/edit/links.html:21
+msgid "link_type"
+msgstr "Linktyp"
+
+#: app/core/models.py:195
+msgid "link_types"
+msgstr "Linktypen"
+
+#: app/core/models.py:201
+msgid "type"
+msgstr "Typ"
+
+#: app/core/models.py:208 app/core/templates/core/edit/links.html:29
+msgid "url"
+msgstr "URL"
+
+#: app/core/models.py:212
+msgid "link"
+msgstr "Link"
+
+#: app/core/models.py:213 app/core/templates/core/edit/profile.html:83
+#: app/core/templates/core/profile/description.html:52
+msgid "links"
+msgstr "Links"
+
+#: app/core/models.py:218
+msgid "preferred_answer"
+msgstr "Bevorzugte Antwort"
+
+#: app/core/models.py:221
+msgid "question_number"
+msgstr "Fragenummer"
+
+#: app/core/models.py:228
+msgid "text"
+msgstr "Text"
+
+#: app/core/models.py:233
+msgid "description"
+msgstr "Beschreibung"
+
+#: app/core/models.py:238 app/core/models.py:246
+#: app/core/templates/core/helpers/readonly-slider-text.html:1
+msgid "question"
+msgstr "Frage"
+
+#: app/core/models.py:239 app/core/templates/core/edit/menu.html:8
+msgid "questions"
+msgstr "Fragen"
+
+#: app/core/models.py:253
+msgid "agreement_level"
+msgstr "Einverständnis"
+
+#: app/core/models.py:256 app/core/templates/core/edit/questions.html:36
+msgid "note"
+msgstr "Bemerkung"
+
+#: app/core/models.py:260
+msgid "answer"
+msgstr "Antwort"
+
+#: app/core/models.py:261
+msgid "answers"
+msgstr "Antworten"
+
+#: app/core/models.py:274
+msgid "value"
+msgstr "Wert"
+
+#: app/core/models.py:306
+msgid "statistic"
+msgstr "Statistik"
+
+#: app/core/models.py:307
+msgid "statistics"
+msgstr "Statistiken"
+
+#: app/core/templates/core/candidates/filter.html:8
+msgid "sort_by_category"
+msgstr "Nach Kategorie sortieren"
+
+#: app/core/templates/core/candidates/filter.html:22
+msgid "filter_by_state"
+msgstr "Auf Kanton einschränken"
+
+#: app/core/templates/core/candidates/filter.html:39
+msgid "search"
+msgstr "Suchen"
+
+#: app/core/templates/core/candidates/filter.html:44
+msgid "filter"
+msgstr "Filtern"
+
+#: app/core/templates/core/candidates/index.html:14
+msgid "opinion_fsfe_chopen"
+msgstr "FSFE & /ch/open"
+
+#: app/core/templates/core/candidates/index.html:19
+#: app/core/templates/core/candidates/index.html:28
+msgid "own_opinion"
+msgstr "Eigene Meinung"
+
+#: app/core/templates/core/candidates/index.html:26
+#: app/core/templates/core/profile/description.html:45
+msgid "add_own_opinion"
+msgstr "Eigene Meinung erfassen"
+
+#: app/core/templates/core/candidates/index.html:27
+msgid "add_own_opinion_here"
+msgstr "Klicken Sie hier um Ihre eigene Meinung zu erfassen"
+
+#: app/core/templates/core/compare/index.html:13
+#: app/core/templates/core/edit/questions.html:11
+#: app/core/templates/core/profile/questions.html:3
+msgid "your_opinion_to"
+msgstr "Wie stehen Sie zu..."
+
+#: app/core/templates/core/compare/index.html:43
+msgid "evaluate"
+msgstr "Auswerten"
+
+#: app/core/templates/core/compare/index.html:46
+msgid "reset_answers"
+msgstr "Antworten zurücksetzen"
+
+#: app/core/templates/core/compare/index.html:49
+#: app/core/templates/core/edit/profile.html:78
+#: app/core/templates/core/party/politician_edit.html:33
+msgid "save"
+msgstr "Speichern"
+
+#: app/core/templates/core/edit/links.html:33
+msgid "add_link"
+msgstr "Link hinzufügen"
+
+#: app/core/templates/core/edit/menu.html:5
+msgid "profile"
+msgstr "Profil"
+
+#: app/core/templates/core/edit/profile.html:44
+msgid "other"
+msgstr "Andere"
+
+#: app/core/templates/core/edit/profile.html:67
+msgid "file_too_large"
+msgstr "Die Datei ist zu gross ( > 5MB )"
+
+#: app/core/templates/core/edit/questions.html:51
+msgid "publish_answers"
+msgstr "Antworten freigeben"
+
+#: app/core/templates/core/edit/questions.html:57
+msgid "unpublish_answers"
+msgstr "Antworten zurückziehen"
+
+#: app/core/templates/core/helpers/question_text.html:7
+msgid "toggle_description"
+msgstr "Erklärung…"
+
+#: app/core/templates/core/helpers/question_text.html:13
+msgid "no_question_description"
+msgstr "Keine Beschreibung vorhanden"
+
+#: app/core/templates/core/helpers/scale.html:4
+#: app/core/templates/core/profile/description.html:36
+msgid "no"
+msgstr "Nein"
+
+#: app/core/templates/core/helpers/scale.html:9
+#: app/core/templates/core/profile/description.html:36
+msgid "yes"
+msgstr "Ja"
+
+#: app/core/templates/core/party/dashboard.html:17
+#: app/core/templates/core/party/menu.html:5
+#: app/core/templates/core/party/politician_edit.html:6
+msgid "add_politician"
+msgstr "Politiker hinzufügen"
+
+#: app/core/templates/core/party/dashboard.html:27
+#: app/core/templates/core/party/menu.html:6
+msgid "export"
+msgstr "Exportieren"
+
+#: app/core/templates/core/party/dashboard.html:37
+#: app/core/templates/core/party/menu.html:7 app/templates/navbar.html:33
+msgid "logout"
+msgstr "Ausloggen"
+
+#: app/core/templates/core/party/dashboard.html:46
+msgid "created_politicians"
+msgstr "Erstellte Politiker"
+
+#: app/core/templates/core/party/dashboard.html:64
+msgid "copy_to_clipboard"
+msgstr "URL in die Zwischenablage kopieren"
+
+#: app/core/templates/core/party/dashboard.html:65
+msgid "edit_politician"
+msgstr "Politiker bearbeiten"
+
+#: app/core/templates/core/party/dashboard.html:66
+msgid "delete_politician"
+msgstr "Politiker löschen"
+
+#: app/core/templates/core/party/dashboard.html:79
+msgid "copy_url_text"
+msgstr "Kopieren Sie die URL in die Zwischenablage"
+
+#: app/core/templates/core/party/dashboard.html:83
+msgid "close"
+msgstr "Schliessen"
+
+#: app/core/templates/core/party/login.html:9
+msgid "login_label"
+msgstr "Bitte geben Sie Ihr Passwort ein"
+
+#: app/core/templates/core/party/login.html:12
+msgid "login"
+msgstr "Login"
+
+#: app/core/templates/core/party/menu.html:4 app/templates/navbar.html:27
+msgid "dashboard"
+msgstr "Dashboard"
+
+#: app/core/templates/core/profile/description.html:40
+msgid "show_own_spider"
+msgstr "Eigene Meinung anzeigen"
+
+#: app/core/templates/core/profile/questions.html:22
+msgid "own_answer"
+msgstr "Eigene Antwort"
+
+#: app/core/templates/core/profile/questions.html:29
+msgid "politician_answer"
+msgstr "Politiker Antwort"
+
+#: app/core/views.py:132
+msgid "answers_saved_successfully_evaluate"
+msgstr ""
+"Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
+"auswerten."
+
+#: app/core/views.py:155
+msgid "answers_resetted"
+msgstr "Ihre Antworten wurden zurückgesetzt"
+
+#: app/core/views.py:204
+msgid "total"
+msgstr "Gesamt"
+
+#: app/core/views.py:287
+msgid "profile_saved_successfully"
+msgstr "Ihr Profil wurde erfolgreich gespeichert."
+
+#: app/core/views.py:354
+msgid "answers_published_successfully"
+msgstr "Ihre Antworten wurden erfolgreich freigegeben."
+
+#: app/core/views.py:364
+msgid "answers_unpublished_successfully"
+msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
+
+#: app/core/views.py:428
+msgid "login_successful"
+msgstr "Sie wurden erfolgreich eingeloggt"
+
+#: app/core/views.py:431
+msgid "login_error"
+msgstr "Sie haben falsche Logindaten eingegeben"
+
+#: app/core/views.py:457
+msgid "politician_add_success"
+msgstr "Politiker wurde erfolgreich hinzugefügt"
+
+#: app/core/views.py:460
+msgid "politician_add_error"
+msgstr "Es gab einen Fehler beim Erstellen des Politikers"
+
+#: app/core/views.py:483
+msgid "politician_edit_success"
+msgstr "Politiker wurde erfolgreich bearbeitet"
+
+#: app/core/views.py:486
+msgid "politician_edit_error"
+msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
+
+#: app/core/views.py:531
+msgid "politician_delete_success"
+msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
+
+#: app/freedomvote/settings.py:179
+msgid "german"
+msgstr "Deutsch"
+
+#: app/freedomvote/settings.py:180
+msgid "french"
+msgstr "Französisch"
+
+#: app/freedomvote/settings.py:181
+msgid "italian"
+msgstr "Italienisch"
+
+#: app/templates/404.html:6
+msgid "page_not_found"
+msgstr "Seite nicht gefunden"
+
+#: app/templates/500.html:6
+msgid "server_error"
+msgstr "Serverfehler"
+
+#: app/templates/footer.html:40 app/templates/partners.html:7
+msgid "our_partners"
+msgstr "Unsere Partner"
+
+#: app/templates/footer.html:52
+msgid "source_code"
+msgstr "Quellcode"
+
+#: app/templates/home.html:15
+msgid "parliament_building"
+msgstr "Bundeshaus"
+
+#: app/templates/home.html:16
+msgid "source"
+msgstr "Quelle"
+
+#: app/templates/index.html:29
+msgid "noscript"
+msgstr "Diese Seite funktioniert nur komplett, wenn Javascript aktiviert ist."
+
+#: app/templates/navbar.html:7
+msgid "toggle_navigation"
+msgstr "Menu umschalten"
+
+#~ msgid "details"
+#~ msgstr "Details"
+
+#~ msgid "applies_not"
+#~ msgstr "Trifft gar nicht zu"
+
+#~ msgid "applies"
+#~ msgstr "Trifft voll und ganz zu"

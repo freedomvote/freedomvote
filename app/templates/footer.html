@@ -1,0 +1,56 @@
+{% load staticfiles i18n %}
+
+<footer class="footer">
+    <div class="container">
+        <div class="row hidden-sm hidden-xs mbm">
+            <div class="center-content">
+                <div class="col-md-4 center-content">
+                    <a href="http://ch-open.ch" class="logo logo-chopen"></a>
+                </div>
+                <div class="col-md-4 center-content">
+                    <a href="http://fsfe.org" class="logo logo-fsfe"></a>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-sm hidden-xs mbm">
+            <div class="center-content">
+                <div class="col-md-2 center-content">
+                    <a href="http://www.digitale-nachhaltigkeit.ch/" class="logo logo--small logo-parldigi"></a>
+                </div>
+                <div class="col-md-2 center-content">
+                    <a href="http://www.isoc.ch/" class="logo logo--small logo-isoc"></a>
+                </div>
+                <div class="col-md-2 center-content">
+                    <a href="http://opendata.ch/" class="logo logo--small logo-opendata"></a>
+                </div>
+                <div class="col-md-2 center-content">
+                    <a href="http://allmend.ch/" class="logo logo--small logo-allmend"></a>
+                </div>
+                <div class="col-md-2 center-content">
+                    <a href="http://www.wilhelmtux.ch/" class="logo logo--small logo-wilhelmtux"></a>
+                </div>
+            </div>
+        </div>
+        <address class="address">
+            Swiss Open Systems User Group |
+            Nicolas Christener |
+            <a href="mailto:freedomvote@freedomvote.ch">freedomvote@freedomvote.ch</a> |
+            <a href="http://ch-open.ch">/ch/open</a> |
+            8000 Zürich |
+            <a href="/partners">{% trans 'our_partners' %}</a>
+        </address>
+        <div class="row center-content">
+            <div class="col-md-2">
+                <a class="footer-icon" href="{% url 'info' %}">
+                    <img src="{% static 'images/json.svg' %}"><br>
+                    API
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="footer-icon" href="https://freie.software/adfinis-sygroup/freedomvote">
+                    <img src="{% static 'images/git.svg' %}"><br>
+                    {% trans 'source_code' %}
+                </a>
+            </div>
+        </div>
+</footer>

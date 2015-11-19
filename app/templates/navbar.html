@@ -1,0 +1,59 @@
+{% load menu_tags staticfiles i18n %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">{% trans 'toggle_navigation' %}</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/"><img class="navbar-logo" alt="Freedomvote" src="{% static 'images/logo.png' %}"></a>
+        </div>
+        <div id="navbar-collapse-1" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                {% for child in children %}
+                <li><a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% if user.is_authenticated %}
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'party_dashboard' user.username %}"><i class="fa fa-dashboard"></i>
+                                {% trans 'dashboard' %}
+                            </a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="{% url 'party_logout' user.username %}"><i class="fa fa-power-off"></i>
+                                {% trans 'logout' %}
+                            </a>
+                        </li>
+                  </ul>
+                </li>
+            </ul>
+            {% endif %}
+            <form action="{% url 'set_language' %}" class="navbar-right navbar-form language" method="post">
+                {% csrf_token %}
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                <input name="next" type="hidden" value="{{ request.path }}" />
+                <input name="language" type="hidden" value="{{ language.code }}" />
+                <ul class="navbar-nav nav">
+                {% for language in languages %}
+                    <li><a href="#" data-lang="{{language.code}}">
+                        {% if language.code == LANGUAGE_CODE %}<strong>{% endif %}
+                        {{language.code}}
+                        {% if language.code == LANGUAGE_CODE %}</strong>{% endif %}
+                    </a></li>
+                {% endfor %}
+                </ul>
+            </form>
+        </div>
+    </div>
+</nav>

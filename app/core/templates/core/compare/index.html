@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block 'scripts' %}
+    <script src="{% static 'js/compare.js' %}"></script>
+    <script src="{% static 'js/description_toggler.js' %}"></script>
+{% endblock %}
+
+{% block 'content' %}
+<form method="post" id="form">
+    {% csrf_token %}
+    <h1>{% trans 'your_opinion_to' %}</h1>
+    <table class="table table-striped">
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>
+                    <div class="row question-row">
+                        <div class="col-md-6 col-sm-6 col-lg-8 col-xs-12">
+                        {% include "core/helpers/question_text.html" with question=d.question %}
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-4 col-xs-12">
+                            <div class="scale-slider">
+                                {% include 'core/helpers/scale.html' %}
+                            </div>
+                            <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
+                            <div
+                             class="slider"
+                             id="slider_{{d.question.id}}"
+                             data-value={{d.value}}
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row button-row">
+        <div class="col-lg-3 col-sm-4 col-md-3 col-md-offset-3">
+            <a class="btn btn-default btn-justified {% if 'answers' not in request.COOKIES or request.COOKIES.answers == '{}' %}disabled{% endif %}" id="evaluate" href="{% url 'candidates' %}?evaluate=1">{% trans 'evaluate' %}</a>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-md-3">
+            <a class="btn btn-default btn-justified" href="{% url 'compare_reset' %}">{% trans 'reset_answers' %}</a>
+        </div>
+        <div class="col-lg-3 col-sm-4 col-md-3">
+            <input type="submit" class="btn btn-primary btn-justified" value="{% trans 'save' %}">
+        </div>
+    </div>
+</form>
+{% endblock %}

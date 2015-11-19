@@ -1,0 +1,35 @@
+{% load i18n thumbnail %}
+
+<div class="col-md-2">
+{% for link in links %}
+    <p>
+        <form style="display:inline-block;" action="{% url 'politician_link_delete' unique_key=politician.unique_key link_id=link.id %}">
+            <img class="img-circle" src="{{link.type.icon|thumbnail_url:'icon'}}">
+            <a href="{{link.url}}">{{link.type.name}}</a>
+            {% csrf_token %}
+            <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
+            <input name="link_id" type="hidden" value="{{link.id}}">
+            <span class="fa fa-trash mouse"></span>
+        </form>
+    </p>
+{%endfor%}
+</div>
+<form id="link" action="{% url 'politician_link_add' unique_key=politician.unique_key %}">
+    {% csrf_token %}
+    <input name="unique_key" type="hidden" value="{{politician.unique_key}}">
+    <div class="col-md-3">
+        <label for="link_type">{% trans 'link_type' %}</label>
+        <select class="form-control" name="link_type">
+            {% for type in link_types %}
+            <option {% if type.id == link_type.id %}selected {% endif %}value="{{type.id}}">{{type.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-4{% if error %} has-error{% endif %}">
+        <label class="control-label" for="url">{% trans 'url' %}</label>
+        <input name="url" class="form-control" type="url" placeholder="http://www.example.com" value="{{ input }}">
+    </div>
+    <div class="col-md-3" style="padding-top:25px">
+        <input class="btn btn-default btn-justified" type="submit" value="{% trans 'add_link' %}">
+    </div>
+</form>

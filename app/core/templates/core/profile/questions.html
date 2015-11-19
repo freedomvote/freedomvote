@@ -1,0 +1,41 @@
+{% load i18n %}
+
+<h2>{% trans 'your_opinion_to' %}</h2>
+<table class="table table-striped">
+    <tbody>
+        {% for answer in answers %}
+        <tr>
+            <td>
+                <div class="row question-row">
+                    <div class="col-sm-6 col-md-6 col-lg-8 col-xs-12">
+                        {% include "core/helpers/question_text.html" with question=answer.politician_ans.question %}
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xs-12">
+                        <div>
+                            {% include 'core/helpers/scale.html' %}
+                        </div>
+                        <div class="readonly-slider">
+                            <div class="readonly-slider-bar"></div>
+                            {% if answer.own_ans %}
+                            <div
+                             class="readonly-slider-marker readonly-slider-own"
+                             data-title="{% trans 'own_answer' %}"
+                             data-value="{{answer.own_ans}}"
+                             data-text="{% include 'core/helpers/readonly-slider-text.html' with number=answer.politician_ans.question.question_number answer=answer.own_ans %}"
+                            ></div>
+                            {% endif %}
+                            <div
+                             class="readonly-slider-marker readonly-slider-politician"
+                             data-title="{% trans 'politician_answer' %}"
+                             data-value="{{answer.politician_ans.agreement_level}}"
+                             data-text="{% include 'core/helpers/readonly-slider-text.html' with number=answer.politician_ans.question.question_number answer=answer.politician_ans.agreement_level %}"
+                            ></div>
+                        </div>
+                        <em>{{answer.politician_ans.note}}</em>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

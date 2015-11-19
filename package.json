@@ -1,0 +1,16 @@
+{
+  "name": "freedomvote.src",
+  "author": "Adfinis SyGroup AG",
+  "private": true,
+  "license": "GPL-3.0",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/adfinis-sygroup/freedomvote"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.5.2"
+  }
+}

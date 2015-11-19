@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+{% load cms_tags staticfiles i18n %}
+
+{% block 'content' %}
+    <div class="row">
+        <div class="col-md-9">
+        {% placeholder intro %}
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <img class="img-responsive img-rounded" src="{% static 'images/bundeshaus.jpg' %}" alt="{% trans 'parliament_building' %}">
+            <em class="source">{% trans 'source' %}: <a href="http://www.parlament.ch">http://www.parlament.ch</a></em>
+        </div>
+        <div class="col-md-9">
+        {% placeholder desc %}
+        </div>
+    </div>
+{% endblock %}

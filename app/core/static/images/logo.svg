@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg6299"
+   sodipodi:docname="vote2.svg"
+   viewBox="0 0 230.32291 39.729936"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   width="100%"
+   height="100%"
+   inkscape:export-filename="/home/mm/Dokumente/vote.png"
+   inkscape:export-xdpi="25.4382"
+   inkscape:export-ydpi="25.4382">
+  <defs
+     id="defs18" />
+  <title
+     id="title3946">vote icon</title>
+  <sodipodi:namedview
+     id="base"
+     bordercolor="#666666"
+     inkscape:pageshadow="2"
+     inkscape:guide-bbox="true"
+     pagecolor="#ffffff"
+     inkscape:window-height="698"
+     inkscape:window-maximized="1"
+     inkscape:zoom="0.55625"
+     inkscape:window-x="0"
+     showgrid="false"
+     borderopacity="1.0"
+     inkscape:current-layer="layer1"
+     inkscape:cx="121.32522"
+     inkscape:cy="-146.6763"
+     showguides="true"
+     inkscape:window-y="0"
+     inkscape:window-width="1022"
+     inkscape:pageopacity="0.0"
+     inkscape:document-units="px"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       id="grid7382"
+       enabled="true"
+       visible="true"
+       snapvisiblegridlinesonly="true"
+       type="xygrid"
+       empspacing="5"
+       originx="189.71824px"
+       originy="-114.70709px" />
+    <sodipodi:guide
+       id="guide9049"
+       position="79.36529,312.53095"
+       orientation="-0.70710678,0.70710678" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="332.55702,-20.00205"
+       id="guide3771" />
+  </sodipodi:namedview>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     transform="translate(189.71824,-325.56298)">
+    <g
+       id="g3768"
+       transform="matrix(0.35,0,0,0.35,-48.461912,224.52817)">
+      <path
+         inkscape:export-xdpi="89.968269"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="F:\FASTALLOY\TTD\2009 TTD\TTD DEC 2009\today\logo_projects\datavote\datavote logo netalloy.png"
+         inkscape:export-ydpi="89.968269"
+         d="m 133.79425,288.6709 c -25.83,16.182 -48.3534,34.947 -69.5475,83.052 l -19.3896,-35.154 -11.2014,7.29 c 9.2988,15.3423 20.6235,35.4636 24.6951,42.9282 h 12.5118 c 12.0411,-49.527 40.5666,-84.528 66.6666,-97.974 l -3.73374,-0.1393 z"
+         style="text-indent:0;text-transform:none;block-progression:tb;color:#000000;fill:#808080;stroke:none"
+         id="path8979" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text2995"
+         y="385.41574"
+         x="96.382027"
+         style="font-size:105px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-size:105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:0px;fill:#808080;fill-opacity:1;font-family:Switzera ADF;-inkscape-font-specification:Switzera ADF"
+           y="385.41574"
+           x="96.382027"
+           id="tspan2997"
+           sodipodi:role="line">ote</tspan></text>
+      <path
+         sodipodi:nodetypes="cssssccssssscccc"
+         d="m 35.955,323.29 c -8.1013,0 -14.851,7.0919 -14.851,16.072 l 0,45.727 c 0,8.9802 6.7494,16.096 14.851,16.096 l 47.497,0 c 8.1013,0 14.872,-7.1161 14.872,-16.096 l -4.9222,0 c 0,5.7257 -4.3036,12.441 -9.9496,12.441 l -47.497,0 c -5.6459,0 -9.9496,-6.7152 -9.9496,-12.441 l 0,-45.727 c 0,-5.7257 4.312973,-12.7662 9.9496,-12.441 l 34.666,0 0,-3.6313 -34.666,0 z"
+         inkscape:connector-curvature="0"
+         style="text-indent:0;text-transform:none;block-progression:tb;color:#000000;fill:#808080;fill-opacity:1;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3038" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text2993"
+         y="386.11237"
+         x="-411.77951"
+         style="font-size:82px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:-5px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;font-family:Switzera ADF;-inkscape-font-specification:Switzera ADF Bold"
+         xml:space="preserve"><tspan
+           style="font-size:105px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:0px;fill:#808080;fill-opacity:1;font-family:Switzera ADF;-inkscape-font-specification:Switzera ADF"
+           y="386.11237"
+           x="-411.77951"
+           id="tspan2995"
+           sodipodi:role="line">Freedom</tspan></text>
+    </g>
+  </g>
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>vote icon</dc:title>
+        <dc:date>2012-02-17T02:02:40</dc:date>
+        <dc:description />
+        <dc:source>https://openclipart.org/detail/168331/vote-icon-by-netalloy</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>netalloy</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>choice</rdf:li>
+            <rdf:li>elect</rdf:li>
+            <rdf:li>election</rdf:li>
+            <rdf:li>vote</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

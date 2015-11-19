@@ -1,0 +1,61 @@
+{% extends 'core/edit/index.html' %}
+
+{% load i18n static %}
+
+{% block 'scripts' %}
+    <script src="{% static 'js/edit_questions.js' %}"></script>
+    <script src="{% static 'js/description_toggler.js' %}"></script>
+{% endblock %}
+
+{% block 'subcontent' %}
+    <h2>{% trans 'your_opinion_to' %}</h2>
+    <table class="table table-striped">
+        <tbody>
+            {% for question in questions %}
+            <tr>
+                <td>
+                    <div class="row question-row">
+                        <div class="col-sm-6 col-md-6 col-lg-7 col-xs-12">
+                            {% include "core/helpers/question_text.html" with question=question %}
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-5 col-xs-12">
+                            <div class="scale-slider">
+                                {% include 'core/helpers/scale.html' %}
+                            </div>
+                            <input type="hidden" name="question_{{ d.question.id }}" value="{{d.value}}">
+                            <form action="{% url 'politician_answer' unique_key=politician.unique_key %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="question" value="{{ question.id }}">
+                                <input type="hidden" name="agreement_level" value="">
+                                <div
+                                 class="slider"
+                                 id="slider_{{question.id}}"
+                                 data-value="{%for answer in answers%}{%if answer.question == question%}{{answer.agreement_level}}{%endif%}{%endfor%}"
+                                ></div>
+                                <div class="note">
+                                    <textarea name="note" class="form-control" placeholder="{% trans 'note' %}">{%for answer in answers%}{%if answer.question == question%}{{answer.note}}{%endif%}{%endfor%}</textarea>
+                                <div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row button-row">
+        <div class="col-md-offset-4 col-lg-offset-6 col-sm-6 col-md-4 col-lg-3 col-xs-12">
+            <form method="post" id="publish" action="{% url 'politician_publish' unique_key=politician.unique_key %}">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary btn-justified" value="{% trans 'publish_answers' %}">
+            </form>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xs-12 col-sm-6 pull-right">
+            <form method="post" id="unpublish" action="{% url 'politician_unpublish' unique_key=politician.unique_key %}">
+                {% csrf_token %}
+                <input type="submit" class="btn btn-default btn-justified" value="{% trans 'unpublish_answers' %}">
+            </form>
+        </div>
+    </div>
+{% endblock %}
