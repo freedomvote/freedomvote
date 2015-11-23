@@ -48,19 +48,15 @@ jQuery(function($) {
             point: {
               events: {
                 click: function(e) {
-                  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width
+                  var rect   = $(this.graphic.element)
+                  var charts = rect.closest('.charts')
+                  var detail = charts.children('.detail')
 
-                  if (width > 1199) {
-                    var rect   = $(this.graphic.element)
-                    var charts = rect.closest('.charts')
-                    var detail = charts.children('.detail')
+                  var effect = 'drop'
 
-                    var effect = 'drop'
+                  $('.detail').not(detail).hide(effect)
 
-                    $('.detail').not(detail).hide(effect)
-
-                    detail.toggle(effect)
-                  }
+                  detail.toggle(effect)
                 }
               }
             }
