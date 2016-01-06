@@ -32,7 +32,7 @@ Now you can access the frontend on http://localhost:8000
 
 # Languages
 The whole application is multilingual. Per default the languages German, Italian and French are installed.
-The translation are located in app/locale/\<LANG_CODE\>/LC_MESSAGES/django.po. After editing the translation, run `python manage.py compilemessages`
+The translation are located in `app/locale/<lang_code>/LC_MESSAGES/django.po`. After editing the translation, run `python manage.py compilemessages`
 
 To install another language (English in this example) make the following steps:
 
