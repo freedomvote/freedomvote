@@ -2,7 +2,8 @@
 A django politician portal app
 # Installation
 ## The "hard" way
-### Requirements
+Requirements:
+
 * python 2.7
 * postgresql
 * python-pip
