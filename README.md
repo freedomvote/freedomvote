@@ -1,6 +1,6 @@
 # Freedomvote
 A tool to represent the views of politicans as a help to the voters.
-![alt tag](https://raw.github.com/adfinis-sygroup.ch/master/tools/screenshot.png)
+![freedomvote.ch](https://raw.githubusercontent.com/adfinis-sygroup/freedomvote/master/tools/screenshot.png)
 # Installation
 ## The "hard" way
 Requirements:
