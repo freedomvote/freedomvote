@@ -221,8 +221,8 @@ msgid "filter"
 msgstr "Filtrare"
 
 #: app/core/templates/core/candidates/index.html:14
-msgid "opinion_fsfe_chopen"
-msgstr "FSFE & /ch/open"
+msgid "opinion_admin"
+msgstr "Opinione admin"
 
 #: app/core/templates/core/candidates/index.html:19
 #: app/core/templates/core/candidates/index.html:28

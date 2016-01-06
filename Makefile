@@ -8,8 +8,6 @@ help:
 	@echo "  * docker                   - Start the docker containers"
 	@echo "  * docker-init              - Initialize docker containers"
 	@echo "  * docker-clean             - Remove all docker containers"
-	@echo "  * docker-bash              - Run a bash in web docker container"
-	@echo "  * docker-data              - Load dumped data"
 	@echo "  * docker-migrate           - Apply migrations to docker env"
 	@echo "  * docker-makemessages      - Generate .po locale files"
 	@echo "  * docker-compilemessages   - Generate .mo locale files"
@@ -20,9 +18,9 @@ help:
 	@echo ""
 	@echo " make docker-init docker"
 	@echo ""
-	@echo "If you want to change any less files run this command:"
+	@echo "If you want to change any sass files run this command:"
 	@echo ""
-	@echo " make dev-env less-watch"
+	@echo " make dev-env sass-watch"
 
 sass:
 	@gulp sass
@@ -40,17 +38,15 @@ docker-clean:
 	@docker-compose kill
 	@docker-compose rm -f
 
-docker-bash:
-	@docker-compose run --rm web bash
-
 docker-init:
-	@docker-compose run --rm web psql -h db -U postgres < tools/docker/cache_table.sql
+	@docker-compose up -d db
+	@sleep 5
+	@docker-compose run --rm -e PGPASSWORD=freedomvote web psql -h db -U postgres freedomvote < tools/docker/cache_table.sql
 	@docker-compose run --rm web app/manage.py migrate
 	@docker-compose run --rm web app/manage.py loaddata tools/docker/user.json
 
-docker-data:
-	@docker-compose run --rm web python app/manage.py flush --noinput
-	@docker-compose run --rm web python app/manage.py loaddata /usr/src/app/${FILE}
+docker-makemigrations:
+	@docker-compose run --rm web python app/manage.py makemigrations
 
 docker-migrate:
 	@docker-compose run --rm web python app/manage.py migrate

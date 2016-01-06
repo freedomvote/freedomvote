@@ -24,10 +24,6 @@ urlpatterns = patterns(
         views.compare_reset_view,
         name='compare_reset'
     ),
-    url(r'^partners/$',
-        cache_page(3600)(TemplateView.as_view(template_name='partners.html')),
-        name='partners'
-    ),
 
     # private politician urls
 

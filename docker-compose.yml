@@ -1,10 +1,13 @@
 db:
     image: postgres
-    dns: 8.8.8.8
+    ports:
+        - "5432:5432"
+    environment:
+        - POSTGRES_DB=freedomvote
+        - POSTGRES_PASSWORD=freedomvote
 
 web:
     build: .
-    dns: 8.8.8.8
     command: python app/manage.py runserver 0.0.0.0:8000
     volumes:
         - .:/usr/src/app

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Django settings for freedomvote project.
 
@@ -17,10 +18,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
     'DB'           : {
-        'HOST'     : 'db',
-        'NAME'     : 'postgres',
+    'HOST'     : 'db',
+        'NAME'     : 'freedomvote',
         'USER'     : 'postgres',
-        'PASS'     : '',
+        'PASS'     : 'freedomvote',
         'PORT'     : '5432',
     },
     'GLOBAL'       : {
@@ -74,25 +75,25 @@ MEDIA_URL  = '/media/'
 # Application definition
 
 INSTALLED_APPS = (
-    'debug_toolbar',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.staticfiles',
-    'djangocms_text_ckeditor',
-    'easy_thumbnails',
-    'core',
-    'modeltranslation',
     'django.contrib.admin',
-    'cms',
-    'mptt',
+    'django.contrib.messages',
+    'django_admin_bootstrapped',
+    'treebeard',
     'menus',
     'sekizai',
     'djangocms_admin_style',
-    'django.contrib.messages',
+    'djangocms_text_ckeditor',
+    'easy_thumbnails',
+    'modeltranslation',
     'piwik',
+    'core',
     'api',
+    'cms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,31 +103,35 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.request',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'cms.context_processors.cms_settings',
-    'sekizai.context_processors.sekizai',
-)
-
-MIGRATION_MODULES = {
-    'cms'                     : 'cms.migrations_django',
-    'menus'                   : 'menus.migrations_django',
-    'djangocms_text_ckeditor' : 'djangocms_text_ckeditor.migrations_django'
-}
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+        'DIRS': [ os.path.join(BASE_DIR, "templates") ],
+        'OPTIONS': {
+            'context_processors':
+                (
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.template.context_processors.csrf',
+                'django.template.context_processors.request',
+                'django.contrib.messages.context_processors.messages',
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
+                )
+        }
+    },
+]
 
 ROOT_URLCONF = 'freedomvote.urls'
 
@@ -140,19 +145,14 @@ INTERNAL_IPS = [
 CMS_PLACEHOLDER_CACHE = False
 CMS_PAGE_CACHE = False
 CMS_PLUGIN_CACHE = False
+CMS_CACHE_DURATION = 0
 
-TEMPLATE_DIRS = (
-    # The docs say it should be absolute path: BASE_DIR is precisely one.
-    # Life is wonderful!
-    os.path.join(BASE_DIR, "templates"),
-)
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'cache_table',
-    }
-}
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#        'LOCATION': 'cache_table',
+#    }
+#}
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases

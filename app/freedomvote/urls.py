@@ -5,15 +5,7 @@ from django.contrib import admin
 
 admin.autodiscover()
 
-urlpatterns = patterns('')
-
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns += patterns('',
-        url(r'^debug/', include(debug_toolbar.urls)),
-    )
-
-urlpatterns += patterns('',
+urlpatterns = patterns('',
     url(r'^admin/' , include(admin.site.urls)) ,
     url(r'^api/'   , include('api.urls'))     ,
     url(r'^'       , include('core.urls'))     ,
