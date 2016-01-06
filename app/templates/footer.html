@@ -1,4 +1,4 @@
-{% load staticfiles i18n %}
+{% load staticfiles i18n helpers %}
 
 <footer class="footer">
     <div class="center-content">
@@ -9,8 +9,8 @@
             </a>
         </div>
         <div class="col-md-2">
-            <a class="footer-icon" href="https://notabug.org/fsfe-zh/freedomvote">
-                <img src="{% static 'images/git.svg' %}"><br>
+            <a class="footer-icon" href="{% git_url %}">
+                <img src="{% static 'images/github.svg' %}"><br>
                 {% trans 'source_code' %}
             </a>
         </div>

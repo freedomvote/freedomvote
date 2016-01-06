@@ -1,4 +1,5 @@
 from django import template
+from django.conf import settings
 
 register = template.Library()
 
@@ -25,3 +26,7 @@ def get_params(request, *args, **kwargs):
         params = ''
 
     return params
+
+@register.simple_tag
+def git_url():
+    return settings.GIT_URL
