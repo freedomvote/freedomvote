@@ -1,5 +1,6 @@
 # Freedomvote
-A django politician portal app
+A tool to represent the views of politicans as a help to the voters.
+![alt tag](https://raw.github.com/adfinis-sygroup.ch/master/tools/screenshot.png)
 # Installation
 ## The "hard" way
 Requirements:
