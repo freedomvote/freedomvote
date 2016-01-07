@@ -1,5 +1,6 @@
 {
-  "name": "freedomvote.src",
+  "name": "freedomvote",
+  "version": "1.0.0",
   "author": "Adfinis SyGroup AG",
   "private": true,
   "license": "GPL-3.0",
