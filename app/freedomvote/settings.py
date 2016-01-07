@@ -212,4 +212,4 @@ THUMBNAIL_ALIASES = {
 PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']
 PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
 
-GIT_URL = 'https://notabug.org/fsfe-zh/freedomvote'
+GIT_URL = 'https://github.com/adfinis-sygroup/freedomvote'
