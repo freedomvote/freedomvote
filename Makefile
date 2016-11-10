@@ -1,61 +1,46 @@
-FILE=tmp.prod.json
 DJANGO_ADMIN_USER=admin
+.DEFAULT_GOAL := help
+PGPASSWORD=freedomvote
 
 help:
-	@echo "The following make targets are available:"
-	@echo "  * sass                     - Compile sass to css"
-	@echo "  * sass-watch               - Compile sass to css on changes"
-	@echo "  * docker                   - Start the docker containers"
-	@echo "  * docker-init              - Initialize docker containers"
-	@echo "  * docker-clean             - Remove all docker containers"
-	@echo "  * docker-migrate           - Apply migrations to docker env"
-	@echo "  * docker-makemessages      - Generate .po locale files"
-	@echo "  * docker-compilemessages   - Generate .mo locale files"
-	@echo "  * docker-pw                - Change django admin pw"
-	@echo ""
-	@echo ""
-	@echo "If you're new to the project, run this to get started:"
-	@echo ""
-	@echo " make docker-init docker"
-	@echo ""
-	@echo "If you want to change any sass files run this command:"
-	@echo ""
-	@echo " make dev-env sass-watch"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort -k 1,1 | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-sass:
+sass: ## Compile SASS to CSS
 	@gulp sass
 
-sass-watch:
+sass-watch: ## Compile SASS to CSS on every change
 	@gulp sass:watch
 
-dev-env:
+dev-env: ## Install the development requirements
 	@npm i
 
-docker:
+docker: ## Start the docker environment
 	@docker-compose up --no-recreate
 
-docker-clean:
+docker-clean: ## Remove the docker environment
 	@docker-compose kill
 	@docker-compose rm -f
 
-docker-init:
-	@docker-compose up -d db
+docker-init: ## Initialize the docker environment
+	@docker-compose up --no-recreate -d db
 	@sleep 5
-	@docker-compose run --rm -e PGPASSWORD=freedomvote web psql -h db -U postgres freedomvote < tools/docker/cache_table.sql
-	@docker-compose run --rm web app/manage.py migrate
-	@docker-compose run --rm web app/manage.py loaddata tools/docker/user.json
+	@docker-compose up --no-recreate -d web
+	@PGPASSWORD=$(PGPASSWORD) psql -h localhost -U postgres freedomvote < tools/docker/cache_table.sql
+	@make docker-migrate
+	@docker exec -it freedomvote_web_1 app/manage.py loaddata tools/docker/user.json
+	@docker-compose stop
 
-docker-makemigrations:
-	@docker-compose run --rm web python app/manage.py makemigrations
+docker-makemigrations: ## Generate django migrations in the docker environment
+	@docker exec -it freedomvote_web_1 python app/manage.py makemigrations
 
-docker-migrate:
-	@docker-compose run --rm web python app/manage.py migrate
+docker-migrate: ## Run django migrations in the docker environment
+	@docker exec -it freedomvote_web_1 python app/manage.py migrate
 
-docker-makemessages:
-	@docker-compose run --rm web python app/manage.py makemessages -a
+docker-makemessages: ## Generate django translations in the docker environment
+	@docker exec -it freedomvote_web_1 python app/manage.py makemessages -a
 
-docker-compilemessages:
-	@docker-compose run --rm web python app/manage.py compilemessages
+docker-compilemessages: ## Compile docker translations in the docker environment
+	@docker exec -it freedomvote_web_1 python app/manage.py compilemessages
 
-docker-pw:
-	@docker-compose run --rm web python app/manage.py changepassword ${DJANGO_ADMIN_USER}
+docker-pw: ## Change the django superuser password in the docker environment
+	@docker exec -it freedomvote_web_1 python app/manage.py changepassword ${DJANGO_ADMIN_USER}
