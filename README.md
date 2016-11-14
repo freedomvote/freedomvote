@@ -49,8 +49,7 @@ The translation are located in `app/locale/<lang_code>/LC_MESSAGES/django.po`. A
 
 To install another language (English in this example) make the following steps:
 
-app/freedomvote/settings.py
-
+`app/freedomvote/settings.py`
 ```python
 LANGUAGES = (
   ...
@@ -58,9 +57,11 @@ LANGUAGES = (
   ('en', _('english')),
 )
 ```
-
-in your environment:
-
+then create a new folder for the language:
+```bash
+$ mkdir app/locale/en
+```
+now run those commands in your environment:
 ```bash
 $ python manage.py makemigrations
 $ python manage.py migrate
