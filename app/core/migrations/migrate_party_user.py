@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import migrations
 from django.contrib.auth.models import User
-from core.models import Party
 import csv
 import re
 import string
@@ -13,6 +12,8 @@ def generate_password(length=12):
     return ''.join(choice(characters) for x in range(length))
 
 def add_user_for_parties(apps, schema_editor):
+    Party = apps.get_model('core', 'Party')
+
     parties = Party.objects.all()
 
     for party in parties:
