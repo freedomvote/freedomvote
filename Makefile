@@ -1,6 +1,10 @@
-DJANGO_ADMIN_USER=admin
+.PHONY: sass sass-watch dev-env docker docker-clean docker-init docker-makemigrations docker-migrate docker-makemessages docker-compilemessages docker-pw
+
 .DEFAULT_GOAL := help
+
+DJANGO_ADMIN_USER=admin
 PGPASSWORD=freedomvote
+DB_PORT=5432
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort -k 1,1 | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -22,11 +26,9 @@ docker-clean: ## Remove the docker environment
 	@docker-compose rm -f
 
 docker-init: ## Initialize the docker environment
-	@docker-compose up --no-recreate -d db
-	@sleep 5
-	@docker-compose up --no-recreate -d web
-	@PGPASSWORD=$(PGPASSWORD) psql -h localhost -U postgres freedomvote < tools/docker/cache_table.sql
-	@make docker-migrate
+	@docker-compose up -d --no-recreate
+	@PGPASSWORD=$(PGPASSWORD) psql -h localhost -p $(DB_PORT) -U postgres freedomvote < tools/docker/cache_table.sql
+	@docker exec -it freedomvote_web_1 python app/manage.py migrate
 	@docker exec -it freedomvote_web_1 app/manage.py loaddata tools/docker/user.json
 	@docker-compose stop
 

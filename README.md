@@ -11,7 +11,19 @@ Requirements:
 
 Run `pip install -r requirements.txt` to install all requirements.
 
-Configure your DB settings in `app/freedomvote/settings.py` and then run:
+Configure your DB settings in `app/settings.ini`:
+
+```ini
+[DB]
+NAME = freedomvote
+USER = freedomvote
+PASS = ***********
+PORT = 5432
+HOST = 127.0.0.1
+```
+
+and then run:
+
 ```bash
 $ psql -h <db_host> -U <db_user> <db_name> < tools/docker/cache_table.sql
 $ python app/manage.py migrate
