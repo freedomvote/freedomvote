@@ -43,6 +43,19 @@ Default user is `admin` with password `123qwe`, to change this, run `make docker
 
 Now you can access the frontend on http://localhost:8000
 
+## Django management
+Django already provides a number of [management commands](https://docs.djangoproject.com/en/1.10/ref/django-admin/) out of the box.
+Other parts of this document already lists the usages of some of these commands.
+Freedomvote provides a couple of custom commands to ease the setup process:
+
+```bash
+$ python app/manage.py help
+$ python app/manage.py help <command>
+$ python app/manage.py generate_politicians 42
+$ python app/manage.py politician_import politician_import.csv.example
+$ python app/manage.py user_import user_import.csv.example
+```
+
 # Languages
 The whole application is multilingual. Per default the languages German, Italian and French are installed.
 The translation are located in `app/locale/<lang_code>/LC_MESSAGES/django.po`. After editing the translation, run `python manage.py compilemessages`
