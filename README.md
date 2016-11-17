@@ -55,6 +55,14 @@ $ python app/manage.py generate_politicians 42
 $ python app/manage.py politician_import politician_import.csv.example
 $ python app/manage.py user_import user_import.csv.example
 ```
+## LinkType icons
+In the management dashboard custom LinkTypes can be configured with both name and icon.
+A fixture is included with this repository to help you configure a common set of link types easily.
+Note that if some of these LinkTypes already exist, triggering this command will add the new ones regardless of existing LinkTypes.
+
+`$ python app/manage.py loaddata fixtures/linktypes.json`
+
+This common set of icon was gathered from [fontawesome](http://fontawesome.org/) using [icon_font_to_png](https://pypi.python.org/pypi/icon_font_to_png/0.3.2).
 
 # Languages
 The whole application is multilingual. Per default the languages German, Italian and French are installed.
