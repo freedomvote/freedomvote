@@ -4,6 +4,8 @@ A tool to represent the views of politicians on certain topics as a help to the 
 The following overview explains the key aspects of the software and shows, what one can expect
 from the current version.
 
+Are you more interested in the prepration and best pratices, please read the [howto guide](HOWTO.md).
+
 ## As a Politician
 * Profile settings
 
