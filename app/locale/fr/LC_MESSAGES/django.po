@@ -153,7 +153,7 @@ msgstr "Liens"
 
 #: app/core/models.py:218
 msgid "preferred_answer"
-msgstr "Réponse préférée"
+msgstr "Réponse préférée (0-10)"
 
 #: app/core/models.py:221
 msgid "question_number"
