@@ -5,11 +5,14 @@ from core.models import Politician
 import csv
 
 class Command(BaseCommand):
-    help = 'Generates x politicians for a user'
+    help = 'Generates [amount] politicians for all registered users.'
+
+    def add_arguments(self, parser):
+        parser.add_argument('amount', help='amount of polticians to generate')
 
     def handle(self, *args, **options):
         try:
-            count = int(args[0])
+            count = int(options['amount'])
         except:
             count = 1
 

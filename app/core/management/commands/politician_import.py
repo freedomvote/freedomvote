@@ -5,14 +5,17 @@ from django.db import transaction
 import csv
 
 class Command(BaseCommand):
-    help = 'Imports politician from a CSV file'
+    help = 'Imports politician from a [csv_file]. Each row of the csv file is expected to be structured like: first_name, last_name, email, state, party, user, member_of_parliament. The rows that were succesfully imported, have their resulted import written into \'/tmp/export.csv\'. This export file is of the structure: first_name, last_name, email, state.name, party.shortname, user.username, politician.unique_url.'
+
+    def add_arguments(self, parser):
+        parser.add_argument('csv_file', help='file to import')
 
     @transaction.atomic
     def handle(self, *args, **options):
         try:
             rows = []
 
-            with open(args[0], 'rb') as csvfile:
+            with open(options['csv_file'], 'rb') as csvfile:
                 reader = csv.reader(csvfile)
                 count = 0
                 for row in reader:
