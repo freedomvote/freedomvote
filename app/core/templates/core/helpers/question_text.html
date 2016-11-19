@@ -8,8 +8,5 @@
     </button>
     <div class="desc">{{question.description|safe}}</div>
 {% else %}
-    {*
-    Explicitly no output in this case, as it's not really useful
     <span class="glyphicon glyphicon-info-sign desc-toggler no-desc" title="{%trans "no_question_description"%}"></span>
-    *}
 {% endif %}
