@@ -1,0 +1,58 @@
+[
+  {
+    "fields": {
+      "icon": "icons/facebook.png",
+      "name": "Facebook"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/linkedin.png",
+      "name": "LinkedIn"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/user.png",
+      "name": "Homepage"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/twitter.png",
+      "name": "Twitter"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/snapchat.png",
+      "name": "Snapchat"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/telegram.png",
+      "name": "Telegram"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/users.png",
+      "name": "Party website"
+    },
+    "model": "core.linktype"
+  },
+  {
+    "fields": {
+      "icon": "icons/whatsapp.png",
+      "name": "WhatsApp"
+    },
+    "model": "core.linktype"
+  }
+]
