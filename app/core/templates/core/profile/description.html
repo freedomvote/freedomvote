@@ -8,8 +8,21 @@
         <h2 class="mt0">{{ politician.first_name }} {{ politician.last_name }}</h2>
 
         <div class="row">
+            {% if politician.state.count > 1 %}
+            <div class="col-md-6"><strong>{% trans 'states' %}</strong></div>
+            <div class="col-md-6">
+                <a href="#" data-toggle="popover" data-placement="auto"
+                   title="{% trans 'states' %}"
+                    data-content="{% for state in politician.state.all %}{{state.name}}, {% endfor %}">
+                    {{politician.state_name}}
+                </a>
+            </div>
+            {% else %}
             <div class="col-md-6"><strong>{% trans 'state' %}</strong></div>
-            <div class="col-md-6">{{politician.state_name}}</div>
+            <div class="col-md-6">
+                {{politician.state_name}}
+            </div>
+            {% endif %}
         </div>
 
         <div class="row">

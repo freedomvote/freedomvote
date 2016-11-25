@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-18 08:03+0000\n"
+"POT-Creation-Date: 2016-11-25 07:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/core/admin.py:21 app/core/views.py:516
+#: app/core/admin.py:21 app/core/views.py:593
 msgid "unique_url"
 msgstr "Link di accesso"
 
-#: app/core/admin.py:44 app/core/models.py:59 app/core/models.py:225
-#: app/core/models.py:271
+#: app/core/admin.py:44 app/core/models.py:59 app/core/models.py:227
+#: app/core/models.py:273
 msgid "category"
 msgstr "Categoria"
 
@@ -35,22 +35,20 @@ msgstr "Paragonare"
 msgid "candidates"
 msgstr "Candidati"
 
-#: app/core/menu.py:12
-msgid "partners"
-msgstr "Partner"
-
 #: app/core/models.py:18 app/core/models.py:33 app/core/models.py:52
-#: app/core/models.py:190
+#: app/core/models.py:192
 msgid "name"
 msgstr "Nome"
 
 #: app/core/models.py:25 app/core/models.py:112
 #: app/core/templates/core/party/dashboard.html:53
-#: app/core/templates/core/profile/description.html:15 app/core/views.py:515
+#: app/core/templates/core/profile/description.html:21 app/core/views.py:592
 msgid "state"
 msgstr "Cantone"
 
-#: app/core/models.py:26
+#: app/core/models.py:26 app/core/models.py:157
+#: app/core/templates/core/profile/description.html:12
+#: app/core/templates/core/profile/description.html:15
 msgid "states"
 msgstr "Cantoni"
 
@@ -59,7 +57,7 @@ msgid "shortname"
 msgstr "Abbreviazione"
 
 #: app/core/models.py:44 app/core/models.py:118
-#: app/core/templates/core/profile/description.html:20
+#: app/core/templates/core/profile/description.html:29
 msgid "party"
 msgstr "Partito"
 
@@ -76,12 +74,12 @@ msgid "user"
 msgstr "Utente"
 
 #: app/core/models.py:72 app/core/templates/core/party/dashboard.html:51
-#: app/core/views.py:513
+#: app/core/views.py:590
 msgid "first_name"
 msgstr "Nome"
 
 #: app/core/models.py:78 app/core/templates/core/party/dashboard.html:52
-#: app/core/views.py:514
+#: app/core/views.py:591
 msgid "last_name"
 msgstr "Cognome"
 
@@ -93,15 +91,15 @@ msgstr "Email"
 msgid "image"
 msgstr "Immagine"
 
-#: app/core/models.py:93 app/core/templates/core/profile/description.html:35
+#: app/core/models.py:93 app/core/templates/core/profile/description.html:42
 msgid "is_member_of_parliament"
 msgstr "Precedente membro del parlamento o senato"
 
-#: app/core/models.py:97 app/core/templates/core/profile/description.html:25
+#: app/core/models.py:97 app/core/templates/core/profile/description.html:34
 msgid "past_contributions"
 msgstr "Precedenti contributi relativi al tema"
 
-#: app/core/models.py:101 app/core/templates/core/profile/description.html:30
+#: app/core/models.py:101 app/core/templates/core/profile/description.html:38
 msgid "future_plans"
 msgstr "Precedenti intenzioni e propositi"
 
@@ -113,94 +111,94 @@ msgstr "Codice di accesso"
 msgid "party_other"
 msgstr "Altro partito"
 
-#: app/core/models.py:179 app/core/models.py:205 app/core/models.py:250
-#: app/core/models.py:267
+#: app/core/models.py:181 app/core/models.py:207 app/core/models.py:252
+#: app/core/models.py:269
 msgid "politician"
 msgstr "Politico"
 
-#: app/core/models.py:180
+#: app/core/models.py:182
 msgid "politicians"
 msgstr "Politici"
 
-#: app/core/models.py:186
+#: app/core/models.py:188
 msgid "icon"
 msgstr "Icona"
 
-#: app/core/models.py:194 app/core/templates/core/edit/links.html:21
+#: app/core/models.py:196 app/core/templates/core/edit/links.html:21
 msgid "link_type"
 msgstr "Tipo di link"
 
-#: app/core/models.py:195
+#: app/core/models.py:197
 msgid "link_types"
 msgstr "Tipi di link"
 
-#: app/core/models.py:201
+#: app/core/models.py:203
 msgid "type"
 msgstr "Tipo"
 
-#: app/core/models.py:208 app/core/templates/core/edit/links.html:29
+#: app/core/models.py:210 app/core/templates/core/edit/links.html:29
 msgid "url"
 msgstr "URL"
 
-#: app/core/models.py:212
+#: app/core/models.py:214
 msgid "link"
 msgstr "Link"
 
-#: app/core/models.py:213 app/core/templates/core/edit/profile.html:83
-#: app/core/templates/core/profile/description.html:52
+#: app/core/models.py:215 app/core/templates/core/edit/profile.html:83
+#: app/core/templates/core/profile/description.html:59
 msgid "links"
 msgstr "Link"
 
-#: app/core/models.py:218
+#: app/core/models.py:220
 msgid "preferred_answer"
 msgstr "Risposta preferita (0-10)"
 
-#: app/core/models.py:221
+#: app/core/models.py:223
 msgid "question_number"
 msgstr "Domanda numero"
 
-#: app/core/models.py:228
+#: app/core/models.py:230
 msgid "text"
 msgstr "Testo"
 
-#: app/core/models.py:233
+#: app/core/models.py:235
 msgid "description"
 msgstr "Descrizione"
 
-#: app/core/models.py:238 app/core/models.py:246
+#: app/core/models.py:240 app/core/models.py:248
 #: app/core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
 msgstr "Domanda"
 
-#: app/core/models.py:239 app/core/templates/core/edit/menu.html:8
+#: app/core/models.py:241 app/core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr "Domande"
 
-#: app/core/models.py:253
+#: app/core/models.py:255
 msgid "agreement_level"
 msgstr "Consenso"
 
-#: app/core/models.py:256 app/core/templates/core/edit/questions.html:36
+#: app/core/models.py:258 app/core/templates/core/edit/questions.html:36
 msgid "note"
 msgstr "Commento"
 
-#: app/core/models.py:260
+#: app/core/models.py:262
 msgid "answer"
 msgstr "Risposta"
 
-#: app/core/models.py:261
+#: app/core/models.py:263
 msgid "answers"
 msgstr "Risposte"
 
-#: app/core/models.py:274
+#: app/core/models.py:276
 msgid "value"
 msgstr "Valore"
 
-#: app/core/models.py:306
+#: app/core/models.py:308
 msgid "statistic"
 msgstr "Statistica"
 
-#: app/core/models.py:307
+#: app/core/models.py:309
 msgid "statistics"
 msgstr "Statistiche"
 
@@ -230,7 +228,7 @@ msgid "own_opinion"
 msgstr "Opinione pers."
 
 #: app/core/templates/core/candidates/index.html:26
-#: app/core/templates/core/profile/description.html:45
+#: app/core/templates/core/profile/description.html:52
 msgid "add_own_opinion"
 msgstr "Aggiungi opinione personale"
 
@@ -286,17 +284,17 @@ msgstr "Annullare le risposte"
 msgid "toggle_description"
 msgstr "Spiegazione"
 
-#: app/core/templates/core/helpers/question_text.html:13
+#: app/core/templates/core/helpers/question_text.html:11
 msgid "no_question_description"
 msgstr "Nessuna descrizione"
 
 #: app/core/templates/core/helpers/scale.html:4
-#: app/core/templates/core/profile/description.html:36
+#: app/core/templates/core/profile/description.html:43
 msgid "no"
 msgstr "No"
 
 #: app/core/templates/core/helpers/scale.html:9
-#: app/core/templates/core/profile/description.html:36
+#: app/core/templates/core/profile/description.html:43
 msgid "yes"
 msgstr "Si"
 
@@ -352,7 +350,7 @@ msgstr "Connettersi"
 msgid "dashboard"
 msgstr "Cruscotto"
 
-#: app/core/templates/core/profile/description.html:40
+#: app/core/templates/core/profile/description.html:47
 msgid "show_own_spider"
 msgstr "Visualizzare la propria opinione"
 
@@ -364,56 +362,56 @@ msgstr "Propria risposta"
 msgid "politician_answer"
 msgstr "Risposta del politico"
 
-#: app/core/views.py:132
+#: app/core/views.py:144
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "La sue risposte sono state memorizzate. Adesso può fare una valutazione"
 
-#: app/core/views.py:155
+#: app/core/views.py:168
 msgid "answers_resetted"
 msgstr "Le sue risposte sono state annullate"
 
-#: app/core/views.py:204
+#: app/core/views.py:235
 msgid "total"
 msgstr "Totale"
 
-#: app/core/views.py:287
+#: app/core/views.py:345
 msgid "profile_saved_successfully"
 msgstr "Il suo profilo è stato memorizzato"
 
-#: app/core/views.py:354
+#: app/core/views.py:419
 msgid "answers_published_successfully"
 msgstr "Le sue risposte sono state rilasciate"
 
-#: app/core/views.py:364
+#: app/core/views.py:429
 msgid "answers_unpublished_successfully"
 msgstr "Le sue risposte sono state annullate"
 
-#: app/core/views.py:428
+#: app/core/views.py:499
 msgid "login_successful"
 msgstr "Connessione corretta"
 
-#: app/core/views.py:431
+#: app/core/views.py:502
 msgid "login_error"
 msgstr "Ha inserito dei dati di accesso erronei"
 
-#: app/core/views.py:457
+#: app/core/views.py:531
 msgid "politician_add_success"
 msgstr "Politico aggiunto correttamente"
 
-#: app/core/views.py:460
+#: app/core/views.py:534
 msgid "politician_add_error"
 msgstr "Ci sono stati degli errori nello aggiungere il politico"
 
-#: app/core/views.py:483
+#: app/core/views.py:559
 msgid "politician_edit_success"
 msgstr "Politico è stato aggiunto correttamente"
 
-#: app/core/views.py:486
+#: app/core/views.py:562
 msgid "politician_edit_error"
 msgstr "Ci sono stati degli errori nel modificare il politico"
 
-#: app/core/views.py:531
+#: app/core/views.py:610
 msgid "politician_delete_success"
 msgstr "Politico \"%s %s\" è stato annullato correttamente"
 
@@ -437,26 +435,26 @@ msgstr "Pagina non ritrovata"
 msgid "server_error"
 msgstr "Errore del server"
 
-#: app/templates/footer.html:40 app/templates/partners.html:7
-msgid "our_partners"
-msgstr "I nostri partner"
-
-#: app/templates/footer.html:52
+#: app/templates/footer.html:14
 msgid "source_code"
 msgstr "Codice sorgente"
 
-#: app/templates/home.html:15
-msgid "parliament_building"
-msgstr "Palazzo federale"
-
-#: app/templates/home.html:16
-msgid "source"
-msgstr "Fonte"
-
-#: app/templates/index.html:29
+#: app/templates/index.html:30
 msgid "noscript"
 msgstr "Questo sito sarà completa solo se javascript è abilitato."
 
 #: app/templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu di commutazione"
+
+#~ msgid "partners"
+#~ msgstr "Partner"
+
+#~ msgid "our_partners"
+#~ msgstr "I nostri partner"
+
+#~ msgid "parliament_building"
+#~ msgstr "Palazzo federale"
+
+#~ msgid "source"
+#~ msgstr "Fonte"
