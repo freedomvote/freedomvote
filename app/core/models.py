@@ -153,9 +153,10 @@ class Politician(models.Model):
 
     @property
     def state_name(self):
-        if self.state.count() > 1:
-            return '%s %s' % (self.state.count(), _('states'))
-        elif self.state.count() == 1:
+        state_count = self.state.count()
+        if state_count > 1:
+            return '%s %s' % (state_count, _('states'))
+        elif state_count == 1:
             return self.state.first().name
         else:
             return '-'
