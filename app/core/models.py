@@ -155,7 +155,7 @@ class Politician(models.Model):
     def state_name(self):
         state_count = self.state.count()
         if state_count > 1:
-            return '%s %s' % (state_count, _('states'))
+            return '%s %s' % (state_count, _('states')) #FIXME include state_count in translation.
         elif state_count == 1:
             return self.state.first().name
         else:

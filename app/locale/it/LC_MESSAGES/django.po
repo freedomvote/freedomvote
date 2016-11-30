@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 07:22+0000\n"
+"POT-Creation-Date: 2016-11-30 22:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgid "unique_url"
 msgstr "Link di accesso"
 
-#: app/core/admin.py:44 app/core/models.py:59 app/core/models.py:227
-#: app/core/models.py:273
+#: app/core/admin.py:44 app/core/models.py:59 app/core/models.py:228
+#: app/core/models.py:274
 msgid "category"
 msgstr "Categoria"
 
@@ -36,7 +36,7 @@ msgid "candidates"
 msgstr "Candidati"
 
 #: app/core/models.py:18 app/core/models.py:33 app/core/models.py:52
-#: app/core/models.py:192
+#: app/core/models.py:193
 msgid "name"
 msgstr "Nome"
 
@@ -46,7 +46,7 @@ msgstr "Nome"
 msgid "state"
 msgstr "Cantone"
 
-#: app/core/models.py:26 app/core/models.py:157
+#: app/core/models.py:26 app/core/models.py:158
 #: app/core/templates/core/profile/description.html:12
 #: app/core/templates/core/profile/description.html:15
 msgid "states"
@@ -111,94 +111,94 @@ msgstr "Codice di accesso"
 msgid "party_other"
 msgstr "Altro partito"
 
-#: app/core/models.py:181 app/core/models.py:207 app/core/models.py:252
-#: app/core/models.py:269
+#: app/core/models.py:182 app/core/models.py:208 app/core/models.py:253
+#: app/core/models.py:270
 msgid "politician"
 msgstr "Politico"
 
-#: app/core/models.py:182
+#: app/core/models.py:183
 msgid "politicians"
 msgstr "Politici"
 
-#: app/core/models.py:188
+#: app/core/models.py:189
 msgid "icon"
 msgstr "Icona"
 
-#: app/core/models.py:196 app/core/templates/core/edit/links.html:21
+#: app/core/models.py:197 app/core/templates/core/edit/links.html:21
 msgid "link_type"
 msgstr "Tipo di link"
 
-#: app/core/models.py:197
+#: app/core/models.py:198
 msgid "link_types"
 msgstr "Tipi di link"
 
-#: app/core/models.py:203
+#: app/core/models.py:204
 msgid "type"
 msgstr "Tipo"
 
-#: app/core/models.py:210 app/core/templates/core/edit/links.html:29
+#: app/core/models.py:211 app/core/templates/core/edit/links.html:29
 msgid "url"
 msgstr "URL"
 
-#: app/core/models.py:214
+#: app/core/models.py:215
 msgid "link"
 msgstr "Link"
 
-#: app/core/models.py:215 app/core/templates/core/edit/profile.html:83
+#: app/core/models.py:216 app/core/templates/core/edit/profile.html:83
 #: app/core/templates/core/profile/description.html:59
 msgid "links"
 msgstr "Link"
 
-#: app/core/models.py:220
+#: app/core/models.py:221
 msgid "preferred_answer"
 msgstr "Risposta preferita (0-10)"
 
-#: app/core/models.py:223
+#: app/core/models.py:224
 msgid "question_number"
 msgstr "Domanda numero"
 
-#: app/core/models.py:230
+#: app/core/models.py:231
 msgid "text"
 msgstr "Testo"
 
-#: app/core/models.py:235
+#: app/core/models.py:236
 msgid "description"
 msgstr "Descrizione"
 
-#: app/core/models.py:240 app/core/models.py:248
+#: app/core/models.py:241 app/core/models.py:249
 #: app/core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
 msgstr "Domanda"
 
-#: app/core/models.py:241 app/core/templates/core/edit/menu.html:8
+#: app/core/models.py:242 app/core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr "Domande"
 
-#: app/core/models.py:255
+#: app/core/models.py:256
 msgid "agreement_level"
 msgstr "Consenso"
 
-#: app/core/models.py:258 app/core/templates/core/edit/questions.html:36
+#: app/core/models.py:259 app/core/templates/core/edit/questions.html:36
 msgid "note"
 msgstr "Commento"
 
-#: app/core/models.py:262
+#: app/core/models.py:263
 msgid "answer"
 msgstr "Risposta"
 
-#: app/core/models.py:263
+#: app/core/models.py:264
 msgid "answers"
 msgstr "Risposte"
 
-#: app/core/models.py:276
+#: app/core/models.py:277
 msgid "value"
 msgstr "Valore"
 
-#: app/core/models.py:308
+#: app/core/models.py:309
 msgid "statistic"
 msgstr "Statistica"
 
-#: app/core/models.py:309
+#: app/core/models.py:310
 msgid "statistics"
 msgstr "Statistiche"
 
