@@ -105,7 +105,7 @@ class Politician(models.Model):
         verbose_name        = _('unique_key'),
         default             = generate_url
     )
-    state                   = models.ForeignKey(
+    state                   = models.ManyToManyField(
         State,
         null                = True,
         blank               = True,
@@ -153,8 +153,11 @@ class Politician(models.Model):
 
     @property
     def state_name(self):
-        if self.state:
-            return self.state.name
+        state_count = self.state.count()
+        if state_count > 1:
+            return '%s %s' % (state_count, _('states')) #FIXME include state_count in translation.
+        elif state_count == 1:
+            return self.state.first().name
         else:
             return '-'
 
