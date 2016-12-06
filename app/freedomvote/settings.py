@@ -177,8 +177,10 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'de'
 
 LANGUAGES = (
     ('de', _('german')),
+    ('en', _('english')),
     ('fr', _('french')),
     ('it', _('italian')),
+    ('nl', _('dutch'))
 )
 
 TIME_ZONE = 'UTC'
