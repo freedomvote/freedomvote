@@ -2,16 +2,16 @@
 # Copyright (C) Freedomvote
 # This file is distributed under the same license as the freedomvote package.
 # Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
-#
+# Nico Rikken <nico.rikken@fsfe.org>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 07:06+0000\n"
-"PO-Revision-Date: 2016-12-06 08:12+0100\n"
-"Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
-"Language-Team: German <de@li.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2016-12-06 07:52+0100\n"
+"Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
+"Language-Team: Netherlands <nl@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: core/admin.py:21 core/views.py:593
 msgid "unique_url"
-msgstr "Zugangslink"
+msgstr "Toegangslink"
 
 #: core/admin.py:44 core/models.py:59 core/models.py:228 core/models.py:274
 msgid "category"
-msgstr "Kategorie"
+msgstr "Categorie"
 
 #: core/menu.py:10
 msgid "compare"
-msgstr "Vergleichen"
+msgstr "Vergelijken"
 
 #: core/menu.py:11
 msgid "candidates"
@@ -36,94 +36,94 @@ msgstr "Kandidaten"
 
 #: core/models.py:18 core/models.py:33 core/models.py:52 core/models.py:193
 msgid "name"
-msgstr "Name"
+msgstr "Naam"
 
 #: core/models.py:25 core/models.py:112
 #: core/templates/core/party/dashboard.html:53
 #: core/templates/core/profile/description.html:21 core/views.py:592
 msgid "state"
-msgstr "Kanton"
+msgstr "Kieskring"
 
 #: core/models.py:26 core/models.py:158
 #: core/templates/core/profile/description.html:12
 #: core/templates/core/profile/description.html:15
 msgid "states"
-msgstr "Kantone"
+msgstr "Kieskringen"
 
 #: core/models.py:37
 msgid "shortname"
-msgstr "Abkürzung"
+msgstr "Afkorting"
 
 #: core/models.py:44 core/models.py:118
 #: core/templates/core/profile/description.html:29
 msgid "party"
-msgstr "Partei"
+msgstr "Partij"
 
 #: core/models.py:45
 msgid "parties"
-msgstr "Parteien"
+msgstr "Partijen"
 
 #: core/models.py:60
 msgid "categories"
-msgstr "Kategorien"
+msgstr "Categorieën"
 
 #: core/models.py:66
 msgid "user"
-msgstr "Benutzer"
+msgstr "Gebruiker"
 
 #: core/models.py:72 core/templates/core/party/dashboard.html:51
 #: core/views.py:590
 msgid "first_name"
-msgstr "Vorname"
+msgstr "Voornaam"
 
 #: core/models.py:78 core/templates/core/party/dashboard.html:52
 #: core/views.py:591
 msgid "last_name"
-msgstr "Nachname"
+msgstr "Achternaam"
 
 #: core/models.py:83
 msgid "email"
-msgstr "Email"
+msgstr "E-mail"
 
 #: core/models.py:89
 msgid "image"
-msgstr "Bild"
+msgstr "Afbeelding"
 
 #: core/models.py:93 core/templates/core/profile/description.html:42
 msgid "is_member_of_parliament"
-msgstr "Bisheriges Mitglied National- oder Ständerat"
+msgstr "Zittend parlementslid"
 
 #: core/models.py:97 core/templates/core/profile/description.html:34
 msgid "past_contributions"
-msgstr "Bisherige Beiträge zum Thema"
+msgstr "Eerdere bijdragen over dit onderwerp"
 
 #: core/models.py:101 core/templates/core/profile/description.html:38
 msgid "future_plans"
-msgstr "Absichten und Pläne"
+msgstr "Intenties en plannen"
 
 #: core/models.py:105
 msgid "unique_key"
-msgstr "Zugangscode"
+msgstr "Toeganscode"
 
 #: core/models.py:124
 msgid "party_other"
-msgstr "Andere Partei"
+msgstr "Andere partij"
 
 #: core/models.py:182 core/models.py:208 core/models.py:253 core/models.py:270
 msgid "politician"
-msgstr "Politiker"
+msgstr "Politicus"
 
 #: core/models.py:183
 msgid "politicians"
-msgstr "Politiker"
+msgstr "Politici"
 
 #: core/models.py:189
 msgid "icon"
-msgstr "Icon"
+msgstr "Pictogram"
 
 #: core/models.py:197 core/templates/core/edit/links.html:21
 msgid "link_type"
-msgstr "Linktyp"
+msgstr "Linktype"
 
 #: core/models.py:198
 msgid "link_types"
@@ -131,7 +131,7 @@ msgstr "Linktypen"
 
 #: core/models.py:204
 msgid "type"
-msgstr "Typ"
+msgstr "Type"
 
 #: core/models.py:211 core/templates/core/edit/links.html:29
 msgid "url"
@@ -148,147 +148,148 @@ msgstr "Links"
 
 #: core/models.py:221
 msgid "preferred_answer"
-msgstr "Bevorzugte Antwort (0-10)"
+msgstr "Voorkeursantwoord (0-10)"
 
 #: core/models.py:224
 msgid "question_number"
-msgstr "Fragenummer"
+msgstr "Vraag nummer"
 
 #: core/models.py:231
 msgid "text"
-msgstr "Text"
+msgstr "Tekst"
 
 #: core/models.py:236
 msgid "description"
-msgstr "Beschreibung"
+msgstr "Beschrijving"
 
 #: core/models.py:241 core/models.py:249
 #: core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
-msgstr "Frage"
+msgstr "Vraag"
 
 #: core/models.py:242 core/templates/core/edit/menu.html:8
 msgid "questions"
-msgstr "Fragen"
+msgstr "Vragen"
 
 #: core/models.py:256
 msgid "agreement_level"
-msgstr "Einverständnis"
+msgstr "Gelijkenis"
 
 #: core/models.py:259 core/templates/core/edit/questions.html:36
 msgid "note"
-msgstr "Bemerkung"
+msgstr "Opmerking"
 
 #: core/models.py:263
 msgid "answer"
-msgstr "Antwort"
+msgstr "Antwoord"
 
 #: core/models.py:264
 msgid "answers"
-msgstr "Antworten"
+msgstr "Antwoorden"
 
 #: core/models.py:277
 msgid "value"
-msgstr "Wert"
+msgstr "Waarde"
 
 #: core/models.py:309
 msgid "statistic"
-msgstr "Statistik"
+msgstr "Statistiek"
 
 #: core/models.py:310
 msgid "statistics"
-msgstr "Statistiken"
+msgstr "Statistieken"
 
 #: core/templates/core/candidates/filter.html:8
 msgid "sort_by_category"
-msgstr "Nach Kategorie sortieren"
+msgstr "Sorteren op categorie"
 
 #: core/templates/core/candidates/filter.html:22
 msgid "filter_by_state"
-msgstr "Auf Kanton einschränken"
+msgstr "Sorteren op kieskring"
 
 #: core/templates/core/candidates/filter.html:39
 msgid "search"
-msgstr "Suchen"
+msgstr "Zoeken"
 
 #: core/templates/core/candidates/filter.html:44
 msgid "filter"
-msgstr "Filtern"
+msgstr "Filteren"
 
 #: core/templates/core/candidates/index.html:14
 msgid "opinion_admin"
-msgstr "Admins Meinung"
+msgstr "Ons standpunt"
 
 #: core/templates/core/candidates/index.html:19
 #: core/templates/core/candidates/index.html:28
 msgid "own_opinion"
-msgstr "Eigene Meinung"
+msgstr "Uw standpunt"
 
 #: core/templates/core/candidates/index.html:26
 #: core/templates/core/profile/description.html:52
 msgid "add_own_opinion"
-msgstr "Eigene Meinung erfassen"
+msgstr "Uw eigen standpunt invoeren"
 
 #: core/templates/core/candidates/index.html:27
 msgid "add_own_opinion_here"
-msgstr "Klicken Sie hier um Ihre eigene Meinung zu erfassen"
+msgstr "Klik hier om uw eigen standpunt in te voeren"
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
 #: core/templates/core/profile/questions.html:3
 msgid "your_opinion_to"
-msgstr "Wie stehen Sie zu..."
+msgstr "Uw standpunt over…"
 
 #: core/templates/core/compare/index.html:43
 msgid "evaluate"
-msgstr "Auswerten"
+msgstr "Bekijken"
 
 #: core/templates/core/compare/index.html:46
 msgid "reset_answers"
-msgstr "Antworten zurücksetzen"
+msgstr "Antwoorden terugzetten"
 
 #: core/templates/core/compare/index.html:49
 #: core/templates/core/edit/profile.html:78
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
-msgstr "Speichern"
+msgstr "Opslaan"
 
 #: core/templates/core/edit/links.html:33
 msgid "add_link"
-msgstr "Link hinzufügen"
+msgstr "Link toevoegen"
 
 #: core/templates/core/edit/menu.html:5
 msgid "profile"
-msgstr "Profil"
+msgstr "Profiel"
 
+# If the profile has no index party but an other one, typically a one-person party.
 #: core/templates/core/edit/profile.html:44
 msgid "other"
-msgstr "Andere"
+msgstr "Anders"
 
 #: core/templates/core/edit/profile.html:67
 msgid "file_too_large"
-msgstr "Die Datei ist zu gross ( > 5MB )"
+msgstr "Het bestand is te groot ( > 5MB )"
 
 #: core/templates/core/edit/questions.html:51
 msgid "publish_answers"
-msgstr "Antworten freigeben"
+msgstr "Antwoorden publiceren"
 
 #: core/templates/core/edit/questions.html:57
 msgid "unpublish_answers"
-msgstr "Antworten zurückziehen"
+msgstr "Antwoorden intrekken"
 
 #: core/templates/core/helpers/question_text.html:7
 msgid "toggle_description"
-msgstr "Erklärung…"
+msgstr "Beschrijving…"
 
 #: core/templates/core/helpers/question_text.html:11
 msgid "no_question_description"
-msgstr "Keine Beschreibung vorhanden"
+msgstr "Geen beschrijving beschikbaar"
 
 #: core/templates/core/helpers/scale.html:4
 #: core/templates/core/profile/description.html:43
 msgid "no"
-msgstr "Nein"
+msgstr "Nee"
 
 #: core/templates/core/helpers/scale.html:9
 #: core/templates/core/profile/description.html:43
@@ -299,49 +300,49 @@ msgstr "Ja"
 #: core/templates/core/party/menu.html:5
 #: core/templates/core/party/politician_edit.html:6
 msgid "add_politician"
-msgstr "Politiker hinzufügen"
+msgstr "Politicus toevoegen"
 
 #: core/templates/core/party/dashboard.html:27
 #: core/templates/core/party/menu.html:6
 msgid "export"
-msgstr "Exportieren"
+msgstr "Exporteren"
 
 #: core/templates/core/party/dashboard.html:37
 #: core/templates/core/party/menu.html:7 templates/navbar.html:33
 msgid "logout"
-msgstr "Ausloggen"
+msgstr "Uitloggen"
 
 #: core/templates/core/party/dashboard.html:46
 msgid "created_politicians"
-msgstr "Erstellte Politiker"
+msgstr "Aangemaakte politici"
 
 #: core/templates/core/party/dashboard.html:64
 msgid "copy_to_clipboard"
-msgstr "URL in die Zwischenablage kopieren"
+msgstr "URL kopiëren naar klembord"
 
 #: core/templates/core/party/dashboard.html:65
 msgid "edit_politician"
-msgstr "Politiker bearbeiten"
+msgstr "Politicus bewerken"
 
 #: core/templates/core/party/dashboard.html:66
 msgid "delete_politician"
-msgstr "Politiker löschen"
+msgstr "Politicus verwijderen"
 
 #: core/templates/core/party/dashboard.html:79
 msgid "copy_url_text"
-msgstr "Kopieren Sie die URL in die Zwischenablage"
+msgstr "URL kopiëren naar klembord"
 
 #: core/templates/core/party/dashboard.html:83
 msgid "close"
-msgstr "Schliessen"
+msgstr "Sluiten"
 
 #: core/templates/core/party/login.html:9
 msgid "login_label"
-msgstr "Bitte geben Sie Ihr Passwort ein"
+msgstr "Voer a.u.b. uw wachtwoord in"
 
 #: core/templates/core/party/login.html:12
 msgid "login"
-msgstr "Login"
+msgstr "Log in"
 
 #: core/templates/core/party/menu.html:4 templates/navbar.html:27
 msgid "dashboard"
@@ -349,127 +350,126 @@ msgstr "Dashboard"
 
 #: core/templates/core/profile/description.html:47
 msgid "show_own_spider"
-msgstr "Eigene Meinung anzeigen"
+msgstr "Eigen mening bekijken"
 
 #: core/templates/core/profile/questions.html:22
 msgid "own_answer"
-msgstr "Eigene Antwort"
+msgstr "Eigen antwoord"
 
 #: core/templates/core/profile/questions.html:29
 msgid "politician_answer"
-msgstr "Politiker Antwort"
+msgstr "Antwoord politicus"
 
 #: core/views.py:144
 msgid "answers_saved_successfully_evaluate"
-msgstr ""
-"Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
-"auswerten."
+msgstr "Uw antwoorden zijn succesvol opgeslagen. U kunt ze nu terugzien."
 
 #: core/views.py:168
 msgid "answers_resetted"
-msgstr "Ihre Antworten wurden zurückgesetzt"
+msgstr "Uw antwoorden zijn teruggezet"
 
 #: core/views.py:235
 msgid "total"
-msgstr "Gesamt"
+msgstr "Totaal"
 
 #: core/views.py:345
 msgid "profile_saved_successfully"
-msgstr "Ihr Profil wurde erfolgreich gespeichert."
+msgstr "Uw profiel is succesvol opgeslagen."
 
 #: core/views.py:419
 msgid "answers_published_successfully"
-msgstr "Ihre Antworten wurden erfolgreich freigegeben."
+msgstr "Uw antwoorden zijn succesvol gepubliceerd"
 
 #: core/views.py:429
 msgid "answers_unpublished_successfully"
-msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
+msgstr "Uw antwoorden zijn succesvol ingetrokken"
 
 #: core/views.py:499
 msgid "login_successful"
-msgstr "Sie wurden erfolgreich eingeloggt"
+msgstr "U bent succesvol ingelogd"
 
 #: core/views.py:502
 msgid "login_error"
-msgstr "Sie haben falsche Logindaten eingegeben"
+msgstr "U heeft foutieve login-gegevens ingevoerd"
 
 #: core/views.py:531
 msgid "politician_add_success"
-msgstr "Politiker wurde erfolgreich hinzugefügt"
+msgstr "Politicus is succesvol toegevoegd"
 
 #: core/views.py:534
 msgid "politician_add_error"
-msgstr "Es gab einen Fehler beim Erstellen des Politikers"
+msgstr "Er ontstond een probleem bij het toevoegen van de politicus"
 
 #: core/views.py:559
 msgid "politician_edit_success"
-msgstr "Politiker wurde erfolgreich bearbeitet"
+msgstr "De politicus is succesvol bewerkt"
 
 #: core/views.py:562
 msgid "politician_edit_error"
-msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
+msgstr "Er ontstond een probleem bij het bewerken van de politicus"
 
 #: core/views.py:610
 msgid "politician_delete_success"
-msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
+msgstr "Politicus '%s %s' is succesvol verwijderd"
 
 #: freedomvote/settings-local.py:179 freedomvote/settings.py:179
 msgid "german"
-msgstr "Deutsch"
+msgstr "Duits"
 
 #: freedomvote/settings-local.py:180 freedomvote/settings.py:181
 msgid "french"
-msgstr "Französisch"
+msgstr "Frans"
 
 #: freedomvote/settings-local.py:181 freedomvote/settings.py:182
 msgid "italian"
-msgstr "Italienisch"
+msgstr "Italiaans"
 
 #: freedomvote/settings-local.py:182 freedomvote/settings.py:183
 msgid "dutch"
-msgstr "Niederländisch"
+msgstr "Nederlands"
 
 #: freedomvote/settings-local.py:183 freedomvote/settings.py:180
 msgid "english"
-msgstr "Englisch"
+msgstr "Engels"
 
 #: templates/404.html:6
 msgid "page_not_found"
-msgstr "Seite nicht gefunden"
+msgstr "Pagina niet gevonden"
 
 #: templates/500.html:6
 msgid "server_error"
-msgstr "Serverfehler"
+msgstr "Server probleem"
 
 #: templates/footer.html:14
 msgid "source_code"
-msgstr "Quellcode"
+msgstr "Broncode"
 
 #: templates/index.html:30
 msgid "noscript"
-msgstr "Diese Seite funktioniert nur komplett, wenn Javascript aktiviert ist."
+msgstr ""
+"Deze website functioneert alleen volledig als Javascript geactiveerd is."
 
 #: templates/navbar.html:7
 msgid "toggle_navigation"
-msgstr "Menu umschalten"
+msgstr "Menu omschakelen"
 
 #~ msgid "partners"
-#~ msgstr "Partner"
+#~ msgstr "Partners"
 
 #~ msgid "our_partners"
-#~ msgstr "Unsere Partner"
+#~ msgstr "Onze partners"
 
 #~ msgid "parliament_building"
-#~ msgstr "Bundeshaus"
+#~ msgstr "Parlementsgebouw"
 
 #~ msgid "source"
-#~ msgstr "Quelle"
+#~ msgstr "Bron"
 
 #~ msgid "details"
 #~ msgstr "Details"
 
 #~ msgid "applies_not"
-#~ msgstr "Trifft gar nicht zu"
+#~ msgstr "Niet van toepassing"
 
 #~ msgid "applies"
-#~ msgstr "Trifft voll und ganz zu"
+#~ msgstr "Van toepassing"
