@@ -56,7 +56,9 @@ jQuery(function($) {
 
                   $('.detail').not(detail).hide(effect)
 
-                  detail.toggle(effect)
+                  detail.toggle(effect, function(e) {
+                    window.dispatchEvent(new Event('resize'));
+                  })
                 }
               }
             }
