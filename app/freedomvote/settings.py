@@ -106,7 +106,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 TEMPLATES = [
@@ -171,9 +170,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'en'
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'de'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 LANGUAGES = (
     ('de', _('german')),
