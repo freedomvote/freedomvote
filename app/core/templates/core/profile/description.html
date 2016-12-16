@@ -1,4 +1,4 @@
-{% load i18n static thumbnail %}
+{% load i18n static thumbnail party %}
 
 <div class="row">
     <div class="col-md-3 col-lg-3">
@@ -27,7 +27,7 @@
 
         <div class="row">
             <div class="col-md-6"><strong>{% trans 'party' %}</strong></div>
-            <div class="col-md-6">{{politician.party_name}}</div>
+            <div class="col-md-6">{% party_tag politician.party %}</div>
         </div>
 
         <div class="row">
