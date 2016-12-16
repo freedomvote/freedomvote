@@ -56,15 +56,19 @@
         </div>
 
         {% if links %}
-        <strong>{% trans 'links' %}</strong>
-        <hr>
-        <div class="col-md-6">
-            {% for link in links %}
-                <p>
-                    <img class="img" src="{{link.type.icon|thumbnail_url:'icon'}}">
-                    <a href="{{link.url}}">{{link.type.name}}</a>
-                </p>
-            {%endfor%}
+        <div class="row">
+            <div class="col-md-12">
+                <strong>{% trans 'links' %}</strong>
+                <hr>
+            </div>
+            <div class="col-md-12">
+                {% for link in links %}
+                    <p class="socialmedia-link">
+                        <i class="fa socialmedia-link-icon" aria-hidden="true"></i>
+                        <a class="socialmedia-link-anchor" href="{{link.url}}"></a>
+                    </p>
+                {%endfor%}
+            </div>
         </div>
         {% endif %}
     </div>

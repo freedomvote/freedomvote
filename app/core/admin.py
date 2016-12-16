@@ -34,10 +34,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 
-class LinkTypeAdmin(admin.ModelAdmin):
-    list_display = ['name']
-
-
 class QuestionAdmin(admin.ModelAdmin):
     def get_category(self, obj):
         return obj.category.__unicode__()
@@ -50,4 +46,3 @@ admin.site.register(models.Party,      PartyAdmin)
 admin.site.register(models.Politician, PoliticianAdmin)
 admin.site.register(models.Category,   CategoryAdmin)
 admin.site.register(models.Question,   QuestionAdmin)
-admin.site.register(models.LinkType,   LinkTypeAdmin)

@@ -24,6 +24,7 @@ jQuery(function ($){
         form.serialize(),
         function(data){
             $('#links').html(data)
+            FREEDOMVOTE.Socialmedia.render()
         }
     )
   })
@@ -37,6 +38,7 @@ jQuery(function ($){
         form.serialize(),
         function(data){
             $('#links').html(data)
+            FREEDOMVOTE.Socialmedia.render()
         }
     )
   })
