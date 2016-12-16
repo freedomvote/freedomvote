@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 06:26+0000\n"
-"PO-Revision-Date: 2016-12-16 07:33+0100\n"
+"POT-Creation-Date: 2016-12-16 09:54+0000\n"
+"PO-Revision-Date: 2016-12-16 10:55+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
 "Language: nl\n"
@@ -17,6 +17,119 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.2\n"
+
+#: api/templates/api/info.html:5
+msgid "API Documentation"
+msgstr "API documentatie"
+
+#: api/templates/api/info.html:7
+msgid ""
+"The data of this site is also available in a machine-readable format (JSON). "
+"Our API serves the same data as the application; especially, no answers that "
+"are visible in the API if they have not been published in the application."
+msgstr ""
+"De data van deze website is ook beschikbaar in een machine-leesaar formaat "
+"(JSON).\n"
+"Onze API serveert dezelfde data als de applicatie; in het bijzonder zijn "
+"antwoorden niet zichtbaar in de API als ze niet gepubliceerd zijn in de "
+"applicatie."
+
+#: api/templates/api/info.html:10
+msgid ""
+"Feel free to fetch this dataset and analyze it as you wish. If you've done "
+"something interesting, consider dropping us a note :)"
+msgstr ""
+"Voel je vrij om de dataset op te halen en naar wens te analyzeren. Als je er "
+"iets bijzonders mee hebt gedaan, schroom dan niet om ons hierover te "
+"informeren :)"
+
+#: api/templates/api/info.html:16
+msgid "Data Structure"
+msgstr "Datastructuur"
+
+#: api/templates/api/info.html:21
+msgid "The id of the politician"
+msgstr "Het id van de politicus"
+
+#: api/templates/api/info.html:22
+msgid "The first name of the politician"
+msgstr "De voornaam van de politicus"
+
+#: api/templates/api/info.html:23
+msgid "The last name of the politician"
+msgstr "De achternaam van de politicus"
+
+#: api/templates/api/info.html:24
+msgid "Is the politician a member of the parliament?"
+msgstr "Is de politicus zittend parlementslid?"
+
+#: api/templates/api/info.html:25
+msgid "URL to the image (can be null)"
+msgstr "URL naar de afbeelding (kan null zijn)"
+
+#: api/templates/api/info.html:26
+msgid "Name of the state (can be null)"
+msgstr "Naam van de kieskring (kan null zijn)"
+
+#: api/templates/api/info.html:28
+msgid "(can be null)"
+msgstr "(kan null zijn)"
+
+#: api/templates/api/info.html:30
+msgid "The long name of the party"
+msgstr "De volledige naam van de partij"
+
+#: api/templates/api/info.html:31
+msgid "The short name of the party (can be null)"
+msgstr "De afkorting van de partij (kan null zijn)"
+
+#: api/templates/api/info.html:33
+msgid "Past contributions of the politician"
+msgstr "Eerdere bijdragen van de politicus"
+
+#: api/templates/api/info.html:34
+msgid "Future plans of the politician"
+msgstr "Intenties en plannen van de politicus"
+
+#: api/templates/api/info.html:38
+msgid "The id of the referring question"
+msgstr "Het id van de bijbehorende vraag"
+
+#: api/templates/api/info.html:39
+msgid "Agreement level to the question (is between 0 - 10)"
+msgstr "Overeenstemming met de vraag (tussen 0 - 10)"
+
+#: api/templates/api/info.html:40
+msgid "Additional note to the answer"
+msgstr "Extra bijschrift bij het antwoord"
+
+#: api/templates/api/info.html:48
+msgid "The id of the category"
+msgstr "Het id van de categorie"
+
+#: api/templates/api/info.html:49
+msgid "The name of the category (by language code)"
+msgstr "De naam van de categorie (per taalcode)"
+
+#: api/templates/api/info.html:55
+msgid "The id of the question"
+msgstr "Het id van de vraag"
+
+#: api/templates/api/info.html:56
+msgid "The id of the referring category"
+msgstr "Het id van de bijbehorende categorie"
+
+#: api/templates/api/info.html:57
+msgid "The question text (by language code)"
+msgstr "De tekst van de vraag (per taalcode)"
+
+#: api/templates/api/info.html:58
+msgid "A better description of the question (by language code)"
+msgstr "Een uitgebreidere beschrijving vna de vraag (per taalcode)"
+
+#: api/templates/api/info.html:59
+msgid "The preferred answer given by the admins (is between 0 - 10)"
+msgstr "Het voorkeursantwoord door de organisatie (tussen 0 - 10)"
 
 #: core/admin.py:21 core/views.py:593
 msgid "unique_url"
