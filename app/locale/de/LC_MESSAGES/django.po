@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 07:06+0000\n"
-"PO-Revision-Date: 2016-12-06 08:12+0100\n"
+"POT-Creation-Date: 2016-12-16 06:26+0000\n"
+"PO-Revision-Date: 2016-12-16 07:43+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -44,8 +44,7 @@ msgstr "Name"
 msgid "state"
 msgstr "Kanton"
 
-#: core/models.py:26 core/models.py:158
-#: core/templates/core/profile/description.html:12
+#: core/models.py:26 core/templates/core/profile/description.html:12
 #: core/templates/core/profile/description.html:15
 msgid "states"
 msgstr "Kantone"
@@ -108,6 +107,11 @@ msgstr "Zugangscode"
 #: core/models.py:124
 msgid "party_other"
 msgstr "Andere Partei"
+
+#: core/models.py:158
+#, python-format
+msgid "%s states"
+msgstr "%s Kantone"
 
 #: core/models.py:182 core/models.py:208 core/models.py:253 core/models.py:270
 msgid "politician"

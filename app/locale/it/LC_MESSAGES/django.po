@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 07:06+0000\n"
-"PO-Revision-Date: 2016-12-06 08:16+0100\n"
+"POT-Creation-Date: 2016-12-16 06:26+0000\n"
+"PO-Revision-Date: 2016-12-16 07:38+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -44,8 +44,7 @@ msgstr "Nome"
 msgid "state"
 msgstr "Cantone"
 
-#: core/models.py:26 core/models.py:158
-#: core/templates/core/profile/description.html:12
+#: core/models.py:26 core/templates/core/profile/description.html:12
 #: core/templates/core/profile/description.html:15
 msgid "states"
 msgstr "Cantoni"
@@ -108,6 +107,11 @@ msgstr "Codice di accesso"
 #: core/models.py:124
 msgid "party_other"
 msgstr "Altro partito"
+
+#: core/models.py:158
+#, python-format
+msgid "%s states"
+msgstr "%s cantoni"
 
 #: core/models.py:182 core/models.py:208 core/models.py:253 core/models.py:270
 msgid "politician"
