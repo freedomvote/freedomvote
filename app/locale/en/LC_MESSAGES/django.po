@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-16 06:26+0000\n"
-"PO-Revision-Date: 2016-12-16 07:43+0100\n"
+"POT-Creation-Date: 2016-12-16 09:54+0000\n"
+"PO-Revision-Date: 2016-12-16 10:56+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
 "Language: en\n"
@@ -17,6 +17,116 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.2\n"
+
+#: api/templates/api/info.html:5
+msgid "API Documentation"
+msgstr "API Documentation"
+
+#: api/templates/api/info.html:7
+msgid ""
+"The data of this site is also available in a machine-readable format (JSON). "
+"Our API serves the same data as the application; especially, no answers that "
+"are visible in the API if they have not been published in the application."
+msgstr ""
+"The data of this site is also available in a machine-readable format (JSON). "
+"Our API serves the same data as the application; especially, no answers that "
+"are visible in the API if they have not been published in the application."
+
+#: api/templates/api/info.html:10
+msgid ""
+"Feel free to fetch this dataset and analyze it as you wish. If you've done "
+"something interesting, consider dropping us a note :)"
+msgstr ""
+"Feel free to fetch this dataset and analyze it as you wish. If you've done "
+"something interesting, consider dropping us a note :)"
+
+#: api/templates/api/info.html:16
+msgid "Data Structure"
+msgstr "Data Structure"
+
+#: api/templates/api/info.html:21
+msgid "The id of the politician"
+msgstr "The id of the politician"
+
+#: api/templates/api/info.html:22
+msgid "The first name of the politician"
+msgstr "The first name of the politician"
+
+#: api/templates/api/info.html:23
+msgid "The last name of the politician"
+msgstr "The last name of the politician"
+
+#: api/templates/api/info.html:24
+msgid "Is the politician a member of the parliament?"
+msgstr "Is the politician a member of the parliament?"
+
+#: api/templates/api/info.html:25
+msgid "URL to the image (can be null)"
+msgstr "URL to the image (can be null)"
+
+#: api/templates/api/info.html:26
+msgid "Name of the state (can be null)"
+msgstr "Name of the state (can be null)"
+
+#: api/templates/api/info.html:28
+msgid "(can be null)"
+msgstr "(can be null)"
+
+#: api/templates/api/info.html:30
+msgid "The long name of the party"
+msgstr "The long name of the party"
+
+#: api/templates/api/info.html:31
+msgid "The short name of the party (can be null)"
+msgstr "The short name of the party (can be null)"
+
+#: api/templates/api/info.html:33
+msgid "Past contributions of the politician"
+msgstr "Past contributions of the politician"
+
+#: api/templates/api/info.html:34
+msgid "Future plans of the politician"
+msgstr "Future plans of the politician"
+
+#: api/templates/api/info.html:38
+msgid "The id of the referring question"
+msgstr "The id of the referring question"
+
+#: api/templates/api/info.html:39
+msgid "Agreement level to the question (is between 0 - 10)"
+msgstr "Agreement level to the question (is between 0 - 10)"
+
+#: api/templates/api/info.html:40
+msgid "Additional note to the answer"
+msgstr "Additional note to the answer"
+
+#: api/templates/api/info.html:48
+msgid "The id of the category"
+msgstr "The id of the category"
+
+#: api/templates/api/info.html:49
+msgid "The name of the category (by language code)"
+msgstr "The name of the category (by language code)"
+
+#: api/templates/api/info.html:55
+msgid "The id of the question"
+msgstr "The id of the question"
+
+#: api/templates/api/info.html:56
+msgid "The id of the referring category"
+msgstr "The id of the referring category"
+
+#: api/templates/api/info.html:57
+msgid "The question text (by language code)"
+msgstr "The question text (by language code)"
+
+#: api/templates/api/info.html:58
+msgid "A better description of the question (by language code)"
+msgstr "A better description of the question (by language code)"
+
+#: api/templates/api/info.html:59
+msgid "The preferred answer given by the admins (is between 0 - 10)"
+msgstr "The preferred answer given by the admins (is between 0 - 10)"
 
 #: core/admin.py:21 core/views.py:593
 msgid "unique_url"
