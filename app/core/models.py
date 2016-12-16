@@ -183,26 +183,7 @@ class Politician(models.Model):
         verbose_name_plural = _('politicians')
 
 
-class LinkType(models.Model):
-    icon                    = models.ImageField(
-        upload_to           = 'icons/',
-        verbose_name        = _('icon')
-    )
-    name                    = models.CharField(
-        max_length          = 50,
-        verbose_name        = _('name')
-    )
-
-    class Meta:
-        verbose_name        = _('link_type')
-        verbose_name_plural = _('link_types')
-
-
 class Link(models.Model):
-    type                    = models.ForeignKey(
-        LinkType,
-        verbose_name        = _('type')
-    )
     politician              = models.ForeignKey(
         Politician,
         verbose_name        = _('politician')

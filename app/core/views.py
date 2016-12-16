@@ -1,7 +1,7 @@
 from core.decorators import require_party_login
 from core.forms import PoliticianForm, PartyPoliticianForm
 from core.models import Politician, Question, State, Answer
-from core.models import Statistic, Category, LinkType, Link
+from core.models import Statistic, Category, Link
 from core.tools import set_cookie, get_cookie
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -189,8 +189,7 @@ def politician_view(request, politician_id):
         filter(politician=politician).
         order_by('question__question_number'))
     links      = (
-        Link.objects.filter(politician=politician).
-        order_by('type__name'))
+        Link.objects.filter(politician=politician))
     cookie     = get_cookie(request, 'answers', {})
     answer_obs = []
 
@@ -334,9 +333,8 @@ def politician_edit_view(request, unique_key):
 
 def politician_edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
-    link_types = LinkType.objects.all().order_by('name')
     links      = (
-        Link.objects.filter(politician=politician).order_by('type__name'))
+        Link.objects.filter(politician=politician))
 
     if request.POST:
         form = PoliticianForm(request.POST, request.FILES, instance=politician)
@@ -352,7 +350,6 @@ def politician_edit_profile_view(request, unique_key):
         {
             'politician' : politician,
             'form'       : form,
-            'link_types' : link_types,
             'links'      : links
         }
     )
@@ -432,7 +429,6 @@ def politician_unpublish_view(request, unique_key):
 
 def politician_link_add_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
-    link_type  = get_object_or_404(LinkType, id=request.POST.get('link_type'))
     url        = request.POST.get('url')
     error      = False
 
@@ -444,24 +440,20 @@ def politician_link_add_view(request, unique_key):
 
     if not error:
         l = Link(
-            type=link_type,
             politician=politician,
             url=url
         )
         l.save()
         url = ''
 
-    types      = LinkType.objects.all().order_by('name')
     links      = (
-        Link.objects.filter(politician=politician).order_by('type__name'))
+        Link.objects.filter(politician=politician))
 
     return render(request, 'core/edit/links.html', {
         'links'      : links,
-        'link_types' : types,
         'politician' : politician,
         'error'      : error,
-        'input'      : url,
-        'link_type'  : link_type,
+        'input'      : url
     })
 
 
@@ -470,13 +462,11 @@ def politician_link_delete_view(request, unique_key, link_id):
     link = get_object_or_404(Link, id=link_id)
     link.delete()
 
-    types      = LinkType.objects.all().order_by('name')
     links      = (
-        Link.objects.filter(politician=politician).order_by('type__name'))
+        Link.objects.filter(politician=politician))
 
     return render(request, 'core/edit/links.html', {
         'links'      : links,
-        'link_types' : types,
         'politician' : politician
     })
 
