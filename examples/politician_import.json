@@ -1,0 +1,15 @@
+[
+    {
+        "language": "en",
+        "first_name": "John",
+        "last_name": "Smith",
+        "email": "john.smith@example.com",
+        "is_member_of_parliament": false,
+        "party": "Democrats",
+        "user": "admin",
+        "states": [
+            "New York",
+            "New Hampshire"
+        ]
+    }
+]

@@ -52,8 +52,8 @@ Freedomvote provides a couple of custom commands to ease the setup process:
 $ python app/manage.py help
 $ python app/manage.py help <command>
 $ python app/manage.py generate_politicians 42
-$ python app/manage.py politician_import politician_import.csv.example
-$ python app/manage.py user_import user_import.csv.example
+$ python app/manage.py politician_import examples/politician_import.json
+$ python app/manage.py user_import examples/user_import.json
 ```
 ## LinkType icons
 In the management dashboard custom LinkTypes can be configured with both name and icon.

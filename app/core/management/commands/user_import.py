@@ -1,24 +1,31 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
-import csv
+import json
 
 class Command(BaseCommand):
-    help = "Imports users from a [csv_file]. Each row in the CSV file should contain: username, password."
+    help = 'Imports users from a JSON file'
 
     def add_arguments(self, parser):
-        parser.add_argument('csv_file', help='file to import')
+        parser.add_argument('json_file', help='JSON file to import')
 
     def handle(self, *args, **options):
         try:
-            with open(options['csv_file'], 'rb') as csvfile:
-                reader = csv.reader(csvfile)
-                for row in reader:
+            with open(options['json_file']) as f:
+                data = json.load(f)
+
+                for row in data:
                     try:
-                        username = row[0]
-                        password = row[1]
-                        user = User.objects.create_user(username, None, password)
+                        user = User.objects.create_user(
+                            row.get('username'),
+                            None,
+                            row.get('password')
+                        )
+
                         user.save()
                     except:
                         print('User creation failed')
+
         except:
-            print('Could not parse target file')
+            print(str(e))
+
+# vim: set sw=4:ts=4:et:

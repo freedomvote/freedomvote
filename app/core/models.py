@@ -107,7 +107,6 @@ class Politician(models.Model):
     )
     state                   = models.ManyToManyField(
         State,
-        null                = True,
         blank               = True,
         verbose_name        = _('state')
     )
