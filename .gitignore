@@ -2,6 +2,5 @@
 *.pyc
 bin/
 include/
-lib/
 local/
 node_modules/
