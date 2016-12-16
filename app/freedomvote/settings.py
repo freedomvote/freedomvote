@@ -75,6 +75,8 @@ MEDIA_URL  = '/media/'
 # Application definition
 
 INSTALLED_APPS = (
+    'modeltranslation',
+    'colorfield',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -89,7 +91,6 @@ INSTALLED_APPS = (
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
     'easy_thumbnails',
-    'modeltranslation',
     'piwik',
     'core',
     'api',

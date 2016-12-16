@@ -4,6 +4,7 @@ from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from colorfield.fields import ColorField
 import base64
 import os
 
@@ -35,6 +36,14 @@ class Party(models.Model):
     shortname               = models.CharField(
         max_length          = 10,
         verbose_name        = _('shortname')
+    )
+    background_color        = ColorField(
+        default             = '#3F51B5',
+        verbose_name        = _('background_color')
+    )
+    font_color              = ColorField(
+        default             = '#FFFFFF',
+        verbose_name        = _('font_color')
     )
 
     def __unicode__(self):

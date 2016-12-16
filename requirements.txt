@@ -1,5 +1,5 @@
 django==1.8
-django-modeltranslation==0.9
+django-modeltranslation==0.12
 django-admin-bootstrapped==2.5.7
 pillow==3.1.0
 psycopg2==2.6.1
@@ -8,3 +8,4 @@ django-cms==3.2.0
 html5lib==0.9999999
 djangocms_text_ckeditor==2.8.1
 django-piwik==0.1
+git+git://github.com/jaredly/django-colorfield@e722499f8d00bb01f46b9e34d7e8738478e2bcd5
