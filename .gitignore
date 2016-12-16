@@ -5,3 +5,4 @@ include/
 lib/
 local/
 node_modules/
+.python-version
