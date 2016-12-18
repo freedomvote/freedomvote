@@ -39,16 +39,11 @@ def handler500(request):
 # GENERIC META
 ##
 
-meta = Meta(
-    title="Sam's awesome ponies",
-    description='Awesome page about ponies',
-    keywords=['pony', 'ponies', 'awesome'],
-    extra_props = {
-        'viewport': 'width=device-width, initial-scale=1.0, minimum-scale=1.0'
-    }
-    # 'extra_custom_props': [
-    #     ('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
-    # ]
+
+default_meta = Meta(
+    title = 'Freedomvote',
+    description = _('The platform for freedom, technology and politics'),
+    image = '/static/images/logo.png'
 )
 
 ##
@@ -104,18 +99,6 @@ def candidates_view(request):
             Q(party__shortname__icontains=search)
         )
 
-    meta = Meta(
-        title="Sam's awesome ponies",
-        description='Awesome page about ponies',
-        keywords=['pony', 'ponies', 'awesome'],
-        extra_props = {
-            'viewport': 'width=device-width, initial-scale=1.0, minimum-scale=1.0'
-        }
-        # 'extra_custom_props': [
-        #     ('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
-        # ]
-    )
-
     paginator = Paginator(politician_list, per_site)
 
     try:
@@ -136,7 +119,7 @@ def candidates_view(request):
             'politicians' : politicians,
             'categories'  : categories,
             'states'      : states,
-            'meta' : meta
+            'meta'        : default_meta
         }
     )
 
@@ -184,7 +167,8 @@ def compare_view(request):
         request,
         'core/compare/index.html',
         {
-            'data' : data
+            'data' : data,
+            'meta' : default_meta
         }
     )
 
@@ -237,7 +221,8 @@ def politician_view(request, politician_id):
             'politician' : politician,
             'answers'    : answer_obs,
             'links'      : links,
-            'embed_url'  : embed_url_absolute
+            'embed_url'  : embed_url_absolute,
+            'meta'       : default_meta
         }
     )
 
