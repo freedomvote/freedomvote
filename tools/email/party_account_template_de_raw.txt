@@ -1,0 +1,59 @@
+Einladung FreedomVote
+
+Sehr geehrte Damen und Herren
+
+Der Open Source Förderverein Swiss Open Systems User Group /ch/open und die
+Schweizer Sektion der Free Software Foundation Europe haben im Rahmen der
+Wahlen 2015 die Plattform "Freedomvote" eingerichtet, welche einen starken
+Fokus auf die Nachhaltigkeit im digitalen Umfeld legt.
+
+SwissICT nennt im Rahmen des Swiss ICT Symposium folgende Kennzahlen zum
+ICT-Sektor der Schweiz:
+
+   "Laut aktuellen Zahlen erwirtschaftet die Schweizer ICT 5.2% des BIP,
+   beschäftigt 176'600 Menschen und der Einsatz von Informatik ist
+   verantwortlich für 40% des gesamtwirtschaftlichen Wachstums." [1]
+
+Es ist unser Anliegen, dass die Nachhaltigkeit bei ICT-Themen in der kommenden
+Legislaturperiode entsprechend thematisiert wird und KandidatInnen, welche sich
+aktiv für diese Themen einsetzen, eine Plattform geschaffen wird, auf der Sie
+sich präsentieren können.
+
+KandidatInnen sämtlicher Parteien können sich auf unserer Plattform in wenigen
+Minuten ein Profil erstellen und zu den zehn Fragen Stellung nehmen.
+
+Den Wählenden wird so ermöglicht, schnell passende KandidatInnen zu finden und
+den Einsatz in diesem Umfeld bei der Stimmabgabe entsprechend zu honorieren.
+
+Für Sie als Parteisektion haben wir den folgenden Login erstellt, wo Sie Ihre
+KandidatInnen verwalten können:
+
+   Link:      https://freedomvote.ch/party/bdp_ag/
+   Passwort:  *********
+
+Um Ihre Arbeit zu erleichtern, haben wir bereits fünf leere Profile erstellt.
+Weitere Profile können einfach erfasst werden. Jedes dieser Profile hat eine
+eigene Adresse. Bitte stellen Sie den Kandidierenden je eine dieser Adressen
+zur Verfügung.
+
+Sie können die Adressen über die Export-Funktion herunterladen.
+
+Gerne erfassen wir die Profile auch vor (Vorname, Nachname, E-Mail, Kanton,
+Partei) und wenden uns dann direkt an die KandidatInnen - bitte stellen Sie uns
+dazu die entsprechenden Informationen der KandidatInnen per Mail zur Verfügung.
+
+Bei Fragen oder Unklarheiten stehen wir Ihnen sowie den KandidatInnen, sehr
+gerne zur Verfügung.
+
+Sie erreichen uns wie folgt:
+
+Swiss Open Systems User Group /ch/open
+Nicolas Christener
+nicolas.christener@ch-open.ch
+
+
+Freundliche Grüsse
+das FreedomVote-Team
+
+
+[1] http://www.swissict.ch/medien/medienmitteilungen/medienmitteilungen/swiss-ict-symposium-wohin-bewegt-sich-der-ictwerkplatz-schweiz/
