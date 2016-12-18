@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     'core',
     'api',
     'cms',
+    'meta'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -215,3 +216,14 @@ PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']
 PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
 
 GIT_URL = 'https://github.com/adfinis-sygroup/freedomvote'
+
+# Metadata settings (according to https://django-meta.readthedocs.io/en/latest/settings.html)
+META_SITE_PROTOCOL = 'http'
+META_SITE_DOMAIN = 'localhost:8000'
+META_SITE_TYPE = 'website'
+META_DEFAULT_KEYWORDS = ['freedomvote', 'tweede kamerverkiezingen', 'tweede kamer', 'verkiezingen']
+META_INCLUDE_KEYWORDS = META_DEFAULT_KEYWORDS
+META_USE_OG_PROPERTIES = True
+META_USE_TWITTER_PROPERTIES = True
+META_USE_GOOGLEPLUS_PROPERTIES = True
+META_OG_NAMESPACES = True

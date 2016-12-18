@@ -13,6 +13,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
+from meta.views import Meta
 import collections
 import csv
 
@@ -33,6 +34,22 @@ def handler500(request):
     response.status_code = 500
 
     return response
+
+##
+# GENERIC META
+##
+
+meta = Meta(
+    title="Sam's awesome ponies",
+    description='Awesome page about ponies',
+    keywords=['pony', 'ponies', 'awesome'],
+    extra_props = {
+        'viewport': 'width=device-width, initial-scale=1.0, minimum-scale=1.0'
+    }
+    # 'extra_custom_props': [
+    #     ('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
+    # ]
+)
 
 ##
 # PUBLIC VIEWS
@@ -87,6 +104,18 @@ def candidates_view(request):
             Q(party__shortname__icontains=search)
         )
 
+    meta = Meta(
+        title="Sam's awesome ponies",
+        description='Awesome page about ponies',
+        keywords=['pony', 'ponies', 'awesome'],
+        extra_props = {
+            'viewport': 'width=device-width, initial-scale=1.0, minimum-scale=1.0'
+        }
+        # 'extra_custom_props': [
+        #     ('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
+        # ]
+    )
+
     paginator = Paginator(politician_list, per_site)
 
     try:
@@ -107,6 +136,7 @@ def candidates_view(request):
             'politicians' : politicians,
             'categories'  : categories,
             'states'      : states,
+            'meta' : meta
         }
     )
 
