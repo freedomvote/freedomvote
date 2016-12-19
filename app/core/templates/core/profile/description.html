@@ -27,7 +27,7 @@
 
         <div class="row">
             <div class="col-md-6"><strong>{% trans 'party' %}</strong></div>
-            <div class="col-md-6">{% party_tag politician.party %}</div>
+            <div class="col-md-6">{% if politician.party %}{% party_tag politician.party %}{%else%}{{politician.party_other}}{% endif %}</div>
         </div>
 
         <div class="row">
