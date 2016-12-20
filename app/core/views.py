@@ -229,6 +229,17 @@ def politician_statistic_spider_view(request, politician_id):
     })
 
 
+def politician_statistic_spider_view_embed(request, politician_id):
+    statistics = Statistic.get_statistics_by_politician(politician_id)
+    return render(
+        request,
+        'core/profile/spider_embed.html',
+        {
+            'politician_id': politician_id
+        }
+    )
+
+
 def politician_statistic_view(request, politician_id):
     category_id = int(request.GET.get('category', False))
     titles  = [force_unicode(_('total'))]
