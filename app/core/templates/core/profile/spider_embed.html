@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block 'scripts' %}
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/highcharts/highcharts.js' %}"></script>
+    <script src="{% static 'lib/highcharts/highcharts-more.js' %}"></script>
+    <script src="{% static 'js/profile_spider_embed.js' %}"></script>
+{% endblock %}
+<div id="chart" data-url="{% url 'politician_statistic_spider' politician_id=politician_id %}?compare"></div>
+<style>
+body {
+    margin: 0
+}
+#chart {
+    height: 280px;
+    width: 400px;
+}
+</style>

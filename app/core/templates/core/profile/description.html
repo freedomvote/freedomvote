@@ -72,9 +72,13 @@
         </div>
         {% endif %}
     </div>
-    <div
-     class="col-md-4 col-lg-4 spider-container"
-     id="chart"
-     data-url="{% url 'politician_statistic_spider' politician_id=politician.id %}?compare"
-    ></div>
+    <div class="col-md-4 col-lg-4">
+        <div
+            class="spider-container"
+            id="chart"
+            data-url="{% url 'politician_statistic_spider' politician_id=politician.id %}?compare">
+        </div>
+        <p class="embed-iframe"><i class="fa fa-share" aria-hidden="true"></i> {% trans 'embed_iframe' %}</p>
+        <input type="text" class="form-control embed-iframe-code" value="&lt;iframe src=&quot;{{ embed_url }}&quot; frameborder=&quot;0&quot; width=&quot;400px&quot; height=&quot;280px&quot;&gt;&lt;/iframe&gt;">
+    </div>
 </div>

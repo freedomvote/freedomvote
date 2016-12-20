@@ -8,8 +8,9 @@ jQuery(function ($){
       chart: {
         polar: true,
         type: 'area',
+        height: 280,
+        width: 400,
         backgroundColor: 'transparent',
-        spacing: [ 10, 90, 10, 90 ]
       },
       title: {
         text: null
@@ -48,24 +49,7 @@ jQuery(function ($){
       series: [{
         pointPlacement: 'on',
         data: data.values.politician
-      },{
-        pointPlacement: 'on',
-        data: data.values.citizen,
-        visible: $('#show_citizen').prop('checked'),
       }]
     });
   })
-
-  $('#show_citizen').on('change', function(){
-    if ($(this).prop('checked')) {
-      item.highcharts().series[1].show()
-    }
-    else {
-      item.highcharts().series[1].hide()
-    }
-  })
-
-  $('.embed-iframe').on('click', function(){
-    $('.embed-iframe-code').toggle();
-  })
-});
+})

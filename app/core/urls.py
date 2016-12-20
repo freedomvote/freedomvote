@@ -74,6 +74,10 @@ urlpatterns = patterns(
         views.politician_statistic_spider_view,
         name='politician_statistic_spider'
     ),
+    url(r'^politician/(?P<politician_id>\d+)/statistic/spider/embed$',
+        views.politician_statistic_spider_view_embed,
+        name='politician_statistic_spider_embed'
+    ),
 
     # party urls
 

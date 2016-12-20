@@ -198,14 +198,16 @@ def politician_view(request, politician_id):
             'own_ans': cookie.get('question_%s' % a.question.id, None),
             'politician_ans': a
         })
-
+    embed_url_reverse = reverse('politician_statistic_spider_embed', kwargs={'politician_id':politician_id})
+    embed_url_absolute = request.build_absolute_uri(embed_url_reverse)
     return render(
         request,
         'core/profile/index.html',
         {
             'politician' : politician,
             'answers'    : answer_obs,
-            'links'      : links
+            'links'      : links,
+            'embed_url'  : embed_url_absolute
         }
     )
 
@@ -227,6 +229,17 @@ def politician_statistic_spider_view(request, politician_id):
         ],
         'values': values
     })
+
+
+def politician_statistic_spider_view_embed(request, politician_id):
+    statistics = Statistic.get_statistics_by_politician(politician_id)
+    return render(
+        request,
+        'core/profile/spider_embed.html',
+        {
+            'politician_id': politician_id
+        }
+    )
 
 
 def politician_statistic_view(request, politician_id):
