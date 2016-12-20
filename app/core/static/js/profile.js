@@ -64,4 +64,8 @@ jQuery(function ($){
       item.highcharts().series[1].hide()
     }
   })
+
+  $('.embed-iframe').on('click', function(){
+    $('.embed-iframe-code').toggle();
+  })
 });
