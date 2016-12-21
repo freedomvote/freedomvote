@@ -7,7 +7,6 @@ import util
 
 def v1(request):
     languages = util.get_setting_lang_code()
-    print(util.model_lang_fields(Question.objects.first(), 'text', languages))
     questions = [
         {
             'id': x.id,
