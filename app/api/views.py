@@ -2,18 +2,16 @@ from core.models import Politician, Question, Statistic, Answer, Category
 from django.http import JsonResponse
 from django.utils.encoding import force_text
 from django.core.serializers.json import DjangoJSONEncoder
-import util
 from api import util
 
 
 def v1(request):
-    languages = util.get_setting_lang_code()
     questions = [
         {
             'id': x.id,
             'category_id': x.category.id,
-            'text': util.model_lang_fields(x, 'text', languages),
-            'description': util.model_lang_fields(x, 'description', languages),
+            'text': util.get_model_translations(x, 'text'),
+            'description': util.get_model_translations(x, 'description'),
             'preferred_answer': x.preferred_answer
         }
         for x
@@ -23,7 +21,7 @@ def v1(request):
     categories = [
         {
             'id': x.id,
-            'name': util.model_lang_fields(x, 'name', languages),
+            'name': util.get_model_translations(x, 'name'),
         }
         for x
         in Category.objects.all().order_by('id')
