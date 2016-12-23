@@ -117,6 +117,7 @@ jQuery(function($) {
         },
         series: [{
           colorByPoint: true,
+          minPointLength: 3,
           data: data.detail.values
         }]
       })
