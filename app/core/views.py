@@ -13,6 +13,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
+from meta.views import Meta
 import collections
 import csv
 
@@ -33,6 +34,17 @@ def handler500(request):
     response.status_code = 500
 
     return response
+
+##
+# GENERIC META
+##
+
+
+default_meta = Meta(
+    title = 'Freedomvote',
+    description = _('The platform for freedom, technology and politics'),
+    image = '/static/images/logo.png'
+)
 
 ##
 # PUBLIC VIEWS
@@ -107,6 +119,7 @@ def candidates_view(request):
             'politicians' : politicians,
             'categories'  : categories,
             'states'      : states,
+            'meta'        : default_meta
         }
     )
 
@@ -154,7 +167,8 @@ def compare_view(request):
         request,
         'core/compare/index.html',
         {
-            'data' : data
+            'data' : data,
+            'meta' : default_meta
         }
     )
 
@@ -207,7 +221,8 @@ def politician_view(request, politician_id):
             'politician' : politician,
             'answers'    : answer_obs,
             'links'      : links,
-            'embed_url'  : embed_url_absolute
+            'embed_url'  : embed_url_absolute,
+            'meta'       : default_meta
         }
     )
 

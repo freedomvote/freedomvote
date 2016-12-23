@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags i18n %}
+{% load cms_tags sekizai_tags menu_tags staticfiles piwik_tags i18n meta %}
 
 <!doctype html>
 <html lang="de">
@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Adfinis SyGroup AG">
         <meta name="keywords" content="Wahlen 2015,Parlament,Open Source,Freie Software">
+
+        {% include 'meta/meta.html' %}
 
         <title>Freedomvote{% block 'title' %}{% endblock %}</title>
 
