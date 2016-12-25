@@ -3,6 +3,7 @@ from core.forms import PoliticianForm, PartyPoliticianForm
 from core.models import Politician, Question, State, Answer
 from core.models import Statistic, Category, Link
 from core.tools import set_cookie, get_cookie
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -49,6 +50,15 @@ default_meta = Meta(
 ##
 # PUBLIC VIEWS
 ##
+
+
+def initial_edit_view(request, lang):
+    if settings.DEBUG:
+        response = render(request, 'core/initial_edit.html')
+    else:
+        response = render(request, '404.html')
+        response.status_code = 404
+    return response
 
 
 def candidates_view(request):
