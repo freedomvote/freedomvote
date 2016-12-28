@@ -2,7 +2,7 @@ jQuery(function ($){
   'use strict'
 
   var item = $('#chart'),
-      sourceUrl = "//" + item.data('source');
+      hostUrl = item.data('host');
 
   $.getJSON(item.data('url'), function(data){
     item.highcharts({
@@ -73,7 +73,7 @@ jQuery(function ($){
     credits: {
       enabled: true,
       text: 'Freedomvote',
-      href: sourceUrl,
+      href: hostUrl,
       target: '_blank' // Now this works like on an <a> tag
     }
   })
