@@ -6,7 +6,7 @@
     <script src="{% static 'lib/highcharts/highcharts-more.js' %}"></script>
     <script src="{% static 'js/profile_spider_embed.js' %}"></script>
 {% endblock %}
-<div id="chart" data-url="{% url 'politician_statistic_spider' politician_id=politician_id %}?compare"></div>
+<div id="chart" data-source="{{request.get_host}}" data-url="{% url 'politician_statistic_spider' politician_id=politician_id %}?compare"></div>
 <style>
 body {
     margin: 0
