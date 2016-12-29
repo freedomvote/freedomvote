@@ -8,6 +8,11 @@ urlpatterns = patterns(
     # public urls
 
     '',
+    url(r'^(?P<lang>\w{2})/$',
+        # Default URL shown on first visit after install
+        views.initial_edit_view,
+        name='initial_edit'
+    ),
     url(
         r'^i18n/',
         include('django.conf.urls.i18n')
