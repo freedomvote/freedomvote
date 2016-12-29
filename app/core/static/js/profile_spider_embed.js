@@ -1,7 +1,8 @@
 jQuery(function ($){
   'use strict'
 
-  var item = $('#chart')
+  var item = $('#chart'),
+      hostUrl = item.data('host');
 
   $.getJSON(item.data('url'), function(data){
     item.highcharts({
@@ -24,7 +25,7 @@ jQuery(function ($){
         lineWidth: 0
       },
       credits: {
-        enabled: false
+        enabled: true
       },
       yAxis: {
         min: 0,
@@ -51,5 +52,29 @@ jQuery(function ($){
         data: data.values.politician
       }]
     });
+  })
+  // Credits to Hampus Nilsson (https://hjnilsson.com/2016/02/26/highcharts-open-credits-in-new-tab/)
+  Highcharts.wrap(Highcharts.Chart.prototype, 'showCredits', function (next, credits) {
+    next.call(this, credits);
+
+    if (credits.enabled) {
+      this.credits.element.onclick = function () {
+        // Create a virtual link and click it
+        var link = document.createElement('a');
+        link.target = credits.target;
+        link.href = credits.href;
+        link.click();
+      }
+    }
+  });
+
+  // Set the theme as you like
+  var options = Highcharts.setOptions({
+    credits: {
+      enabled: true,
+      text: 'Freedomvote',
+      href: hostUrl,
+      target: '_blank' // Now this works like on an <a> tag
+    }
   })
 })
