@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
     'DB'           : {
-    'HOST'     : 'db',
+    'HOST'     : '127.0.0.1',
         'NAME'     : 'freedomvote',
         'USER'     : 'postgres',
         'PASS'     : 'freedomvote',
