@@ -11,6 +11,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
+        migrations.RemoveField(
+            model_name='link',
+            name='type',
+        ),
         migrations.AddField(
             model_name='category',
             name='name_en',
@@ -18,16 +22,6 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='category',
-            name='name_nl',
-            field=models.CharField(max_length=50, null=True, verbose_name='name'),
-        ),
-        migrations.AddField(
-            model_name='linktype',
-            name='name_en',
-            field=models.CharField(max_length=50, null=True, verbose_name='name'),
-        ),
-        migrations.AddField(
-            model_name='linktype',
             name='name_nl',
             field=models.CharField(max_length=50, null=True, verbose_name='name'),
         ),
@@ -89,5 +83,8 @@ class Migration(migrations.Migration):
             model_name='politician',
             name='state',
             field=models.ManyToManyField(to='core.State', null=True, verbose_name='state', blank=True),
+        ),
+        migrations.DeleteModel(
+            name='LinkType',
         ),
     ]
