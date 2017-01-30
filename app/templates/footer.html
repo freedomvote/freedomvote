@@ -1,6 +1,7 @@
-{% load staticfiles i18n helpers %}
+{% load cms_tags staticfiles i18n helpers %}
 
 <footer class="footer">
+    {% static_placeholder 'footer' %}
     <div class="center-content">
         <div class="col-md-2">
             <a class="footer-icon" href="{% url 'info' %}">
