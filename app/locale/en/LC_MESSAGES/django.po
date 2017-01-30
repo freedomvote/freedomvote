@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 12:05+0000\n"
-"PO-Revision-Date: 2016-12-23 13:15+0100\n"
+"POT-Creation-Date: 2017-01-30 06:27+0000\n"
+"PO-Revision-Date: 2017-01-30 07:26+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
 "Language: en\n"
@@ -128,7 +128,7 @@ msgstr "A better description of the question (by language code)"
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr "The preferred answer given by the admins (is between 0 - 10)"
 
-#: core/admin.py:21 core/views.py:611
+#: core/admin.py:21 core/views.py:621
 msgid "unique_url"
 msgstr "Unique URL"
 
@@ -150,7 +150,7 @@ msgstr "Name"
 
 #: core/models.py:26 core/models.py:120
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:610
+#: core/templates/core/profile/description.html:21 core/views.py:620
 msgid "state"
 msgstr "State"
 
@@ -189,12 +189,12 @@ msgid "user"
 msgstr "User"
 
 #: core/models.py:81 core/templates/core/party/dashboard.html:51
-#: core/views.py:608
+#: core/views.py:618
 msgid "first_name"
 msgstr "First name"
 
 #: core/models.py:87 core/templates/core/party/dashboard.html:52
-#: core/views.py:609
+#: core/views.py:619
 msgid "last_name"
 msgstr "Last name"
 
@@ -343,7 +343,7 @@ msgstr "Click here to add your own stance"
 #: core/templates/core/edit/questions.html:11
 #: core/templates/core/profile/questions.html:3
 msgid "your_opinion_to"
-msgstr "Youw stance on…"
+msgstr "Your stance on…"
 
 #: core/templates/core/compare/index.html:43
 msgid "evaluate"
@@ -470,81 +470,81 @@ msgstr "Own answer"
 msgid "politician_answer"
 msgstr "Politician answer"
 
-#: core/views.py:45
+#: core/views.py:46
 msgid "The platform for freedom, technology and politics"
 msgstr "The platform for freedom, technology and politics"
 
-#: core/views.py:157
+#: core/views.py:167
 msgid "answers_saved_successfully_evaluate"
 msgstr "Your answers have been saved succesfully. You kan view them now."
 
-#: core/views.py:182
+#: core/views.py:192
 msgid "answers_resetted"
 msgstr "Your answers have been resetted"
 
-#: core/views.py:262
+#: core/views.py:272
 msgid "total"
 msgstr "Total"
 
-#: core/views.py:371
+#: core/views.py:381
 msgid "profile_saved_successfully"
 msgstr "Your profile has been saved successfully"
 
-#: core/views.py:444
+#: core/views.py:454
 msgid "answers_published_successfully"
 msgstr "Your answers have been saved succesfully"
 
-#: core/views.py:454
+#: core/views.py:464
 msgid "answers_unpublished_successfully"
 msgstr "Your answers have been unpublished successfully"
 
-#: core/views.py:517
+#: core/views.py:527
 msgid "login_successful"
 msgstr "You have been logged in succesfully"
 
-#: core/views.py:520
+#: core/views.py:530
 msgid "login_error"
 msgstr "You have inserted incorrect login credentials"
 
-#: core/views.py:549
+#: core/views.py:559
 msgid "politician_add_success"
 msgstr "Politican has been addes successfully"
 
-#: core/views.py:552
+#: core/views.py:562
 msgid "politician_add_error"
 msgstr "There was an error whilst adding the politican"
 
-#: core/views.py:577
+#: core/views.py:587
 msgid "politician_edit_success"
 msgstr "The politician is edited successfully"
 
-#: core/views.py:580
+#: core/views.py:590
 msgid "politician_edit_error"
 msgstr "There was an error whilst editing the politican"
 
-#: core/views.py:628
+#: core/views.py:638
 msgid "politician_delete_success"
 msgstr "Politican '%s %s' was deleted successfully"
 
-#: freedomvote/settings-local.py:179 freedomvote/settings.py:180
+#: freedomvote/settings.py:180
 msgid "german"
 msgstr "German"
 
-#: freedomvote/settings-local.py:180 freedomvote/settings.py:182
+#: freedomvote/settings.py:181
+msgid "english"
+msgstr "English"
+
+#: freedomvote/settings.py:182
 msgid "french"
 msgstr "French"
 
-#: freedomvote/settings-local.py:181 freedomvote/settings.py:183
+#: freedomvote/settings.py:183
 msgid "italian"
 msgstr "Italian"
 
-#: freedomvote/settings-local.py:182 freedomvote/settings.py:184
+#: freedomvote/settings.py:184
 msgid "dutch"
 msgstr "Dutch"
-
-#: freedomvote/settings-local.py:183 freedomvote/settings.py:181
-msgid "english"
-msgstr "English"
 
 #: templates/404.html:6
 msgid "page_not_found"
@@ -558,7 +558,7 @@ msgstr "Server error"
 msgid "source_code"
 msgstr "Source code"
 
-#: templates/index.html:32
+#: templates/index.html:33
 msgid "noscript"
 msgstr "This website is only fully operations if Javascript is enabled."
 
