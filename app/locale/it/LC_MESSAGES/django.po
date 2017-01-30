@@ -1,18 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Freedomvote Translation
+# Copyright (C) Freedomvote
+# This file is distributed under the same license as the freedomvote package.
+# Gian-Maria Daffré <gian-maria.daffre@giammi.com>, 2015.
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version:\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 12:05+0000\n"
-"PO-Revision-Date: 2016-12-23 13:17+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-01-30 06:42+0000\n"
+"PO-Revision-Date: 2017-01-30 07:42+0100\n"
+"Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
+"Language-Team: Italian <it@li.org>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,7 +122,7 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:21 core/views.py:611
+#: core/admin.py:21 core/views.py:621
 msgid "unique_url"
 msgstr "Link di accesso"
 
@@ -145,7 +144,7 @@ msgstr "Nome"
 
 #: core/models.py:26 core/models.py:120
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:610
+#: core/templates/core/profile/description.html:21 core/views.py:620
 msgid "state"
 msgstr "Cantone"
 
@@ -184,12 +183,12 @@ msgid "user"
 msgstr "Utente"
 
 #: core/models.py:81 core/templates/core/party/dashboard.html:51
-#: core/views.py:608
+#: core/views.py:618
 msgid "first_name"
 msgstr "Nome"
 
 #: core/models.py:87 core/templates/core/party/dashboard.html:52
-#: core/views.py:609
+#: core/views.py:619
 msgid "last_name"
 msgstr "Cognome"
 
@@ -464,82 +463,82 @@ msgstr "Propria risposta"
 msgid "politician_answer"
 msgstr "Risposta del politico"
 
-#: core/views.py:45
+#: core/views.py:46
 msgid "The platform for freedom, technology and politics"
 msgstr "la piattaforma dedicata alla libertà, la tecnologia e la politica"
 
-#: core/views.py:157
+#: core/views.py:167
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "La sue risposte sono state memorizzate. Adesso può fare una valutazione"
 
-#: core/views.py:182
+#: core/views.py:192
 msgid "answers_resetted"
 msgstr "Le sue risposte sono state annullate"
 
-#: core/views.py:262
+#: core/views.py:272
 msgid "total"
 msgstr "Totale"
 
-#: core/views.py:371
+#: core/views.py:381
 msgid "profile_saved_successfully"
 msgstr "Il suo profilo è stato memorizzato"
 
-#: core/views.py:444
+#: core/views.py:454
 msgid "answers_published_successfully"
 msgstr "Le sue risposte sono state rilasciate"
 
-#: core/views.py:454
+#: core/views.py:464
 msgid "answers_unpublished_successfully"
 msgstr "Le sue risposte sono state annullate"
 
-#: core/views.py:517
+#: core/views.py:527
 msgid "login_successful"
 msgstr "Connessione corretta"
 
-#: core/views.py:520
+#: core/views.py:530
 msgid "login_error"
 msgstr "Ha inserito dei dati di accesso erronei"
 
-#: core/views.py:549
+#: core/views.py:559
 msgid "politician_add_success"
 msgstr "Politico aggiunto correttamente"
 
-#: core/views.py:552
+#: core/views.py:562
 msgid "politician_add_error"
 msgstr "Ci sono stati degli errori nello aggiungere il politico"
 
-#: core/views.py:577
+#: core/views.py:587
 msgid "politician_edit_success"
 msgstr "Politico è stato aggiunto correttamente"
 
-#: core/views.py:580
+#: core/views.py:590
 msgid "politician_edit_error"
 msgstr "Ci sono stati degli errori nel modificare il politico"
 
-#: core/views.py:628
+#: core/views.py:638
 msgid "politician_delete_success"
 msgstr "Politico \"%s %s\" è stato annullato correttamente"
 
-#: freedomvote/settings-local.py:179 freedomvote/settings.py:180
+#: freedomvote/settings.py:180
 msgid "german"
 msgstr "Tedesco"
 
-#: freedomvote/settings-local.py:180 freedomvote/settings.py:182
+#: freedomvote/settings.py:181
+msgid "english"
+msgstr "Inglese"
+
+#: freedomvote/settings.py:182
 msgid "french"
 msgstr "Francese"
 
-#: freedomvote/settings-local.py:181 freedomvote/settings.py:183
+#: freedomvote/settings.py:183
 msgid "italian"
 msgstr "Italiano"
 
-#: freedomvote/settings-local.py:182 freedomvote/settings.py:184
+#: freedomvote/settings.py:184
 msgid "dutch"
 msgstr "Neerlandese"
-
-#: freedomvote/settings-local.py:183 freedomvote/settings.py:181
-msgid "english"
-msgstr "Inglese"
 
 #: templates/404.html:6
 msgid "page_not_found"
@@ -553,7 +552,7 @@ msgstr "Errore del server"
 msgid "source_code"
 msgstr "Codice sorgente"
 
-#: templates/index.html:32
+#: templates/index.html:33
 msgid "noscript"
 msgstr "Questo sito sarà completa solo se javascript è abilitato."
 
