@@ -625,7 +625,9 @@ def party_export_view(request, party_name):
         state = p.state.name if p.state else '-'
 
         cols = [p.first_name, p.last_name, state, p.unique_url]
-        writer.writerow([c.encode('latin1') for c in cols])
+        writer.writerow([c.encode('latin1')
+                        if c is not None else '' for c in cols
+                         ])
 
     return response
 
