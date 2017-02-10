@@ -27,7 +27,18 @@
 
         <div class="row">
             <div class="col-md-6"><strong>{% trans 'party' %}</strong></div>
-            <div class="col-md-6">{% if politician.party %}{% party_tag politician.party %}{%else%}{{politician.party_other}}{% endif %}</div>
+            <div class="col-md-6">
+                {% if politician.party %}
+                    <a href="{% url 'party_view' party_name=politician.party %}">
+                        {{politician.party}}
+                        {% if politician.party.image %}
+                            <img src="{{politician.party.image|thumbnail_url:'large'}}" height="30px"/>
+                        {% endif %}
+                    </a>
+                {%else%}
+                    {{politician.party_other}}
+                {% endif %}
+            </div>
         </div>
 
         <div class="row">

@@ -84,8 +84,13 @@ urlpatterns = patterns(
         name='politician_statistic_spider_embed'
     ),
 
-    # party urls
+    # parties url
+    url(r'^parties/$',
+        views.parties_list_view,
+        name='parties_list'
+    ),
 
+    # party urls
     url(r'^party/(?P<party_name>\w+)/login/$',
         views.party_login_view,
         name='party_login'
@@ -95,6 +100,10 @@ urlpatterns = patterns(
         name='party_logout'
     ),
     url(r'^party/(?P<party_name>\w+)/$',
+        views.party_view,
+        name='party_view'
+    ),
+    url(r'^party/(?P<party_name>\w+)/dashboard/$',
         views.party_dashboard_view,
         name='party_dashboard'
     ),

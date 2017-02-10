@@ -7,9 +7,11 @@ class CoreMenu(Menu):
 
     def get_nodes(self, request):
         nodes   = []
-        compare = NavigationNode(_('compare'), reverse('compare'), 1, attr={'priority':1002})
-        candidates  = NavigationNode(_('candidates'), reverse('candidates'), 2,   attr={'priority':1001})
+        compare = NavigationNode(_('compare'), reverse('compare'), 1, attr={'priority':1003})
+        candidates  = NavigationNode(_('candidates'), reverse('candidates'), 2, attr={'priority':1001})
+        parties  = NavigationNode(_('parties_list'), reverse('parties_list'), 3, attr={'priority':1002})
         nodes.append(candidates)
+        nodes.append(parties)
         nodes.append(compare)
         return nodes
 

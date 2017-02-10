@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% load thumbnail i18n %}
+
+{% block 'content' %}
+    <h1>{{party.name}} ({{party.shortname}})</h1>
+    {% if party.image %}
+    <img src="{{party.image|thumbnail_url:'large'}}" class="" width="100px" alt={{party.name}}>
+    {% endif %}
+    <ul>
+        {% for politician in party.politicians %}
+        <li>
+            <a href="{% url 'politician' politician_id=politician.id %}">{{politician.first_name}} {{politician.last_name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

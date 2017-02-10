@@ -13,6 +13,7 @@ def generate_url():
     key = base64.urlsafe_b64encode(os.urandom(16))[:20]
     return key
 
+
 class State(models.Model):
     name                    = models.CharField(
         max_length          = 50,
@@ -28,6 +29,28 @@ class State(models.Model):
         ordering            = ['name']
 
 
+class Responder(models.Model):
+    image                   = models.ImageField(
+        upload_to           = 'responder/',
+        null                = True,
+        blank               = True,
+        verbose_name        = _('image')
+    )
+    past_contributions      = models.TextField(
+        blank               = True,
+        verbose_name        = _('past_contributions')
+    )
+    future_plans            = models.TextField(
+        blank               = True,
+        verbose_name        = _('future_plans')
+    )
+    state                   = models.ManyToManyField(
+        State,
+        blank               = True,
+        verbose_name        = _('state')
+    )
+
+
 class Party(models.Model):
     name                    = models.CharField(
         max_length          = 50,
@@ -36,14 +59,6 @@ class Party(models.Model):
     shortname               = models.CharField(
         max_length          = 10,
         verbose_name        = _('shortname')
-    )
-    background_color        = ColorField(
-        default             = '#3F51B5',
-        verbose_name        = _('background_color')
-    )
-    font_color              = ColorField(
-        default             = '#FFFFFF',
-        verbose_name        = _('font_color')
     )
 
     def __unicode__(self):
@@ -86,38 +101,19 @@ class Politician(models.Model):
         null                = True,
         verbose_name        = _('last_name')
     )
+    is_member_of_parliament = models.BooleanField(
+        default             = False,
+        verbose_name        = _('is_member_of_parliament')
+    )
     email                   = models.EmailField(
         blank               = True,
         null                = True,
         verbose_name        = _('email')
     )
-    image                   = models.ImageField(
-        upload_to           = 'politicians/',
-        null                = True,
-        blank               = True,
-        verbose_name        = _('image')
-    )
-    is_member_of_parliament = models.BooleanField(
-        default             = False,
-        verbose_name        = _('is_member_of_parliament')
-    )
-    past_contributions      = models.TextField(
-        blank               = True,
-        verbose_name        = _('past_contributions')
-    )
-    future_plans            = models.TextField(
-        blank               = True,
-        verbose_name        = _('future_plans')
-    )
     unique_key              = models.CharField(
         max_length          = 20,
         verbose_name        = _('unique_key'),
         default             = generate_url
-    )
-    state                   = models.ManyToManyField(
-        State,
-        blank               = True,
-        verbose_name        = _('state')
     )
     party                   = models.ForeignKey(
         Party,
@@ -191,32 +187,10 @@ class Politician(models.Model):
         verbose_name_plural = _('politicians')
 
 
-class Responder(models.Model):
-    image                   = models.ImageField(
-        upload_to           = 'responder/',
-        null                = True,
-        blank               = True,
-        verbose_name        = _('image')
-    )
-    past_contributions      = models.TextField(
-        blank               = True,
-        verbose_name        = _('past_contributions')
-    )
-    future_plans            = models.TextField(
-        blank               = True,
-        verbose_name        = _('future_plans')
-    )
-    state                   = models.ManyToManyField(
-        State,
-        blank               = True,
-        verbose_name        = _('state')
-    )
-
-
 class Link(models.Model):
-    politician              = models.ForeignKey(
-        Politician,
-        verbose_name        = _('politician')
+    responder              = models.ForeignKey(
+        Responder,
+        verbose_name        = _('responder')
     )
     url                     = models.URLField(
         verbose_name        = _('url')
@@ -259,9 +233,9 @@ class Answer(models.Model):
         Question,
         verbose_name        = _('question')
     )
-    politician              = models.ForeignKey(
-        Politician,
-        verbose_name        = _('politician')
+    responder              = models.ForeignKey(
+        Responder,
+        verbose_name        = _('responder')
     )
     agreement_level         = models.IntegerField(
         verbose_name        = _('agreement_level')
@@ -276,9 +250,9 @@ class Answer(models.Model):
 
 
 class Statistic(models.Model):
-    politician              = models.ForeignKey(
-        Politician,
-        verbose_name        = _('politician')
+    responder              = models.ForeignKey(
+        Responder,
+        verbose_name        = _('responder')
     )
     category                = models.ForeignKey(
         Category,

@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% load thumbnail staticfiles i18n %}
+
+{% block 'content' %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Kürzel</th>
+                <th>Name</th>
+                <th>Eingetragene Politiker</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for party in parties %}
+            <tr>
+                <td><img class="img-thumbnail" width="80px" src="{% if party.image %}{{party.image|thumbnail_url:'large'}}{% else %}{% static 'images/placeholder_party.svg' %}{% endif %}"></td>
+                <td>{{party.shortname}}</td>
+                <td>
+                    <a href="{% url 'party_view' party_name=party.shortname %}">
+                    {{party.name}}
+                    </a>
+                </td>
+                <td>
+                    {% for politician in party.politicians %}
+                        <a href="{% url 'politician' politician_id=politician.id %}">{{politician.first_name}} {{politician.last_name}} {{politician.get_details}}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

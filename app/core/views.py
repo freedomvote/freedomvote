@@ -1,7 +1,7 @@
 from core.decorators import require_party_login
 from core.forms import PoliticianForm, PartyPoliticianForm
 from core.models import Politician, Question, State, Answer
-from core.models import Statistic, Category, Link
+from core.models import Statistic, Category, Link, Party
 from core.tools import set_cookie, get_cookie
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -207,7 +207,6 @@ def politician_view(request, politician_id):
     politician = get_object_or_404(
         Politician.objects.filter(statistic__id__gt=0).distinct(),
         pk=politician_id)
-
     answers    = (
         Answer.objects.
         filter(politician=politician).
@@ -216,7 +215,6 @@ def politician_view(request, politician_id):
         Link.objects.filter(politician=politician))
     cookie     = get_cookie(request, 'answers', {})
     answer_obs = []
-
     for a in answers:
         answer_obs.append({
             'own_ans': cookie.get('question_%s' % a.question.id, None),
@@ -509,8 +507,37 @@ def politician_link_delete_view(request, unique_key, link_id):
     })
 
 ##
+# PARTIES
+##
+
+
+def parties_list_view(request):
+    parties = Party.objects.all().order_by('name')
+    for party in parties:
+        party.politicians = Politician.objects.filter(party=party, statistic__id__gt=0).distinct().order_by('first_name', 'last_name')
+
+    return render(
+        request,
+        'core/parties/index.html',
+        {
+            'parties' : parties
+        }
+    )
+
+##
 # PARTY VIEWS
 ##
+
+
+def party_view(request, party_name):
+    party = get_object_or_404(Party, shortname=party_name)
+    party.politicians = Politician.objects.filter(party=party, statistic__id__gt=0).distinct().order_by('first_name', 'last_name')
+    return render(
+        request,
+        'core/party/party.html',
+        {
+            'party': party
+        })
 
 
 def party_login_view(request, party_name):
@@ -554,6 +581,11 @@ def party_politician_add_view(request, party_name):
     if request.POST:
         form = PartyPoliticianForm(request.POST, request.FILES)
         form.data['user'] = request.user.id
+        party = Party.objects.filter(shortname=party_name)
+        if party:
+            print(party)
+            form.data['party'] = party
+
         if form.is_valid():
             form.save()
             messages.success(request, _('politician_add_success'))
