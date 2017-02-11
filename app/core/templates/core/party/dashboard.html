@@ -50,18 +50,19 @@
                         <tr>
                             <th class="col-md-4">{% trans 'first_name' %}</th>
                             <th class="col-md-4">{% trans 'last_name' %}</th>
-                            <th class="col-md-3 hidden-xs">{% trans 'state' %}</th>
-                            <th class="col-md-1 text-right"></th>
+                            <th class="col-md-2 hidden-xs">{% trans 'state' %}</th>
+                            <th class="col-md-2 text-right"></th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for politician in politicians %}
                         <tr>
-                            <td class="col-md-4">{{politician.first_name}}</td>
-                            <td class="col-md-4">{{politician.last_name}}</td>
-                            <td class="col-md-3 hidden-xs">{{politician.state_name}}</td>
-                            <td class="col-md-1 text-right">
+                            <td>{{politician.first_name}}</td>
+                            <td>{{politician.last_name}}</td>
+                            <td class="hidden-xs">{{politician.state_name}}</td>
+                            <td class="text-right">
                                 <a href="#" class="clipboard" data-clipboard-text="{{politician.unique_url}}" title="{% trans 'copy_to_clipboard' %}"><i class="fa fa-copy"></i></a>
+                                <a href="{{politician.unique_url}}" title="{% trans 'edit_politician' %}"><i class="fa fa-external-link"></i></a>
                                 <a href="{% url 'party_politician_edit' party_name=user.username politician_id=politician.id %}" title="{% trans 'edit_politician' %}"><i class="fa fa-pencil"></i></a>
                                 <a href="{% url 'party_politician_delete' party_name=user.username politician_id=politician.id %}" title="{% trans 'delete_politician' %}"><i class="fa fa-trash"></i></a>
                             </td>
