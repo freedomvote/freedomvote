@@ -476,7 +476,7 @@ msgstr "The platform for freedom, technology and politics"
 
 #: core/views.py:167
 msgid "answers_saved_successfully_evaluate"
-msgstr "Your answers have been saved succesfully. You kan view them now."
+msgstr "Your answers have been saved succesfully. You can view them now."
 
 #: core/views.py:192
 msgid "answers_resetted"
