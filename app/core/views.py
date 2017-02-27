@@ -141,7 +141,7 @@ def compare_view(request):
     session_answers    = get_cookie(request, 'answers',    {})
     session_statistics = get_cookie(request, 'statistics', {})
 
-    if request.POST:
+    if request.method == "POST":
         for question in questions:
             qid = 'question_%d' % question.id
             session_answers[qid] = request.POST.get(qid, 0)
@@ -173,19 +173,21 @@ def compare_view(request):
         }
         data.append(item)
 
-    response = render(
-        request,
-        'core/compare/index.html',
-        {
-            'data' : data,
-            'meta' : default_meta
-        }
-    )
+    if request.method == "GET":
+        response = render(
+            request,
+            'core/compare/index.html',
+            {
+                'data' : data,
+                'meta' : default_meta
+            }
+        )
 
-    set_cookie(response, 'answers', session_answers, 30)
-    set_cookie(response, 'statistics', session_statistics, 30)
-
-    return response
+        set_cookie(response, 'answers', session_answers, 30)
+        set_cookie(response, 'statistics', session_statistics, 30)
+        return response
+    else:
+        return redirect('%s?evaluate=1' % reverse('candidates'))
 
 
 def compare_reset_view(request):
