@@ -18,7 +18,12 @@ class QuestionTranslationOptions(TranslationOptions):
     fields = ('text', 'description',)
 
 
+class AnswerTranslationOptions(TranslationOptions):
+    fields = ('note',)
+
+
 translator.register(models.State,    StateTranslationOptions)
 translator.register(models.Party,    PartyTranslationOptions)
 translator.register(models.Category, CategoryTranslationOptions)
 translator.register(models.Question, QuestionTranslationOptions)
+translator.register(models.Answer, AnswerTranslationOptions)
