@@ -183,11 +183,12 @@ def compare_view(request):
             }
         )
 
-        set_cookie(response, 'answers', session_answers, 30)
-        set_cookie(response, 'statistics', session_statistics, 30)
-        return response
     else:
-        return redirect('%s?evaluate=1' % reverse('candidates'))
+        response = redirect('%s?evaluate=1' % reverse('candidates'))
+
+    set_cookie(response, 'answers', session_answers, 30)
+    set_cookie(response, 'statistics', session_statistics, 30)
+    return response
 
 
 def compare_reset_view(request):
