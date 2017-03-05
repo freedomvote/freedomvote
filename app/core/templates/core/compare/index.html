@@ -39,14 +39,11 @@
         </tbody>
     </table>
     <div class="row button-row">
-        <div class="col-lg-3 col-sm-4 col-md-3 col-md-offset-3">
-            <a class="btn btn-default btn-justified {% if 'answers' not in request.COOKIES or request.COOKIES.answers == '{}' %}disabled{% endif %}" id="evaluate" href="{% url 'candidates' %}?evaluate=1">{% trans 'evaluate' %}</a>
-        </div>
-        <div class="col-lg-3 col-sm-4 col-md-3">
+        <div class="col-sm-6 col-md-3 col-md-offset-6">
             <a class="btn btn-default btn-justified" href="{% url 'compare_reset' %}">{% trans 'reset_answers' %}</a>
         </div>
-        <div class="col-lg-3 col-sm-4 col-md-3">
-            <input type="submit" class="btn btn-primary btn-justified" value="{% trans 'save' %}">
+        <div class="col-sm-6 col-md-3">
+            <button class="btn btn-primary btn-justified">{% trans 'save' %} & {% trans 'evaluate' %}</button>
         </div>
     </div>
 </form>
