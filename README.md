@@ -1,6 +1,17 @@
 # Freedomvote
 A tool to represent the views of politicans as a help to the voters.
-![freedomvote.ch](https://raw.githubusercontent.com/adfinis-sygroup/freedomvote/master/tools/screenshot.png)
+
+## Used in
+
+* Swiss Election 2015 - [freedomvote.ch](https://freedomvote.ch/)
+* Dutch Election 2017 - [freedomvote.nl](https://freedomvote.nl/)
+
+## How does it look?
+
+This is how Freedomvote looked for the Swiss Election in 2015 - [freedomvote.ch](https://freedomvote.ch/)
+
+![freedomvote.ch](https://raw.githubusercontent.com/freedomvote/freedomvote/master/tools/screenshot.png)
+
 # Installation
 ## The "hard" way
 Requirements:
@@ -55,14 +66,6 @@ $ python app/manage.py generate_politicians 42
 $ python app/manage.py politician_import examples/politician_import.json
 $ python app/manage.py user_import examples/user_import.json
 ```
-## LinkType icons
-In the management dashboard custom LinkTypes can be configured with both name and icon.
-A fixture is included with this repository to help you configure a common set of link types easily.
-Note that if some of these LinkTypes already exist, triggering this command will add the new ones regardless of existing LinkTypes.
-
-`$ python app/manage.py loaddata fixtures/linktypes.json`
-
-This common set of icon was gathered from [fontawesome](http://fontawesome.org/) using [icon_font_to_png](https://pypi.python.org/pypi/icon_font_to_png/0.3.2).
 
 # Languages
 The whole application is multilingual. Per default the languages German, Italian and French are installed.
@@ -98,4 +101,4 @@ $ make docker-compilemessages
 ```
 
 # License
-GPLv3 see [LICENSE](https://github.com/adfinis-sygroup/freedomvote/blob/master/LICENSE)
+GPLv3 see [LICENSE](https://github.com/freedomvote/freedomvote/blob/master/LICENSE)
