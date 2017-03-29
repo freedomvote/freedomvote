@@ -18,6 +18,8 @@ Requirements:
 
 * python 2.7
 * postgresql
+* libjpeg
+* zlib
 * python-pip
 
 Run `pip install -r requirements.txt` to install all requirements.
