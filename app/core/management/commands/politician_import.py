@@ -15,7 +15,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             with open(options['json_file']) as f:
-                try:
                 data = json.load(f)
 
                 for row in data:
