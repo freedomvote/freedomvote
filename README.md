@@ -24,7 +24,13 @@ Requirements:
 
 Run `pip install -r requirements.txt` to install all requirements.
 
-Configure your DB settings in `app/settings.ini`:
+Configure your DB settings and Secret in `app/settings.ini`:
+There is an example in the  `app/example.settings.ini`
+
+**Please generate a new SECRET and don't commit it to your repository!**
+
+More infos about the Django Secret
+[Django Secret](https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-SECRET_KEY)
 
 ```ini
 [DB]
@@ -33,7 +39,12 @@ USER = freedomvote
 PASS = ***********
 PORT = 5432
 HOST = 127.0.0.1
+
+[GLOBAL]
+SECRET = GENERATE A SECRET
 ```
+
+
 
 and then run:
 
