@@ -46,7 +46,8 @@ SECRET = GENERATE A SECRET
 
 
 
-and then run:
+Edit the `tools/docker/cache_table.sql` file to change your database user, and
+then run:
 
 ```bash
 $ psql -h <db_host> -U <db_user> <db_name> < tools/docker/cache_table.sql
