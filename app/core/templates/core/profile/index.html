@@ -20,7 +20,7 @@
 {% block 'meta' %}
     <meta property="og:title" content="OSS-Challenge" />
     <meta property="og:type" content="profile:username" />
-    <meta property="og:image" content="{{ politician.image }}" />
-    <meta property="og:url" content="www.freedomvote.ch/politician/{{ politician.id }}/" />
-    <meta property="og:description" content="{{ politician.first_name }} {{ politician.last_name }}" />
+    <meta property="og:image" content="{{politician.image}}" />
+    <meta property="og:url" content="{{politician_url}}/" />
+    <meta property="og:description" content="{{politician.first_name}} {{politician.last_name}}" />
 {% endblock %}
