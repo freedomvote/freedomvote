@@ -18,9 +18,9 @@
 {% endblock %}
 
 {% block 'meta' %}
-    <meta property="og:title" content="OSS-Challenge" />
-    <meta property="og:type" content="profile:username" />
+    <meta property="og:title" content="{{politician.first_name}} {{politician.last_name}}" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="{{politician.image}}" />
     <meta property="og:url" content="{{politician_url}}/" />
-    <meta property="og:description" content="{{politician.first_name}} {{politician.last_name}}" />
+    <meta property="og:description" content="The profile of {{politician.first_name}} {{politician.last_name}} on Freedomvote" />
 {% endblock %}
