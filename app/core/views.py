@@ -227,8 +227,6 @@ def politician_view(request, politician_id):
         })
     embed_url_reverse = reverse('politician_statistic_spider_embed', kwargs={'politician_id' : politician_id})
     embed_url_absolute = request.build_absolute_uri(embed_url_reverse)
-    politician_url_reverse = reverse('politician', kwargs={'politician_id' : politician_id})
-    politician_url_absolute = request.build_absolute_uri(politician_url_reverse)
     return render(
         request,
         'core/profile/index.html',
@@ -238,7 +236,7 @@ def politician_view(request, politician_id):
             'links'          : links,
             'embed_url'      : embed_url_absolute,
             'meta'           : default_meta,
-            'politician_url' : politician_url_absolute
+            'base_url'       : settings.BASE_URL
 
         }
     )

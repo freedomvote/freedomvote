@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 
-{% load static %}
+{% load i18n static thumbnail %}
 
 {% block 'scripts' %}
     <script src="{% static 'lib/highcharts/highcharts-more.js' %}"></script>
@@ -20,7 +20,7 @@
 {% block 'meta' %}
     <meta property="og:title" content="{{politician.first_name}} {{politician.last_name}}" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="{{politician.image}}" />
-    <meta property="og:url" content="{{politician_url}}/" />
-    <meta property="og:description" content="The profile of {{politician.first_name}} {{politician.last_name}} on Freedomvote" />
+    <meta property="og:image" content="{% if politician.image %}{{base_url}}{{politician.image|thumbnail_url:'large'}}{% else %}{{base_url}}{% static 'images/placeholder.svg' %}{% endif %}" />
+    <meta property="og:url" content="{{ request.build_absolute_uri|urlencode }}" />
+    <meta property="og:description" content= "{% blocktrans %}The profile of {{politician.first_name}} {{politician.last_name}} on Freedomvote{% endblocktrans %}" />
 {% endblock %}
