@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-04 12:18+0000\n"
-"PO-Revision-Date: 2018-01-04 13:10+0100\n"
+"PO-Revision-Date: 2018-01-04 14:38+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
@@ -159,11 +159,11 @@ msgstr "Abréviation"
 
 #: core/models.py:42
 msgid "background_color"
-msgstr "couleur d'arrière-plan"
+msgstr "Couleur d'arrière-plan"
 
 #: core/models.py:46
 msgid "font_color"
-msgstr "couleur de la police"
+msgstr "Couleur de la police"
 
 #: core/models.py:53 core/models.py:126
 #: core/templates/core/profile/description.html:29
@@ -367,7 +367,7 @@ msgstr "Autres"
 
 #: core/templates/core/edit/profile.html:68
 msgid "file_too_large"
-msgstr "fichier à grand"
+msgstr "Fichier à grand"
 
 #: core/templates/core/edit/questions.html:51
 msgid "publish_answers"
