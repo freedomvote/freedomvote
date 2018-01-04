@@ -71,6 +71,14 @@
             </div>
         </div>
         {% endif %}
+        <div class="social-media-buttons">
+            <div class="facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}" target="_blank" title="{% trans "Share" %}" role="button" aria-label="{% trans "Share" %}" class="share-button">
+                    <div class="fb-icon"></div>
+                    <span>{% trans "Share" %}</span>
+                </a>
+            </div>
+        </div>
     </div>
     <div class="col-md-4 col-lg-4">
         <div

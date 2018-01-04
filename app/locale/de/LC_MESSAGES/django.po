@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-30 06:27+0000\n"
-"PO-Revision-Date: 2016-12-23 13:16+0100\n"
+"POT-Creation-Date: 2018-01-04 12:18+0000\n"
+"PO-Revision-Date: 2018-01-04 13:00+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:21 core/views.py:621
+#: core/admin.py:21 core/views.py:626
 msgid "unique_url"
 msgstr "Zugangslink"
 
@@ -145,7 +145,7 @@ msgstr "Name"
 
 #: core/models.py:26 core/models.py:120
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:620
+#: core/templates/core/profile/description.html:21 core/views.py:625
 msgid "state"
 msgstr "Kanton"
 
@@ -160,11 +160,11 @@ msgstr "Abkürzung"
 
 #: core/models.py:42
 msgid "background_color"
-msgstr ""
+msgstr "Hintergrundfarbe"
 
 #: core/models.py:46
 msgid "font_color"
-msgstr ""
+msgstr "Schriftfarbe"
 
 #: core/models.py:53 core/models.py:126
 #: core/templates/core/profile/description.html:29
@@ -184,12 +184,12 @@ msgid "user"
 msgstr "Benutzer"
 
 #: core/models.py:81 core/templates/core/party/dashboard.html:51
-#: core/views.py:618
+#: core/views.py:623
 msgid "first_name"
 msgstr "Vorname"
 
 #: core/models.py:87 core/templates/core/party/dashboard.html:52
-#: core/views.py:619
+#: core/views.py:624
 msgid "last_name"
 msgstr "Nachname"
 
@@ -341,18 +341,18 @@ msgid "your_opinion_to"
 msgstr "Wie stehen Sie zu..."
 
 #: core/templates/core/compare/index.html:43
-msgid "evaluate"
-msgstr "Auswerten"
-
-#: core/templates/core/compare/index.html:46
 msgid "reset_answers"
 msgstr "Antworten zurücksetzen"
 
-#: core/templates/core/compare/index.html:49
+#: core/templates/core/compare/index.html:46
 #: core/templates/core/edit/profile.html:79
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
 msgstr "Speichern"
+
+#: core/templates/core/compare/index.html:46
+msgid "evaluate"
+msgstr "Auswerten"
 
 #: core/templates/core/edit/links.html:25
 msgid "add_link"
@@ -421,18 +421,19 @@ msgid "copy_to_clipboard"
 msgstr "URL in die Zwischenablage kopieren"
 
 #: core/templates/core/party/dashboard.html:65
+#: core/templates/core/party/dashboard.html:66
 msgid "edit_politician"
 msgstr "Politiker bearbeiten"
 
-#: core/templates/core/party/dashboard.html:66
+#: core/templates/core/party/dashboard.html:67
 msgid "delete_politician"
 msgstr "Politiker löschen"
 
-#: core/templates/core/party/dashboard.html:79
+#: core/templates/core/party/dashboard.html:80
 msgid "copy_url_text"
 msgstr "Kopieren Sie die URL in die Zwischenablage"
 
-#: core/templates/core/party/dashboard.html:83
+#: core/templates/core/party/dashboard.html:84
 msgid "close"
 msgstr "Schliessen"
 
@@ -452,9 +453,23 @@ msgstr "Dashboard"
 msgid "show_own_spider"
 msgstr "Eigene Meinung anzeigen"
 
-#: core/templates/core/profile/description.html:81
+#: core/templates/core/profile/description.html:76
+#: core/templates/core/profile/description.html:78
+msgid "Share"
+msgstr "Teilen"
+
+#: core/templates/core/profile/description.html:89
 msgid "embed_iframe"
 msgstr "Einbetten"
+
+#: core/templates/core/profile/index.html:25
+#, python-format
+msgid ""
+"The profile of %(politician.first_name)s %(politician.last_name)s on "
+"Freedomvote"
+msgstr ""
+"Das Profil von %(politician.first_name)s %(politician.last_name)s bei "
+"Freedomvote"
 
 #: core/templates/core/profile/questions.html:22
 msgid "own_answer"
@@ -474,71 +489,71 @@ msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
 
-#: core/views.py:192
+#: core/views.py:195
 msgid "answers_resetted"
 msgstr "Ihre Antworten wurden zurückgesetzt"
 
-#: core/views.py:272
+#: core/views.py:277
 msgid "total"
 msgstr "Gesamt"
 
-#: core/views.py:381
+#: core/views.py:386
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:454
+#: core/views.py:459
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:464
+#: core/views.py:469
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:527
+#: core/views.py:532
 msgid "login_successful"
 msgstr "Sie wurden erfolgreich eingeloggt"
 
-#: core/views.py:530
+#: core/views.py:535
 msgid "login_error"
 msgstr "Sie haben falsche Logindaten eingegeben"
 
-#: core/views.py:559
+#: core/views.py:564
 msgid "politician_add_success"
 msgstr "Politiker wurde erfolgreich hinzugefügt"
 
-#: core/views.py:562
+#: core/views.py:567
 msgid "politician_add_error"
 msgstr "Es gab einen Fehler beim Erstellen des Politikers"
 
-#: core/views.py:587
+#: core/views.py:592
 msgid "politician_edit_success"
 msgstr "Politiker wurde erfolgreich bearbeitet"
 
-#: core/views.py:590
+#: core/views.py:595
 msgid "politician_edit_error"
 msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 
-#: core/views.py:638
+#: core/views.py:645
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: freedomvote/settings.py:180
+#: freedomvote/settings.py:181
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:181
+#: freedomvote/settings.py:182
 msgid "english"
 msgstr "Englisch"
 
-#: freedomvote/settings.py:182
+#: freedomvote/settings.py:183
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:183
+#: freedomvote/settings.py:184
 msgid "italian"
 msgstr "Italienisch"
 
-#: freedomvote/settings.py:184
+#: freedomvote/settings.py:185
 msgid "dutch"
 msgstr "Niederländisch"
 
@@ -550,11 +565,11 @@ msgstr "Seite nicht gefunden"
 msgid "server_error"
 msgstr "Serverfehler"
 
-#: templates/footer.html:14
+#: templates/footer.html:15
 msgid "source_code"
 msgstr "Quellcode"
 
-#: templates/index.html:33
+#: templates/index.html:34
 msgid "noscript"
 msgstr "Diese Seite funktioniert nur komplett, wenn Javascript aktiviert ist."
 
