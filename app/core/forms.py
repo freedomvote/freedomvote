@@ -1,6 +1,7 @@
 from django import forms
 from core.models import Politician, Party
 from core.widgets import ImagePreviewFileInput
+from django.utils.translation import gettext_lazy as _
 
 
 class PoliticianForm(forms.ModelForm):
@@ -64,3 +65,18 @@ class PartyPoliticianForm(forms.ModelForm):
                 field.widget.attrs.update({
                     'class': 'form-control'
                 })
+
+
+class RegistrationForm(forms.Form):
+    first_name = forms.CharField(label=_('First_name'), max_length=30)
+    last_name = forms.CharField(label=_('Last_name'), max_length=30)
+    email = forms.EmailField(label='Email')
+
+    def clean_email(self):
+        email = self.cleaned_data['email']
+
+        try:
+            Politician.objects.get(email=email)
+        except Politician.DoesNotExist:
+            return email
+        raise forms.ValidationError(_('Email is already taken.'))

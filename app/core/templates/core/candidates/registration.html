@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+
+{% block 'content' %}
+    <h2 class="registration-title">{% trans 'Registration for candidates' %}</h2>
+    <p class="registration-description">{% trans 'After the registration you will get a link to your personal profile on Freedomvote' %}</p>
+    <form class="registration" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">{% trans 'First name' %}</label>
+            <input class="form-control" name="first_name" type="text" required="required" autofocus autocomplete="off">
+            <label for="last_name">{% trans 'Last name' %}</label>
+            <input class="form-control" name="last_name" type="text" required="required" autofocus autocomplete="off">
+            <label for="email">{% trans 'Email' %}</label>
+            <input class="form-control" name="email" type="email" required="required" autofocus autocomplete="off">
+        </div>
+        <input type="submit" value="{% trans 'Register' %}" class="btn btn-primary form-control">
+    </form>
+{% endblock %}
