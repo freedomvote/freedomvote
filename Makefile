@@ -27,7 +27,6 @@ docker-clean: ## Remove the docker environment
 
 docker-init: ## Initialize the docker environment
 	@docker-compose up -d --no-recreate
-	@PGPASSWORD=$(PGPASSWORD) psql -h localhost -p $(DB_PORT) -U postgres freedomvote < tools/docker/cache_table.sql
 	@docker exec -it freedomvote_web_1 python app/manage.py migrate
 	@docker exec -it freedomvote_web_1 app/manage.py loaddata tools/docker/user.json
 	@docker-compose stop
