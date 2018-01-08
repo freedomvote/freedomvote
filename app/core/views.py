@@ -16,8 +16,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import FormView
-from django.views import generic
+from django.views.generic import FormView, TemplateView
 
 from meta.views import Meta
 import collections
@@ -381,6 +380,9 @@ def politician_edit_view(request, unique_key):
 
 def politician_edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
+    if not politician.is_active:
+        politician.is_active = True
+        politician.save()
     links      = (
         Link.objects.filter(politician=politician))
 
@@ -663,9 +665,7 @@ class PoliticianRegistrationView(FormView):
     def get_context_data(self, *args, **kwargs):
         unique_key = self.kwargs['unique_key']
         try:
-            user = User.objects.get(registrationkey__unique_key=unique_key)
-            user.is_active = True
-            user.save()
+            User.objects.get(registrationkey__unique_key=unique_key)
         except ObjectDoesNotExist:
             self.template_name = '404.html'
 
@@ -680,28 +680,31 @@ class PoliticianRegistrationView(FormView):
             user_id=user.id
         )
 
-        if politician is not None:
-            self.send_mail(politician)
+        self.send_mail(politician)
 
         return super(PoliticianRegistrationView, self).form_valid(form)
 
     def send_mail(self, politician):
+        profile_url = reverse(
+            'politician_edit_profile',
+            kwargs={'unique_key': politician.unique_key}
+        )
         send_mail(
             _('Freedomvote account link'),
             _("""
             Hello,
 
             You receive the link for your profile on Freedomvote:
-            {}/politician/{}/edit/profile/
+            {}{}
 
             Sincerely,
             The Freedomvote Team
-            """).format(settings.BASE_URL, politician.unique_key),
-            'freedomvote@freedomvote.ch',
+            """).format(settings.BASE_URL, profile_url),
+            settings.DEFAULT_FROM_EMAIL,
             [politician.email],
             fail_silently=False,
         )
 
 
-class PoliticianRegistrationSendMailView(generic.TemplateView):
+class PoliticianRegistrationSendMailView(TemplateView):
     template_name = 'core/candidates/registration_send_mail.html'
