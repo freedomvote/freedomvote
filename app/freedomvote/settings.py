@@ -20,7 +20,7 @@ DEFAULT_SETTINGS = {
     'DB'           : {
     'HOST'     : 'db',
         'NAME'     : 'freedomvote',
-        'USER'     : 'postgres',
+        'USER'     : 'freedomvote',
         'PASS'     : 'freedomvote',
         'PORT'     : '5432',
     },

@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 services:
   web:
     build: .
@@ -10,9 +10,25 @@ services:
       - db
     command: wait-for-it.sh db:5432 -- python app/manage.py runserver 0.0.0.0:8000
   db:
-    image: postgres
+    image: postgres:9
     ports:
       - "5432:5432"
+    volumes:
+      - ./tools/docker/cache_table.sql:/docker-entrypoint-initdb.d/cache_table.sql
     environment:
       - POSTGRES_DB=freedomvote
+      - POSTGRES_USER=freedomvote
       - POSTGRES_PASSWORD=freedomvote
+  phppgadmin:
+    image: zhajor/docker-phppgadmin
+    ports:
+      - "8001:80"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "8002:1080"
