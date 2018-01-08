@@ -2,7 +2,10 @@ from core.models import Politician, Question, Statistic, Answer, Category
 from django.http import JsonResponse
 from django.utils.encoding import force_text
 from django.core.serializers.json import DjangoJSONEncoder
-from api import util
+from api import util, serializers
+from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.filters import SearchFilter
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 def v1(request):
@@ -66,3 +69,18 @@ def v1(request):
             politicians.append(p)
 
     return JsonResponse({ 'politicians': politicians, 'questions': questions, 'categories': categories })
+
+
+class PoliticianViewSet(ReadOnlyModelViewSet):
+    queryset = Politician.objects.filter(statistic__id__gt=0).distinct()
+    serializer_class = serializers.PoliticianSerializer
+    filter_backends = (SearchFilter, DjangoFilterBackend,)
+    filter_fields = ('state',)
+    search_fields = (
+        'first_name',
+        'last_name',
+        'state__name',
+        'party__name',
+        'party__shortname',
+        'party_other'
+    )
