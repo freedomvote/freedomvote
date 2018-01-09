@@ -96,7 +96,9 @@ INSTALLED_APPS = (
     'core',
     'api',
     'cms',
-    'meta'
+    'meta',
+    'rest_framework',
+    'django_filters'
 )
 
 MIDDLEWARE_CLASSES = (

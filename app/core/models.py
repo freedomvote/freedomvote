@@ -194,7 +194,8 @@ class Politician(models.Model):
 class Link(models.Model):
     politician              = models.ForeignKey(
         Politician,
-        verbose_name        = _('politician')
+        verbose_name        = _('politician'),
+        related_name        = 'links'
     )
     url                     = models.URLField(
         verbose_name        = _('url')
@@ -239,7 +240,8 @@ class Answer(models.Model):
     )
     politician              = models.ForeignKey(
         Politician,
-        verbose_name        = _('politician')
+        verbose_name        = _('politician'),
+        related_name        = 'answers'
     )
     agreement_level         = models.IntegerField(
         verbose_name        = _('agreement_level')
