@@ -689,17 +689,18 @@ class PoliticianRegistrationView(FormView):
             'politician_edit_profile',
             kwargs={'unique_key': politician.unique_key}
         )
+        profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
             _('Freedomvote account link'),
             _("""
             Hello,
 
             You receive the link for your profile on Freedomvote:
-            {}{}
+            {}
 
             Sincerely,
             The Freedomvote Team
-            """).format(settings.BASE_URL, profile_url),
+            """).format(profile_url_absolute),
             settings.DEFAULT_FROM_EMAIL,
             [politician.email],
             fail_silently=False,

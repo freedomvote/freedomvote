@@ -304,6 +304,7 @@ class Statistic(models.Model):
         verbose_name        = _('statistic')
         verbose_name_plural = _('statistics')
 
+# Model to extend the django user model and add a unique key to every user
 
 class RegistrationKey(models.Model):
     user                    = models.OneToOneField(
