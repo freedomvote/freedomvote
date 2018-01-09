@@ -34,7 +34,8 @@ class PoliticianSerializer(serializers.ModelSerializer):
                     'category': result['detail']['categories'][x]
                 }
                 for x
-                in range(0, len(result.get('detail', {}).get('values', [])))
+                in range(0, len(result['detail']['values']))
+                if result['detail']['values']
             ],
             'summary': [
                 {
@@ -45,7 +46,8 @@ class PoliticianSerializer(serializers.ModelSerializer):
                     'title': result['summary']['titles'][x]
                 }
                 for x
-                in range(0, len(result.get('summary', {}).get('values', {}).get('positive', [])))
+                in range(0, len(result['summary']['values']['positive']))
+                if result['summary']['values']
             ]
         }
 
