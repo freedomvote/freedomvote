@@ -1,5 +1,5 @@
 from core.decorators import require_party_login
-from core.forms import PoliticianForm, PartyPoliticianForm
+from core.forms import PoliticianForm, PartyPoliticianForm, RegistrationForm
 from core.models import Politician, Question, State, Answer
 from core.models import Statistic, Category, Link
 from core.tools import set_cookie, get_cookie
@@ -9,11 +9,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
+from django.core.mail import send_mail
+from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q, Sum
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
+from django.views.generic import FormView, TemplateView
+
 from meta.views import Meta
 import collections
 import csv
@@ -376,6 +380,9 @@ def politician_edit_view(request, unique_key):
 
 def politician_edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
+    if not politician.is_active:
+        politician.is_active = True
+        politician.save()
     links      = (
         Link.objects.filter(politician=politician))
 
@@ -647,3 +654,58 @@ def party_politician_delete_view(request, party_name, politician_id):
         ))
 
     return redirect(reverse('party_dashboard', args=[party_name]))
+
+
+class PoliticianRegistrationView(FormView):
+    model = Politician
+    template_name = 'core/candidates/registration.html'
+    form_class = RegistrationForm
+    success_url = '/registration_send_mail/'
+
+    def get_context_data(self, *args, **kwargs):
+        unique_key = self.kwargs['unique_key']
+        try:
+            User.objects.get(registrationkey__unique_key=unique_key)
+        except ObjectDoesNotExist:
+            self.template_name = '404.html'
+
+    def form_valid(self, form, *args, **kwargs):
+        unique_key = self.kwargs['unique_key']
+        user = User.objects.get(registrationkey__unique_key=unique_key)
+        politician = Politician.objects.create(
+            first_name=form.data['first_name'],
+            last_name=form.data['last_name'],
+            email=form.data['email'],
+            is_active=False,
+            user_id=user.id
+        )
+
+        self.send_mail(politician)
+
+        return super(PoliticianRegistrationView, self).form_valid(form)
+
+    def send_mail(self, politician):
+        profile_url = reverse(
+            'politician_edit_profile',
+            kwargs={'unique_key': politician.unique_key}
+        )
+        profile_url_absolute = self.request.build_absolute_uri(profile_url)
+        send_mail(
+            _('Freedomvote account link'),
+            _("""
+            Hello,
+
+            You receive the link for your profile on Freedomvote:
+            {}
+
+            Sincerely,
+            The Freedomvote Team
+            """).format(profile_url_absolute),
+            settings.DEFAULT_FROM_EMAIL,
+            [politician.email],
+            fail_silently=False,
+        )
+
+
+class PoliticianRegistrationSendMailView(TemplateView):
+    template_name = 'core/candidates/registration_send_mail.html'

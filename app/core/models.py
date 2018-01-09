@@ -4,6 +4,8 @@ from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.conf import settings
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 from colorfield.fields import ColorField
 import base64
 import os
@@ -12,6 +14,7 @@ import os
 def generate_url():
     key = base64.urlsafe_b64encode(os.urandom(16))[:20]
     return key
+
 
 class State(models.Model):
     name                    = models.CharField(
@@ -131,6 +134,10 @@ class Politician(models.Model):
         blank               = True,
         verbose_name        = _('party_other')
     )
+    is_active               = models.BooleanField(
+        default             = True,
+        verbose_name        = _('is_active')
+    )
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
@@ -226,7 +233,6 @@ class Question(models.Model):
         verbose_name        = _('description')
     )
 
-
     class Meta:
         verbose_name        = _('question')
         verbose_name_plural = _('questions')
@@ -299,3 +305,22 @@ class Statistic(models.Model):
     class Meta:
         verbose_name        = _('statistic')
         verbose_name_plural = _('statistics')
+
+# Model to extend the django user model and add a unique key to every user
+
+class RegistrationKey(models.Model):
+    user                    = models.OneToOneField(
+        User,
+        on_delete           = models.CASCADE
+    )
+    unique_key              = models.CharField(
+        max_length          = 20,
+        verbose_name        = _('unique_key'),
+        default             = generate_url
+    )
+
+
+@receiver(post_save, sender=User)
+def create_user_registration_key(sender, instance, created, **kwargs):
+    if created:
+        RegistrationKey.objects.create(user=instance)
