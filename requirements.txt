@@ -12,3 +12,4 @@ django-piwik==0.1
 django-colorfield==0.1.14
 djangorestframework>=3.6,<3.7
 django-filter
+flup
