@@ -17,22 +17,23 @@ from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
-    'DB'            : {
-        'HOST'      : 'db',
-        'NAME'      : 'freedomvote',
-        'USER'      : 'freedomvote',
-        'PASS'      : 'freedomvote',
-        'PORT'      : '5432',
+    'DB'                   : {
+        'HOST'             : 'db',
+        'NAME'             : 'freedomvote',
+        'USER'             : 'freedomvote',
+        'PASS'             : 'freedomvote',
+        'PORT'             : '5432',
     },
-    'GLOBAL'        : {
-        'DEBUG'     : 'True',
-        'BASE_URL'  : 'http://localhost:8000',
-        'LANGUAGES' : 'de,en,fr,it,nl',
-        'SECRET'    : 'someverysecretrandomkey'
+    'GLOBAL'               : {
+        'DEBUG'            : 'True',
+        'BASE_URL'         : 'http://localhost:8000',
+        'DEFAULT_LANGUAGE' : 'en',
+        'LANGUAGES'        : 'de,en,fr,it,nl',
+        'SECRET'           : 'someverysecretrandomkey'
     },
-    'PIWIK'         : {
-        'SITE_ID'   : 0,
-        'URL'       : '',
+    'PIWIK'                : {
+        'SITE_ID'          : 0,
+        'URL'              : '',
     }
 }
 
@@ -177,9 +178,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = DEFAULT_SETTINGS['GLOBAL']['DEFAULT_LANGUAGE']
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_DEFAULT_LANGUAGE = DEFAULT_SETTINGS['GLOBAL']['DEFAULT_LANGUAGE']
 
 LANGUAGES = [
     lang for
