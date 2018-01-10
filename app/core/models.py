@@ -134,10 +134,6 @@ class Politician(models.Model):
         blank               = True,
         verbose_name        = _('party_other')
     )
-    is_active               = models.BooleanField(
-        default             = True,
-        verbose_name        = _('is_active')
-    )
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)

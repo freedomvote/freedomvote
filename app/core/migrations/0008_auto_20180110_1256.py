@@ -22,9 +22,14 @@ class Migration(migrations.Migration):
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.AddField(
-            model_name='politician',
-            name='is_active',
-            field=models.BooleanField(default=True, verbose_name='is_active'),
+        migrations.AlterField(
+            model_name='answer',
+            name='politician',
+            field=models.ForeignKey(related_name='answers', verbose_name='politician', to='core.Politician'),
+        ),
+        migrations.AlterField(
+            model_name='link',
+            name='politician',
+            field=models.ForeignKey(related_name='links', verbose_name='politician', to='core.Politician'),
         ),
     ]
