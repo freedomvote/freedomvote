@@ -27,7 +27,7 @@ DEFAULT_SETTINGS = {
     'GLOBAL'               : {
         'DEBUG'            : 'True',
         'BASE_URL'         : 'http://localhost:8000',
-        'DEFAULT LANGUAGE' : 'en',
+        'DEFAULT_LANGUAGE' : 'en',
         'LANGUAGES'        : 'de,en,fr,it,nl',
         'SECRET'           : 'someverysecretrandomkey'
     },
