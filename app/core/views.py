@@ -380,9 +380,7 @@ def politician_edit_view(request, unique_key):
 
 def politician_edit_profile_view(request, unique_key):
     politician = get_object_or_404(Politician, unique_key=unique_key)
-    if not politician.is_active:
-        politician.is_active = True
-        politician.save()
+
     links      = (
         Link.objects.filter(politician=politician))
 
@@ -676,7 +674,6 @@ class PoliticianRegistrationView(FormView):
             first_name=form.data['first_name'],
             last_name=form.data['last_name'],
             email=form.data['email'],
-            is_active=False,
             user_id=user.id
         )
 
