@@ -3,6 +3,7 @@
 {% load i18n staticfiles helpers %}
 
 {% block 'scripts' %}
+<script src="{% static 'lib/polyfills/url.min.js' %}"></script>
 <script src="{% static 'lib/vue/vue.js' %}"></script>
 <script src="{% static 'js/candidates.js' %}"></script>
 {% endblock %}
