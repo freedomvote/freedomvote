@@ -115,4 +115,15 @@ urlpatterns = patterns(
         views.party_politician_delete_view,
         name='party_politician_delete'
     ),
+
+    # politician registration
+
+    url(r'^registration/(?P<unique_key>[^/]+)/$',
+        views.PoliticianRegistrationView.as_view(),
+        name='politician_registration'
+    ),
+    url(r'^registration_send_mail/$',
+        views.PoliticianRegistrationSendMailView.as_view(),
+        name='registration_sendmail'
+    ),
 )

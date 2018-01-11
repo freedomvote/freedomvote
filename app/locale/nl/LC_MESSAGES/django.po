@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-04 12:18+0000\n"
-"PO-Revision-Date: 2018-01-04 13:22+0100\n"
+"POT-Creation-Date: 2018-01-08 09:20+0000\n"
+"PO-Revision-Date: 2018-01-08 10:29+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
 "Language: nl\n"
@@ -131,13 +131,29 @@ msgstr "Een uitgebreidere beschrijving vna de vraag (per taalcode)"
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr "Het voorkeursantwoord door de organisatie (tussen 0 - 10)"
 
-#: core/admin.py:21 core/views.py:626
+#: core/admin.py:21 core/views.py:631
 msgid "unique_url"
 msgstr "Toegangslink"
 
-#: core/admin.py:40 core/models.py:68 core/models.py:217 core/models.py:263
+#: core/admin.py:40 core/models.py:71 core/models.py:224 core/models.py:269
 msgid "category"
 msgstr "Categorie"
+
+#: core/forms.py:71
+#, fuzzy
+#| msgid "first_name"
+msgid "First_name"
+msgstr "Voornaam"
+
+#: core/forms.py:72
+#, fuzzy
+#| msgid "last_name"
+msgid "Last_name"
+msgstr "Achternaam"
+
+#: core/forms.py:82
+msgid "Email is already taken."
+msgstr "Deze Email is al in gebruik."
 
 #: core/menu.py:10
 msgid "compare"
@@ -147,164 +163,168 @@ msgstr "Vergelijken"
 msgid "candidates"
 msgstr "Kandidaten"
 
-#: core/models.py:19 core/models.py:34 core/models.py:61
+#: core/models.py:22 core/models.py:37 core/models.py:64
 msgid "name"
 msgstr "Naam"
 
-#: core/models.py:26 core/models.py:120
+#: core/models.py:29 core/models.py:123
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:625
+#: core/templates/core/profile/description.html:21 core/views.py:630
 msgid "state"
 msgstr "Kieskring"
 
-#: core/models.py:27 core/templates/core/profile/description.html:12
+#: core/models.py:30 core/templates/core/profile/description.html:12
 #: core/templates/core/profile/description.html:15
 msgid "states"
 msgstr "Kieskringen"
 
-#: core/models.py:38
+#: core/models.py:41
 msgid "shortname"
 msgstr "Afkorting"
 
-#: core/models.py:42
+#: core/models.py:45
 msgid "background_color"
 msgstr "Achtergrondkleur"
 
-#: core/models.py:46
+#: core/models.py:49
 msgid "font_color"
 msgstr "Tekstkleur"
 
-#: core/models.py:53 core/models.py:126
+#: core/models.py:56 core/models.py:129
 #: core/templates/core/profile/description.html:29
 msgid "party"
 msgstr "Partij"
 
-#: core/models.py:54
+#: core/models.py:57
 msgid "parties"
 msgstr "Partijen"
 
-#: core/models.py:69
+#: core/models.py:72
 msgid "categories"
 msgstr "Categorieën"
 
-#: core/models.py:75
+#: core/models.py:78
 msgid "user"
 msgstr "Gebruiker"
 
-#: core/models.py:81 core/templates/core/party/dashboard.html:51
-#: core/views.py:623
+#: core/models.py:84 core/templates/core/party/dashboard.html:51
+#: core/views.py:628
 msgid "first_name"
 msgstr "Voornaam"
 
-#: core/models.py:87 core/templates/core/party/dashboard.html:52
-#: core/views.py:624
+#: core/models.py:90 core/templates/core/party/dashboard.html:52
+#: core/views.py:629
 msgid "last_name"
 msgstr "Achternaam"
 
-#: core/models.py:92
+#: core/models.py:95
 msgid "email"
 msgstr "E-mail"
 
-#: core/models.py:98
+#: core/models.py:101
 msgid "image"
 msgstr "Afbeelding"
 
-#: core/models.py:102 core/templates/core/profile/description.html:42
+#: core/models.py:105 core/templates/core/profile/description.html:42
 msgid "is_member_of_parliament"
 msgstr "Zittend parlementslid"
 
-#: core/models.py:106 core/templates/core/profile/description.html:34
+#: core/models.py:109 core/templates/core/profile/description.html:34
 msgid "past_contributions"
 msgstr "Eerdere bijdragen over dit onderwerp"
 
-#: core/models.py:110 core/templates/core/profile/description.html:38
+#: core/models.py:113 core/templates/core/profile/description.html:38
 msgid "future_plans"
 msgstr "Intenties en plannen"
 
-#: core/models.py:114
+#: core/models.py:117 core/models.py:315
 msgid "unique_key"
 msgstr "Toeganscode"
 
-#: core/models.py:132
+#: core/models.py:135
 msgid "party_other"
 msgstr "Andere partij"
 
-#: core/models.py:166
+#: core/models.py:139
+msgid "is_active"
+msgstr "Is actief"
+
+#: core/models.py:173
 #, python-format
 msgid "%s states"
 msgstr "%s kieskringen"
 
-#: core/models.py:190 core/models.py:197 core/models.py:242 core/models.py:259
+#: core/models.py:197 core/models.py:204 core/models.py:248 core/models.py:265
 msgid "politician"
 msgstr "Politicus"
 
-#: core/models.py:191
+#: core/models.py:198
 msgid "politicians"
 msgstr "Politici"
 
-#: core/models.py:200 core/templates/core/edit/links.html:21
+#: core/models.py:207 core/templates/core/edit/links.html:21
 msgid "url"
 msgstr "URL"
 
-#: core/models.py:204
+#: core/models.py:211
 msgid "link"
 msgstr "Link"
 
-#: core/models.py:205 core/templates/core/edit/profile.html:84
+#: core/models.py:212 core/templates/core/edit/profile.html:84
 #: core/templates/core/profile/description.html:61
 msgid "links"
 msgstr "Links"
 
-#: core/models.py:210
+#: core/models.py:217
 msgid "preferred_answer"
 msgstr "Voorkeursantwoord (0-10)"
 
-#: core/models.py:213
+#: core/models.py:220
 msgid "question_number"
 msgstr "Vraag nummer"
 
-#: core/models.py:220
+#: core/models.py:227
 msgid "text"
 msgstr "Tekst"
 
-#: core/models.py:225
+#: core/models.py:232
 msgid "description"
 msgstr "Beschrijving"
 
-#: core/models.py:230 core/models.py:238
+#: core/models.py:236 core/models.py:244
 #: core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
 msgstr "Vraag"
 
-#: core/models.py:231 core/templates/core/edit/menu.html:8
+#: core/models.py:237 core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr "Vragen"
 
-#: core/models.py:245
+#: core/models.py:251
 msgid "agreement_level"
 msgstr "Gelijkenis"
 
-#: core/models.py:248 core/templates/core/edit/questions.html:36
+#: core/models.py:254 core/templates/core/edit/questions.html:36
 msgid "note"
 msgstr "Opmerking"
 
-#: core/models.py:252
+#: core/models.py:258
 msgid "answer"
 msgstr "Antwoord"
 
-#: core/models.py:253
+#: core/models.py:259
 msgid "answers"
 msgstr "Antwoorden"
 
-#: core/models.py:266
+#: core/models.py:272
 msgid "value"
 msgstr "Waarde"
 
-#: core/models.py:298
+#: core/models.py:304
 msgid "statistic"
 msgstr "Statistiek"
 
-#: core/models.py:299
+#: core/models.py:305
 msgid "statistics"
 msgstr "Statistieken"
 
@@ -341,6 +361,44 @@ msgstr "Uw eigen standpunt invoeren"
 #: core/templates/core/candidates/index.html:27
 msgid "add_own_opinion_here"
 msgstr "Klik hier om uw eigen standpunt in te voeren"
+
+#: core/templates/core/candidates/registration.html:6
+msgid "Registration for candidates"
+msgstr "Registratie voor kandidaten"
+
+#: core/templates/core/candidates/registration.html:7
+msgid ""
+"After the registration you will get a link to your personal profile on "
+"Freedomvote"
+msgstr ""
+"Na de registratie krijgt u een link naar uw persoonlijke profiel op "
+"Freedomvote"
+
+#: core/templates/core/candidates/registration.html:11
+#, fuzzy
+#| msgid "first_name"
+msgid "First name"
+msgstr "Voornaam"
+
+#: core/templates/core/candidates/registration.html:13
+#, fuzzy
+#| msgid "last_name"
+msgid "Last name"
+msgstr "Achternaam"
+
+#: core/templates/core/candidates/registration.html:15
+#, fuzzy
+#| msgid "email"
+msgid "Email"
+msgstr "E-mail"
+
+#: core/templates/core/candidates/registration.html:18
+msgid "Register"
+msgstr "Registreren"
+
+#: core/templates/core/candidates/registration_send_mail.html:6
+msgid "We have emailed you a link to your profile on Freedomvote"
+msgstr "We hebben je een e-mail gestuurd met je profiel op Freedomvote"
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
@@ -488,61 +546,86 @@ msgstr "Eigen antwoord"
 msgid "politician_answer"
 msgstr "Antwoord politicus"
 
-#: core/views.py:46
+#: core/views.py:51
 msgid "The platform for freedom, technology and politics"
 msgstr "Het platform voor vrijheid, technologie en politiek"
 
-#: core/views.py:167
+#: core/views.py:172
 msgid "answers_saved_successfully_evaluate"
 msgstr "Uw antwoorden zijn succesvol opgeslagen. U kunt ze nu terugzien."
 
-#: core/views.py:195
+#: core/views.py:200
 msgid "answers_resetted"
 msgstr "Uw antwoorden zijn teruggezet"
 
-#: core/views.py:277
+#: core/views.py:282
 msgid "total"
 msgstr "Totaal"
 
-#: core/views.py:386
+#: core/views.py:391
 msgid "profile_saved_successfully"
 msgstr "Uw profiel is succesvol opgeslagen."
 
-#: core/views.py:459
+#: core/views.py:464
 msgid "answers_published_successfully"
 msgstr "Uw antwoorden zijn succesvol gepubliceerd"
 
-#: core/views.py:469
+#: core/views.py:474
 msgid "answers_unpublished_successfully"
 msgstr "Uw antwoorden zijn succesvol ingetrokken"
 
-#: core/views.py:532
+#: core/views.py:537
 msgid "login_successful"
 msgstr "U bent succesvol ingelogd"
 
-#: core/views.py:535
+#: core/views.py:540
 msgid "login_error"
 msgstr "U heeft foutieve login-gegevens ingevoerd"
 
-#: core/views.py:564
+#: core/views.py:569
 msgid "politician_add_success"
 msgstr "Politicus is succesvol toegevoegd"
 
-#: core/views.py:567
+#: core/views.py:572
 msgid "politician_add_error"
 msgstr "Er ontstond een probleem bij het toevoegen van de politicus"
 
-#: core/views.py:592
+#: core/views.py:597
 msgid "politician_edit_success"
 msgstr "De politicus is succesvol bewerkt"
 
-#: core/views.py:595
+#: core/views.py:600
 msgid "politician_edit_error"
 msgstr "Er ontstond een probleem bij het bewerken van de politicus"
 
-#: core/views.py:645
+#: core/views.py:650
 msgid "politician_delete_success"
 msgstr "Politicus '%s %s' is succesvol verwijderd"
+
+#: core/views.py:690
+msgid "Freedomvote account link"
+msgstr "Freedomvote-accountlink"
+
+#: core/views.py:691
+msgid ""
+"\n"
+"            Hello,\n"
+"\n"
+"            You receive the link for your profile on Freedomvote:\n"
+"            {}/politician/{}/edit/profile/\n"
+"\n"
+"            Sincerely,\n"
+"            The Freedomvote Team\n"
+"            "
+msgstr ""
+"\n"
+"             Hallo,\n"
+"\n"
+"             U ontvangt de link voor uw profiel op Freedomvote:\n"
+"             {}/politician/{}/edit/profile/\n"
+"\n"
+"             Oprecht,\n"
+"             Het Freedomvote-team"
 
 #: freedomvote/settings.py:181
 msgid "german"
@@ -584,6 +667,9 @@ msgstr ""
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu omschakelen"
+
+#~ msgid "Key does not exist"
+#~ msgstr "Sleutel bestaat niet"
 
 #~ msgid "icon"
 #~ msgstr "Pictogram"
