@@ -6,36 +6,18 @@ jQuery(function($) {
   })
 })
 
-function qpsToString(qps) {
-  return Object.keys(qps)
-    .reduce(function(arr, key) {
-      if (qps[key]) {
-        arr.push(key + '=' + qps[key])
-      }
+function cleanParams(params) {
+  return Object.keys(params).reduce(function(clean, key) {
+    if (params[key]) {
+      clean[key] = params[key]
+    }
 
-      return arr
-    }, [])
-    .join('&')
-}
-
-function getCurrentURLWithoutPage() {
-  return location.href.replace(/&?page=\d+/, '')
+    return clean
+  }, {})
 }
 
 Vue.component('candidate-pagination', {
-  data: function() {
-    return {
-      url: getCurrentURLWithoutPage()
-    }
-  },
   computed: {
-    baseUrl: function() {
-      if (this.url.search(/\?/) === -1) {
-        return this.url + '?'
-      }
-
-      return this.url + '&'
-    },
     prevPage: function() {
       return this.page === 1 ? 1 : this.page - 1
     },
@@ -70,17 +52,13 @@ Vue.component('candidate-pagination', {
 
 Vue.component('candidate-pagination-page', {
   computed: {
-    base: function() {
-      let url = getCurrentURLWithoutPage()
-
-      if (url.search(/\?/) === -1) {
-        return url + '?'
-      }
-
-      return url + '&'
-    },
     url: function() {
-      return this.base + 'page=' + this.page
+      let url = new URL(location)
+
+      url.searchParams.delete('page')
+      url.searchParams.append('page', this.page)
+
+      return url
     },
     active: function() {
       return parseInt(this.current) === parseInt(this.page)
@@ -280,9 +258,7 @@ new Vue({
   },
   computed: {
     page: function() {
-      let page = location.search.match(/page=(\d+)/)
-
-      return page ? parseInt(page[1]) : 1
+      return new URL(location).searchParams.get('page') || 1
     },
     candidates: function() {
       let end = this.page * this.limit
@@ -299,24 +275,18 @@ new Vue({
     }
   },
   mounted: function() {
-    let state = location.search.match(/state=(\d+)/)
-    let category = location.search.match(/category=(\d+)/)
-    let search = location.search.match(/search=(\w+)/)
-    let evaluate = location.search.match(/evaluate=(\d+)/)
-
-    state = state ? parseInt(state[1]) : null
-    category = category ? parseInt(category[1]) : null
-    search = search ? search[1] : null
-    evaluate = evaluate ? true : false
+    let currentUrl = new URL(location)
 
     fetch(
       '/api/v2/politicians/?' +
-        qpsToString({
-          state: state,
-          category: category,
-          search: search,
-          evaluate: evaluate
-        }),
+        new URLSearchParams(
+          cleanParams({
+            state: parseInt(currentUrl.searchParams.get('state')),
+            category: parseInt(currentUrl.searchParams.get('category')),
+            search: currentUrl.searchParams.get('search'),
+            evaluate: parseInt(currentUrl.searchParams.get('evaluate'))
+          })
+        ).toString(),
       {
         headers: {
           'Accept-Language':
@@ -328,7 +298,7 @@ new Vue({
       function(res) {
         res.json().then(
           function(data) {
-            let i = category > 0 ? 1 : 0
+            let i = currentUrl.searchParams.get('category') > 0 ? 1 : 0
 
             this.results = _.sortBy(data, [
               function(x) {
