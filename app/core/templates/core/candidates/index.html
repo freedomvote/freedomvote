@@ -39,6 +39,7 @@
 <div class="row">
     <div class="col-md-12">
         <div id="vue-app">
+            <loading-spinner v-if="loading"></loading-spinner>
             <candidate-list :candidates="candidates"></candidate-list>
             <candidate-pagination :page="page" :pages="pages"></candidate-pagination>
         </div>
