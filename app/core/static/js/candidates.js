@@ -16,6 +16,14 @@ function cleanParams(params) {
   }, {})
 }
 
+Vue.component('loading-spinner', {
+  template: `
+    <div class="loading-wrapper">
+      <div class="loading-spinner"></div>
+    </div>
+  `
+})
+
 Vue.component('candidate-pagination', {
   computed: {
     prevPage: function() {
@@ -254,7 +262,8 @@ new Vue({
   el: '#vue-app',
   data: {
     limit: 10,
-    results: []
+    results: [],
+    loading: true
   },
   computed: {
     page: function() {
@@ -307,6 +316,8 @@ new Vue({
               'first_name',
               'last_name'
             ])
+
+            this.loading = false
           }.bind(this)
         )
       }.bind(this)
