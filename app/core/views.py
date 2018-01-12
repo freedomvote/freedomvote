@@ -66,11 +66,6 @@ def initial_edit_view(request, lang):
 
 
 def candidates_view(request):
-    politician_list = (
-        Politician.objects.
-        filter(statistic__id__gt=0).distinct().
-        order_by('first_name', 'last_name'))
-
     states          = State.objects.all().order_by('name')
     categories      = (
         Category.objects.filter(statistic__id__gt=0).
@@ -80,57 +75,10 @@ def candidates_view(request):
     state    = request.GET.get('state', None)
     search   = request.GET.get('search', None)
 
-    per_site = request.GET.get('per_page', 10)
-    page     = request.GET.get('page',      1)
-
-    request.GET = request.GET.copy()
-    stat_cookie = get_cookie(request, 'statistics', {})
-    if 'evaluate' in request.GET and stat_cookie == {}:
-        request.GET.pop('evaluate')
-
-    if category and category != '0':
-        if 'evaluate' in request.GET:
-            stats = get_cookie(request, 'statistics', {})
-            val = stats.get('category_%s' % category, 0)
-        else:
-            val = Question.objects.filter(
-                category__id=category
-            ).aggregate(Sum('preferred_answer'))['preferred_answer__sum']
-
-        politician_list = (
-            Politician.get_politicians_by_category(
-                category, (int(val) * 10)))
-
-    if state and state != '0':
-        politician_list = politician_list.filter(state=state)
-
-    if search:
-        politician_list = politician_list.filter(
-            Q(last_name__icontains=search) |
-            Q(first_name__icontains=search) |
-            Q(state__name__icontains=search) |
-            Q(party__name__icontains=search) |
-            Q(party__shortname__icontains=search)
-        )
-
-    paginator = Paginator(politician_list, per_site)
-
-    try:
-        politicians = paginator.page(page)
-    except PageNotAnInteger:
-        politicians = paginator.page(1)
-    except EmptyPage:
-        politicians = paginator.page(paginator.num_pages)
-
-    # remove the page parameter from url
-    if request.GET.get('page', None):
-        request.GET.pop('page')
-
     return render(
         request,
         'core/candidates/index.html',
         {
-            'politicians' : politicians,
             'categories'  : categories,
             'states'      : states,
             'meta'        : default_meta
@@ -302,6 +250,9 @@ def politician_statistic_view(request, politician_id):
             delta_by_cat[ans.question.category_id].append(delta)
 
         for cid, cat in cat_by_id.iteritems():
+            if not len(delta_by_cat[cid]):
+                continue
+
             pairs.append({
                 'category': cat.name,
                 'value':    (

@@ -3,6 +3,8 @@
 {% load i18n staticfiles helpers %}
 
 {% block 'scripts' %}
+<script src="{% static 'lib/polyfills/url.min.js' %}"></script>
+<script src="{% static 'lib/vue/vue.js' %}"></script>
 <script src="{% static 'js/candidates.js' %}"></script>
 {% endblock %}
 
@@ -33,9 +35,14 @@
         {% include 'core/candidates/filter.html' %}
     </div>
 </div>
+
 <div class="row">
     <div class="col-md-12">
-        {% include 'core/candidates/list.html' %}
+        <div id="vue-app">
+            <candidate-list :candidates="candidates"></candidate-list>
+            <candidate-pagination :page="page" :pages="pages"></candidate-pagination>
+        </div>
     </div>
 </div>
+
 {% endblock %}
