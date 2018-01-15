@@ -2,7 +2,6 @@ from django.conf import settings
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from core.models import RegistrationKey
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 import models
@@ -47,7 +46,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 class RegistrationKeyInline(admin.StackedInline):
-    model = RegistrationKey
+    model = models.RegistrationKey
     can_delete = False
     fk_name = 'user'
 
