@@ -228,8 +228,8 @@ PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
 GIT_URL = 'https://github.com/adfinis-sygroup/freedomvote'
 
 # Metadata settings (according to https://django-meta.readthedocs.io/en/latest/settings.html)
-META_SITE_PROTOCOL = 'http'
-META_SITE_DOMAIN = 'localhost:8000'
+META_SITE_PROTOCOL = BASE_URL.split('://')[0] or 'http'
+META_SITE_DOMAIN = BASE_URL.split('://')[1] or 'localhost:8000'
 META_SITE_TYPE = 'website'
 META_DEFAULT_KEYWORDS = ['freedomvote', 'elections', 'politicians', 'states']
 META_INCLUDE_KEYWORDS = META_DEFAULT_KEYWORDS

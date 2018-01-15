@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-08 09:20+0000\n"
-"PO-Revision-Date: 2018-01-08 10:28+0100\n"
+"POT-Creation-Date: 2018-01-15 11:53+0000\n"
+"PO-Revision-Date: 2018-01-15 12:42+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.5\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
@@ -122,11 +122,11 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:21 core/views.py:631
+#: core/admin.py:21 core/views.py:591
 msgid "unique_url"
 msgstr "Link di accesso"
 
-#: core/admin.py:40 core/models.py:71 core/models.py:224 core/models.py:269
+#: core/admin.py:40 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Categoria"
 
@@ -160,7 +160,7 @@ msgstr "Nome"
 
 #: core/models.py:29 core/models.py:123
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:630
+#: core/templates/core/profile/description.html:21 core/views.py:590
 msgid "state"
 msgstr "Cantone"
 
@@ -199,12 +199,12 @@ msgid "user"
 msgstr "Utente"
 
 #: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:628
+#: core/views.py:588
 msgid "first_name"
 msgstr "Nome"
 
 #: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:629
+#: core/views.py:589
 msgid "last_name"
 msgstr "Cognome"
 
@@ -228,7 +228,7 @@ msgstr "Precedenti contributi relativi al tema"
 msgid "future_plans"
 msgstr "Precedenti intenzioni e propositi"
 
-#: core/models.py:117 core/models.py:315
+#: core/models.py:117 core/models.py:314
 msgid "unique_key"
 msgstr "Codice di accesso"
 
@@ -236,86 +236,82 @@ msgstr "Codice di accesso"
 msgid "party_other"
 msgstr "Altro partito"
 
-#: core/models.py:139
-msgid "is_active"
-msgstr "È attivo"
-
-#: core/models.py:173
+#: core/models.py:169
 #, python-format
 msgid "%s states"
 msgstr "%s cantoni"
 
-#: core/models.py:197 core/models.py:204 core/models.py:248 core/models.py:265
+#: core/models.py:193 core/models.py:200 core/models.py:245 core/models.py:263
 msgid "politician"
 msgstr "Politico"
 
-#: core/models.py:198
+#: core/models.py:194
 msgid "politicians"
 msgstr "Politici"
 
-#: core/models.py:207 core/templates/core/edit/links.html:21
+#: core/models.py:204 core/templates/core/edit/links.html:21
 msgid "url"
 msgstr "URL"
 
-#: core/models.py:211
+#: core/models.py:208
 msgid "link"
 msgstr "Link"
 
-#: core/models.py:212 core/templates/core/edit/profile.html:84
+#: core/models.py:209 core/templates/core/edit/profile.html:84
 #: core/templates/core/profile/description.html:61
 msgid "links"
 msgstr "Link"
 
-#: core/models.py:217
+#: core/models.py:214
 msgid "preferred_answer"
 msgstr "Risposta preferita (0-10)"
 
-#: core/models.py:220
+#: core/models.py:217
 msgid "question_number"
 msgstr "Domanda numero"
 
-#: core/models.py:227
+#: core/models.py:224
 msgid "text"
 msgstr "Testo"
 
-#: core/models.py:232
+#: core/models.py:229
 msgid "description"
 msgstr "Descrizione"
 
-#: core/models.py:236 core/models.py:244
+#: core/models.py:233 core/models.py:241
 #: core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
 msgstr "Domanda"
 
-#: core/models.py:237 core/templates/core/edit/menu.html:8
+#: core/models.py:234 core/templates/core/edit/menu.html:8
 msgid "questions"
 msgstr "Domande"
 
-#: core/models.py:251
+#: core/models.py:249
 msgid "agreement_level"
 msgstr "Consenso"
 
-#: core/models.py:254 core/templates/core/edit/questions.html:36
+#: core/models.py:252 core/templates/core/edit/questions.html:36
 msgid "note"
 msgstr "Commento"
 
-#: core/models.py:258
+#: core/models.py:256
 msgid "answer"
 msgstr "Risposta"
 
-#: core/models.py:259
+#: core/models.py:257
 msgid "answers"
 msgstr "Risposte"
 
-#: core/models.py:272
+#: core/models.py:270
 msgid "value"
 msgstr "Valore"
 
-#: core/models.py:304
+#: core/models.py:302
 msgid "statistic"
 msgstr "Statistica"
 
-#: core/models.py:305
+#: core/models.py:303
 msgid "statistics"
 msgstr "Statistiche"
 
@@ -335,21 +331,21 @@ msgstr "Ricerca"
 msgid "filter"
 msgstr "Filtrare"
 
-#: core/templates/core/candidates/index.html:14
+#: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
 msgstr "Opinione admin"
 
-#: core/templates/core/candidates/index.html:19
-#: core/templates/core/candidates/index.html:28
+#: core/templates/core/candidates/index.html:21
+#: core/templates/core/candidates/index.html:30
 msgid "own_opinion"
 msgstr "Opinione pers."
 
-#: core/templates/core/candidates/index.html:26
+#: core/templates/core/candidates/index.html:28
 #: core/templates/core/profile/description.html:52
 msgid "add_own_opinion"
 msgstr "Aggiungi opinione personale"
 
-#: core/templates/core/candidates/index.html:27
+#: core/templates/core/candidates/index.html:29
 msgid "add_own_opinion_here"
 msgstr "Cliccare qui per aggiungere la Sua opinione personale"
 
@@ -519,15 +515,6 @@ msgstr "Quota"
 msgid "embed_iframe"
 msgstr "Codice da incorporare"
 
-#: core/templates/core/profile/index.html:25
-#, python-format
-msgid ""
-"The profile of %(politician.first_name)s %(politician.last_name)s on "
-"Freedomvote"
-msgstr ""
-"Il profilo di %(politician.first_name)s %(politician.last_name)s a "
-"Freedomvote"
-
 #: core/templates/core/profile/questions.html:22
 msgid "own_answer"
 msgstr "Propria risposta"
@@ -540,70 +527,74 @@ msgstr "Risposta del politico"
 msgid "The platform for freedom, technology and politics"
 msgstr "la piattaforma dedicata alla libertà, la tecnologia e la politica"
 
-#: core/views.py:172
+#: core/views.py:120
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "La sue risposte sono state memorizzate. Adesso può fare una valutazione"
 
-#: core/views.py:200
+#: core/views.py:148
 msgid "answers_resetted"
 msgstr "Le sue risposte sono state annullate"
 
-#: core/views.py:282
+#: core/views.py:187
+msgid "%(first_name)s %(last_name)s on Freedomvote"
+msgstr "%(first_name)s %(last_name)s a Freedomvote"
+
+#: core/views.py:238
 msgid "total"
 msgstr "Totale"
 
-#: core/views.py:391
+#: core/views.py:351
 msgid "profile_saved_successfully"
 msgstr "Il suo profilo è stato memorizzato"
 
-#: core/views.py:464
+#: core/views.py:424
 msgid "answers_published_successfully"
 msgstr "Le sue risposte sono state rilasciate"
 
-#: core/views.py:474
+#: core/views.py:434
 msgid "answers_unpublished_successfully"
 msgstr "Le sue risposte sono state annullate"
 
-#: core/views.py:537
+#: core/views.py:497
 msgid "login_successful"
 msgstr "Connessione corretta"
 
-#: core/views.py:540
+#: core/views.py:500
 msgid "login_error"
 msgstr "Ha inserito dei dati di accesso erronei"
 
-#: core/views.py:569
+#: core/views.py:529
 msgid "politician_add_success"
 msgstr "Politico aggiunto correttamente"
 
-#: core/views.py:572
+#: core/views.py:532
 msgid "politician_add_error"
 msgstr "Ci sono stati degli errori nello aggiungere il politico"
 
-#: core/views.py:597
+#: core/views.py:557
 msgid "politician_edit_success"
 msgstr "Politico è stato aggiunto correttamente"
 
-#: core/views.py:600
+#: core/views.py:560
 msgid "politician_edit_error"
 msgstr "Ci sono stati degli errori nel modificare il politico"
 
-#: core/views.py:650
+#: core/views.py:610
 msgid "politician_delete_success"
 msgstr "Politico \"%s %s\" è stato annullato correttamente"
 
-#: core/views.py:690
+#: core/views.py:651
 msgid "Freedomvote account link"
 msgstr "Collegamento all'account Freedomvote"
 
-#: core/views.py:691
+#: core/views.py:652
 msgid ""
 "\n"
 "            Hello,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote:\n"
-"            {}/politician/{}/edit/profile/\n"
+"            {}\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
@@ -618,23 +609,23 @@ msgstr ""
 "             Cordiali saluti,\n"
 "             Il team di Freedomvote"
 
-#: freedomvote/settings.py:181
+#: freedomvote/settings.py:188
 msgid "german"
 msgstr "Tedesco"
 
-#: freedomvote/settings.py:182
+#: freedomvote/settings.py:189
 msgid "english"
 msgstr "Inglese"
 
-#: freedomvote/settings.py:183
+#: freedomvote/settings.py:190
 msgid "french"
 msgstr "Francese"
 
-#: freedomvote/settings.py:184
+#: freedomvote/settings.py:191
 msgid "italian"
 msgstr "Italiano"
 
-#: freedomvote/settings.py:185
+#: freedomvote/settings.py:192
 msgid "dutch"
 msgstr "Neerlandese"
 
@@ -650,13 +641,16 @@ msgstr "Errore del server"
 msgid "source_code"
 msgstr "Codice sorgente"
 
-#: templates/index.html:34
+#: templates/index.html:32
 msgid "noscript"
 msgstr "Questo sito sarà completa solo se javascript è abilitato."
 
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu di commutazione"
+
+#~ msgid "is_active"
+#~ msgstr "È attivo"
 
 #~ msgid "Key does not exist"
 #~ msgstr "La chiave non esiste"
