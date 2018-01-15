@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:27+0000\n"
+"POT-Creation-Date: 2018-01-15 11:53+0000\n"
 "PO-Revision-Date: 2018-01-15 11:28+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -539,9 +539,8 @@ msgid "answers_resetted"
 msgstr "Ihre Antworten wurden zurückgesetzt"
 
 #: core/views.py:187
-#, python-format
-msgid "The profile of %(first_name)s %(last_name)s on Freedomvote"
-msgstr "Das Profil von %(first_name)s %(last_name)s bei Freedomvote"
+msgid "%(first_name)s %(last_name)s on Freedomvote"
+msgstr "%(first_name)s %(last_name)s bei Freedomvote"
 
 #: core/views.py:238
 msgid "total"

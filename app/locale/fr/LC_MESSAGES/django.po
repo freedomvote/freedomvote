@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:27+0000\n"
+"POT-Creation-Date: 2018-01-15 11:53+0000\n"
 "PO-Revision-Date: 2018-01-15 12:41+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: French <fr@li.org>\n"
@@ -538,9 +538,8 @@ msgid "answers_resetted"
 msgstr "Vos réponses on été réinitialisées"
 
 #: core/views.py:187
-#, python-format
-msgid "The profile of %(first_name)s %(last_name)s on Freedomvote"
-msgstr "Le profil de %(first_name)s %(last_name)s à Freedomvote"
+msgid "%(first_name)s %(last_name)s on Freedomvote"
+msgstr "%(first_name)s %(last_name)s à Freedomvote"
 
 #: core/views.py:238
 msgid "total"

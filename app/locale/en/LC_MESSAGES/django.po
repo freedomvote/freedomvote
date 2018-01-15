@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 10:27+0000\n"
+"POT-Creation-Date: 2018-01-15 11:53+0000\n"
 "PO-Revision-Date: 2018-01-15 12:41+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
@@ -543,9 +543,8 @@ msgid "answers_resetted"
 msgstr "Your answers have been resetted"
 
 #: core/views.py:187
-#, python-format
-msgid "The profile of %(first_name)s %(last_name)s on Freedomvote"
-msgstr "The profile of %(first_name)s %(last_name)s on Freedomvote"
+msgid "%(first_name)s %(last_name)s on Freedomvote"
+msgstr "%(first_name)s %(last_name)s on Freedomvote"
 
 #: core/views.py:238
 msgid "total"
