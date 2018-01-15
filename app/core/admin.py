@@ -2,7 +2,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
 import models
+
 
 class StateAdmin(admin.ModelAdmin):
     list_display = ['name']
@@ -41,6 +44,24 @@ class QuestionAdmin(admin.ModelAdmin):
 
     list_display = ['question_number', 'get_category', 'text']
 
+
+class RegistrationKeyInline(admin.StackedInline):
+    model = models.RegistrationKey
+    can_delete = False
+    fk_name = 'user'
+
+
+class CustomUserAdmin(UserAdmin):
+    inlines = (RegistrationKeyInline, )
+
+    def get_inline_instances(self, request, obj=None):
+        if not obj:
+            return list()
+        return super(CustomUserAdmin, self).get_inline_instances(request, obj)
+
+
+admin.site.unregister(User)
+admin.site.register(User, CustomUserAdmin)
 admin.site.register(models.State,      StateAdmin)
 admin.site.register(models.Party,      PartyAdmin)
 admin.site.register(models.Politician, PoliticianAdmin)
