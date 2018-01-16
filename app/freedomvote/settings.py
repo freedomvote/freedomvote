@@ -34,6 +34,14 @@ DEFAULT_SETTINGS = {
     'PIWIK'                : {
         'SITE_ID'          : 0,
         'URL'              : '',
+    },
+    'EMAIL'                : {
+        'HOST'             : 'localhost',
+        'HOST_USER'        : '',
+        'HOST_PASSWORD'    : '',
+        'PORT'             : '25',
+        'USE_TLS'          : 'False',
+        'USE_SSL'          : 'False',
     }
 }
 
@@ -237,3 +245,10 @@ META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_GOOGLEPLUS_PROPERTIES = True
 META_OG_NAMESPACES = True
+
+EMAIL_HOST = DEFAULT_SETTINGS['EMAIL']['HOST']
+EMAIL_HOST_USER = DEFAULT_SETTINGS['EMAIL']['HOST_USER']
+EMAIL_HOST_PASSWORD = DEFAULT_SETTINGS['EMAIL']['HOST_PASSWORD']
+EMAIL_PORT = DEFAULT_SETTINGS['EMAIL']['PORT']
+EMAIL_USE_TLS = DEFAULT_SETTINGS['EMAIL']['USE_TLS']
+EMAIL_USE_SSL = DEFAULT_SETTINGS['EMAIL']['USE_SSL']
