@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 11:53+0000\n"
+"POT-Creation-Date: 2018-01-16 15:11+0000\n"
 "PO-Revision-Date: 2018-01-15 11:28+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -123,11 +123,11 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:21 core/views.py:591
+#: core/admin.py:24 core/views.py:591
 msgid "unique_url"
 msgstr "Zugangslink"
 
-#: core/admin.py:40 core/models.py:71 core/models.py:221 core/models.py:267
+#: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Kategorie"
 
@@ -539,6 +539,7 @@ msgid "answers_resetted"
 msgstr "Ihre Antworten wurden zurückgesetzt"
 
 #: core/views.py:187
+#, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s bei Freedomvote"
 
@@ -596,7 +597,7 @@ msgid ""
 "            Hello,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote:\n"
-"            {}\n"
+"            %(url)s\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
@@ -606,7 +607,7 @@ msgstr ""
 "            Hallo,\n"
 "\n"
 "            Sie erhalten den Link zu Ihrem Profil bei Freedomvote:\n"
-"            {}/politician/{}/edit/profile/\n"
+"            %(url)s\n"
 "\n"
 "            Freundliche Grüsse,\n"
 "            Das Freedomvote Team"
@@ -650,42 +651,3 @@ msgstr "Diese Seite funktioniert nur komplett, wenn Javascript aktiviert ist."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu umschalten"
-
-#~ msgid "is_active"
-#~ msgstr "Ist aktiv"
-
-#~ msgid "Key does not exist"
-#~ msgstr "Schlüssel existiert nicht"
-
-#~ msgid "icon"
-#~ msgstr "Icon"
-
-#~ msgid "link_type"
-#~ msgstr "Linktyp"
-
-#~ msgid "link_types"
-#~ msgstr "Linktypen"
-
-#~ msgid "type"
-#~ msgstr "Typ"
-
-#~ msgid "partners"
-#~ msgstr "Partner"
-
-#~ msgid "our_partners"
-#~ msgstr "Unsere Partner"
-
-#~ msgid "parliament_building"
-#~ msgstr "Bundeshaus"
-
-#~ msgid "source"
-#~ msgstr "Quelle"
-
-#~ msgid "details"
-#~ msgstr "Details"
-
-#~ msgid "applies_not"
-#~ msgstr "Trifft gar nicht zu"
-
-#~ msgid "applies"
-#~ msgstr "Trifft voll und ganz zu"

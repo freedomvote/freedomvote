@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 11:53+0000\n"
+"POT-Creation-Date: 2018-01-16 15:11+0000\n"
 "PO-Revision-Date: 2018-01-15 12:41+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
@@ -128,11 +128,11 @@ msgstr "A better description of the question (by language code)"
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr "The preferred answer given by the admins (is between 0 - 10)"
 
-#: core/admin.py:21 core/views.py:591
+#: core/admin.py:24 core/views.py:591
 msgid "unique_url"
 msgstr "Unique URL"
 
-#: core/admin.py:40 core/models.py:71 core/models.py:221 core/models.py:267
+#: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Category"
 
@@ -543,6 +543,7 @@ msgid "answers_resetted"
 msgstr "Your answers have been resetted"
 
 #: core/views.py:187
+#, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s on Freedomvote"
 
@@ -600,7 +601,7 @@ msgid ""
 "            Hello,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote:\n"
-"            {}\n"
+"            %(url)s\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
@@ -610,7 +611,7 @@ msgstr ""
 "            Hello,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote:\n"
-"            {}/politician/{}/edit/profile/\n"
+"            %(url)s\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
@@ -655,42 +656,3 @@ msgstr "This website is only fully operations if Javascript is enabled."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Toggle navigation"
-
-#~ msgid "is_active"
-#~ msgstr "Is active"
-
-#~ msgid "Key does not exist"
-#~ msgstr "Key does not exist"
-
-#~ msgid "icon"
-#~ msgstr "Icon"
-
-#~ msgid "link_type"
-#~ msgstr "Link type"
-
-#~ msgid "link_types"
-#~ msgstr "Link types"
-
-#~ msgid "type"
-#~ msgstr "Type"
-
-#~ msgid "partners"
-#~ msgstr "Partners"
-
-#~ msgid "our_partners"
-#~ msgstr "Our partners"
-
-#~ msgid "parliament_building"
-#~ msgstr "Parliament building"
-
-#~ msgid "source"
-#~ msgstr "Source"
-
-#~ msgid "details"
-#~ msgstr "Details"
-
-#~ msgid "applies_not"
-#~ msgstr "Does not apply"
-
-#~ msgid "applies"
-#~ msgstr "Does apply"

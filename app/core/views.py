@@ -18,6 +18,7 @@ from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView, TemplateView
 
+from textwrap import dedent
 from easy_thumbnails.files import get_thumbnailer
 from meta.views import Meta
 import collections
@@ -648,16 +649,16 @@ class PoliticianRegistrationView(FormView):
         )
         profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
-            _('Freedomvote account link'),
-            _("""
+            unicode(_('Freedomvote account link')),
+            dedent(unicode(_("""
             Hello,
 
             You receive the link for your profile on Freedomvote:
-            {}
+            %(url)s
 
             Sincerely,
             The Freedomvote Team
-            """).format(profile_url_absolute),
+            """) % { 'url': profile_url_absolute })),
             settings.DEFAULT_FROM_EMAIL,
             [politician.email],
             fail_silently=False,

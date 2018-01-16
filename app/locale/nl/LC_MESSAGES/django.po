@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 11:53+0000\n"
+"POT-Creation-Date: 2018-01-16 15:11+0000\n"
 "PO-Revision-Date: 2018-01-15 12:42+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
@@ -131,11 +131,11 @@ msgstr "Een uitgebreidere beschrijving vna de vraag (per taalcode)"
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr "Het voorkeursantwoord door de organisatie (tussen 0 - 10)"
 
-#: core/admin.py:21 core/views.py:591
+#: core/admin.py:24 core/views.py:591
 msgid "unique_url"
 msgstr "Toegangslink"
 
-#: core/admin.py:40 core/models.py:71 core/models.py:221 core/models.py:267
+#: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Categorie"
 
@@ -546,6 +546,7 @@ msgid "answers_resetted"
 msgstr "Uw antwoorden zijn teruggezet"
 
 #: core/views.py:187
+#, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s bij Freedomvote"
 
@@ -603,20 +604,20 @@ msgid ""
 "            Hello,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote:\n"
-"            {}\n"
+"            %(url)s\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
 "            "
 msgstr ""
 "\n"
-"             Hallo,\n"
+"            Hallo,\n"
 "\n"
-"             U ontvangt de link voor uw profiel op Freedomvote:\n"
-"             {}/politician/{}/edit/profile/\n"
+"            U ontvangt de link voor uw profiel op Freedomvote:\n"
+"            %(url)s\n"
 "\n"
-"             Oprecht,\n"
-"             Het Freedomvote-team"
+"            Oprecht,\n"
+"            Het Freedomvote-team"
 
 #: freedomvote/settings.py:188
 msgid "german"
@@ -658,42 +659,3 @@ msgstr ""
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu omschakelen"
-
-#~ msgid "is_active"
-#~ msgstr "Is actief"
-
-#~ msgid "Key does not exist"
-#~ msgstr "Sleutel bestaat niet"
-
-#~ msgid "icon"
-#~ msgstr "Pictogram"
-
-#~ msgid "link_type"
-#~ msgstr "Linktype"
-
-#~ msgid "link_types"
-#~ msgstr "Linktypen"
-
-#~ msgid "type"
-#~ msgstr "Type"
-
-#~ msgid "partners"
-#~ msgstr "Partners"
-
-#~ msgid "our_partners"
-#~ msgstr "Onze partners"
-
-#~ msgid "parliament_building"
-#~ msgstr "Parlementsgebouw"
-
-#~ msgid "source"
-#~ msgstr "Bron"
-
-#~ msgid "details"
-#~ msgstr "Details"
-
-#~ msgid "applies_not"
-#~ msgstr "Niet van toepassing"
-
-#~ msgid "applies"
-#~ msgstr "Van toepassing"
