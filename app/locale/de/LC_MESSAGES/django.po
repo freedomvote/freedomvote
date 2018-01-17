@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-16 15:11+0000\n"
+"POT-Creation-Date: 2018-01-17 09:35+0000\n"
 "PO-Revision-Date: 2018-01-15 11:28+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:24 core/views.py:591
+#: core/admin.py:24 core/views.py:592
 msgid "unique_url"
 msgstr "Zugangslink"
 
@@ -161,7 +161,7 @@ msgstr "Name"
 
 #: core/models.py:29 core/models.py:123
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:590
+#: core/templates/core/profile/description.html:21 core/views.py:591
 msgid "state"
 msgstr "Kanton"
 
@@ -200,12 +200,12 @@ msgid "user"
 msgstr "Benutzer"
 
 #: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:588
+#: core/views.py:589
 msgid "first_name"
 msgstr "Vorname"
 
 #: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:589
+#: core/views.py:590
 msgid "last_name"
 msgstr "Nachname"
 
@@ -524,91 +524,94 @@ msgstr "Eigene Antwort"
 msgid "politician_answer"
 msgstr "Politiker Antwort"
 
-#: core/views.py:51
+#: core/views.py:52
 msgid "The platform for freedom, technology and politics"
 msgstr "Die Plattform für und zu Freiheit, Technologie und Politik"
 
-#: core/views.py:120
+#: core/views.py:121
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
 
-#: core/views.py:148
+#: core/views.py:149
 msgid "answers_resetted"
 msgstr "Ihre Antworten wurden zurückgesetzt"
 
-#: core/views.py:187
+#: core/views.py:188
 #, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s bei Freedomvote"
 
-#: core/views.py:238
+#: core/views.py:239
 msgid "total"
 msgstr "Gesamt"
 
-#: core/views.py:351
+#: core/views.py:352
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:424
+#: core/views.py:425
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:434
+#: core/views.py:435
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:497
+#: core/views.py:498
 msgid "login_successful"
 msgstr "Sie wurden erfolgreich eingeloggt"
 
-#: core/views.py:500
+#: core/views.py:501
 msgid "login_error"
 msgstr "Sie haben falsche Logindaten eingegeben"
 
-#: core/views.py:529
+#: core/views.py:530
 msgid "politician_add_success"
 msgstr "Politiker wurde erfolgreich hinzugefügt"
 
-#: core/views.py:532
+#: core/views.py:533
 msgid "politician_add_error"
 msgstr "Es gab einen Fehler beim Erstellen des Politikers"
 
-#: core/views.py:557
+#: core/views.py:558
 msgid "politician_edit_success"
 msgstr "Politiker wurde erfolgreich bearbeitet"
 
-#: core/views.py:560
+#: core/views.py:561
 msgid "politician_edit_error"
 msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 
-#: core/views.py:610
+#: core/views.py:611
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: core/views.py:651
+#: core/views.py:652
 msgid "Freedomvote account link"
 msgstr "Freedomvote Account Link"
 
-#: core/views.py:652
+#: core/views.py:653
+#, python-format
 msgid ""
 "\n"
-"            Hello,\n"
+"            Hello %(first_name)s %(last_name)s,\n"
 "\n"
-"            You receive the link for your profile on Freedomvote:\n"
-"            %(url)s\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n"
+"\n"
+"            Keep this link and use it to login to your profile again.\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
 "            "
 msgstr ""
 "\n"
-"            Hallo,\n"
+"            Hallo %(first_name)s %(last_name)s,\n"
 "\n"
-"            Sie erhalten den Link zu Ihrem Profil bei Freedomvote:\n"
-"            %(url)s\n"
+"            Sie erhalten den Link zu Ihrem Profil bei Freedomvote: %(url)s\n"
 "\n"
+"            Bewahren Sie den Link auf und benutzen Sie ihn um sich wieder "
+"einzuloggen.\n"
 "            Freundliche Grüsse,\n"
 "            Das Freedomvote Team"
 
