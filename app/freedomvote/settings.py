@@ -36,6 +36,7 @@ DEFAULT_SETTINGS = {
         'URL'              : '',
     },
     'EMAIL'                : {
+        'BACKEND'          : 'django.core.mail.backends.smtp.EmailBackend',
         'HOST'             : 'localhost',
         'HOST_USER'        : '',
         'HOST_PASSWORD'    : '',
@@ -246,6 +247,7 @@ META_USE_TWITTER_PROPERTIES = True
 META_USE_GOOGLEPLUS_PROPERTIES = True
 META_OG_NAMESPACES = True
 
+EMAIL_BACKEND = DEFAULT_SETTINGS['EMAIL']['BACKEND']
 EMAIL_HOST = DEFAULT_SETTINGS['EMAIL']['HOST']
 EMAIL_HOST_USER = DEFAULT_SETTINGS['EMAIL']['HOST_USER']
 EMAIL_HOST_PASSWORD = DEFAULT_SETTINGS['EMAIL']['HOST_PASSWORD']
