@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 10:19+0000\n"
-"PO-Revision-Date: 2018-01-17 11:22+0100\n"
+"POT-Creation-Date: 2018-01-17 12:59+0000\n"
+"PO-Revision-Date: 2018-01-17 14:21+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "Language: it\n"
@@ -130,6 +130,20 @@ msgstr "Link di accesso"
 msgid "category"
 msgstr "Categoria"
 
+#: core/forms.py:71 core/models.py:84
+#: core/templates/core/party/dashboard.html:51 core/views.py:589
+msgid "first_name"
+msgstr "Nome"
+
+#: core/forms.py:72 core/models.py:90
+#: core/templates/core/party/dashboard.html:52 core/views.py:590
+msgid "last_name"
+msgstr "Cognome"
+
+#: core/forms.py:73 core/models.py:95
+msgid "email"
+msgstr "Email"
+
 #: core/forms.py:82
 msgid "Email is already taken."
 msgstr "L'email è già stata presa"
@@ -185,20 +199,6 @@ msgstr "Categorie"
 #: core/models.py:78
 msgid "user"
 msgstr "Utente"
-
-#: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:589
-msgid "first_name"
-msgstr "Nome"
-
-#: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:590
-msgid "last_name"
-msgstr "Cognome"
-
-#: core/models.py:95
-msgid "email"
-msgstr "Email"
 
 #: core/models.py:101
 msgid "image"
@@ -349,19 +349,7 @@ msgstr ""
 "Dopo la registrazione riceverai un link al tuo profilo personale su "
 "Freedomvote"
 
-#: core/templates/core/candidates/registration.html:11
-msgid "First name"
-msgstr "Nome"
-
 #: core/templates/core/candidates/registration.html:13
-msgid "Last name"
-msgstr "Cognome"
-
-#: core/templates/core/candidates/registration.html:15
-msgid "Email"
-msgstr "Email"
-
-#: core/templates/core/candidates/registration.html:18
 msgid "Register"
 msgstr "Registrare"
 
@@ -567,11 +555,11 @@ msgstr "Ci sono stati degli errori nel modificare il politico"
 msgid "politician_delete_success"
 msgstr "Politico \"%s %s\" è stato annullato correttamente"
 
-#: core/views.py:652
+#: core/views.py:653
 msgid "Freedomvote account link"
 msgstr "Collegamento all'account Freedomvote"
 
-#: core/views.py:653
+#: core/views.py:654
 #, python-format
 msgid ""
 "\n"
@@ -634,13 +622,3 @@ msgstr "Questo sito sarà completa solo se javascript è abilitato."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu di commutazione"
-
-#, fuzzy
-#~| msgid "first_name"
-#~ msgid "First_name"
-#~ msgstr "Nome"
-
-#, fuzzy
-#~| msgid "last_name"
-#~ msgid "Last_name"
-#~ msgstr "Cognome"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 10:19+0000\n"
-"PO-Revision-Date: 2018-01-17 11:30+0100\n"
+"POT-Creation-Date: 2018-01-17 12:59+0000\n"
+"PO-Revision-Date: 2018-01-17 14:21+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
 "Language: nl\n"
@@ -139,6 +139,20 @@ msgstr "Toegangslink"
 msgid "category"
 msgstr "Categorie"
 
+#: core/forms.py:71 core/models.py:84
+#: core/templates/core/party/dashboard.html:51 core/views.py:589
+msgid "first_name"
+msgstr "Voornaam"
+
+#: core/forms.py:72 core/models.py:90
+#: core/templates/core/party/dashboard.html:52 core/views.py:590
+msgid "last_name"
+msgstr "Achternaam"
+
+#: core/forms.py:73 core/models.py:95
+msgid "email"
+msgstr "E-mail"
+
 #: core/forms.py:82
 msgid "Email is already taken."
 msgstr "Deze Email is al in gebruik."
@@ -194,20 +208,6 @@ msgstr "Categorieën"
 #: core/models.py:78
 msgid "user"
 msgstr "Gebruiker"
-
-#: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:589
-msgid "first_name"
-msgstr "Voornaam"
-
-#: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:590
-msgid "last_name"
-msgstr "Achternaam"
-
-#: core/models.py:95
-msgid "email"
-msgstr "E-mail"
 
 #: core/models.py:101
 msgid "image"
@@ -358,19 +358,7 @@ msgstr ""
 "Na de registratie krijgt u een link naar uw persoonlijke profiel op "
 "Freedomvote"
 
-#: core/templates/core/candidates/registration.html:11
-msgid "First name"
-msgstr "Voornaam"
-
 #: core/templates/core/candidates/registration.html:13
-msgid "Last name"
-msgstr "Achternaam"
-
-#: core/templates/core/candidates/registration.html:15
-msgid "Email"
-msgstr "E-mail"
-
-#: core/templates/core/candidates/registration.html:18
 msgid "Register"
 msgstr "Registreren"
 
@@ -576,11 +564,11 @@ msgstr "Er ontstond een probleem bij het bewerken van de politicus"
 msgid "politician_delete_success"
 msgstr "Politicus '%s %s' is succesvol verwijderd"
 
-#: core/views.py:652
+#: core/views.py:653
 msgid "Freedomvote account link"
 msgstr "Freedomvote-accountlink"
 
-#: core/views.py:653
+#: core/views.py:654
 #, python-format
 msgid ""
 "\n"
@@ -644,13 +632,3 @@ msgstr ""
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu omschakelen"
-
-#, fuzzy
-#~| msgid "first_name"
-#~ msgid "First_name"
-#~ msgstr "Voornaam"
-
-#, fuzzy
-#~| msgid "last_name"
-#~ msgid "Last_name"
-#~ msgstr "Achternaam"

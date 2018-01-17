@@ -1,7 +1,7 @@
 from django import forms
 from core.models import Politician, Party
 from core.widgets import ImagePreviewFileInput
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
 
 
 class PoliticianForm(forms.ModelForm):
@@ -68,9 +68,13 @@ class PartyPoliticianForm(forms.ModelForm):
 
 
 class RegistrationForm(forms.Form):
-    first_name = forms.CharField(label=('First_name'), max_length=30)
-    last_name = forms.CharField(label=('Last_name'), max_length=30)
-    email = forms.EmailField(label='Email')
+    first_name = forms.CharField(label=_('first_name'), max_length=30, widget=forms.TextInput(attrs={'class': 'form-control', 'required': True, 'autofocus': True}))
+    last_name = forms.CharField(label=_('last_name'), max_length=30, widget=forms.TextInput(attrs={'class': 'form-control', 'required': True, 'autofocus': True}))
+    email = forms.EmailField(label=_('email'), widget=forms.EmailInput(attrs={'class': 'form-control', 'required': True, 'autofocus': True}))
+
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+        self.label_suffix = ""
 
     def clean_email(self):
         email = self.cleaned_data['email']
