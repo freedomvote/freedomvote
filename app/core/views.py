@@ -651,16 +651,14 @@ class PoliticianRegistrationView(FormView):
         profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
             unicode(_('Freedomvote account link')),
-            dedent(unicode(_("""
-            Hello %(first_name)s %(last_name)s,
+            dedent(unicode(_("""Hello %(first_name)s %(last_name)s,
 
             You receive the link for your profile on Freedomvote: %(url)s
 
             Keep this link and use it to login to your profile again.
 
             Sincerely,
-            The Freedomvote Team
-            """) % {
+            The Freedomvote Team""") % {
                 'url': profile_url_absolute,
                 'first_name': politician.first_name,
                 'last_name': politician.last_name
