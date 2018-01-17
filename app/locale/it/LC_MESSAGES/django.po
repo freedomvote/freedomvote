@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 12:59+0000\n"
-"PO-Revision-Date: 2018-01-17 14:21+0100\n"
+"POT-Creation-Date: 2018-01-17 14:49+0000\n"
+"PO-Revision-Date: 2018-01-17 15:54+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "Language: it\n"
@@ -144,7 +144,7 @@ msgstr "Cognome"
 msgid "email"
 msgstr "Email"
 
-#: core/forms.py:82
+#: core/forms.py:86
 msgid "Email is already taken."
 msgstr "L'email è già stata presa"
 
@@ -354,8 +354,13 @@ msgid "Register"
 msgstr "Registrare"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
-msgid "We have emailed you a link to your profile on Freedomvote"
-msgstr "Ti abbiamo inviato per email un link al tuo profilo su Freedomvote"
+msgid ""
+"We have emailed you a link to your profile on Freedomvote. It could take a "
+"few minutes to show up in your inbox."
+msgstr ""
+"Ti abbiamo inviato per email un link al tuo profilo su Freedomvote. "
+"Potrebbero essere necessari alcuni minuti per essere visualizzati nella tua "
+"casella di posta."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
