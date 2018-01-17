@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-15 11:53+0000\n"
+"POT-Creation-Date: 2018-01-17 09:35+0000\n"
 "PO-Revision-Date: 2018-01-15 12:41+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
@@ -128,11 +128,11 @@ msgstr "A better description of the question (by language code)"
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr "The preferred answer given by the admins (is between 0 - 10)"
 
-#: core/admin.py:21 core/views.py:591
+#: core/admin.py:24 core/views.py:592
 msgid "unique_url"
 msgstr "Unique URL"
 
-#: core/admin.py:40 core/models.py:71 core/models.py:221 core/models.py:267
+#: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Category"
 
@@ -166,7 +166,7 @@ msgstr "Name"
 
 #: core/models.py:29 core/models.py:123
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:590
+#: core/templates/core/profile/description.html:21 core/views.py:591
 msgid "state"
 msgstr "State"
 
@@ -205,12 +205,12 @@ msgid "user"
 msgstr "User"
 
 #: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:588
+#: core/views.py:589
 msgid "first_name"
 msgstr "First name"
 
 #: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:589
+#: core/views.py:590
 msgid "last_name"
 msgstr "Last name"
 
@@ -530,87 +530,91 @@ msgstr "Own answer"
 msgid "politician_answer"
 msgstr "Politician answer"
 
-#: core/views.py:51
+#: core/views.py:52
 msgid "The platform for freedom, technology and politics"
 msgstr "The platform for freedom, technology and politics"
 
-#: core/views.py:120
+#: core/views.py:121
 msgid "answers_saved_successfully_evaluate"
 msgstr "Your answers have been saved succesfully. You can view them now."
 
-#: core/views.py:148
+#: core/views.py:149
 msgid "answers_resetted"
 msgstr "Your answers have been resetted"
 
-#: core/views.py:187
+#: core/views.py:188
+#, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s on Freedomvote"
 
-#: core/views.py:238
+#: core/views.py:239
 msgid "total"
 msgstr "Total"
 
-#: core/views.py:351
+#: core/views.py:352
 msgid "profile_saved_successfully"
 msgstr "Your profile has been saved successfully"
 
-#: core/views.py:424
+#: core/views.py:425
 msgid "answers_published_successfully"
 msgstr "Your answers have been saved succesfully"
 
-#: core/views.py:434
+#: core/views.py:435
 msgid "answers_unpublished_successfully"
 msgstr "Your answers have been unpublished successfully"
 
-#: core/views.py:497
+#: core/views.py:498
 msgid "login_successful"
 msgstr "You have been logged in succesfully"
 
-#: core/views.py:500
+#: core/views.py:501
 msgid "login_error"
 msgstr "You have inserted incorrect login credentials"
 
-#: core/views.py:529
+#: core/views.py:530
 msgid "politician_add_success"
 msgstr "Politican has been addes successfully"
 
-#: core/views.py:532
+#: core/views.py:533
 msgid "politician_add_error"
 msgstr "There was an error whilst adding the politican"
 
-#: core/views.py:557
+#: core/views.py:558
 msgid "politician_edit_success"
 msgstr "The politician is edited successfully"
 
-#: core/views.py:560
+#: core/views.py:561
 msgid "politician_edit_error"
 msgstr "There was an error whilst editing the politican"
 
-#: core/views.py:610
+#: core/views.py:611
 msgid "politician_delete_success"
 msgstr "Politican '%s %s' was deleted successfully"
 
-#: core/views.py:651
+#: core/views.py:652
 msgid "Freedomvote account link"
 msgstr "Freedomvote account link"
 
-#: core/views.py:652
+#: core/views.py:653
+#, python-format
 msgid ""
 "\n"
-"            Hello,\n"
+"            Hello %(first_name)s %(last_name)s,\n"
 "\n"
-"            You receive the link for your profile on Freedomvote:\n"
-"            {}\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n"
+"\n"
+"            Keep this link and use it to login to your profile again.\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
 "            "
 msgstr ""
 "\n"
-"            Hello,\n"
+"            Hello %(first_name)s %(last_name)s,\n"
 "\n"
-"            You receive the link for your profile on Freedomvote:\n"
-"            {}/politician/{}/edit/profile/\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n"
+"\n"
+"            Keep this link and use it to login to your profile again.\n"
 "\n"
 "            Sincerely,\n"
 "            The Freedomvote Team\n"
@@ -655,42 +659,3 @@ msgstr "This website is only fully operations if Javascript is enabled."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Toggle navigation"
-
-#~ msgid "is_active"
-#~ msgstr "Is active"
-
-#~ msgid "Key does not exist"
-#~ msgstr "Key does not exist"
-
-#~ msgid "icon"
-#~ msgstr "Icon"
-
-#~ msgid "link_type"
-#~ msgstr "Link type"
-
-#~ msgid "link_types"
-#~ msgstr "Link types"
-
-#~ msgid "type"
-#~ msgstr "Type"
-
-#~ msgid "partners"
-#~ msgstr "Partners"
-
-#~ msgid "our_partners"
-#~ msgstr "Our partners"
-
-#~ msgid "parliament_building"
-#~ msgstr "Parliament building"
-
-#~ msgid "source"
-#~ msgstr "Source"
-
-#~ msgid "details"
-#~ msgstr "Details"
-
-#~ msgid "applies_not"
-#~ msgstr "Does not apply"
-
-#~ msgid "applies"
-#~ msgstr "Does apply"
