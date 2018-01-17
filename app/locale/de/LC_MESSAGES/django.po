@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 14:49+0000\n"
+"POT-Creation-Date: 2018-01-17 15:15+0000\n"
 "PO-Revision-Date: 2018-01-17 15:53+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -569,44 +569,42 @@ msgstr "Freedomvote Account Link"
 #: core/views.py:654
 #, python-format
 msgid ""
-"\n"
-"            Hello %(first_name)s %(last_name)s,\n"
+"Hello %(first_name)s %(last_name)s,\n"
 "\n"
 "            You receive the link for your profile on Freedomvote: %(url)s\n"
 "\n"
 "            Keep this link and use it to login to your profile again.\n"
 "\n"
 "            Sincerely,\n"
-"            The Freedomvote Team\n"
-"            "
+"            The Freedomvote Team"
 msgstr ""
-"\n"
-"            Hallo %(first_name)s %(last_name)s,\n"
+"Hallo %(first_name)s %(last_name)s,\n"
 "\n"
 "            Sie erhalten den Link zu Ihrem Profil bei Freedomvote: %(url)s\n"
 "\n"
 "            Bewahren Sie den Link auf und benutzen Sie ihn um sich wieder "
 "einzuloggen.\n"
+"\n"
 "            Freundliche Grüsse,\n"
 "            Das Freedomvote Team"
 
-#: freedomvote/settings.py:197
+#: freedomvote/settings.py:198
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:198
+#: freedomvote/settings.py:199
 msgid "english"
 msgstr "Englisch"
 
-#: freedomvote/settings.py:199
+#: freedomvote/settings.py:200
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:200
+#: freedomvote/settings.py:201
 msgid "italian"
 msgstr "Italienisch"
 
-#: freedomvote/settings.py:201
+#: freedomvote/settings.py:202
 msgid "dutch"
 msgstr "Niederländisch"
 
