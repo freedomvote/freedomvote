@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 09:35+0000\n"
+"POT-Creation-Date: 2018-01-17 10:19+0000\n"
 "PO-Revision-Date: 2018-01-15 12:41+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
@@ -135,18 +135,6 @@ msgstr "Unique URL"
 #: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Category"
-
-#: core/forms.py:71
-#, fuzzy
-#| msgid "first_name"
-msgid "First_name"
-msgstr "First name"
-
-#: core/forms.py:72
-#, fuzzy
-#| msgid "last_name"
-msgid "Last_name"
-msgstr "Last name"
 
 #: core/forms.py:82
 msgid "Email is already taken."
@@ -620,23 +608,23 @@ msgstr ""
 "            The Freedomvote Team\n"
 "            "
 
-#: freedomvote/settings.py:188
+#: freedomvote/settings.py:197
 msgid "german"
 msgstr "German"
 
-#: freedomvote/settings.py:189
+#: freedomvote/settings.py:198
 msgid "english"
 msgstr "English"
 
-#: freedomvote/settings.py:190
+#: freedomvote/settings.py:199
 msgid "french"
 msgstr "French"
 
-#: freedomvote/settings.py:191
+#: freedomvote/settings.py:200
 msgid "italian"
 msgstr "Italian"
 
-#: freedomvote/settings.py:192
+#: freedomvote/settings.py:201
 msgid "dutch"
 msgstr "Dutch"
 
@@ -659,3 +647,13 @@ msgstr "This website is only fully operations if Javascript is enabled."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Toggle navigation"
+
+#, fuzzy
+#~| msgid "first_name"
+#~ msgid "First_name"
+#~ msgstr "First name"
+
+#, fuzzy
+#~| msgid "last_name"
+#~ msgid "Last_name"
+#~ msgstr "Last name"

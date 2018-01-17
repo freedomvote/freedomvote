@@ -68,8 +68,8 @@ class PartyPoliticianForm(forms.ModelForm):
 
 
 class RegistrationForm(forms.Form):
-    first_name = forms.CharField(label=_('First_name'), max_length=30)
-    last_name = forms.CharField(label=_('Last_name'), max_length=30)
+    first_name = forms.CharField(label=('First_name'), max_length=30)
+    last_name = forms.CharField(label=('Last_name'), max_length=30)
     email = forms.EmailField(label='Email')
 
     def clean_email(self):

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 09:35+0000\n"
-"PO-Revision-Date: 2018-01-15 11:28+0100\n"
+"POT-Creation-Date: 2018-01-17 10:19+0000\n"
+"PO-Revision-Date: 2018-01-17 11:21+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
@@ -130,18 +130,6 @@ msgstr "Zugangslink"
 #: core/admin.py:43 core/models.py:71 core/models.py:221 core/models.py:267
 msgid "category"
 msgstr "Kategorie"
-
-#: core/forms.py:71
-#, fuzzy
-#| msgid "first_name"
-msgid "First_name"
-msgstr "Vorname"
-
-#: core/forms.py:72
-#, fuzzy
-#| msgid "last_name"
-msgid "Last_name"
-msgstr "Nachname"
 
 #: core/forms.py:82
 msgid "Email is already taken."
@@ -363,20 +351,14 @@ msgstr ""
 "Freedomvote erhalten"
 
 #: core/templates/core/candidates/registration.html:11
-#, fuzzy
-#| msgid "first_name"
 msgid "First name"
 msgstr "Vorname"
 
 #: core/templates/core/candidates/registration.html:13
-#, fuzzy
-#| msgid "last_name"
 msgid "Last name"
 msgstr "Nachname"
 
 #: core/templates/core/candidates/registration.html:15
-#, fuzzy
-#| msgid "email"
 msgid "Email"
 msgstr "Email"
 
@@ -615,23 +597,23 @@ msgstr ""
 "            Freundliche Grüsse,\n"
 "            Das Freedomvote Team"
 
-#: freedomvote/settings.py:188
+#: freedomvote/settings.py:197
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:189
+#: freedomvote/settings.py:198
 msgid "english"
 msgstr "Englisch"
 
-#: freedomvote/settings.py:190
+#: freedomvote/settings.py:199
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:191
+#: freedomvote/settings.py:200
 msgid "italian"
 msgstr "Italienisch"
 
-#: freedomvote/settings.py:192
+#: freedomvote/settings.py:201
 msgid "dutch"
 msgstr "Niederländisch"
 
@@ -654,3 +636,13 @@ msgstr "Diese Seite funktioniert nur komplett, wenn Javascript aktiviert ist."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu umschalten"
+
+#, fuzzy
+#~| msgid "first_name"
+#~ msgid "First_name"
+#~ msgstr "Vorname"
+
+#, fuzzy
+#~| msgid "last_name"
+#~ msgid "Last_name"
+#~ msgstr "Nachname"
