@@ -627,6 +627,7 @@ class PoliticianRegistrationView(FormView):
             User.objects.get(registrationkey__unique_key=unique_key)
         except ObjectDoesNotExist:
             self.template_name = '404.html'
+        return super(PoliticianRegistrationView, self).get_context_data(*args, **kwargs)
 
     def form_valid(self, form, *args, **kwargs):
         unique_key = self.kwargs['unique_key']

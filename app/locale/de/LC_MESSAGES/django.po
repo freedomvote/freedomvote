@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 09:35+0000\n"
-"PO-Revision-Date: 2018-01-15 11:28+0100\n"
+"POT-Creation-Date: 2018-01-17 12:59+0000\n"
+"PO-Revision-Date: 2018-01-17 14:21+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
@@ -131,17 +131,19 @@ msgstr "Zugangslink"
 msgid "category"
 msgstr "Kategorie"
 
-#: core/forms.py:71
-#, fuzzy
-#| msgid "first_name"
-msgid "First_name"
+#: core/forms.py:71 core/models.py:84
+#: core/templates/core/party/dashboard.html:51 core/views.py:589
+msgid "first_name"
 msgstr "Vorname"
 
-#: core/forms.py:72
-#, fuzzy
-#| msgid "last_name"
-msgid "Last_name"
+#: core/forms.py:72 core/models.py:90
+#: core/templates/core/party/dashboard.html:52 core/views.py:590
+msgid "last_name"
 msgstr "Nachname"
+
+#: core/forms.py:73 core/models.py:95
+msgid "email"
+msgstr "Email"
 
 #: core/forms.py:82
 msgid "Email is already taken."
@@ -198,20 +200,6 @@ msgstr "Kategorien"
 #: core/models.py:78
 msgid "user"
 msgstr "Benutzer"
-
-#: core/models.py:84 core/templates/core/party/dashboard.html:51
-#: core/views.py:589
-msgid "first_name"
-msgstr "Vorname"
-
-#: core/models.py:90 core/templates/core/party/dashboard.html:52
-#: core/views.py:590
-msgid "last_name"
-msgstr "Nachname"
-
-#: core/models.py:95
-msgid "email"
-msgstr "Email"
 
 #: core/models.py:101
 msgid "image"
@@ -362,25 +350,7 @@ msgstr ""
 "Nach der Registration werden Sie einen Link zu Ihrem persönlichen Profil bei "
 "Freedomvote erhalten"
 
-#: core/templates/core/candidates/registration.html:11
-#, fuzzy
-#| msgid "first_name"
-msgid "First name"
-msgstr "Vorname"
-
 #: core/templates/core/candidates/registration.html:13
-#, fuzzy
-#| msgid "last_name"
-msgid "Last name"
-msgstr "Nachname"
-
-#: core/templates/core/candidates/registration.html:15
-#, fuzzy
-#| msgid "email"
-msgid "Email"
-msgstr "Email"
-
-#: core/templates/core/candidates/registration.html:18
 msgid "Register"
 msgstr "Registrieren"
 
@@ -587,11 +557,11 @@ msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: core/views.py:652
+#: core/views.py:653
 msgid "Freedomvote account link"
 msgstr "Freedomvote Account Link"
 
-#: core/views.py:653
+#: core/views.py:654
 #, python-format
 msgid ""
 "\n"
@@ -615,23 +585,23 @@ msgstr ""
 "            Freundliche Grüsse,\n"
 "            Das Freedomvote Team"
 
-#: freedomvote/settings.py:188
+#: freedomvote/settings.py:197
 msgid "german"
 msgstr "Deutsch"
 
-#: freedomvote/settings.py:189
+#: freedomvote/settings.py:198
 msgid "english"
 msgstr "Englisch"
 
-#: freedomvote/settings.py:190
+#: freedomvote/settings.py:199
 msgid "french"
 msgstr "Französisch"
 
-#: freedomvote/settings.py:191
+#: freedomvote/settings.py:200
 msgid "italian"
 msgstr "Italienisch"
 
-#: freedomvote/settings.py:192
+#: freedomvote/settings.py:201
 msgid "dutch"
 msgstr "Niederländisch"
 
