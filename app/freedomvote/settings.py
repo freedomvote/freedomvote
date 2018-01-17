@@ -43,6 +43,7 @@ DEFAULT_SETTINGS = {
         'PORT'             : '25',
         'USE_TLS'          : 'False',
         'USE_SSL'          : 'False',
+        'FROM'             : 'webmaster@localhost'
     }
 }
 
@@ -254,3 +255,4 @@ EMAIL_HOST_PASSWORD = DEFAULT_SETTINGS['EMAIL']['HOST_PASSWORD']
 EMAIL_PORT = DEFAULT_SETTINGS['EMAIL']['PORT']
 EMAIL_USE_TLS = DEFAULT_SETTINGS['EMAIL']['USE_TLS'].lower() == 'true'
 EMAIL_USE_SSL = DEFAULT_SETTINGS['EMAIL']['USE_SSL'].lower() == 'true'
+DEFAULT_FROM_EMAIL = DEFAULT_SETTINGS['EMAIL']['FROM']
