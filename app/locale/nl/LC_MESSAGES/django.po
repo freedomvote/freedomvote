@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-17 12:59+0000\n"
-"PO-Revision-Date: 2018-01-17 14:21+0100\n"
+"POT-Creation-Date: 2018-01-17 14:49+0000\n"
+"PO-Revision-Date: 2018-01-17 15:55+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
 "Language: nl\n"
@@ -153,7 +153,7 @@ msgstr "Achternaam"
 msgid "email"
 msgstr "E-mail"
 
-#: core/forms.py:82
+#: core/forms.py:86
 msgid "Email is already taken."
 msgstr "Deze Email is al in gebruik."
 
@@ -363,8 +363,12 @@ msgid "Register"
 msgstr "Registreren"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
-msgid "We have emailed you a link to your profile on Freedomvote"
-msgstr "We hebben je een e-mail gestuurd met je profiel op Freedomvote"
+msgid ""
+"We have emailed you a link to your profile on Freedomvote. It could take a "
+"few minutes to show up in your inbox."
+msgstr ""
+"We hebben je een e-mail gestuurd met je profiel op Freedomvote. Het kan een "
+"paar minuten duren voordat het in je inbox verschijnt."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
