@@ -183,7 +183,7 @@ def politician_view(request, politician_id):
     embed_url_absolute = request.build_absolute_uri(embed_url_reverse)
 
     meta = Meta(
-        title='{0} {1}'.format(politician.first_name, politician.last_name),
+        title=u'{0} {1}'.format(politician.first_name, politician.last_name),
         image=get_thumbnailer(politician.image)['large'].url if politician.image else None,
         description=_("%(first_name)s %(last_name)s on Freedomvote") % { 'first_name': politician.first_name, 'last_name': politician.last_name },
         url=request.build_absolute_uri(reverse('politician', kwargs={'politician_id':politician.id}))

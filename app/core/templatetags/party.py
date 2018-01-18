@@ -5,8 +5,9 @@ register = template.Library()
 
 @register.simple_tag
 def party_tag(party):
-    return '<span class="party-tag" style="color:{};background-color:{}"><span>{}</span></span>'.format(
+    return u'<span title="{}" class="party-tag" style="color:{};background-color:{}"><span>{}</span></span>'.format(
+        party.name,
         party.font_color,
         party.background_color,
-        party.shortname.encode('utf-8')
+        party.shortname
     )
