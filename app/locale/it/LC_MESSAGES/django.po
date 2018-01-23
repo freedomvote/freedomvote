@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-17 15:15+0000\n"
-"PO-Revision-Date: 2018-01-23 09:16+0100\n"
+"PO-Revision-Date: 2018-01-23 14:31+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "Language: it\n"
@@ -154,7 +154,7 @@ msgstr "Paragonare"
 
 #: core/menu.py:11
 msgid "candidates"
-msgstr "Candidati"
+msgstr "Candidati e candidate"
 
 #: core/models.py:22 core/models.py:37 core/models.py:64
 msgid "name"
