@@ -506,7 +506,7 @@ def party_login_view(request, party_name):
 def party_logout_view(request, party_name):
     logout(request)
 
-    return redirect(reverse('party_login', args=[party_name]))
+    return redirect(settings.BASE_URL)
 
 
 @require_party_login
