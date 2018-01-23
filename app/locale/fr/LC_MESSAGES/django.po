@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-17 15:15+0000\n"
-"PO-Revision-Date: 2018-01-17 15:54+0100\n"
+"PO-Revision-Date: 2018-01-23 14:29+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
@@ -154,7 +154,7 @@ msgstr "Comparer"
 
 #: core/menu.py:11
 msgid "candidates"
-msgstr "Candidats"
+msgstr "Candidats et candidates"
 
 #: core/models.py:22 core/models.py:37 core/models.py:64
 msgid "name"
@@ -321,7 +321,7 @@ msgstr "Filtrer"
 
 #: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
-msgstr "Admins opinion"
+msgstr "Notre opinion"
 
 #: core/templates/core/candidates/index.html:21
 #: core/templates/core/candidates/index.html:30
