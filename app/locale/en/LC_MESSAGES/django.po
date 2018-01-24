@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 12:42+0100\n"
+"PO-Revision-Date: 2018-01-24 13:46+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
 "Language: en\n"
@@ -331,7 +331,7 @@ msgstr "Filter"
 
 #: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
-msgstr "Freedomvote stance"
+msgstr "Freedomvote"
 
 #: core/templates/core/candidates/index.html:21
 #: core/templates/core/candidates/index.html:30
