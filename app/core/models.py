@@ -21,6 +21,12 @@ class State(models.Model):
         max_length          = 50,
         verbose_name        = _('name')
     )
+    sort                    = models.PositiveIntegerField(
+        default             = 0,
+        verbose_name        = _('sort')
+    )
+
+
 
     def __unicode__(self):
         return self.name

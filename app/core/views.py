@@ -68,7 +68,7 @@ def initial_edit_view(request, lang):
 
 
 def candidates_view(request):
-    states          = State.objects.all().order_by('name')
+    states          = State.objects.all().order_by('sort', 'name')
     categories      = (
         Category.objects.filter(statistic__id__gt=0).
         order_by('name').distinct())
