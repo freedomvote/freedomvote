@@ -22,7 +22,8 @@ class State(models.Model):
         verbose_name        = _('name')
     )
     sort                    = models.PositiveIntegerField(
-        default             = 0
+        default             = 0,
+        verbose_name        = _('sort')
     )
 
 
