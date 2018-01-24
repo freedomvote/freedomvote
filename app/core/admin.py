@@ -8,7 +8,7 @@ import models
 
 
 class StateAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'sort']
 
 
 class PartyAdmin(admin.ModelAdmin):
