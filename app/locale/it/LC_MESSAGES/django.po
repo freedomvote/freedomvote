@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 12:04+0100\n"
+"PO-Revision-Date: 2018-01-24 12:42+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: Italian <it@li.org>\n"
 "Language: it\n"
@@ -325,7 +325,7 @@ msgstr "Filtrare"
 
 #: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
-msgstr "La nostra opinione"
+msgstr "Freedomvote opinione"
 
 #: core/templates/core/candidates/index.html:21
 #: core/templates/core/candidates/index.html:30
