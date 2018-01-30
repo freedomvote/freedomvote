@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 13:46+0100\n"
+"POT-Creation-Date: 2018-01-30 09:19+0000\n"
+"PO-Revision-Date: 2018-01-30 10:23+0100\n"
 "Last-Translator: Gian-Maria Daffré <gian-maria.daffre@giammi.com>\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr\n"
@@ -484,12 +484,20 @@ msgstr "Tableau de bord"
 msgid "show_own_spider"
 msgstr "Voir sa propre opinion"
 
-#: core/templates/core/profile/description.html:76
-#: core/templates/core/profile/description.html:78
+#: core/templates/core/profile/description.html:77
 msgid "Share"
 msgstr "Partager"
 
-#: core/templates/core/profile/description.html:89
+#: core/templates/core/profile/description.html:79
+#: core/templates/core/profile/description.html:85
+msgid "#freedomvote share"
+msgstr "#freedomvote partager"
+
+#: core/templates/core/profile/description.html:83
+msgid "Tweet"
+msgstr "Tweet"
+
+#: core/templates/core/profile/description.html:97
 msgid "embed_iframe"
 msgstr "Intégrer"
 

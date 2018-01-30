@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 15:07+0100\n"
+"POT-Creation-Date: 2018-01-30 09:19+0000\n"
+"PO-Revision-Date: 2018-01-30 10:20+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -211,7 +211,7 @@ msgstr "Bild"
 
 #: core/models.py:111 core/templates/core/profile/description.html:42
 msgid "is_member_of_parliament"
-msgstr "Bisheriges Mitglied National- oder Ständerat"
+msgstr "Bisher"
 
 #: core/models.py:115 core/templates/core/profile/description.html:34
 msgid "past_contributions"
@@ -486,12 +486,20 @@ msgstr "Dashboard"
 msgid "show_own_spider"
 msgstr "Eigene Meinung anzeigen"
 
-#: core/templates/core/profile/description.html:76
-#: core/templates/core/profile/description.html:78
+#: core/templates/core/profile/description.html:77
 msgid "Share"
 msgstr "Teilen"
 
-#: core/templates/core/profile/description.html:89
+#: core/templates/core/profile/description.html:79
+#: core/templates/core/profile/description.html:85
+msgid "#freedomvote share"
+msgstr "#freedomvote teilen"
+
+#: core/templates/core/profile/description.html:83
+msgid "Tweet"
+msgstr "Tweet"
+
+#: core/templates/core/profile/description.html:97
 msgid "embed_iframe"
 msgstr "Einbetten"
 
