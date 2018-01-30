@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 13:47+0100\n"
+"POT-Creation-Date: 2018-01-30 13:21+0000\n"
+"PO-Revision-Date: 2018-01-30 10:24+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
 "Language: nl\n"
@@ -494,12 +494,22 @@ msgstr "Dashboard"
 msgid "show_own_spider"
 msgstr "Eigen mening bekijken"
 
-#: core/templates/core/profile/description.html:76
-#: core/templates/core/profile/description.html:78
+#: core/templates/core/profile/description.html:77
 msgid "Share"
 msgstr "Delen"
 
-#: core/templates/core/profile/description.html:89
+#: core/templates/core/profile/description.html:79
+#: core/templates/core/profile/description.html:85
+#, fuzzy
+#| msgid "#freedomvote share"
+msgid "Share #freedomvote"
+msgstr "#freedomvote delen"
+
+#: core/templates/core/profile/description.html:83
+msgid "Tweet"
+msgstr "Tweet"
+
+#: core/templates/core/profile/description.html:97
 msgid "embed_iframe"
 msgstr "Insluiten"
 
