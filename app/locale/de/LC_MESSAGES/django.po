@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 09:19+0000\n"
-"PO-Revision-Date: 2018-01-30 10:20+0100\n"
+"POT-Creation-Date: 2018-01-30 13:21+0000\n"
+"PO-Revision-Date: 2018-01-30 14:22+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -492,7 +492,7 @@ msgstr "Teilen"
 
 #: core/templates/core/profile/description.html:79
 #: core/templates/core/profile/description.html:85
-msgid "#freedomvote share"
+msgid "Share #freedomvote"
 msgstr "#freedomvote teilen"
 
 #: core/templates/core/profile/description.html:83

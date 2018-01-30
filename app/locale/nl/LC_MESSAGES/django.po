@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 09:19+0000\n"
+"POT-Creation-Date: 2018-01-30 13:21+0000\n"
 "PO-Revision-Date: 2018-01-30 10:24+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: Netherlands <nl@li.org>\n"
@@ -500,7 +500,9 @@ msgstr "Delen"
 
 #: core/templates/core/profile/description.html:79
 #: core/templates/core/profile/description.html:85
-msgid "#freedomvote share"
+#, fuzzy
+#| msgid "#freedomvote share"
+msgid "Share #freedomvote"
 msgstr "#freedomvote delen"
 
 #: core/templates/core/profile/description.html:83

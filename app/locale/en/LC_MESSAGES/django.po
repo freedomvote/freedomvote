@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 09:19+0000\n"
-"PO-Revision-Date: 2018-01-30 10:23+0100\n"
+"POT-Creation-Date: 2018-01-30 13:21+0000\n"
+"PO-Revision-Date: 2018-01-30 14:22+0100\n"
 "Last-Translator: Nico Rikken <nico.rikken@fsfe.org>\n"
 "Language-Team: English <en@li.org>\n"
 "Language: en\n"
@@ -497,8 +497,8 @@ msgstr "Share"
 
 #: core/templates/core/profile/description.html:79
 #: core/templates/core/profile/description.html:85
-msgid "#freedomvote share"
-msgstr "#freedomvote share"
+msgid "Share #freedomvote"
+msgstr "Share #freedomvote"
 
 #: core/templates/core/profile/description.html:83
 msgid "Tweet"
