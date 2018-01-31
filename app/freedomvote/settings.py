@@ -235,7 +235,7 @@ THUMBNAIL_ALIASES = {
 PIWIK_SITE_ID = DEFAULT_SETTINGS['PIWIK']['SITE_ID']
 PIWIK_URL = DEFAULT_SETTINGS['PIWIK']['URL']
 
-GIT_URL = 'https://github.com/adfinis-sygroup/freedomvote'
+GIT_URL = 'https://github.com/freedomvote/freedomvote'
 
 # Metadata settings (according to https://django-meta.readthedocs.io/en/latest/settings.html)
 META_SITE_PROTOCOL = BASE_URL.split('://')[0] or 'http'
