@@ -27,16 +27,18 @@ Vue.component('loading-spinner', {
 Vue.component('candidate-pagination', {
   computed: {
     prevPage: function() {
-      return this.page === 1 ? 1 : this.page - 1
+      return parseInt(this.page) === 1 ? 1 : parseInt(this.page) - 1
     },
     nextPage: function() {
-      return this.page < this.pages.length ? this.page + 1 : this.page
+      return parseInt(this.page) < this.pages.length
+        ? parseInt(this.page) + 1
+        : parseInt(this.page)
     },
     prevDisabled: function() {
-      return this.prevPage === this.page
+      return parseInt(this.prevPage) === parseInt(this.page)
     },
     nextDisabled: function() {
-      return this.nextPage === this.page
+      return parseInt(this.nextPage) === parseInt(this.page)
     }
   },
   template: `
@@ -297,6 +299,7 @@ new Vue({
           })
         ).toString(),
       {
+        credentials: 'same-origin',
         headers: {
           'Accept-Language':
             document.querySelector('.language ul > li > a > strong').parentNode
