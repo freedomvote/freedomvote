@@ -104,6 +104,10 @@ def compare_view(request):
 
         for category in categories:
             cq = Question.objects.filter(category=category)
+
+            if not len(cq):
+                continue
+
             values = []
             for question in cq:
                 values.append(
