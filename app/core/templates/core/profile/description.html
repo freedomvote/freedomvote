@@ -3,13 +3,17 @@
 <div class="row">
     <div class="col-md-3 col-lg-3">
         <img class="img-thumbnail" src="{% if politician.image %}{{politician.image|thumbnail_url:'large'}}{% else %}{% static 'images/placeholder.svg' %}{% endif %}">
-        <div class="mvm">
-            <a class="share-button share-button--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}" target="_blank" title="{% trans "Share" %}" role="button" aria-label="{% trans "Share" %}" class="share-button">
-                <i class="fa fa-facebook"></i>{% trans "Share" %}
-            </a>
-            <a class="share-button share-button--twitter" href="https://twitter.com/intent/tweet?url=&hashtags{{ request.build_absolute_uri|urlencode }}=freedomvote" target="_blank" title="{% trans "Tweet" %}" aria-label="{% trans "Tweet" %}" class="share-button">
-                <i class="fa fa-twitter"></i>{% trans "Tweet" %}
-            </a>
+        <div class="row mvm">
+            <div class="col-md-12 mbs">
+                <a class="share-button share-button--facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri|urlencode }}" target="_blank" title="{% trans "Share" %}" role="button" aria-label="{% trans "Share" %}" class="share-button">
+                    <i class="fa fa-facebook fa-fw"></i>{% trans "Share" %}
+                </a>
+            </div>
+            <div class="col-md-12">
+                <a class="share-button share-button--twitter" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri|urlencode }}&hashtags=freedomvote" target="_blank" title="{% trans "Tweet" %}" aria-label="{% trans "Tweet" %}" class="share-button">
+                    <i class="fa fa-twitter fa-fw"></i>{% trans "Tweet" %}
+                </a>
+            </div>
         </div>
     </div>
     <div class="col-md-5 col-lg-5 details">
