@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-24 11:01+0000\n"
-"PO-Revision-Date: 2018-01-24 13:45+0100\n"
+"POT-Creation-Date: 2018-02-08 07:31+0000\n"
+"PO-Revision-Date: 2018-02-08 08:33+0100\n"
 "Last-Translator: David Vogt <david.vogt@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
@@ -123,7 +123,7 @@ msgstr ""
 msgid "The preferred answer given by the admins (is between 0 - 10)"
 msgstr ""
 
-#: core/admin.py:24 core/views.py:592
+#: core/admin.py:24 core/views.py:596
 msgid "unique_url"
 msgstr "Zugangslink"
 
@@ -132,12 +132,12 @@ msgid "category"
 msgstr "Kategorie"
 
 #: core/forms.py:71 core/models.py:90
-#: core/templates/core/party/dashboard.html:51 core/views.py:589
+#: core/templates/core/party/dashboard.html:51 core/views.py:593
 msgid "first_name"
 msgstr "Vorname"
 
 #: core/forms.py:72 core/models.py:96
-#: core/templates/core/party/dashboard.html:52 core/views.py:590
+#: core/templates/core/party/dashboard.html:52 core/views.py:594
 msgid "last_name"
 msgstr "Nachname"
 
@@ -167,12 +167,12 @@ msgstr "Sortierung"
 
 #: core/models.py:35 core/models.py:129
 #: core/templates/core/party/dashboard.html:53
-#: core/templates/core/profile/description.html:21 core/views.py:591
+#: core/templates/core/profile/description.html:29 core/views.py:595
 msgid "state"
 msgstr "Kanton"
 
-#: core/models.py:36 core/templates/core/profile/description.html:12
-#: core/templates/core/profile/description.html:15
+#: core/models.py:36 core/templates/core/profile/description.html:21
+#: core/templates/core/profile/description.html:23
 msgid "states"
 msgstr "Kantone"
 
@@ -189,7 +189,7 @@ msgid "font_color"
 msgstr "Schriftfarbe"
 
 #: core/models.py:62 core/models.py:135
-#: core/templates/core/profile/description.html:29
+#: core/templates/core/profile/description.html:34
 msgid "party"
 msgstr "Partei"
 
@@ -209,15 +209,15 @@ msgstr "Benutzer"
 msgid "image"
 msgstr "Bild"
 
-#: core/models.py:111 core/templates/core/profile/description.html:42
+#: core/models.py:111 core/templates/core/profile/description.html:46
 msgid "is_member_of_parliament"
 msgstr "Bisheriges Mitglied National- oder Ständerat"
 
-#: core/models.py:115 core/templates/core/profile/description.html:34
+#: core/models.py:115 core/templates/core/profile/description.html:38
 msgid "past_contributions"
 msgstr "Bisherige Beiträge zum Thema"
 
-#: core/models.py:119 core/templates/core/profile/description.html:38
+#: core/models.py:119 core/templates/core/profile/description.html:42
 msgid "future_plans"
 msgstr "Absichten und Pläne"
 
@@ -251,7 +251,7 @@ msgid "link"
 msgstr "Link"
 
 #: core/models.py:215 core/templates/core/edit/profile.html:84
-#: core/templates/core/profile/description.html:61
+#: core/templates/core/profile/description.html:65
 msgid "links"
 msgstr "Links"
 
@@ -334,7 +334,7 @@ msgid "own_opinion"
 msgstr "Eigene Meinung"
 
 #: core/templates/core/candidates/index.html:28
-#: core/templates/core/profile/description.html:52
+#: core/templates/core/profile/description.html:55
 msgid "add_own_opinion"
 msgstr "Eigene Meinung erfassen"
 
@@ -420,12 +420,12 @@ msgid "no_question_description"
 msgstr "Keine Beschreibung vorhanden"
 
 #: core/templates/core/helpers/scale.html:4
-#: core/templates/core/profile/description.html:43
+#: core/templates/core/profile/description.html:46
 msgid "no"
 msgstr "Nein"
 
 #: core/templates/core/helpers/scale.html:9
-#: core/templates/core/profile/description.html:43
+#: core/templates/core/profile/description.html:46
 msgid "yes"
 msgstr "Ja"
 
@@ -482,16 +482,21 @@ msgstr "Login"
 msgid "dashboard"
 msgstr "Dashboard"
 
-#: core/templates/core/profile/description.html:47
-msgid "show_own_spider"
-msgstr "Eigene Meinung anzeigen"
-
-#: core/templates/core/profile/description.html:76
-#: core/templates/core/profile/description.html:78
+#: core/templates/core/profile/description.html:7
+#: core/templates/core/profile/description.html:8
 msgid "Share"
 msgstr "Teilen"
 
-#: core/templates/core/profile/description.html:89
+#: core/templates/core/profile/description.html:10
+#: core/templates/core/profile/description.html:11
+msgid "Tweet"
+msgstr "Twittern"
+
+#: core/templates/core/profile/description.html:51
+msgid "show_own_spider"
+msgstr "Eigene Meinung anzeigen"
+
+#: core/templates/core/profile/description.html:84
 msgid "embed_iframe"
 msgstr "Einbetten"
 
@@ -507,70 +512,70 @@ msgstr "Politiker Antwort"
 msgid "The platform for freedom, technology and politics"
 msgstr "Die Plattform für und zu Freiheit, Technologie und Politik"
 
-#: core/views.py:121
+#: core/views.py:125
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
 "Ihre Antworten wurden erfolgreich gespeichert. Sie können sie nun nach ihnen "
 "auswerten."
 
-#: core/views.py:149
+#: core/views.py:153
 msgid "answers_resetted"
 msgstr "Ihre Antworten wurden zurückgesetzt"
 
-#: core/views.py:188
+#: core/views.py:192
 #, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
 msgstr "%(first_name)s %(last_name)s bei Freedomvote"
 
-#: core/views.py:239
+#: core/views.py:243
 msgid "total"
 msgstr "Gesamt"
 
-#: core/views.py:352
+#: core/views.py:356
 msgid "profile_saved_successfully"
 msgstr "Ihr Profil wurde erfolgreich gespeichert."
 
-#: core/views.py:425
+#: core/views.py:429
 msgid "answers_published_successfully"
 msgstr "Ihre Antworten wurden erfolgreich freigegeben."
 
-#: core/views.py:435
+#: core/views.py:439
 msgid "answers_unpublished_successfully"
 msgstr "Ihre Antworten wurden erfolgreich zurückgezogen."
 
-#: core/views.py:498
+#: core/views.py:502
 msgid "login_successful"
 msgstr "Sie wurden erfolgreich eingeloggt"
 
-#: core/views.py:501
+#: core/views.py:505
 msgid "login_error"
 msgstr "Sie haben falsche Logindaten eingegeben"
 
-#: core/views.py:530
+#: core/views.py:534
 msgid "politician_add_success"
 msgstr "Politiker wurde erfolgreich hinzugefügt"
 
-#: core/views.py:533
+#: core/views.py:537
 msgid "politician_add_error"
 msgstr "Es gab einen Fehler beim Erstellen des Politikers"
 
-#: core/views.py:558
+#: core/views.py:562
 msgid "politician_edit_success"
 msgstr "Politiker wurde erfolgreich bearbeitet"
 
-#: core/views.py:561
+#: core/views.py:565
 msgid "politician_edit_error"
 msgstr "Es gab einen Fehler beim Bearbeiten des Politikers"
 
-#: core/views.py:611
+#: core/views.py:615
 msgid "politician_delete_success"
 msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
-#: core/views.py:653
+#: core/views.py:657
 msgid "Freedomvote account link"
 msgstr "Freedomvote Account Link"
 
-#: core/views.py:654
+#: core/views.py:658
 #, python-format
 msgid ""
 "Hello %(first_name)s %(last_name)s,\n"

@@ -104,8 +104,10 @@ Vue.component('candidate-list-item', {
       <td>
         <div class="row candidate-row">
           <div class="col-xs-12 col-md-5 col-sm-6 center-xs">
-            <img v-if="candidate.thumbnail" class="img-thumbnail" width="60px" :src="candidate.thumbnail">
-            <img v-else class="img-thumbnail" width="60px" src="/static/images/placeholder.svg">
+            <a :href="candidate.profile_link">
+              <img v-if="candidate.thumbnail" class="img-thumbnail" :src="candidate.thumbnail">
+              <img v-else class="img-thumbnail" src="/static/images/placeholder.svg">
+            </a>
             <br class="visible-xs">
             <a :href="candidate.profile_link">
               {{ candidate.first_name }} {{ candidate.last_name }}
