@@ -31,7 +31,7 @@
                              data-text="{% include 'core/helpers/readonly-slider-text.html' with number=answer.politician_ans.question.question_number answer=answer.politician_ans.agreement_level %}"
                             ></div>
                         </div>
-                        <em>{{answer.politician_ans.note}}</em>
+                        <blockquote class="politician-answer-note">{{answer.politician_ans.note|urlize}}</blockquote>
                     </div>
                 </div>
             </td>
