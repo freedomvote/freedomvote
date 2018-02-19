@@ -1,0 +1,22 @@
+# Freedomvote Translation
+# Copyright (C) Freedomvote
+# This file is distributed under the same license as the freedomvote package.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-15 16:38+0000\n"
+"PO-Revision-Date: 2018-02-15 17:43+0100\n"
+"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+msgid "Candidates %(start)s to %(end)s of %(total)s"
+msgstr "Candidats %(start)s à %(end)s de %(total)s"
