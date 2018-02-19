@@ -75,7 +75,7 @@ class PoliticianViewSet(ReadOnlyModelViewSet):
     queryset = Politician.objects.filter(statistic__id__gt=0).distinct()
     serializer_class = serializers.PoliticianSerializer
     filter_backends = (SearchFilter, DjangoFilterBackend,)
-    filter_fields = ('state',)
+    filter_fields = ('state','party','is_member_of_parliament')
     search_fields = (
         'first_name',
         'last_name',
