@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-15 16:38+0000\n"
-"PO-Revision-Date: 2018-02-15 17:42+0100\n"
+"PO-Revision-Date: 2018-02-19 10:37+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
 "Language: de\n"
@@ -169,12 +169,12 @@ msgstr "Sortierung"
 #: core/templates/core/party/dashboard.html:53
 #: core/templates/core/profile/description.html:33 core/views.py:597
 msgid "state"
-msgstr "Kanton"
+msgstr "Wahlkreis"
 
 #: core/models.py:36 core/templates/core/profile/description.html:25
 #: core/templates/core/profile/description.html:27
 msgid "states"
-msgstr "Kantone"
+msgstr "Wahlkreise"
 
 #: core/models.py:47
 msgid "shortname"
@@ -211,7 +211,7 @@ msgstr "Bild"
 
 #: core/models.py:111 core/templates/core/profile/description.html:50
 msgid "is_member_of_parliament"
-msgstr "Bisheriges Mitglied National- oder Ständerat"
+msgstr "Bisher"
 
 #: core/models.py:115 core/templates/core/profile/description.html:42
 msgid "past_contributions"
@@ -232,7 +232,7 @@ msgstr "Andere Partei"
 #: core/models.py:175
 #, python-format
 msgid "%s states"
-msgstr "%s Kantone"
+msgstr "%s Wahlkreise"
 
 #: core/models.py:199 core/models.py:206 core/models.py:251 core/models.py:269
 msgid "politician"
@@ -322,7 +322,7 @@ msgstr "Auf Partei einschränken"
 
 #: core/templates/core/candidates/filter.html:38
 msgid "filter_by_state"
-msgstr "Auf Kanton einschränken"
+msgstr "Auf Wahlkreis einschränken"
 
 #: core/templates/core/candidates/filter.html:52
 msgid "sort_by_category"
@@ -334,7 +334,7 @@ msgstr "Alle Kandidaten"
 
 #: core/templates/core/candidates/filter.html:67
 msgid "Only current members of parliament"
-msgstr "Nur bisherige Mitglieder des National- oder Ständerates"
+msgstr "Nur bisherige Kandidaten"
 
 #: core/templates/core/candidates/filter.html:68
 msgid "Only new candidates"
@@ -509,12 +509,12 @@ msgstr "Dashboard"
 #: core/templates/core/profile/description.html:8
 #: core/templates/core/profile/description.html:9
 msgid "Share"
-msgstr "Teilen"
+msgstr "#freedomvote teilen"
 
 #: core/templates/core/profile/description.html:13
 #: core/templates/core/profile/description.html:14
 msgid "Tweet"
-msgstr "Twittern"
+msgstr "#freedomvote twittern"
 
 #: core/templates/core/profile/description.html:55
 msgid "show_own_spider"
