@@ -5,3 +5,5 @@ include/
 local/
 node_modules/
 .python-version
+env/
+*.sqlite

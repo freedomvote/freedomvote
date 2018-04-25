@@ -13,3 +13,4 @@ django-colorfield==0.1.14
 djangorestframework>=3.6,<3.7
 django-filter
 flup==1.0.2
+sqlparse==0.2.4
