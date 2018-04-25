@@ -17,7 +17,7 @@ This is how Freedomvote looked for the Swiss Election in 2015 - [freedomvote.ch]
 Requirements:
 
 * python 2.7
-* postgresql
+* postgresql (for SQLite see note below)
 * libjpeg
 * zlib
 * python-pip
@@ -44,8 +44,6 @@ HOST = 127.0.0.1
 SECRET = GENERATE A SECRET
 ```
 
-
-
 Edit the `tools/docker/cache_table.sql` file to change your database user, and
 then run:
 
@@ -67,6 +65,10 @@ $ make docker-init docker
 Default user is `admin` with password `123qwe`, to change this, run `make docker-pw`
 
 Now you can access the frontend on http://localhost:8000
+
+## Development setup with SQLite
+
+Add `DJANGO_DEBUG=1` to your environment to use a local SQLite database instead of Postgres. Not all features of the application may be available, as this is only partially supported, but you will have a functioning instance.
 
 ## Django management
 Django already provides a number of [management commands](https://docs.djangoproject.com/en/1.10/ref/django-admin/) out of the box.
