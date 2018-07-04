@@ -159,6 +159,9 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
+## Has to be allocated to an empty array to show the toolbar on /?edit because of the update of django cms
+CMS_INTERNAL_IPS = []
+
 CMS_PLACEHOLDER_CACHE = False
 CMS_PAGE_CACHE = False
 CMS_PLUGIN_CACHE = False
