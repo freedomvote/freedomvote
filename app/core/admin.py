@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-import models
+from . import models
 
 
 class StateAdmin(admin.ModelAdmin):

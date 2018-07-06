@@ -71,7 +71,6 @@ SECRET_KEY = DEFAULT_SETTINGS['GLOBAL']['SECRET']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEFAULT_SETTINGS['GLOBAL']['DEBUG'].lower() == 'true'
 THUMBNAIL_DEBUG = True
-TEMPLATE_DEBUG = True
 SITE_ID = 1
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
@@ -124,6 +123,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware'
 )
 
 TEMPLATES = [
@@ -132,6 +132,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'DIRS': [ os.path.join(BASE_DIR, "templates") ],
         'OPTIONS': {
+            'debug': DEBUG,
             'context_processors':
                 (
                 'django.contrib.auth.context_processors.auth',

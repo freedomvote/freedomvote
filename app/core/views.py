@@ -14,7 +14,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q, Sum
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils.encoding import force_unicode
+from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView, TemplateView
 
@@ -242,7 +242,7 @@ def politician_statistic_spider_view_embed(request, politician_id):
 
 def politician_statistic_view(request, politician_id):
     category_id = int(request.GET.get('category', False))
-    titles  = [force_unicode(_('total'))]
+    titles  = [force_text(_('total'))]
 
     if category_id:
         category = get_object_or_404(Category, id=category_id)
@@ -428,7 +428,7 @@ def politician_publish_view(request, unique_key):
 
     return JsonResponse({
         'type': 'success',
-        'text': force_unicode(_('answers_published_successfully'))
+        'text': force_text(_('answers_published_successfully'))
     })
 
 
@@ -438,7 +438,7 @@ def politician_unpublish_view(request, unique_key):
 
     return JsonResponse({
         'type': 'success',
-        'text': force_unicode(_('answers_unpublished_successfully'))
+        'text': force_text(_('answers_unpublished_successfully'))
     })
 
 
@@ -592,10 +592,10 @@ def party_export_view(request, party_name):
 
     writer = csv.writer(response)
     writer.writerow([
-        force_unicode(_('first_name')),
-        force_unicode(_('last_name')),
-        force_unicode(_('state')),
-        force_unicode(_('unique_url'))
+        force_text(_('first_name')),
+        force_text(_('last_name')),
+        force_text(_('state')),
+        force_text(_('unique_url'))
     ])
 
     for p in politicians:

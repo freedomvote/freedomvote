@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 from django.forms.widgets import ClearableFileInput, CheckboxInput
 from easy_thumbnails.files import get_thumbnailer
 from django.templatetags.static import static
-from django.utils.encoding import force_unicode
+from django.utils.encoding import force_text
 
 class ImagePreviewFileInput(ClearableFileInput):
 
@@ -12,8 +12,8 @@ class ImagePreviewFileInput(ClearableFileInput):
         substitutions = {
             'clear_checkbox_label': self.clear_checkbox_label,
             'initial' : '<img class="img-responsive img-thumbnail" width="%s" src="%s">' % (
-                force_unicode('100%'),
-                force_unicode(get_thumbnailer(value)['medium'].url if value and hasattr(value, 'url') else static('images/placeholder.svg'))
+                force_text('100%'),
+                force_text(get_thumbnailer(value)['medium'].url if value and hasattr(value, 'url') else static('images/placeholder.svg'))
             )
         }
         template = '%(initial)s%(input)s'
