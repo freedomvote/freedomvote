@@ -39,7 +39,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class QuestionAdmin(admin.ModelAdmin):
     def get_category(self, obj):
-        return obj.category.__unicode__()
+        return obj.category.__str__()
     get_category.short_description = _('category')
 
     list_display = ['question_number', 'get_category', 'text']

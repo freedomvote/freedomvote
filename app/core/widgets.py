@@ -27,6 +27,6 @@ class ImagePreviewFileInput(ClearableFileInput):
             substitutions['clear_checkbox_name'] = conditional_escape(checkbox_name)
             substitutions['clear_checkbox_id'] = conditional_escape(checkbox_id)
             substitutions['clear'] = CheckboxInput().render(checkbox_name, False, attrs={'id': checkbox_id})
-            substitutions['clear_template'] = self.template_with_clear % substitutions
+            substitutions['clear_template'] = self.clear_checkbox_name(checkbox_name)
 
         return mark_safe(template % substitutions)
