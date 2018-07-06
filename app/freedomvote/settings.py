@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import ConfigParser
+import configparser
 from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -48,7 +48,7 @@ DEFAULT_SETTINGS = {
 }
 
 try:
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.readfp(open(os.path.join(BASE_DIR, 'settings.ini')))
 
     for key in config._sections:
@@ -97,7 +97,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
-    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.messages',
     'treebeard',
