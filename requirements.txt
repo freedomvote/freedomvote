@@ -1,14 +1,14 @@
-django==1.11.14
+django==1.11.14 # pyup: >=1.11,<1.12
 django-modeltranslation==0.13b1
 pillow==5.2.0
 psycopg2-binary==2.7.5
 easy-thumbnails==2.5
 django-cms==3.5.2
-html5lib==0.9999999
-djangocms_text_ckeditor==3.2.1
+html5lib==0.9999999 
+djangocms_text_ckeditor==3.6.0
 django-meta==1.4.1
 django-piwik==0.1
 django-colorfield==0.1.14
 djangorestframework==3.8.2
-django-filter
-flup6
+django-filter==1.1.0
+flup6==1.1.1
