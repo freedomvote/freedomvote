@@ -9,11 +9,8 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 RUN mkdir -p /usr/src/app
 
 WORKDIR /usr/src/app
-ADD requirements.txt package.json /usr/src/app/ 
-RUN pip install --upgrade pip
+COPY requirements.txt package.json /usr/src/app/ 
 RUN pip install -r requirements.txt
 RUN npm install
-ADD . /usr/src/app/
-RUN ls node_modules
-RUN ls
+COPY . /usr/src/app/
 CMD /bin/sh -c "/usr/bin/wait-for-it.sh db:5432 -- ./app/manage.py migrate && ./app/manage.py loaddata tools/docker/user.json && ./app/manage.py runserver 0.0.0.0:8000"
