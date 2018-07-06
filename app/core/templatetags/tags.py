@@ -14,6 +14,6 @@ def get_params(request, ignore=[]):
         return ''
     else:
         params = '?'
-        for k, v in request.GET.iteritems():
+        for k, v in request.GET.items():
             if k not in ignore:
                 params += clean_param(k, v, len(params))

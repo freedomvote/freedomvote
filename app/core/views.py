@@ -265,7 +265,7 @@ def politician_statistic_view(request, politician_id):
             delta       = abs(ans.agreement_level - voter_value)
             delta_by_cat[ans.question.category_id].append(delta)
 
-        for cid, cat in cat_by_id.iteritems():
+        for cid, cat in cat_by_id.items():
             if not len(delta_by_cat[cid]):
                 continue
 

@@ -15,7 +15,7 @@ def clean_param(key, value, amp):
 @register.simple_tag
 def get_params(request, *args, **kwargs):
     params = '?'
-    for k, v in request.GET.iteritems():
+    for k, v in request.GET.items():
         if k not in args:
             params += clean_param(k, v, len(params))
 
