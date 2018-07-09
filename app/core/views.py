@@ -231,11 +231,16 @@ def politician_statistic_spider_view(request, politician_id):
 
 def politician_statistic_spider_view_embed(request, politician_id):
     statistics = Statistic.get_statistics_by_politician(politician_id)
+
+    politician_url_reverse = reverse('politician', kwargs={'politician_id' : politician_id})
+    politician_url_absolute = request.build_absolute_uri(politician_url_reverse)
+
     return render(
         request,
         'core/profile/spider_embed.html',
         {
-            'politician_id': politician_id
+            'politician_id': politician_id,
+            'politician_url': politician_url_absolute
         }
     )
 
@@ -656,8 +661,8 @@ class PoliticianRegistrationView(FormView):
         )
         profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
-            unicode(_('Freedomvote account link')),
-            dedent(unicode(_("""Hello %(first_name)s %(last_name)s,
+            str(_('Freedomvote account link')),
+            dedent(str(_("""Hello %(first_name)s %(last_name)s,
 
             You receive the link for your profile on Freedomvote: %(url)s
 
