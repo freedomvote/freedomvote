@@ -37,10 +37,10 @@ DEFAULT_SETTINGS = {
     },
     'EMAIL'                : {
         'BACKEND'          : 'django.core.mail.backends.smtp.EmailBackend',
-        'HOST'             : 'localhost',
+        'HOST'             : 'mailcatcher',
         'HOST_USER'        : '',
         'HOST_PASSWORD'    : '',
-        'PORT'             : '25',
+        'PORT'             : '1025',
         'USE_TLS'          : 'False',
         'USE_SSL'          : 'False',
         'FROM'             : 'webmaster@localhost'

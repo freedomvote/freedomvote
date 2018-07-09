@@ -9,6 +9,7 @@ services:
       - /usr/src/app/node_modules
     depends_on:
       - db
+      - mailcatcher
   db:
     image: postgres:9
     ports:
