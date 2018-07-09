@@ -661,8 +661,8 @@ class PoliticianRegistrationView(FormView):
         )
         profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
-            unicode(_('Freedomvote account link')),
-            dedent(unicode(_("""Hello %(first_name)s %(last_name)s,
+            str(_('Freedomvote account link')),
+            dedent(str(_("""Hello %(first_name)s %(last_name)s,
 
             You receive the link for your profile on Freedomvote: %(url)s
 
