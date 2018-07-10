@@ -33,7 +33,7 @@ class PoliticianForm(forms.ModelForm):
         kwargs.setdefault('label_suffix', '')
         super(PoliticianForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            if isinstance(field.widget, forms.TextInput) or isinstance(field.widget, forms.Select):
+            if isinstance(field.widget, forms.TextInput) or isinstance(field.widget, forms.Select) or isinstance(field.widget, forms.EmailInput):
                 field.widget.attrs.update({
                     'class': 'form-control'
                 })

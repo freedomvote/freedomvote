@@ -7,6 +7,11 @@ from django.utils.encoding import force_text
 
 class ImagePreviewFileInput(ClearableFileInput):
 
+    def __init__(self, *args, **kwargs):
+      super(ClearableFileInput, self).__init__(*args, **kwargs)
+
+      self.template_name = "core/custom_file_input.html"
+
     def render(self, name, value, attrs=None,):
 
         substitutions = {
@@ -30,3 +35,6 @@ class ImagePreviewFileInput(ClearableFileInput):
             substitutions['clear_template'] = self.clear_checkbox_name(checkbox_name)
 
         return mark_safe(template % substitutions)
+
+    def clear_checkbox_name(self, name):
+      return ""
