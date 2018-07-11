@@ -32,6 +32,7 @@ DEFAULT_SETTINGS = {
         'SECRET'           : 'someverysecretrandomkey'
     },
     'PIWIK'                : {
+        'ENABLED'          : False,
         'SITE_ID'          : 0,
         'URL'              : '',
     },
@@ -79,6 +80,16 @@ ALLOWED_HOSTS = ['*']
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+
+PIWIK_ENABLED = DEFAULT_SETTINGS['PIWIK']['ENABLED'].lower() == False
+
+# Export settings to made them accessible from templates
+SETTINGS_EXPORT = [
+  'PIWIK_ENABLED',
+]
+
+# Rename the context variable
+SETTINGS_EXPORT_VARIABLE_NAME = 'my_config'
 
 BASE_URL = DEFAULT_SETTINGS['GLOBAL']['BASE_URL']
 
@@ -145,6 +156,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
+                'django_settings_export.settings_export'
                 )
         }
     },
