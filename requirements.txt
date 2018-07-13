@@ -10,6 +10,6 @@ django-meta==1.4.1
 django-piwik==0.1
 django-colorfield==0.1.14
 djangorestframework==3.8.2
-django-filter==1.1.0
+django-filter==2.0.0
 flup6==1.1.1
 django-settings-export==1.2.1
