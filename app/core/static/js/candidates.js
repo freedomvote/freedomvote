@@ -8,7 +8,7 @@ jQuery(function($) {
 
 function cleanParams(params) {
   return Object.keys(params).reduce(function(clean, key) {
-    if (params[key]) {
+    if (params[key] === 0 || params[key]) {
       clean[key] = params[key]
     }
 
