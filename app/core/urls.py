@@ -1,13 +1,12 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
 from core import views
 
-urlpatterns = patterns(
+urlpatterns = [
 
     # public urls
 
-    '',
     url(r'^(?P<lang>\w{2})/$',
         # Default URL shown on first visit after install
         views.initial_edit_view,
@@ -126,4 +125,4 @@ urlpatterns = patterns(
         views.PoliticianRegistrationSendMailView.as_view(),
         name='registration_sendmail'
     ),
-)
+]

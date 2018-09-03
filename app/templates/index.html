@@ -49,6 +49,6 @@
         <script src="{% static 'js/language.js' %}"></script>
         {% block 'scripts' %}{% endblock %}
         {% render_block 'js' %}
-        {% if not debug %}{% tracking_code %}{% endif %}
+        {% if my_config.PIWIK_ENABLED %}{% tracking_code %}{% endif %}
     </body>
 </html>

@@ -5,13 +5,13 @@
   "private": true,
   "license": "GPL-3.0",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/adfinis-sygroup/freedomvote"
+    "type": "git",
+    "url": "https://github.com/adfinis-sygroup/freedomvote"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.5.2"
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
   }
 }

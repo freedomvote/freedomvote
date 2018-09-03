@@ -6,9 +6,10 @@ services:
       - "8000:8000"
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - db
-    command: wait-for-it.sh db:5432 -- python app/manage.py runserver 0.0.0.0:8000
+      - mailcatcher
   db:
     image: postgres:9
     ports:

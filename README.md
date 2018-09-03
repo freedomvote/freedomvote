@@ -16,7 +16,7 @@ This is how Freedomvote looked for the Swiss Election in 2015 - [freedomvote.ch]
 ## The "hard" way
 Requirements:
 
-* python 2.7
+* python 3
 * postgresql
 * libjpeg
 * zlib

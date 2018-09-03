@@ -3,10 +3,10 @@ from django import template
 register = template.Library()
 
 def clean_param(key, value, amp):
-    tpl = value ? '%s%s=%s' : '%s%s%s'
-    pre = amp != 1 ? '&' : ''
+    tpl = '{}{}={}'.format(pre, key, vlaue) if value else '{}{}{}'.format(pre, key, value)
+    pre = '&' if amp != 1 else ''
 
-    return tpl % (pre, key, value)
+    return tpl
 
 @register.simple_tag
 def get_params(request, ignore=[]):
@@ -14,6 +14,6 @@ def get_params(request, ignore=[]):
         return ''
     else:
         params = '?'
-        for k, v in request.GET.iteritems():
+        for k, v in request.GET.items():
             if k not in ignore:
                 params += clean_param(k, v, len(params))
