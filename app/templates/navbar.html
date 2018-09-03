@@ -46,11 +46,13 @@
                 <input name="language" type="hidden" value="{{ language.code }}" />
                 <ul class="navbar-nav nav">
                 {% for language in languages %}
-                    <li><a href="#" data-lang="{{language.code}}">
-                        {% if language.code == LANGUAGE_CODE %}<strong>{% endif %}
-                        {{language.code|upper}}
-                        {% if language.code == LANGUAGE_CODE %}</strong>{% endif %}
-                    </a></li>
+                    <li>
+                        <a href="#" data-lang="{{language.code}}">
+                          {% if language.code == LANGUAGE_CODE %}<strong>{% endif %}
+                          {{language.code|upper}}
+                          {% if language.code == LANGUAGE_CODE %}</strong>{% endif %}
+                        </a>
+                    </li>
                 {% endfor %}
                 </ul>
             </form>

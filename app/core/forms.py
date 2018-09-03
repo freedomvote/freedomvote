@@ -32,8 +32,8 @@ class PoliticianForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
         super(PoliticianForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.iteritems():
-            if isinstance(field.widget, forms.TextInput) or isinstance(field.widget, forms.Select):
+        for field_name, field in self.fields.items():
+            if isinstance(field.widget, forms.TextInput) or isinstance(field.widget, forms.Select) or isinstance(field.widget, forms.EmailInput):
                 field.widget.attrs.update({
                     'class': 'form-control'
                 })
@@ -60,7 +60,7 @@ class PartyPoliticianForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         kwargs.setdefault('label_suffix', '')
         super(PartyPoliticianForm, self).__init__(*args, **kwargs)
-        for field_name, field in self.fields.iteritems():
+        for field_name, field in self.fields.items():
             if isinstance(field.widget, forms.TextInput) or isinstance(field.widget, forms.Select):
                 field.widget.attrs.update({
                     'class': 'form-control'

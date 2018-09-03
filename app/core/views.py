@@ -14,7 +14,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Q, Sum
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
-from django.utils.encoding import force_unicode
+from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import FormView, TemplateView
 
@@ -231,18 +231,23 @@ def politician_statistic_spider_view(request, politician_id):
 
 def politician_statistic_spider_view_embed(request, politician_id):
     statistics = Statistic.get_statistics_by_politician(politician_id)
+
+    politician_url_reverse = reverse('politician', kwargs={'politician_id' : politician_id})
+    politician_url_absolute = request.build_absolute_uri(politician_url_reverse)
+
     return render(
         request,
         'core/profile/spider_embed.html',
         {
-            'politician_id': politician_id
+            'politician_id': politician_id,
+            'politician_url': politician_url_absolute
         }
     )
 
 
 def politician_statistic_view(request, politician_id):
     category_id = int(request.GET.get('category', False))
-    titles  = [force_unicode(_('total'))]
+    titles  = [force_text(_('total'))]
 
     if category_id:
         category = get_object_or_404(Category, id=category_id)
@@ -265,7 +270,7 @@ def politician_statistic_view(request, politician_id):
             delta       = abs(ans.agreement_level - voter_value)
             delta_by_cat[ans.question.category_id].append(delta)
 
-        for cid, cat in cat_by_id.iteritems():
+        for cid, cat in cat_by_id.items():
             if not len(delta_by_cat[cid]):
                 continue
 
@@ -428,7 +433,7 @@ def politician_publish_view(request, unique_key):
 
     return JsonResponse({
         'type': 'success',
-        'text': force_unicode(_('answers_published_successfully'))
+        'text': force_text(_('answers_published_successfully'))
     })
 
 
@@ -438,7 +443,7 @@ def politician_unpublish_view(request, unique_key):
 
     return JsonResponse({
         'type': 'success',
-        'text': force_unicode(_('answers_unpublished_successfully'))
+        'text': force_text(_('answers_unpublished_successfully'))
     })
 
 
@@ -592,10 +597,10 @@ def party_export_view(request, party_name):
 
     writer = csv.writer(response)
     writer.writerow([
-        force_unicode(_('first_name')),
-        force_unicode(_('last_name')),
-        force_unicode(_('state')),
-        force_unicode(_('unique_url'))
+        force_text(_('first_name')),
+        force_text(_('last_name')),
+        force_text(_('state')),
+        force_text(_('unique_url'))
     ])
 
     for p in politicians:
@@ -656,8 +661,8 @@ class PoliticianRegistrationView(FormView):
         )
         profile_url_absolute = self.request.build_absolute_uri(profile_url)
         send_mail(
-            unicode(_('Freedomvote account link')),
-            dedent(unicode(_("""Hello %(first_name)s %(last_name)s,
+            str(_('Freedomvote account link')),
+            dedent(str(_("""Hello %(first_name)s %(last_name)s,
 
             You receive the link for your profile on Freedomvote: %(url)s
 

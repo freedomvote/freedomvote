@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import ConfigParser
+import configparser
 from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -32,15 +32,16 @@ DEFAULT_SETTINGS = {
         'SECRET'           : 'someverysecretrandomkey'
     },
     'PIWIK'                : {
+        'ENABLED'          : False,
         'SITE_ID'          : 0,
         'URL'              : '',
     },
     'EMAIL'                : {
         'BACKEND'          : 'django.core.mail.backends.smtp.EmailBackend',
-        'HOST'             : 'localhost',
+        'HOST'             : 'mailcatcher',
         'HOST_USER'        : '',
         'HOST_PASSWORD'    : '',
-        'PORT'             : '25',
+        'PORT'             : '1025',
         'USE_TLS'          : 'False',
         'USE_SSL'          : 'False',
         'FROM'             : 'webmaster@localhost'
@@ -48,7 +49,7 @@ DEFAULT_SETTINGS = {
 }
 
 try:
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.readfp(open(os.path.join(BASE_DIR, 'settings.ini')))
 
     for key in config._sections:
@@ -71,7 +72,6 @@ SECRET_KEY = DEFAULT_SETTINGS['GLOBAL']['SECRET']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEFAULT_SETTINGS['GLOBAL']['DEBUG'].lower() == 'true'
 THUMBNAIL_DEBUG = True
-TEMPLATE_DEBUG = True
 SITE_ID = 1
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
@@ -80,6 +80,16 @@ ALLOWED_HOSTS = ['*']
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+
+PIWIK_ENABLED = DEFAULT_SETTINGS['PIWIK']['ENABLED'].lower() == False
+
+# Export settings to made them accessible from templates
+SETTINGS_EXPORT = [
+  'PIWIK_ENABLED',
+]
+
+# Rename the context variable
+SETTINGS_EXPORT_VARIABLE_NAME = 'my_config'
 
 BASE_URL = DEFAULT_SETTINGS['GLOBAL']['BASE_URL']
 
@@ -98,7 +108,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangocms_admin_style',
     'djangocms_text_ckeditor',
-    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.messages',
     'treebeard',
@@ -132,6 +141,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'DIRS': [ os.path.join(BASE_DIR, "templates") ],
         'OPTIONS': {
+            'debug': DEBUG,
             'context_processors':
                 (
                 'django.contrib.auth.context_processors.auth',
@@ -145,6 +155,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
+                'django_settings_export.settings_export'
                 )
         }
     },
@@ -158,6 +169,9 @@ INTERNAL_IPS = [
     '0.0.0.0',
     '127.0.0.1',
 ]
+
+## Has to be allocated to an empty array to show the toolbar on /?edit because of the update of django cms
+CMS_INTERNAL_IPS = []
 
 CMS_PLACEHOLDER_CACHE = False
 CMS_PAGE_CACHE = False

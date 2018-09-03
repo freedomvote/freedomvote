@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils.encoding import force_unicode
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
 from django.conf import settings
@@ -28,7 +27,7 @@ class State(models.Model):
 
 
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -55,7 +54,7 @@ class Party(models.Model):
         verbose_name        = _('font_color')
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return self.shortname
 
     class Meta:
@@ -70,7 +69,7 @@ class Category(models.Model):
         verbose_name        = _('name')
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     class Meta:
@@ -141,7 +140,7 @@ class Politician(models.Model):
         verbose_name        = _('party_other')
     )
 
-    def __unicode__(self):
+    def __str__(self):
         return u'%s %s' % (self.first_name, self.last_name)
 
     @classmethod
