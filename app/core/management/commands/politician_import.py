@@ -4,6 +4,7 @@ from core.models import Politician, State, Party
 from django.db import transaction
 from django.utils import translation
 import json
+import traceback
 
 class Command(BaseCommand):
     help = 'Imports politicians from a JSON file'
@@ -33,8 +34,11 @@ class Command(BaseCommand):
                         politician.save()
 
                         politician.state.add(*State.objects.filter(name__in=row.get('states')))
-                    except:
-                        print('Politician creation failed')
+                    except Exception:
+                        print('Skipping politician row:\n-----')
+                        print(row)
+                        print('------')
+                        print(traceback.format_exc())
 
         except Exception as e:
             print(str(e))

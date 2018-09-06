@@ -188,16 +188,27 @@ CMS_CACHE_DURATION = 0
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        'NAME':     DEFAULT_SETTINGS['DB']['NAME'],
-        'USER':     DEFAULT_SETTINGS['DB']['USER'],
-        'PASSWORD': DEFAULT_SETTINGS['DB']['PASS'],
-        'HOST':     DEFAULT_SETTINGS['DB']['HOST'],
-        'PORT':     DEFAULT_SETTINGS['DB']['PORT'],
+from os import environ
+DJANGO_DEBUG = bool(environ.get('DJANGO_DEBUG', False))
+
+if DJANGO_DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'freedomvote-db.sqlite',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE':   'django.db.backends.postgresql_psycopg2',
+            'NAME':     DEFAULT_SETTINGS['DB']['NAME'],
+            'USER':     DEFAULT_SETTINGS['DB']['USER'],
+            'PASSWORD': DEFAULT_SETTINGS['DB']['PASS'],
+            'HOST':     DEFAULT_SETTINGS['DB']['HOST'],
+            'PORT':     DEFAULT_SETTINGS['DB']['PORT'],
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
