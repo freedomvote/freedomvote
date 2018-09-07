@@ -81,7 +81,7 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
-PIWIK_ENABLED = DEFAULT_SETTINGS['PIWIK']['ENABLED'].lower() == False
+PIWIK_ENABLED = DEFAULT_SETTINGS['PIWIK']['ENABLED'].lower() == 'false'
 
 # Export settings to made them accessible from templates
 SETTINGS_EXPORT = [
