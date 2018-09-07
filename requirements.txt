@@ -14,3 +14,4 @@ django-filter==2.0.0
 flup6==1.1.1
 django-settings-export==1.2.1
 sqlparse==0.2.4
+uwsgi==2.0.17.1
