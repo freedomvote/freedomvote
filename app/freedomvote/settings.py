@@ -32,7 +32,7 @@ DEFAULT_SETTINGS = {
         'SECRET'           : 'someverysecretrandomkey'
     },
     'PIWIK'                : {
-        'ENABLED'          : False,
+        'ENABLED'          : 'False',
         'SITE_ID'          : 0,
         'URL'              : '',
     },
