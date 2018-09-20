@@ -23,9 +23,9 @@ class PoliticianSerializer(serializers.ModelSerializer):
         return self.context['request'].build_absolute_uri(reverse('politician', kwargs={'politician_id':instance.id}))
 
     def get_statistic(self, instance):
-        result = json.loads(
-            politician_statistic_view(self.context['request'], instance.id).content
-        )
+        res = politician_statistic_view(self.context['request'], instance.id).content
+
+        result = json.loads(res.decode('utf-8'))
 
         return {
             'detail': [

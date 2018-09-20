@@ -47,12 +47,17 @@ DEFAULT_SETTINGS = {
         'FROM'             : 'webmaster@localhost'
     }
 }
+def readline_generator(fp):
+    line = fp.readline()
+    while line:
+        yield line
+        line = fp.readline()
 
 try:
-    config = configparser.ConfigParser()
-    config.readfp(open(os.path.join(BASE_DIR, 'settings.ini')))
+    config = configparser.RawConfigParser()
+    config.read_file(readline_generator(open(os.path.join(BASE_DIR, 'settings.ini'))))
 
-    for key in config._sections:
+    for key in config.sections():
         DEFAULT_SETTINGS[key].update({
                 k.upper():v
                 for k,v
