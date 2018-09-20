@@ -1,7 +1,7 @@
 from core.decorators import require_party_login
 from core.forms import PoliticianForm, PartyPoliticianForm, RegistrationForm
 from core.models import Politician, Question, State, Answer
-from core.models import Statistic, Category, Link
+from core.models import Statistic, Category, Link, Party
 from core.tools import set_cookie, get_cookie
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -69,6 +69,7 @@ def initial_edit_view(request, lang):
 
 def candidates_view(request):
     states          = State.objects.all().order_by('sort', 'name')
+    parties         = Party.objects.all().order_by('name')
     categories      = (
         Category.objects.filter(statistic__id__gt=0).
         order_by('name').distinct())
@@ -83,6 +84,7 @@ def candidates_view(request):
         {
             'categories'  : categories,
             'states'      : states,
+            'parties'     : parties,
             'meta'        : default_meta
         }
     )
@@ -104,6 +106,10 @@ def compare_view(request):
 
         for category in categories:
             cq = Question.objects.filter(category=category)
+
+            if not len(cq):
+                continue
+
             values = []
             for question in cq:
                 values.append(

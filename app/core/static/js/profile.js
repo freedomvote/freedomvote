@@ -1,15 +1,15 @@
-jQuery(function ($){
+jQuery(function($) {
   'use strict'
 
   var item = $('#chart')
 
-  $.getJSON(item.data('url'), function(data){
+  $.getJSON(item.data('url'), function(data) {
     item.highcharts({
       chart: {
         polar: true,
         type: 'area',
         backgroundColor: 'transparent',
-        spacing: [ 10, 90, 10, 90 ]
+        spacing: [50, 50, 50, 50]
       },
       title: {
         text: null
@@ -45,27 +45,29 @@ jQuery(function ($){
       legend: {
         enabled: false
       },
-      series: [{
-        pointPlacement: 'on',
-        data: data.values.politician
-      },{
-        pointPlacement: 'on',
-        data: data.values.citizen,
-        visible: $('#show_citizen').prop('checked'),
-      }]
-    });
+      series: [
+        {
+          pointPlacement: 'on',
+          data: data.values.politician
+        },
+        {
+          pointPlacement: 'on',
+          data: data.values.citizen,
+          visible: $('#show_citizen').prop('checked')
+        }
+      ]
+    })
   })
 
-  $('#show_citizen').on('change', function(){
+  $('#show_citizen').on('change', function() {
     if ($(this).prop('checked')) {
       item.highcharts().series[1].show()
-    }
-    else {
+    } else {
       item.highcharts().series[1].hide()
     }
   })
 
-  $('.embed-iframe').on('click', function(){
-    $('.embed-iframe-code').toggle();
+  $('.embed-iframe').on('click', function() {
+    $('.embed-iframe-code').toggle()
   })
-});
+})

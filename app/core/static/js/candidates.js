@@ -27,16 +27,29 @@ Vue.component('loading-spinner', {
 Vue.component('candidate-pagination', {
   computed: {
     prevPage: function() {
-      return this.page === 1 ? 1 : this.page - 1
+      return parseInt(this.page) === 1 ? 1 : parseInt(this.page) - 1
     },
     nextPage: function() {
-      return this.page < this.pages.length ? this.page + 1 : this.page
+      return parseInt(this.page) < this.pages.length
+        ? parseInt(this.page) + 1
+        : parseInt(this.page)
     },
     prevDisabled: function() {
-      return this.prevPage === this.page
+      return parseInt(this.prevPage) === parseInt(this.page)
     },
     nextDisabled: function() {
-      return this.nextPage === this.page
+      return parseInt(this.nextPage) === parseInt(this.page)
+    },
+    count: function() {
+      return interpolate(
+        gettext('Candidates %(start)s to %(end)s of %(total)s'),
+        {
+          start: this.start,
+          end: this.end,
+          total: this.total
+        },
+        true
+      )
     }
   },
   template: `
@@ -53,9 +66,14 @@ Vue.component('candidate-pagination', {
         </candidate-pagination-page>
         <candidate-pagination-page :disabled="nextDisabled" content="»" :page="nextPage"></candidate-pagination-page>
       </ul>
+      <div class="text-center">
+        <em>
+          {{ count }}
+        </em>
+      </div>
     </nav>
   `,
-  props: ['page', 'pages']
+  props: ['page', 'pages', 'start', 'end', 'total']
 })
 
 Vue.component('candidate-pagination-page', {
@@ -102,8 +120,10 @@ Vue.component('candidate-list-item', {
       <td>
         <div class="row candidate-row">
           <div class="col-xs-12 col-md-5 col-sm-6 center-xs">
-            <img v-if="candidate.thumbnail" class="img-thumbnail" width="60px" :src="candidate.thumbnail">
-            <img v-else class="img-thumbnail" width="60px" src="/static/images/placeholder.svg">
+            <a :href="candidate.profile_link">
+              <img v-if="candidate.thumbnail" class="img-thumbnail" :src="candidate.thumbnail">
+              <img v-else class="img-thumbnail" src="/static/images/placeholder.svg">
+            </a>
             <br class="visible-xs">
             <a :href="candidate.profile_link">
               {{ candidate.first_name }} {{ candidate.last_name }}
@@ -274,6 +294,12 @@ new Vue({
 
       return this.results.slice(end - this.limit, end)
     },
+    pageStart: function() {
+      return this.page * this.limit - this.limit + 1
+    },
+    pageEnd: function() {
+      return this.pageStart - 1 + this.candidates.length
+    },
     pages: function() {
       return Array.from(
         { length: Math.ceil(this.results.length / this.limit) },
@@ -293,10 +319,15 @@ new Vue({
             state: parseInt(currentUrl.searchParams.get('state')),
             category: parseInt(currentUrl.searchParams.get('category')),
             search: currentUrl.searchParams.get('search'),
-            evaluate: parseInt(currentUrl.searchParams.get('evaluate'))
+            evaluate: parseInt(currentUrl.searchParams.get('evaluate')),
+            party: parseInt(currentUrl.searchParams.get('party')),
+            is_member_of_parliament: parseInt(
+              currentUrl.searchParams.get('is_member')
+            )
           })
         ).toString(),
       {
+        credentials: 'same-origin',
         headers: {
           'Accept-Language':
             document.querySelector('.language ul > li > a > strong').parentNode

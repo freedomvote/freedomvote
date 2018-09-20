@@ -3,6 +3,7 @@
 {% load i18n staticfiles helpers %}
 
 {% block 'scripts' %}
+<script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
 <script src="{% static 'lib/polyfills/url.min.js' %}"></script>
 <script src="{% static 'lib/vue/vue.js' %}"></script>
 <script src="{% static 'js/candidates.js' %}"></script>
@@ -10,38 +11,42 @@
 
 {% block 'content' %}
 
-<div class="row mbs">
-    <div class="col-xs-12 col-md-4 col-lg-3 col-md-offset-8 col-lg-offset-0 switch">
-        <div class="btn-group btn-group-justified">
-            <a href="{% url 'candidates' %}{% get_params request 'evaluate' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_admin' %}</a>
-            {% if 'statistics' in request.COOKIES and request.COOKIES.statistics != '{}' %}
-                <a
-                    href="{% url 'candidates' %}{% get_params request 'evaluate' add='evaluate=1' %}"
-                 class="btn btn-default {% if 'evaluate' in request.GET %}active{% endif %}"
-                >{% trans 'own_opinion' %}</a>
-            {% else %}
-                <a
-                 href="#"
-                 class="btn btn-default add-popover"
-                 data-toggle="popover"
-                 data-placement="bottom"
-                 title="{% trans 'add_own_opinion' %}"
-                 data-content="<a href=&quot;{% url 'compare' %}&quot;>{% trans 'add_own_opinion_here' %}</a>"
-                 >{% trans 'own_opinion' %}</a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="col-xs-12 col-md-12 col-lg-offset-1 col-lg-8">
-        {% include 'core/candidates/filter.html' %}
-    </div>
+<div class="btn-group mts">
+    <a href="{% url 'candidates' %}{% get_params request 'evaluate' %}" class="btn btn-default {% if not 'evaluate' in request.GET %}active{% endif %}">{% trans 'opinion_admin' %}</a>
+    {% if 'statistics' in request.COOKIES and request.COOKIES.statistics != '{}' %}
+        <a
+            href="{% url 'candidates' %}{% get_params request 'evaluate' add='evaluate=1' %}"
+            class="btn btn-default {% if 'evaluate' in request.GET %}active{% endif %}"
+        >{% trans 'own_opinion' %}</a>
+    {% else %}
+        <a
+            href="#"
+            class="btn btn-default add-popover"
+            data-toggle="popover"
+            data-placement="bottom"
+            title="{% trans 'add_own_opinion' %}"
+            data-content="<a href=&quot;{% url 'compare' %}&quot;>{% trans 'add_own_opinion_here' %}</a>"
+            >{% trans 'own_opinion' %}</a>
+    {% endif %}
 </div>
+
+{% include 'core/candidates/filter.html' %}
 
 <div class="row">
     <div class="col-md-12">
         <div id="vue-app">
             <loading-spinner v-if="loading"></loading-spinner>
-            <candidate-list :candidates="candidates"></candidate-list>
-            <candidate-pagination :page="page" :pages="pages"></candidate-pagination>
+            <div v-else>
+                <div v-if="results.length">
+                    <candidate-list :candidates="candidates"></candidate-list>
+                    <candidate-pagination :page="page" :pages="pages" :start="pageStart" :end="pageEnd" :total="results.length"></candidate-pagination>
+                </div>
+                <div v-else class="text-center mvm">
+                    <em>
+                        {% trans 'No candidates found' %}...
+                    </em>
+                </div>
+            </div>
         </div>
     </div>
 </div>
