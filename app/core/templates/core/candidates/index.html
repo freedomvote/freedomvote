@@ -28,6 +28,17 @@
             data-content="<a href=&quot;{% url 'compare' %}&quot;>{% trans 'add_own_opinion_here' %}</a>"
             >{% trans 'own_opinion' %}</a>
     {% endif %}
+    {% if has_cookie %}
+        <a 
+            href="#"
+            class="btn btn-default add-popover"
+            data-toggle="popover"
+            data-placement="bottom"
+            title="URL"
+            data-content="{{ share_url }}"
+        >{% trans 'share_own_opinion' %}</a>
+    {% endif %}
+
 </div>
 
 {% include 'core/candidates/filter.html' %}
