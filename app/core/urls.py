@@ -28,6 +28,10 @@ urlpatterns = [
         views.compare_reset_view,
         name='compare_reset'
     ),
+    url(r'^share/$',
+        views.share_view,
+        name='share'
+    ),
 
     # private politician urls
 

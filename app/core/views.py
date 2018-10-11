@@ -21,8 +21,11 @@ from django.views.generic import FormView, TemplateView
 from textwrap import dedent
 from easy_thumbnails.files import get_thumbnailer
 from meta.views import Meta
+from urllib.parse import urlencode
+from re import split
 import collections
 import csv
+import json
 
 ##
 # ERROR VIEWS
@@ -78,15 +81,39 @@ def candidates_view(request):
     state    = request.GET.get('state', None)
     search   = request.GET.get('search', None)
 
+    session_answers    = get_cookie(request, 'answers',    {})
+    session_statistics = get_cookie(request, 'statistics', {})
+    
+    has_cookie = len(session_answers) > 0 and len(session_statistics) > 0
+
+    context = {
+        'categories'  : categories,
+        'states'      : states,
+        'parties'     : parties,
+        'meta'        : default_meta,
+        'has_cookie'  : has_cookie,
+    }
+
+    if has_cookie:
+        query_params = {}
+
+        for k, v in session_statistics.items():
+            query_params['statistics_{0}'.format(k)] = v
+
+        for k, v in session_answers.items():
+            query_params['answers_{0}'.format(k)] = v
+
+        formatted_query_params = urlencode(query_params)
+        
+        context['share_url'] = '{0}/share?{1}'.format(
+            settings.BASE_URL,
+            formatted_query_params
+        )
+
     return render(
         request,
         'core/candidates/index.html',
-        {
-            'categories'  : categories,
-            'states'      : states,
-            'parties'     : parties,
-            'meta'        : default_meta
-        }
+        context
     )
 
 
@@ -148,6 +175,25 @@ def compare_view(request):
 
     set_cookie(response, 'answers', session_answers, 30)
     set_cookie(response, 'statistics', session_statistics, 30)
+    return response
+
+
+def share_view(request):
+    response = redirect('%s?evaluate=1' % reverse('candidates'))
+
+    cookies = {
+        'statistics': {},
+        'answers'   : {}
+    }
+
+    for k, v in request.GET.items():
+        cookie_name, variable_name = split('_', k, maxsplit=1) 
+        # V can be a float or int in a string and since we can not
+        # parse a float in a string to int we did it this way
+        cookies[cookie_name][variable_name] = int(float(v))
+
+    set_cookie(response, 'answers', cookies['answers'], 30)
+    set_cookie(response, 'statistics', cookies['statistics'], 30)
     return response
 
 
