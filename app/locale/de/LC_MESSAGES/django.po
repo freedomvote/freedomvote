@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 14:49+0200\n"
+"POT-Creation-Date: 2018-10-15 12:28+0200\n"
 "PO-Revision-Date: 2018-02-15 17:42+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
-msgstr ""
+msgstr "API Dokumentation"
 
 #: api/templates/api/info.html:7
 msgid ""
