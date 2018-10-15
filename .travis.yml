@@ -6,8 +6,8 @@ install:
   - pip install transifex-client
 script:
   - sudo echo $'[https://www.transifex.com]\nhostname = https://www.transifex.com\nusername = '"$TRANSIFEX_USER"$'\npassword = '"$TRANSIFEX_PASSWORD"$'\ntoken = '"$TRANSIFEX_API_TOKEN"$'\n' > ~/.transifexrc
-  - cat ~/.transifexrc
-  - tx init --token=$TRANSIFEX_API_TOKEN --force --no-interactive
-  - sudo echo $'[main]\nhost = https://www.transifex.com\n\n[freedomvote.django-po]\nfile_filter = app/locale/<lang>/LC_MESSAGES/django.po\nminimum_perc = 0\nsource_file = app/locale/en/LC_MESSAGES/django.po\nsource_lang = en\ntype = PO\n' > .tx/config
+  # - cat ~/.transifexrc
+  # - tx init --token=$TRANSIFEX_API_TOKEN --force --no-interactive
+  # - sudo echo $'[main]\nhost = https://www.transifex.com\n\n[freedomvote.django-po]\nfile_filter = app/locale/<lang>/LC_MESSAGES/django.po\nminimum_perc = 0\nsource_file = app/locale/en/LC_MESSAGES/django.po\nsource_lang = en\ntype = PO\n' > .tx/config
   - tx push -s
-  - cat .tx/config
+  # - cat .tx/config
