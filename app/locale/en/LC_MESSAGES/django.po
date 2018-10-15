@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-15 12:55+0200\n"
+"POT-Creation-Date: 2018-10-15 14:35+0200\n"
 "PO-Revision-Date: 2018-02-15 17:42+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: English <en@li.org>\n"
@@ -434,7 +434,7 @@ msgstr "Other"
 
 #: core/templates/core/edit/profile.html:68
 msgid "file_too_large"
-msgstr "The file is too large ( > 5MB )"
+msgstr "The file is too large! ( > 5MB )"
 
 #: core/templates/core/edit/questions.html:51
 msgid "publish_answers"
