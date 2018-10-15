@@ -6,4 +6,5 @@ install:
   - pip install transifex-client
 script:
   - sudo echo $'[https://www.transifex.com]\nhostname = https://www.transifex.com\nusername = '"$TRANSIFEX_USER"$'\npassword = '"$TRANSIFEX_PASSWORD"$'\ntoken = '"$TRANSIFEX_API_TOKEN"$'\n' > ~/.transifexrc
-  - tx push -s
+  - cat ~/.transifexrc
+  - tx push -s --no-interactive
