@@ -584,7 +584,7 @@ msgstr "You have inserted incorrect login credentials"
 
 #: core/views.py:587
 msgid "politician_add_success"
-msgstr "Politican has been addes successfully"
+msgstr "Politican has been added successfully"
 
 #: core/views.py:590
 msgid "politician_add_error"
