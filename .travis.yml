@@ -9,3 +9,4 @@ script:
   - cat ~/.transifexrc
   - tx init --token=$TRANSIFEX_API_TOKEN --force --no-interactive
   - tx push -s
+  - cat .tx/config
