@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 14:49+0200\n"
+"POT-Creation-Date: 2018-10-15 12:55+0200\n"
 "PO-Revision-Date: 2018-02-15 17:42+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: English <en@li.org>\n"
@@ -393,11 +393,11 @@ msgstr "Register"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
 msgid ""
-"We have emailed you a link to your profile on Freedomvote. It could take a "
-"few minutes to show up in your inbox."
+"We have sent you a link to your profile on Freedomvote. It could take a few "
+"minutes to show up in your inbox."
 msgstr ""
-"We have emailed you a link to your profile on Freedomvote. It could take a "
-"few minutes to show up in your inbox."
+"We have sent you a link to your profile on Freedomvote. It could take a few "
+"minutes to show up in your inbox."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
