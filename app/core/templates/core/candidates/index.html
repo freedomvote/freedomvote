@@ -7,6 +7,7 @@
 <script src="{% static 'lib/polyfills/url.min.js' %}"></script>
 <script src="{% static 'lib/vue/vue.js' %}"></script>
 <script src="{% static 'js/candidates.js' %}"></script>
+<script src="{% static 'js/clipboard.js' %}"></script>
 {% endblock %}
 
 {% block 'content' %}
@@ -30,12 +31,13 @@
     {% endif %}
     {% if has_cookie %}
         <a 
+            id="share_opinion"
             href="#"
             class="btn btn-default add-popover"
             data-toggle="popover"
             data-placement="bottom"
-            title="URL"
-            data-content="{{ share_url }}"
+            title="Link<input value='{{ share_url }}' id='opinion_link'>"
+            data-content="<button id='clip' class='btn btn-default'>{% trans 'copy_link_to_the_clipboard' %}</button>"
         >{% trans 'share_own_opinion' %}</a>
     {% endif %}
 
