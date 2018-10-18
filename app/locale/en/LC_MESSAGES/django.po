@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-15 14:35+0200\n"
+"POT-Creation-Date: 2018-10-18 14:48+0200\n"
 "PO-Revision-Date: 2018-02-15 17:42+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: English <en@li.org>\n"
@@ -349,29 +349,33 @@ msgstr "Only new candidates"
 msgid "filter"
 msgstr "Filter"
 
-#: core/templates/core/candidates/index.html:15
+#: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
 msgstr "Freedomvote"
 
-#: core/templates/core/candidates/index.html:20
-#: core/templates/core/candidates/index.html:29
+#: core/templates/core/candidates/index.html:21
+#: core/templates/core/candidates/index.html:30
 msgid "own_opinion"
 msgstr "Your stance"
 
-#: core/templates/core/candidates/index.html:27
+#: core/templates/core/candidates/index.html:28
 #: core/templates/core/profile/description.html:59
 msgid "add_own_opinion"
 msgstr "Add your own stance"
 
-#: core/templates/core/candidates/index.html:28
+#: core/templates/core/candidates/index.html:29
 msgid "add_own_opinion_here"
 msgstr "Click here to add your own stance"
 
-#: core/templates/core/candidates/index.html:39
+#: core/templates/core/candidates/index.html:40
+msgid "copy_link_to_the_clipboard"
+msgstr "Copy URL to clipboard"
+
+#: core/templates/core/candidates/index.html:41
 msgid "share_own_opinion"
 msgstr "Share your own stance"
 
-#: core/templates/core/candidates/index.html:57
+#: core/templates/core/candidates/index.html:59
 msgid "No candidates found"
 msgstr "No candidates found"
 
