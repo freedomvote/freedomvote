@@ -13,4 +13,4 @@ jobs:
         - pip install transifex-client
       script:
         - tx push -s -t --no-interactive
-      if: branch = master
+      if: branch = master and type = push
