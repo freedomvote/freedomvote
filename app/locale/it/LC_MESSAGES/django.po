@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-09 14:49+0200\n"
+"POT-Creation-Date: 2018-10-18 14:48+0200\n"
 "PO-Revision-Date: 2018-02-15 17:44+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: Italian <it@li.org>\n"
@@ -343,29 +343,33 @@ msgstr "Solo nuovi candidati"
 msgid "filter"
 msgstr "Filtrare"
 
-#: core/templates/core/candidates/index.html:15
+#: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
 msgstr "Freedomvote"
 
-#: core/templates/core/candidates/index.html:20
-#: core/templates/core/candidates/index.html:29
+#: core/templates/core/candidates/index.html:21
+#: core/templates/core/candidates/index.html:30
 msgid "own_opinion"
 msgstr "Opinione pers."
 
-#: core/templates/core/candidates/index.html:27
+#: core/templates/core/candidates/index.html:28
 #: core/templates/core/profile/description.html:59
 msgid "add_own_opinion"
 msgstr "Aggiungi opinione personale"
 
-#: core/templates/core/candidates/index.html:28
+#: core/templates/core/candidates/index.html:29
 msgid "add_own_opinion_here"
 msgstr "Cliccare qui per aggiungere la Sua opinione personale"
 
-#: core/templates/core/candidates/index.html:39
+#: core/templates/core/candidates/index.html:40
+msgid "copy_link_to_the_clipboard"
+msgstr "Copiare la URL nella cartella di appunti"
+
+#: core/templates/core/candidates/index.html:41
 msgid "share_own_opinion"
 msgstr "Condividi opinione personale"
 
-#: core/templates/core/candidates/index.html:57
+#: core/templates/core/candidates/index.html:59
 msgid "No candidates found"
 msgstr "Nessun candidato trovato"
 
@@ -387,8 +391,8 @@ msgstr "Registrare"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
 msgid ""
-"We have emailed you a link to your profile on Freedomvote. It could take a "
-"few minutes to show up in your inbox."
+"We have sent you a link to your profile on Freedomvote. It could take a few "
+"minutes to show up in your inbox."
 msgstr ""
 "Ti abbiamo inviato per email un link al tuo profilo su Freedomvote. "
 "Potrebbero essere necessari alcuni minuti per essere visualizzati nella tua "

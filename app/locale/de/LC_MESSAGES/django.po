@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-15 12:28+0200\n"
+"POT-Creation-Date: 2018-10-18 14:48+0200\n"
 "PO-Revision-Date: 2018-02-15 17:42+0100\n"
 "Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
 "Language-Team: German <de@li.org>\n"
@@ -344,29 +344,33 @@ msgstr "Nur neue Kandidaten"
 msgid "filter"
 msgstr "Filtern"
 
-#: core/templates/core/candidates/index.html:15
+#: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
 msgstr "Freedomvote"
 
-#: core/templates/core/candidates/index.html:20
-#: core/templates/core/candidates/index.html:29
+#: core/templates/core/candidates/index.html:21
+#: core/templates/core/candidates/index.html:30
 msgid "own_opinion"
 msgstr "Eigene Meinung"
 
-#: core/templates/core/candidates/index.html:27
+#: core/templates/core/candidates/index.html:28
 #: core/templates/core/profile/description.html:59
 msgid "add_own_opinion"
 msgstr "Eigene Meinung erfassen"
 
-#: core/templates/core/candidates/index.html:28
+#: core/templates/core/candidates/index.html:29
 msgid "add_own_opinion_here"
 msgstr "Klicken Sie hier um Ihre eigene Meinung zu erfassen"
 
-#: core/templates/core/candidates/index.html:39
+#: core/templates/core/candidates/index.html:40
+msgid "copy_link_to_the_clipboard"
+msgstr "URL in die Zwischenablage kopieren"
+
+#: core/templates/core/candidates/index.html:41
 msgid "share_own_opinion"
 msgstr "Eigene Meinung teilen"
 
-#: core/templates/core/candidates/index.html:57
+#: core/templates/core/candidates/index.html:59
 msgid "No candidates found"
 msgstr "Keine Kandidaten gefunden"
 
@@ -388,8 +392,8 @@ msgstr "Registrieren"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
 msgid ""
-"We have emailed you a link to your profile on Freedomvote. It could take a "
-"few minutes to show up in your inbox."
+"We have sent you a link to your profile on Freedomvote. It could take a few "
+"minutes to show up in your inbox."
 msgstr ""
 "Wir haben Ihnen einen Link zu Ihrem Profil bei Freedomvote geschickt. Es "
 "könnte ein paar Minuten dauern, bis die E-Mail in Ihrem Posteingang "
