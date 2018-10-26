@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - "3.6"
+
+install: true
+script: true
+
+jobs:
+  include:
+    - stage: translations
+      install:
+        - pip install transifex-client
+      script:
+        - tx push -s -t --no-interactive
+      if: branch = master and type = push

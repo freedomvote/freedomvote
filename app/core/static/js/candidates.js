@@ -344,8 +344,7 @@ new Vue({
               function(x) {
                 return x.statistic.summary[i].value.negative
               },
-              'first_name',
-              'last_name'
+              Math.random
             ])
 
             this.loading = false
