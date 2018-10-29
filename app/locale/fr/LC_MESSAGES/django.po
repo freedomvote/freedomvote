@@ -1,37 +1,36 @@
 # Freedomvote Translation
 # Copyright (C) Freedomvote
 # This file is distributed under the same license as the freedomvote package.
-# Gian-Maria Daffré <gian-maria.daffre@giammi.com>, 2015.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+# Nico Rikken <nico.rikken@fsfe.org>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: freedomvote\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 14:48+0200\n"
-"PO-Revision-Date: 2018-02-15 17:43+0100\n"
-"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2018-10-29 15:26\n"
+"Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
+"Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: freedomvote\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /master/app/locale/en/LC_MESSAGES/django.po\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
 msgstr ""
 
 #: api/templates/api/info.html:7
-msgid ""
-"The data of this site is also available in a machine-readable format (JSON). "
-"Our API serves the same data as the application; especially, no answers that "
-"are visible in the API if they have not been published in the application."
+msgid "The data of this site is also available in a machine-readable format (JSON). Our API serves the same data as the application; especially, no answers that are visible in the API if they have not been published in the application."
 msgstr ""
 
 #: api/templates/api/info.html:10
-msgid ""
-"Feel free to fetch this dataset and analyze it as you wish. If you've done "
-"something interesting, consider dropping us a note :)"
+msgid "Feel free to fetch this dataset and analyze it as you wish. If you've done something interesting, consider dropping us a note :)"
 msgstr ""
 
 #: api/templates/api/info.html:16
@@ -333,8 +332,7 @@ msgstr "Toute les candidats et candidates"
 
 #: core/templates/core/candidates/filter.html:67
 msgid "Only current members of parliament"
-msgstr ""
-"Seulement les membres actuels du Conseil National ou le Conseil des Etats"
+msgstr "Seulement les membres actuels du Conseil National ou le Conseil des Etats"
 
 #: core/templates/core/candidates/filter.html:68
 msgid "Only new candidates"
@@ -379,24 +377,16 @@ msgid "Registration for candidates"
 msgstr "Inscription pour les candidats"
 
 #: core/templates/core/candidates/registration.html:7
-msgid ""
-"After the registration you will get a link to your personal profile on "
-"Freedomvote"
-msgstr ""
-"Après l'inscription, vous aurez un lien vers votre profil personnel sur "
-"Freedomvote"
+msgid "After the registration you will get a link to your personal profile on Freedomvote"
+msgstr "Après l'inscription, vous aurez un lien vers votre profil personnel sur Freedomvote"
 
 #: core/templates/core/candidates/registration.html:13
 msgid "Register"
 msgstr "Registre"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
-msgid ""
-"We have sent you a link to your profile on Freedomvote. It could take a few "
-"minutes to show up in your inbox."
-msgstr ""
-"Nous vous avons envoyé un lien vers votre profil sur Freedomvote. Cela peut "
-"prendre quelques minutes pour apparaître dans votre boîte de réception."
+msgid "We have sent you a link to your profile on Freedomvote. It could take a few minutes to show up in your inbox."
+msgstr "Nous vous avons envoyé un lien vers votre profil sur Freedomvote. Cela peut prendre quelques minutes pour apparaître dans votre boîte de réception."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
@@ -426,6 +416,7 @@ msgstr "Ajouter un lien"
 msgid "profile"
 msgstr "Profil"
 
+# If the profile has no index party but an other one, typically a one-person party.
 #: core/templates/core/edit/profile.html:45
 msgid "other"
 msgstr "Autres"
@@ -545,9 +536,7 @@ msgstr "la plateforme dédiée à la liberté, la technologie et la politique"
 
 #: core/views.py:154
 msgid "answers_saved_successfully_evaluate"
-msgstr ""
-"Vos réponses ont été enregistrées avec succès. Vous pouvez maintenant les "
-"évaluer "
+msgstr "Vos réponses ont été enregistrées avec succès. Vous pouvez maintenant les évaluer "
 
 #: core/views.py:201
 msgid "answers_resetted"
@@ -608,23 +597,14 @@ msgstr "Lien de compte Freedomvote"
 
 #: core/views.py:711
 #, python-format
-msgid ""
-"Hello %(first_name)s %(last_name)s,\n"
-"\n"
-"            You receive the link for your profile on Freedomvote: %(url)s\n"
-"\n"
-"            Keep this link and use it to login to your profile again.\n"
-"\n"
+msgid "Hello %(first_name)s %(last_name)s,\n\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n\n"
+"            Keep this link and use it to login to your profile again.\n\n"
 "            Sincerely,\n"
 "            The Freedomvote Team"
-msgstr ""
-"Bonjour %(first_name)s %(last_name)s,\n"
-"\n"
-"            Vous recevez le lien pour votre profil sur Freedomvote: %(url)s\n"
-"\n"
-"            Gardez ce lien et utilisez-le pour vous reconnecter à votre "
-"profil.\n"
-"\n"
+msgstr "Bonjour %(first_name)s %(last_name)s,\n\n"
+"            Vous recevez le lien pour votre profil sur Freedomvote: %(url)s\n\n"
+"            Gardez ce lien et utilisez-le pour vous reconnecter à votre profil.\n\n"
 "            Cordialement,\n"
 "            L'équipe Freedomvote"
 
@@ -667,3 +647,4 @@ msgstr "Ce site ne sera complète que si javascript est activé."
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Activer/désactiver le menu"
+
