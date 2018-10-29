@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: freedomvote\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 14:48+0200\n"
-"PO-Revision-Date: 2018-10-29 15:26\n"
+"PO-Revision-Date: 2018-10-29 16:18\n"
 "Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: api/templates/api/info.html:10
 msgid "Feel free to fetch this dataset and analyze it as you wish. If you've done something interesting, consider dropping us a note :)"
-msgstr ""
+msgstr "Fühlen Sie sich frei, dieses Dataset abzurufen und zu analysieren, wie Sie möchten. Sollten Sie etwas Interessantes getan haben, lassen Sie es uns wissen :)"
 
 #: api/templates/api/info.html:16
 msgid "Data Structure"
