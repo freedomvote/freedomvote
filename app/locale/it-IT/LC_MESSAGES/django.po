@@ -1,0 +1,646 @@
+# Freedomvote Translation
+# Copyright (C) Freedomvote
+# This file is distributed under the same license as the freedomvote package.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+# Nico Rikken <nico.rikken@fsfe.org>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: freedomvote\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-18 14:48+0200\n"
+"PO-Revision-Date: 2018-10-29 15:11\n"
+"Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: freedomvote\n"
+"X-Crowdin-Language: it\n"
+"X-Crowdin-File: /master/app/locale/en/LC_MESSAGES/django.po\n"
+
+#: api/templates/api/info.html:5
+msgid "API Documentation"
+msgstr ""
+
+#: api/templates/api/info.html:7
+msgid "The data of this site is also available in a machine-readable format (JSON). Our API serves the same data as the application; especially, no answers that are visible in the API if they have not been published in the application."
+msgstr ""
+
+#: api/templates/api/info.html:10
+msgid "Feel free to fetch this dataset and analyze it as you wish. If you've done something interesting, consider dropping us a note :)"
+msgstr ""
+
+#: api/templates/api/info.html:16
+msgid "Data Structure"
+msgstr ""
+
+#: api/templates/api/info.html:21
+msgid "The id of the politician"
+msgstr ""
+
+#: api/templates/api/info.html:22
+msgid "The first name of the politician"
+msgstr ""
+
+#: api/templates/api/info.html:23
+msgid "The last name of the politician"
+msgstr ""
+
+#: api/templates/api/info.html:24
+msgid "Is the politician a member of the parliament?"
+msgstr ""
+
+#: api/templates/api/info.html:25
+msgid "URL to the image (can be null)"
+msgstr ""
+
+#: api/templates/api/info.html:26
+msgid "Name of the state (can be null)"
+msgstr ""
+
+#: api/templates/api/info.html:28
+msgid "(can be null)"
+msgstr ""
+
+#: api/templates/api/info.html:30
+msgid "The long name of the party"
+msgstr ""
+
+#: api/templates/api/info.html:31
+msgid "The short name of the party (can be null)"
+msgstr ""
+
+#: api/templates/api/info.html:33
+msgid "Past contributions of the politician"
+msgstr ""
+
+#: api/templates/api/info.html:34
+msgid "Future plans of the politician"
+msgstr ""
+
+#: api/templates/api/info.html:38
+msgid "The id of the referring question"
+msgstr ""
+
+#: api/templates/api/info.html:39
+msgid "Agreement level to the question (is between 0 - 10)"
+msgstr ""
+
+#: api/templates/api/info.html:40
+msgid "Additional note to the answer"
+msgstr ""
+
+#: api/templates/api/info.html:48
+msgid "The id of the category"
+msgstr ""
+
+#: api/templates/api/info.html:49
+msgid "The name of the category (by language code)"
+msgstr ""
+
+#: api/templates/api/info.html:55
+msgid "The id of the question"
+msgstr ""
+
+#: api/templates/api/info.html:56
+msgid "The id of the referring category"
+msgstr ""
+
+#: api/templates/api/info.html:57
+msgid "The question text (by language code)"
+msgstr ""
+
+#: api/templates/api/info.html:58
+msgid "A better description of the question (by language code)"
+msgstr ""
+
+#: api/templates/api/info.html:59
+msgid "The preferred answer given by the admins (is between 0 - 10)"
+msgstr ""
+
+#: core/admin.py:24 core/views.py:649
+msgid "unique_url"
+msgstr ""
+
+#: core/admin.py:43 core/models.py:76 core/models.py:226 core/models.py:272
+msgid "category"
+msgstr ""
+
+#: core/cms_menus.py:10
+msgid "compare"
+msgstr ""
+
+#: core/cms_menus.py:11
+msgid "candidates"
+msgstr ""
+
+#: core/forms.py:71 core/models.py:89
+#: core/templates/core/party/dashboard.html:51 core/views.py:646
+msgid "first_name"
+msgstr ""
+
+#: core/forms.py:72 core/models.py:95
+#: core/templates/core/party/dashboard.html:52 core/views.py:647
+msgid "last_name"
+msgstr ""
+
+#: core/forms.py:73 core/models.py:100
+msgid "email"
+msgstr ""
+
+#: core/forms.py:86
+msgid "Email is already taken."
+msgstr ""
+
+#: core/models.py:21 core/models.py:42 core/models.py:69
+msgid "name"
+msgstr ""
+
+#: core/models.py:25
+msgid "sort"
+msgstr ""
+
+#: core/models.py:34 core/models.py:128
+#: core/templates/core/party/dashboard.html:53
+#: core/templates/core/profile/description.html:33 core/views.py:648
+msgid "state"
+msgstr ""
+
+#: core/models.py:35 core/templates/core/profile/description.html:25
+#: core/templates/core/profile/description.html:27
+msgid "states"
+msgstr ""
+
+#: core/models.py:46
+msgid "shortname"
+msgstr ""
+
+#: core/models.py:50
+msgid "background_color"
+msgstr ""
+
+#: core/models.py:54
+msgid "font_color"
+msgstr ""
+
+#: core/models.py:61 core/models.py:134
+#: core/templates/core/profile/description.html:38
+msgid "party"
+msgstr ""
+
+#: core/models.py:62
+msgid "parties"
+msgstr ""
+
+#: core/models.py:77
+msgid "categories"
+msgstr ""
+
+#: core/models.py:83
+msgid "user"
+msgstr ""
+
+#: core/models.py:106
+msgid "image"
+msgstr ""
+
+#: core/models.py:110 core/templates/core/profile/description.html:50
+msgid "is_member_of_parliament"
+msgstr ""
+
+#: core/models.py:114 core/templates/core/profile/description.html:42
+msgid "past_contributions"
+msgstr ""
+
+#: core/models.py:118 core/templates/core/profile/description.html:46
+msgid "future_plans"
+msgstr ""
+
+#: core/models.py:122 core/models.py:319
+msgid "unique_key"
+msgstr ""
+
+#: core/models.py:140
+msgid "party_other"
+msgstr ""
+
+#: core/models.py:174
+#, python-format
+msgid "%s states"
+msgstr ""
+
+#: core/models.py:198 core/models.py:205 core/models.py:250 core/models.py:268
+msgid "politician"
+msgstr ""
+
+#: core/models.py:199
+msgid "politicians"
+msgstr ""
+
+#: core/models.py:209 core/templates/core/edit/links.html:21
+msgid "url"
+msgstr ""
+
+#: core/models.py:213
+msgid "link"
+msgstr ""
+
+#: core/models.py:214 core/templates/core/edit/profile.html:84
+#: core/templates/core/profile/description.html:69
+msgid "links"
+msgstr ""
+
+#: core/models.py:219
+msgid "preferred_answer"
+msgstr ""
+
+#: core/models.py:222
+msgid "question_number"
+msgstr ""
+
+#: core/models.py:229
+msgid "text"
+msgstr ""
+
+#: core/models.py:234
+msgid "description"
+msgstr ""
+
+#: core/models.py:238 core/models.py:246
+#: core/templates/core/helpers/readonly-slider-text.html:1
+msgid "question"
+msgstr ""
+
+#: core/models.py:239 core/templates/core/edit/menu.html:8
+msgid "questions"
+msgstr ""
+
+#: core/models.py:254
+msgid "agreement_level"
+msgstr ""
+
+#: core/models.py:257 core/templates/core/edit/questions.html:36
+msgid "note"
+msgstr ""
+
+#: core/models.py:261
+msgid "answer"
+msgstr ""
+
+#: core/models.py:262
+msgid "answers"
+msgstr ""
+
+#: core/models.py:275
+msgid "value"
+msgstr ""
+
+#: core/models.py:307
+msgid "statistic"
+msgstr ""
+
+#: core/models.py:308
+msgid "statistics"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:6
+msgid "Filters"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:16
+msgid "search"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:24
+msgid "filter_by_party"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:38
+msgid "filter_by_state"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:52
+msgid "sort_by_category"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:66
+msgid "All candidates"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:67
+msgid "Only current members of parliament"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:68
+msgid "Only new candidates"
+msgstr ""
+
+#: core/templates/core/candidates/filter.html:74
+msgid "filter"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:16
+msgid "opinion_admin"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:21
+#: core/templates/core/candidates/index.html:30
+msgid "own_opinion"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:28
+#: core/templates/core/profile/description.html:59
+msgid "add_own_opinion"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:29
+msgid "add_own_opinion_here"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:40
+msgid "copy_link_to_the_clipboard"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:41
+msgid "share_own_opinion"
+msgstr ""
+
+#: core/templates/core/candidates/index.html:59
+msgid "No candidates found"
+msgstr ""
+
+#: core/templates/core/candidates/registration.html:6
+msgid "Registration for candidates"
+msgstr ""
+
+#: core/templates/core/candidates/registration.html:7
+msgid "After the registration you will get a link to your personal profile on Freedomvote"
+msgstr ""
+
+#: core/templates/core/candidates/registration.html:13
+msgid "Register"
+msgstr ""
+
+#: core/templates/core/candidates/registration_send_mail.html:6
+msgid "We have sent you a link to your profile on Freedomvote. It could take a few minutes to show up in your inbox."
+msgstr ""
+
+#: core/templates/core/compare/index.html:13
+#: core/templates/core/edit/questions.html:11
+#: core/templates/core/profile/questions.html:3
+msgid "your_opinion_to"
+msgstr ""
+
+#: core/templates/core/compare/index.html:43
+msgid "reset_answers"
+msgstr ""
+
+#: core/templates/core/compare/index.html:46
+#: core/templates/core/edit/profile.html:79
+#: core/templates/core/party/politician_edit.html:33
+msgid "save"
+msgstr ""
+
+#: core/templates/core/compare/index.html:46
+msgid "evaluate"
+msgstr ""
+
+#: core/templates/core/edit/links.html:25
+msgid "add_link"
+msgstr ""
+
+#: core/templates/core/edit/menu.html:5
+msgid "profile"
+msgstr ""
+
+# If the profile has no index party but an other one, typically a one-person party.
+#: core/templates/core/edit/profile.html:45
+msgid "other"
+msgstr ""
+
+#: core/templates/core/edit/profile.html:68
+msgid "file_too_large"
+msgstr ""
+
+#: core/templates/core/edit/questions.html:51
+msgid "publish_answers"
+msgstr ""
+
+#: core/templates/core/edit/questions.html:57
+msgid "unpublish_answers"
+msgstr ""
+
+#: core/templates/core/helpers/question_text.html:7
+msgid "toggle_description"
+msgstr ""
+
+#: core/templates/core/helpers/question_text.html:11
+msgid "no_question_description"
+msgstr ""
+
+#: core/templates/core/helpers/scale.html:4
+#: core/templates/core/profile/description.html:50
+msgid "no"
+msgstr ""
+
+#: core/templates/core/helpers/scale.html:9
+#: core/templates/core/profile/description.html:50
+msgid "yes"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:17
+#: core/templates/core/party/menu.html:5
+#: core/templates/core/party/politician_edit.html:6
+msgid "add_politician"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:27
+#: core/templates/core/party/menu.html:6
+msgid "export"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:37
+#: core/templates/core/party/menu.html:7 templates/navbar.html:33
+msgid "logout"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:46
+msgid "created_politicians"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:64
+msgid "copy_to_clipboard"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:65
+#: core/templates/core/party/dashboard.html:66
+msgid "edit_politician"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:67
+msgid "delete_politician"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:80
+msgid "copy_url_text"
+msgstr ""
+
+#: core/templates/core/party/dashboard.html:84
+msgid "close"
+msgstr ""
+
+#: core/templates/core/party/login.html:9
+msgid "login_label"
+msgstr ""
+
+#: core/templates/core/party/login.html:12
+msgid "login"
+msgstr ""
+
+#: core/templates/core/party/menu.html:4 templates/navbar.html:27
+msgid "dashboard"
+msgstr ""
+
+#: core/templates/core/profile/description.html:8
+#: core/templates/core/profile/description.html:9
+msgid "Share"
+msgstr ""
+
+#: core/templates/core/profile/description.html:13
+#: core/templates/core/profile/description.html:14
+msgid "Tweet"
+msgstr ""
+
+#: core/templates/core/profile/description.html:55
+msgid "show_own_spider"
+msgstr ""
+
+#: core/templates/core/profile/description.html:88
+msgid "embed_iframe"
+msgstr ""
+
+#: core/templates/core/profile/questions.html:22
+msgid "own_answer"
+msgstr ""
+
+#: core/templates/core/profile/questions.html:29
+msgid "politician_answer"
+msgstr ""
+
+#: core/views.py:55
+msgid "The platform for freedom, technology and politics"
+msgstr ""
+
+#: core/views.py:154
+msgid "answers_saved_successfully_evaluate"
+msgstr ""
+
+#: core/views.py:201
+msgid "answers_resetted"
+msgstr ""
+
+#: core/views.py:240
+#, python-format
+msgid "%(first_name)s %(last_name)s on Freedomvote"
+msgstr ""
+
+#: core/views.py:296
+msgid "total"
+msgstr ""
+
+#: core/views.py:409
+msgid "profile_saved_successfully"
+msgstr ""
+
+#: core/views.py:482
+msgid "answers_published_successfully"
+msgstr ""
+
+#: core/views.py:492
+msgid "answers_unpublished_successfully"
+msgstr ""
+
+#: core/views.py:555
+msgid "login_successful"
+msgstr ""
+
+#: core/views.py:558
+msgid "login_error"
+msgstr ""
+
+#: core/views.py:587
+msgid "politician_add_success"
+msgstr ""
+
+#: core/views.py:590
+msgid "politician_add_error"
+msgstr ""
+
+#: core/views.py:615
+msgid "politician_edit_success"
+msgstr ""
+
+#: core/views.py:618
+msgid "politician_edit_error"
+msgstr ""
+
+#: core/views.py:668
+msgid "politician_delete_success"
+msgstr ""
+
+#: core/views.py:710
+msgid "Freedomvote account link"
+msgstr ""
+
+#: core/views.py:711
+#, python-format
+msgid "Hello %(first_name)s %(last_name)s,\n\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n\n"
+"            Keep this link and use it to login to your profile again.\n\n"
+"            Sincerely,\n"
+"            The Freedomvote Team"
+msgstr ""
+
+#: freedomvote/settings.py:228
+msgid "german"
+msgstr ""
+
+#: freedomvote/settings.py:229
+msgid "english"
+msgstr ""
+
+#: freedomvote/settings.py:230
+msgid "french"
+msgstr ""
+
+#: freedomvote/settings.py:231
+msgid "italian"
+msgstr ""
+
+#: freedomvote/settings.py:232
+msgid "dutch"
+msgstr ""
+
+#: templates/404.html:6
+msgid "page_not_found"
+msgstr ""
+
+#: templates/500.html:6
+msgid "server_error"
+msgstr ""
+
+#: templates/footer.html:15
+msgid "source_code"
+msgstr ""
+
+#: templates/index.html:32
+msgid "noscript"
+msgstr ""
+
+#: templates/navbar.html:7
+msgid "toggle_navigation"
+msgstr ""
+
