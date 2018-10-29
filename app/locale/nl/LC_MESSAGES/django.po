@@ -5,43 +5,34 @@
 # Nico Rikken <nico.rikken@fsfe.org>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: freedomvote\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 14:48+0200\n"
-"PO-Revision-Date: 2018-02-15 17:45+0100\n"
-"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
-"Language-Team: Netherlands <nl@li.org>\n"
+"PO-Revision-Date: 2018-10-29 15:03\n"
+"Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
+"Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: freedomvote\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /master/app/locale/en/LC_MESSAGES/django.po\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
 msgstr "API documentatie"
 
 #: api/templates/api/info.html:7
-msgid ""
-"The data of this site is also available in a machine-readable format (JSON). "
-"Our API serves the same data as the application; especially, no answers that "
-"are visible in the API if they have not been published in the application."
-msgstr ""
-"De data van deze website is ook beschikbaar in een machine-leesaar formaat "
-"(JSON).\n"
-"Onze API serveert dezelfde data als de applicatie; in het bijzonder zijn "
-"antwoorden niet zichtbaar in de API als ze niet gepubliceerd zijn in de "
-"applicatie."
+msgid "The data of this site is also available in a machine-readable format (JSON). Our API serves the same data as the application; especially, no answers that are visible in the API if they have not been published in the application."
+msgstr "De data van deze website is ook beschikbaar in een machine-leesaar formaat (JSON).\n"
+"Onze API serveert dezelfde data als de applicatie; in het bijzonder zijn antwoorden niet zichtbaar in de API als ze niet gepubliceerd zijn in de applicatie."
 
 #: api/templates/api/info.html:10
-msgid ""
-"Feel free to fetch this dataset and analyze it as you wish. If you've done "
-"something interesting, consider dropping us a note :)"
-msgstr ""
-"Voel je vrij om de dataset op te halen en naar wens te analyzeren. Als je er "
-"iets bijzonders mee hebt gedaan, schroom dan niet om ons hierover te "
-"informeren :)"
+msgid "Feel free to fetch this dataset and analyze it as you wish. If you've done something interesting, consider dropping us a note :)"
+msgstr "Voel je vrij om de dataset op te halen en naar wens te analyzeren. Als je er iets bijzonders mee hebt gedaan, schroom dan niet om ons hierover te informeren :)"
 
 #: api/templates/api/info.html:16
 msgid "Data Structure"
@@ -318,7 +309,7 @@ msgstr "Statistieken"
 
 #: core/templates/core/candidates/filter.html:6
 msgid "Filters"
-msgstr "Filters"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:16
 msgid "search"
@@ -387,24 +378,16 @@ msgid "Registration for candidates"
 msgstr "Registratie voor kandidaten"
 
 #: core/templates/core/candidates/registration.html:7
-msgid ""
-"After the registration you will get a link to your personal profile on "
-"Freedomvote"
-msgstr ""
-"Na de registratie krijgt u een link naar uw persoonlijke profiel op "
-"Freedomvote"
+msgid "After the registration you will get a link to your personal profile on Freedomvote"
+msgstr "Na de registratie krijgt u een link naar uw persoonlijke profiel op Freedomvote"
 
 #: core/templates/core/candidates/registration.html:13
 msgid "Register"
 msgstr "Registreren"
 
 #: core/templates/core/candidates/registration_send_mail.html:6
-msgid ""
-"We have sent you a link to your profile on Freedomvote. It could take a few "
-"minutes to show up in your inbox."
-msgstr ""
-"We hebben je een e-mail gestuurd met je profiel op Freedomvote. Het kan een "
-"paar minuten duren voordat het in je inbox verschijnt."
+msgid "We have sent you a link to your profile on Freedomvote. It could take a few minutes to show up in your inbox."
+msgstr "We hebben je een e-mail gestuurd met je profiel op Freedomvote. Het kan een paar minuten duren voordat het in je inbox verschijnt."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
@@ -615,23 +598,14 @@ msgstr "Freedomvote-accountlink"
 
 #: core/views.py:711
 #, python-format
-msgid ""
-"Hello %(first_name)s %(last_name)s,\n"
-"\n"
-"            You receive the link for your profile on Freedomvote: %(url)s\n"
-"\n"
-"            Keep this link and use it to login to your profile again.\n"
-"\n"
+msgid "Hello %(first_name)s %(last_name)s,\n\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n\n"
+"            Keep this link and use it to login to your profile again.\n\n"
 "            Sincerely,\n"
 "            The Freedomvote Team"
-msgstr ""
-"Hallo %(first_name)s %(last_name)s,\n"
-"\n"
-"            U ontvangt de link voor uw profiel op Freedomvote: %(url)s\n"
-"\n"
-"            Bewaar deze link en gebruik deze om je opnieuw aan te melden bij "
-"je profiel.\n"
-"\n"
+msgstr "Hallo %(first_name)s %(last_name)s,\n\n"
+"            U ontvangt de link voor uw profiel op Freedomvote: %(url)s\n\n"
+"            Bewaar deze link en gebruik deze om je opnieuw aan te melden bij je profiel.\n\n"
 "            Oprecht,\n"
 "            Het Freedomvote-team"
 
@@ -669,9 +643,9 @@ msgstr "Broncode"
 
 #: templates/index.html:32
 msgid "noscript"
-msgstr ""
-"Deze website functioneert alleen volledig als Javascript geactiveerd is."
+msgstr "Deze website functioneert alleen volledig als Javascript geactiveerd is."
 
 #: templates/navbar.html:7
 msgid "toggle_navigation"
 msgstr "Menu omschakelen"
+
