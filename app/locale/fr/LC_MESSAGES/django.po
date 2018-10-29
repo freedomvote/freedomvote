@@ -1,37 +1,36 @@
 # Freedomvote Translation
 # Copyright (C) Freedomvote
 # This file is distributed under the same license as the freedomvote package.
-# Gian-Maria Daffré <gian-maria.daffre@giammi.com>, 2015.
+# Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>, 2015.
+# Nico Rikken <nico.rikken@fsfe.org>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: freedomvote\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 14:48+0200\n"
-"PO-Revision-Date: 2018-02-15 17:43+0100\n"
-"Last-Translator: Jonas Metzener <jonas.metzener@adfinis-sygroup.ch>\n"
-"Language-Team: French <fr@li.org>\n"
+"PO-Revision-Date: 2018-10-29 15:03\n"
+"Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
+"Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: crowdin.com\n"
+"X-Crowdin-Project: freedomvote\n"
+"X-Crowdin-Language: fr\n"
+"X-Crowdin-File: /master/app/locale/en/LC_MESSAGES/django.po\n"
 
 #: api/templates/api/info.html:5
 msgid "API Documentation"
 msgstr ""
 
 #: api/templates/api/info.html:7
-msgid ""
-"The data of this site is also available in a machine-readable format (JSON). "
-"Our API serves the same data as the application; especially, no answers that "
-"are visible in the API if they have not been published in the application."
+msgid "The data of this site is also available in a machine-readable format (JSON). Our API serves the same data as the application; especially, no answers that are visible in the API if they have not been published in the application."
 msgstr ""
 
 #: api/templates/api/info.html:10
-msgid ""
-"Feel free to fetch this dataset and analyze it as you wish. If you've done "
-"something interesting, consider dropping us a note :)"
+msgid "Feel free to fetch this dataset and analyze it as you wish. If you've done something interesting, consider dropping us a note :)"
 msgstr ""
 
 #: api/templates/api/info.html:16
@@ -124,546 +123,524 @@ msgstr ""
 
 #: core/admin.py:24 core/views.py:649
 msgid "unique_url"
-msgstr "Lien d'accès"
+msgstr ""
 
 #: core/admin.py:43 core/models.py:76 core/models.py:226 core/models.py:272
 msgid "category"
-msgstr "Catégorie"
+msgstr ""
 
 #: core/cms_menus.py:10
 msgid "compare"
-msgstr "Comparer"
+msgstr ""
 
 #: core/cms_menus.py:11
 msgid "candidates"
-msgstr "Candidats et candidates"
+msgstr ""
 
 #: core/forms.py:71 core/models.py:89
 #: core/templates/core/party/dashboard.html:51 core/views.py:646
 msgid "first_name"
-msgstr "Prénom"
+msgstr ""
 
 #: core/forms.py:72 core/models.py:95
 #: core/templates/core/party/dashboard.html:52 core/views.py:647
 msgid "last_name"
-msgstr "Nom de famille"
+msgstr ""
 
 #: core/forms.py:73 core/models.py:100
 msgid "email"
-msgstr "Email"
+msgstr ""
 
 #: core/forms.py:86
 msgid "Email is already taken."
-msgstr "Cet email est déjà pris."
+msgstr ""
 
 #: core/models.py:21 core/models.py:42 core/models.py:69
 msgid "name"
-msgstr "Nom"
+msgstr ""
 
 #: core/models.py:25
 msgid "sort"
-msgstr "Triage"
+msgstr ""
 
 #: core/models.py:34 core/models.py:128
 #: core/templates/core/party/dashboard.html:53
 #: core/templates/core/profile/description.html:33 core/views.py:648
 msgid "state"
-msgstr "Canton"
+msgstr ""
 
 #: core/models.py:35 core/templates/core/profile/description.html:25
 #: core/templates/core/profile/description.html:27
 msgid "states"
-msgstr "Cantons"
+msgstr ""
 
 #: core/models.py:46
 msgid "shortname"
-msgstr "Abréviation"
+msgstr ""
 
 #: core/models.py:50
 msgid "background_color"
-msgstr "Couleur d'arrière-plan"
+msgstr ""
 
 #: core/models.py:54
 msgid "font_color"
-msgstr "Couleur de la police"
+msgstr ""
 
 #: core/models.py:61 core/models.py:134
 #: core/templates/core/profile/description.html:38
 msgid "party"
-msgstr "Parti"
+msgstr ""
 
 #: core/models.py:62
 msgid "parties"
-msgstr "Parties"
+msgstr ""
 
 #: core/models.py:77
 msgid "categories"
-msgstr "Catégories"
+msgstr ""
 
 #: core/models.py:83
 msgid "user"
-msgstr "Utilisateur"
+msgstr ""
 
 #: core/models.py:106
 msgid "image"
-msgstr "Image"
+msgstr ""
 
 #: core/models.py:110 core/templates/core/profile/description.html:50
 msgid "is_member_of_parliament"
-msgstr "Ancien membre du Conseil National ou le Conseil des Etats "
+msgstr ""
 
 #: core/models.py:114 core/templates/core/profile/description.html:42
 msgid "past_contributions"
-msgstr "Contributions précédentes sur le sujet"
+msgstr ""
 
 #: core/models.py:118 core/templates/core/profile/description.html:46
 msgid "future_plans"
-msgstr "Intentions et plans"
+msgstr ""
 
 #: core/models.py:122 core/models.py:319
 msgid "unique_key"
-msgstr "Code d' accès"
+msgstr ""
 
 #: core/models.py:140
 msgid "party_other"
-msgstr "Autre parti"
+msgstr ""
 
 #: core/models.py:174
 #, python-format
 msgid "%s states"
-msgstr "%s cantons"
+msgstr ""
 
 #: core/models.py:198 core/models.py:205 core/models.py:250 core/models.py:268
 msgid "politician"
-msgstr "Politicien"
+msgstr ""
 
 #: core/models.py:199
 msgid "politicians"
-msgstr "Politiciens"
+msgstr ""
 
 #: core/models.py:209 core/templates/core/edit/links.html:21
 msgid "url"
-msgstr "URL"
+msgstr ""
 
 #: core/models.py:213
 msgid "link"
-msgstr "Lien"
+msgstr ""
 
 #: core/models.py:214 core/templates/core/edit/profile.html:84
 #: core/templates/core/profile/description.html:69
 msgid "links"
-msgstr "Liens"
+msgstr ""
 
 #: core/models.py:219
 msgid "preferred_answer"
-msgstr "Réponse préférée (0-10)"
+msgstr ""
 
 #: core/models.py:222
 msgid "question_number"
-msgstr "Question nombre"
+msgstr ""
 
 #: core/models.py:229
 msgid "text"
-msgstr "Texte"
+msgstr ""
 
 #: core/models.py:234
 msgid "description"
-msgstr "Description"
+msgstr ""
 
 #: core/models.py:238 core/models.py:246
 #: core/templates/core/helpers/readonly-slider-text.html:1
 msgid "question"
-msgstr "Question"
+msgstr ""
 
 #: core/models.py:239 core/templates/core/edit/menu.html:8
 msgid "questions"
-msgstr "Questions"
+msgstr ""
 
 #: core/models.py:254
 msgid "agreement_level"
-msgstr "Consentement"
+msgstr ""
 
 #: core/models.py:257 core/templates/core/edit/questions.html:36
 msgid "note"
-msgstr "Commentaire"
+msgstr ""
 
 #: core/models.py:261
 msgid "answer"
-msgstr "Réponse"
+msgstr ""
 
 #: core/models.py:262
 msgid "answers"
-msgstr "Réponses"
+msgstr ""
 
 #: core/models.py:275
 msgid "value"
-msgstr "Valeur"
+msgstr ""
 
 #: core/models.py:307
 msgid "statistic"
-msgstr "Statistique"
+msgstr ""
 
 #: core/models.py:308
 msgid "statistics"
-msgstr "Statistiques"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:6
 msgid "Filters"
-msgstr "Filtres"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:16
 msgid "search"
-msgstr "Recherche"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:24
 msgid "filter_by_party"
-msgstr "Filtrer par parti"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:38
 msgid "filter_by_state"
-msgstr "Filtrer par canton"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:52
 msgid "sort_by_category"
-msgstr "Trier par catégorie"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:66
 msgid "All candidates"
-msgstr "Toute les candidats et candidates"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:67
 msgid "Only current members of parliament"
 msgstr ""
-"Seulement les membres actuels du Conseil National ou le Conseil des Etats"
 
 #: core/templates/core/candidates/filter.html:68
 msgid "Only new candidates"
-msgstr "Seulement de nouveaux candidats"
+msgstr ""
 
 #: core/templates/core/candidates/filter.html:74
 msgid "filter"
-msgstr "Filtrer"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:16
 msgid "opinion_admin"
-msgstr "Freedomvote"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:21
 #: core/templates/core/candidates/index.html:30
 msgid "own_opinion"
-msgstr "Propre opinion"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:28
 #: core/templates/core/profile/description.html:59
 msgid "add_own_opinion"
-msgstr "Propre opinion"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:29
 msgid "add_own_opinion_here"
-msgstr "Saisir sa propre opinion"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:40
 msgid "copy_link_to_the_clipboard"
-msgstr "Copier l'url dans le presse-papiers"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:41
 msgid "share_own_opinion"
-msgstr "Partager sa propre opinion"
+msgstr ""
 
 #: core/templates/core/candidates/index.html:59
 msgid "No candidates found"
-msgstr "Aucun candidat trouvé"
+msgstr ""
 
 #: core/templates/core/candidates/registration.html:6
 msgid "Registration for candidates"
-msgstr "Inscription pour les candidats"
+msgstr ""
 
 #: core/templates/core/candidates/registration.html:7
-msgid ""
-"After the registration you will get a link to your personal profile on "
-"Freedomvote"
+msgid "After the registration you will get a link to your personal profile on Freedomvote"
 msgstr ""
-"Après l'inscription, vous aurez un lien vers votre profil personnel sur "
-"Freedomvote"
 
 #: core/templates/core/candidates/registration.html:13
 msgid "Register"
-msgstr "Registre"
+msgstr ""
 
 #: core/templates/core/candidates/registration_send_mail.html:6
-msgid ""
-"We have sent you a link to your profile on Freedomvote. It could take a few "
-"minutes to show up in your inbox."
+msgid "We have sent you a link to your profile on Freedomvote. It could take a few minutes to show up in your inbox."
 msgstr ""
-"Nous vous avons envoyé un lien vers votre profil sur Freedomvote. Cela peut "
-"prendre quelques minutes pour apparaître dans votre boîte de réception."
 
 #: core/templates/core/compare/index.html:13
 #: core/templates/core/edit/questions.html:11
 #: core/templates/core/profile/questions.html:3
 msgid "your_opinion_to"
-msgstr "Cliquez ici pour saisir votre propre opinion"
+msgstr ""
 
 #: core/templates/core/compare/index.html:43
 msgid "reset_answers"
-msgstr "Réinitialiser les réponses"
+msgstr ""
 
 #: core/templates/core/compare/index.html:46
 #: core/templates/core/edit/profile.html:79
 #: core/templates/core/party/politician_edit.html:33
 msgid "save"
-msgstr "Sauvegarder"
+msgstr ""
 
 #: core/templates/core/compare/index.html:46
 msgid "evaluate"
-msgstr "Évaluer"
+msgstr ""
 
 #: core/templates/core/edit/links.html:25
 msgid "add_link"
-msgstr "Ajouter un lien"
+msgstr ""
 
 #: core/templates/core/edit/menu.html:5
 msgid "profile"
-msgstr "Profil"
+msgstr ""
 
+# If the profile has no index party but an other one, typically a one-person party.
 #: core/templates/core/edit/profile.html:45
 msgid "other"
-msgstr "Autres"
+msgstr ""
 
 #: core/templates/core/edit/profile.html:68
 msgid "file_too_large"
-msgstr "Fichier à grand"
+msgstr ""
 
 #: core/templates/core/edit/questions.html:51
 msgid "publish_answers"
-msgstr "Validation des réponses"
+msgstr ""
 
 #: core/templates/core/edit/questions.html:57
 msgid "unpublish_answers"
-msgstr "Retirer les réponses"
+msgstr ""
 
 #: core/templates/core/helpers/question_text.html:7
 msgid "toggle_description"
-msgstr "Description..."
+msgstr ""
 
 #: core/templates/core/helpers/question_text.html:11
 msgid "no_question_description"
-msgstr "Aucune description disponible"
+msgstr ""
 
 #: core/templates/core/helpers/scale.html:4
 #: core/templates/core/profile/description.html:50
 msgid "no"
-msgstr "Non"
+msgstr ""
 
 #: core/templates/core/helpers/scale.html:9
 #: core/templates/core/profile/description.html:50
 msgid "yes"
-msgstr "Oui"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:17
 #: core/templates/core/party/menu.html:5
 #: core/templates/core/party/politician_edit.html:6
 msgid "add_politician"
-msgstr "Ajouter un politicien"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:27
 #: core/templates/core/party/menu.html:6
 msgid "export"
-msgstr "Exporter"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:37
 #: core/templates/core/party/menu.html:7 templates/navbar.html:33
 msgid "logout"
-msgstr "Fermer la session"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:46
 msgid "created_politicians"
-msgstr "Politiciens créés"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:64
 msgid "copy_to_clipboard"
-msgstr "Copier l'url dans le presse-papiers"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:65
 #: core/templates/core/party/dashboard.html:66
 msgid "edit_politician"
-msgstr "Modifier le politicien"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:67
 msgid "delete_politician"
-msgstr "Supprimer le politicien"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:80
 msgid "copy_url_text"
-msgstr "Copiez l'url dans le presse-papiers"
+msgstr ""
 
 #: core/templates/core/party/dashboard.html:84
 msgid "close"
-msgstr "Fermer"
+msgstr ""
 
 #: core/templates/core/party/login.html:9
 msgid "login_label"
-msgstr "Veuillez entrer votre mot de passe"
+msgstr ""
 
 #: core/templates/core/party/login.html:12
 msgid "login"
-msgstr "Ouverture de session"
+msgstr ""
 
 #: core/templates/core/party/menu.html:4 templates/navbar.html:27
 msgid "dashboard"
-msgstr "Tableau de bord"
+msgstr ""
 
 #: core/templates/core/profile/description.html:8
 #: core/templates/core/profile/description.html:9
 msgid "Share"
-msgstr "Partager"
+msgstr ""
 
 #: core/templates/core/profile/description.html:13
 #: core/templates/core/profile/description.html:14
 msgid "Tweet"
-msgstr "Tweeter"
+msgstr ""
 
 #: core/templates/core/profile/description.html:55
 msgid "show_own_spider"
-msgstr "Voir sa propre opinion"
+msgstr ""
 
 #: core/templates/core/profile/description.html:88
 msgid "embed_iframe"
-msgstr "Intégrer"
+msgstr ""
 
 #: core/templates/core/profile/questions.html:22
 msgid "own_answer"
-msgstr "Propre réponse"
+msgstr ""
 
 #: core/templates/core/profile/questions.html:29
 msgid "politician_answer"
-msgstr "Réponse du politicien"
+msgstr ""
 
 #: core/views.py:55
 msgid "The platform for freedom, technology and politics"
-msgstr "la plateforme dédiée à la liberté, la technologie et la politique"
+msgstr ""
 
 #: core/views.py:154
 msgid "answers_saved_successfully_evaluate"
 msgstr ""
-"Vos réponses ont été enregistrées avec succès. Vous pouvez maintenant les "
-"évaluer "
 
 #: core/views.py:201
 msgid "answers_resetted"
-msgstr "Vos réponses on été réinitialisées"
+msgstr ""
 
 #: core/views.py:240
 #, python-format
 msgid "%(first_name)s %(last_name)s on Freedomvote"
-msgstr "%(first_name)s %(last_name)s à Freedomvote"
+msgstr ""
 
 #: core/views.py:296
 msgid "total"
-msgstr "Total"
+msgstr ""
 
 #: core/views.py:409
 msgid "profile_saved_successfully"
-msgstr "Le profile a été engregistré avec succès"
+msgstr ""
 
 #: core/views.py:482
 msgid "answers_published_successfully"
-msgstr "Vos réponses ont été publiés avec succès"
+msgstr ""
 
 #: core/views.py:492
 msgid "answers_unpublished_successfully"
-msgstr "Vos réponses on été réinitilisées avec succès"
+msgstr ""
 
 #: core/views.py:555
 msgid "login_successful"
-msgstr "Vous avez été connecté avec succès"
+msgstr ""
 
 #: core/views.py:558
 msgid "login_error"
-msgstr "Vous avez entré les données de connection incorrectes"
+msgstr ""
 
 #: core/views.py:587
 msgid "politician_add_success"
-msgstr "Politicien ajouté avec succès"
+msgstr ""
 
 #: core/views.py:590
 msgid "politician_add_error"
-msgstr "Il y avait une erreur lors de la création du politicien"
+msgstr ""
 
 #: core/views.py:615
 msgid "politician_edit_success"
-msgstr "Le politicien a été édité avec succès"
+msgstr ""
 
 #: core/views.py:618
 msgid "politician_edit_error"
-msgstr "Il y avait une erreur lors de l'édition du politicien"
+msgstr ""
 
 #: core/views.py:668
 msgid "politician_delete_success"
-msgstr "Le politicien a \"%s %s\" été supprimé avec succès"
+msgstr ""
 
 #: core/views.py:710
 msgid "Freedomvote account link"
-msgstr "Lien de compte Freedomvote"
+msgstr ""
 
 #: core/views.py:711
 #, python-format
-msgid ""
-"Hello %(first_name)s %(last_name)s,\n"
-"\n"
-"            You receive the link for your profile on Freedomvote: %(url)s\n"
-"\n"
-"            Keep this link and use it to login to your profile again.\n"
-"\n"
+msgid "Hello %(first_name)s %(last_name)s,\n\n"
+"            You receive the link for your profile on Freedomvote: %(url)s\n\n"
+"            Keep this link and use it to login to your profile again.\n\n"
 "            Sincerely,\n"
 "            The Freedomvote Team"
 msgstr ""
-"Bonjour %(first_name)s %(last_name)s,\n"
-"\n"
-"            Vous recevez le lien pour votre profil sur Freedomvote: %(url)s\n"
-"\n"
-"            Gardez ce lien et utilisez-le pour vous reconnecter à votre "
-"profil.\n"
-"\n"
-"            Cordialement,\n"
-"            L'équipe Freedomvote"
 
 #: freedomvote/settings.py:228
 msgid "german"
-msgstr "Alemand"
+msgstr ""
 
 #: freedomvote/settings.py:229
 msgid "english"
-msgstr "Anglais"
+msgstr ""
 
 #: freedomvote/settings.py:230
 msgid "french"
-msgstr "Français"
+msgstr ""
 
 #: freedomvote/settings.py:231
 msgid "italian"
-msgstr "Italien"
+msgstr ""
 
 #: freedomvote/settings.py:232
 msgid "dutch"
-msgstr "Néerlandais"
+msgstr ""
 
 #: templates/404.html:6
 msgid "page_not_found"
-msgstr "Page non trouvée"
+msgstr ""
 
 #: templates/500.html:6
 msgid "server_error"
-msgstr "Erreur du serveur"
+msgstr ""
 
 #: templates/footer.html:15
 msgid "source_code"
-msgstr "Code source"
+msgstr ""
 
 #: templates/index.html:32
 msgid "noscript"
-msgstr "Ce site ne sera complète que si javascript est activé."
+msgstr ""
 
 #: templates/navbar.html:7
 msgid "toggle_navigation"
-msgstr "Activer/désactiver le menu"
+msgstr ""
+
