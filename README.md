@@ -4,8 +4,11 @@ A tool to represent the views of politicans as a help to the voters.
 
 ## Used in
 
-- Swiss Election 2015, 2018 and 2019 - [freedomvote.ch](https://freedomvote.ch/)
+- Swiss Election 2015 - [ch15.freedomvote.ch](https://ch15.freedomvote.ch/)
 - Dutch Election 2017 - [freedomvote.nl](https://freedomvote.nl/)
+- Swiss Election 2018 for the canton of bern - [ktbe18.freedomvote.ch](https://ktbe18.freedomvote.ch/)
+- Swiss Election 2018 for the city of zurich - [stadtzh18.freedomvote.ch](https://stadtzh18.freedomvote.ch/)
+- Swiss Election 2019 - [ch19.freedomvote.ch](https://ch19.freedomvote.ch/)
 
 ## How does it look?
 
