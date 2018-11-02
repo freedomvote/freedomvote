@@ -2,6 +2,8 @@ from menus.base import Menu, NavigationNode, Modifier
 from menus.menu_pool import menu_pool
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse
+from django.conf import settings
+from datetime import datetime
 
 class CoreMenu(Menu):
 
@@ -9,8 +11,10 @@ class CoreMenu(Menu):
         nodes   = []
         compare = NavigationNode(_('compare'), reverse('compare'), 1, attr={'priority':1002})
         candidates  = NavigationNode(_('candidates'), reverse('candidates'), 2,   attr={'priority':1001})
-        nodes.append(candidates)
-        nodes.append(compare)
+
+        if not settings.CANDIDATE_LIST_SHOW_AFTER or settings.CANDIDATE_LIST_SHOW_AFTER <= datetime.now():
+            nodes.append(candidates)
+            nodes.append(compare)
         return nodes
 
 class CoreModifier(Modifier):
