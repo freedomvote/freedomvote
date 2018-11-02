@@ -579,6 +579,7 @@ def party_dashboard_view(request, party_name):
 
 @require_party_login
 def party_politician_add_view(request, party_name):
+    request.POST._mutable = True
     if request.POST:
         form = PartyPoliticianForm(request.POST, request.FILES)
         form.data['user'] = request.user.id
@@ -606,6 +607,7 @@ def party_politician_add_view(request, party_name):
 def party_politician_edit_view(request, party_name, politician_id):
     politician = get_object_or_404(Politician, id=politician_id)
 
+    request.POST._mutable = True
     if request.POST:
         form = PartyPoliticianForm(
             request.POST, request.FILES, instance=politician)
