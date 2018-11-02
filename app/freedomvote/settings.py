@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 import configparser
 from django.utils.translation import ugettext_lazy as _
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -45,6 +46,9 @@ DEFAULT_SETTINGS = {
         'USE_TLS'          : 'False',
         'USE_SSL'          : 'False',
         'FROM'             : 'webmaster@localhost'
+    },
+    'APP': {
+        'CANDIDATE_LIST_SHOW_AFTER': '2019-01-01'
     }
 }
 def readline_generator(fp):
@@ -286,3 +290,8 @@ EMAIL_PORT = DEFAULT_SETTINGS['EMAIL']['PORT']
 EMAIL_USE_TLS = DEFAULT_SETTINGS['EMAIL']['USE_TLS'].lower() == 'true'
 EMAIL_USE_SSL = DEFAULT_SETTINGS['EMAIL']['USE_SSL'].lower() == 'true'
 DEFAULT_FROM_EMAIL = DEFAULT_SETTINGS['EMAIL']['FROM']
+
+CANDIDATE_LIST_SHOW_AFTER = datetime.strptime(
+    DEFAULT_SETTINGS['APP']['CANDIDATE_LIST_SHOW_AFTER'],
+    '%Y-%m-%d'
+)
