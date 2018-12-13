@@ -4,7 +4,7 @@ pillow==5.3.0
 psycopg2-binary==2.7.5
 easy-thumbnails==2.5
 django-cms==3.5.2
-html5lib==0.9999999 
+html5lib==1.0.1 
 djangocms_text_ckeditor==3.6.0
 django-meta==1.4.1
 django-piwik==0.1
