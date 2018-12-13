@@ -1,6 +1,6 @@
 {% load i18n %}
 <strong>{{question.category.name}}:</strong>
-{{question.text}}
+<span class="question-field">{{question.text}}</span>
 {% if question.description %}
     <button type="button" class="desc-toggler btn btn-default btn-xs">
         <span class="glyphicon glyphicon-info-sign" ></span>
