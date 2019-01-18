@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: freedomvote\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-18 14:48+0200\n"
-"PO-Revision-Date: 2018-10-31 10:16\n"
+"PO-Revision-Date: 2018-12-13 10:48\n"
 "Last-Translator: lehjo <jonas.lehmann@adfinis-sygroup.ch>\n"
 "Language-Team: German\n"
 "Language: de\n"
@@ -593,7 +593,7 @@ msgstr "Politiker '%s %s' wurde erfolgreich gelöscht"
 
 #: core/views.py:710
 msgid "Freedomvote account link"
-msgstr "Freedomvote Account Link"
+msgstr "Freedomvote - Link zum Profil"
 
 #: core/views.py:711
 #, python-format

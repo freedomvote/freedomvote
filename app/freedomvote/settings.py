@@ -48,7 +48,7 @@ DEFAULT_SETTINGS = {
         'FROM'             : 'webmaster@localhost'
     },
     'APP': {
-        'CANDIDATE_LIST_SHOW_AFTER': '2019-01-01'
+        'CANDIDATE_LIST_SHOW_AFTER': '2019-04-01'
     }
 }
 def readline_generator(fp):
