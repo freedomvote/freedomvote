@@ -1,4 +1,4 @@
-django==1.11.17 # pyup: >=1.11,<1.12
+django==1.11.18 # pyup: >=1.11,<1.12
 django-modeltranslation==0.13b1
 pillow==5.4.1
 psycopg2-binary==2.7.6.1
