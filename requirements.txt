@@ -2,8 +2,8 @@ django==1.11.18 # pyup: >=1.11,<1.12
 django-modeltranslation==0.13b1
 pillow==5.4.1
 psycopg2-binary==2.7.6.1
+django-cms==3.6.0
 easy-thumbnails==2.6
-django-cms==3.5.3
 html5lib==1.0.1 
 djangocms_text_ckeditor==3.7.0
 django-meta==1.4.1
