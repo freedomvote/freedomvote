@@ -35,9 +35,9 @@
                 {{ form.last_name|label_with_class:'control-label' }}
                 {{ form.last_name }}
             </div>
-            <div class="form-group {% if form.is_member_of_parliament.errors %}has-error{% endif %}">
-                {{ form.is_member_of_parliament }}
+            <div class="{% if form.is_member_of_parliament.errors %}has-error{% endif %}">
                 {{ form.is_member_of_parliament|label_with_class:'control-label' }}
+                {{ form.is_member_of_parliament }}
             </div>
             <div class="form-group {% if form.party.errors %}has-error{% endif %}">
                 {{ form.party|label_with_class:'control-label' }}
