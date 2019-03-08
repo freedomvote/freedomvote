@@ -1,5 +1,5 @@
 django==1.11.20 # pyup: >=1.11,<1.12
-django-modeltranslation==0.13b1
+django-modeltranslation==0.13
 pillow==5.4.1
 psycopg2-binary==2.7.7
 django-cms==3.6.0
@@ -9,9 +9,9 @@ djangocms_text_ckeditor==3.7.0
 django-meta==1.4.1
 django-piwik==0.1
 django-colorfield==0.1.15
-djangorestframework==3.9.1
+djangorestframework==3.9.2
 django-filter==2.1.0
 flup6==1.1.1
 django-settings-export==1.2.1
 sqlparse==0.2.4
-uwsgi==2.0.17.1
+uwsgi==2.0.18
