@@ -25,27 +25,9 @@
                 {{ form.email|label_with_class:'control-label' }}
                 {{ form.email }}
             </div>
-            <div class="form-group {% if form.is_member_of_parliament.errors %}has-error{% endif %}">
-                {{ form.is_member_of_parliament }}
-                {{ form.is_member_of_parliament|label_with_class:'control-label' }}
-            </div>
-            <div class="row">
-                <div class="col-md-6 {% if form.state.errors %}has-error{% endif %}">
-                    <div class="form-group">
-                        {{ form.state|label_with_class:'control-label' }}
-                        {{ form.state }}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group {% if form.party.errors %}has-error{% endif %}">
-                        {{ form.party|label_with_class:'control-label' }}
-                        {{ form.party }}
-                    </div>
-                    <div class="form-group {% if form.party_other.errors %}has-error{% endif %}">
-                        <a id="toggle-party" href="#">{% trans 'other' %}...</a>
-                        {{ form.party_other }}
-                    </div>
-                </div>
+            <div class="form-group">
+                {{ form.state|label_with_class:'control-label' }}
+                {{ form.state }}
             </div>
         </div>
         <div class="col-md-4 {% if form.last_name.errors %}has-error{% endif %}">
@@ -53,13 +35,17 @@
                 {{ form.last_name|label_with_class:'control-label' }}
                 {{ form.last_name }}
             </div>
-            <div class="form-group {% if form.past_contributions.errors %}has-error{% endif %}">
-                {{ form.past_contributions|label_with_class:'control-label' }}
-                {{ form.past_contributions }}
+            <div class="{% if form.is_member_of_parliament.errors %}has-error{% endif %}">
+                {{ form.is_member_of_parliament|label_with_class:'control-label' }}
+                {{ form.is_member_of_parliament }}
             </div>
-            <div class="form-group {% if form.future_plans.errors %}has-error{% endif %}">
-                {{ form.future_plans|label_with_class:'control-label' }}
-                {{ form.future_plans }}
+            <div class="form-group {% if form.party.errors %}has-error{% endif %}">
+                {{ form.party|label_with_class:'control-label' }}
+                {{ form.party }}
+            </div>
+            <div class="form-group {% if form.party_other.errors %}has-error{% endif %}">
+                <a id="toggle-party" href="#">{% trans 'other' %}...</a>
+                {{ form.party_other }}
             </div>
         </div>
         <div class="col-md-4">
@@ -74,9 +60,22 @@
             {{ form.image }}
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-3 col-xs-12 col-md-4 pull-right">
+    <div class="row mts">
+        <div class="col-lg-4 col-xs-12 col-md-4 pull-right">
             <input class="btn btn-primary btn-justified" type="submit" value="{% trans 'save' %}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p class="mbs" style="font-weight:bold">Fassen Sie hier kurz ihre bisherige Position im Bereich Netzpolitik zusammen und wofür Sie sich künftig im Bereich Netzpolitik einsetzen.</p>
+            <div class="form-group {% if form.past_contributions.errors %}has-error{% endif %}">
+                {{ form.past_contributions|label_with_class:'control-label' }}
+                {{ form.past_contributions }}
+            </div>
+            <div class="form-group {% if form.future_plans.errors %}has-error{% endif %}">
+                {{ form.future_plans|label_with_class:'control-label' }}
+                {{ form.future_plans }}
+            </div>
         </div>
     </div>
 </form>
