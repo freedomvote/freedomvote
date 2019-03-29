@@ -6,12 +6,12 @@ django-cms==3.6.0
 easy-thumbnails==2.6
 html5lib==1.0.1 
 djangocms_text_ckeditor==3.7.0
-django-meta==1.4.1
+django-meta==1.5.0
 django-piwik==0.1
 django-colorfield==0.1.15
 djangorestframework==3.9.2
 django-filter==2.1.0
 flup6==1.1.1
 django-settings-export==1.2.1
-sqlparse==0.2.4
+sqlparse==0.3.0
 uwsgi==2.0.18

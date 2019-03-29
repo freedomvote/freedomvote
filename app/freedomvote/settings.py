@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from os import environ
 """
 Django settings for freedomvote project.
 
@@ -18,54 +19,58 @@ from datetime import datetime
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 DEFAULT_SETTINGS = {
-    'DB'                   : {
-        'HOST'             : 'db',
-        'NAME'             : 'freedomvote',
-        'USER'             : 'freedomvote',
-        'PASS'             : 'freedomvote',
-        'PORT'             : '5432',
+    'DB': {
+        'HOST': 'db',
+        'NAME': 'freedomvote',
+        'USER': 'freedomvote',
+        'PASS': 'freedomvote',
+        'PORT': '5432',
     },
-    'GLOBAL'               : {
-        'DEBUG'            : 'True',
-        'BASE_URL'         : 'http://localhost:8000',
-        'DEFAULT_LANGUAGE' : 'en',
-        'LANGUAGES'        : 'de,en,fr,it,nl',
-        'SECRET'           : 'someverysecretrandomkey'
+    'GLOBAL': {
+        'DEBUG': 'True',
+        'BASE_URL': 'http://localhost:8000',
+        'DEFAULT_LANGUAGE': 'en',
+        'LANGUAGES': 'de,en,fr,it,nl',
+        'SECRET': 'someverysecretrandomkey'
     },
-    'PIWIK'                : {
-        'ENABLED'          : 'False',
-        'SITE_ID'          : 0,
-        'URL'              : '',
+    'PIWIK': {
+        'ENABLED': 'False',
+        'SITE_ID': 0,
+        'URL': '',
     },
-    'EMAIL'                : {
-        'BACKEND'          : 'django.core.mail.backends.smtp.EmailBackend',
-        'HOST'             : 'mailcatcher',
-        'HOST_USER'        : '',
-        'HOST_PASSWORD'    : '',
-        'PORT'             : '1025',
-        'USE_TLS'          : 'False',
-        'USE_SSL'          : 'False',
-        'FROM'             : 'webmaster@localhost'
+    'EMAIL': {
+        'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
+        'HOST': 'mailcatcher',
+        'HOST_USER': '',
+        'HOST_PASSWORD': '',
+        'PORT': '1025',
+        'USE_TLS': 'False',
+        'USE_SSL': 'False',
+        'FROM': 'webmaster@localhost'
     },
     'APP': {
-        'CANDIDATE_LIST_SHOW_AFTER': '2019-04-01'
+        'CANDIDATE_LIST_SHOW_AFTER': '2019-06-01'
     }
 }
+
+
 def readline_generator(fp):
     line = fp.readline()
     while line:
         yield line
         line = fp.readline()
 
+
 try:
     config = configparser.RawConfigParser()
-    config.read_file(readline_generator(open(os.path.join(BASE_DIR, 'settings.ini'))))
+    config.read_file(readline_generator(
+        open(os.path.join(BASE_DIR, 'settings.ini'))))
 
     for key in config.sections():
         DEFAULT_SETTINGS[key].update({
-                k.upper():v
-                for k,v
-                in config.items(key)
+            k.upper(): v
+            for k, v
+            in config.items(key)
         })
 
 except:
@@ -94,7 +99,7 @@ PIWIK_ENABLED = DEFAULT_SETTINGS['PIWIK']['ENABLED'].lower() == 'false'
 
 # Export settings to made them accessible from templates
 SETTINGS_EXPORT = [
-  'PIWIK_ENABLED',
+    'PIWIK_ENABLED',
 ]
 
 # Rename the context variable
@@ -103,7 +108,7 @@ SETTINGS_EXPORT_VARIABLE_NAME = 'my_config'
 BASE_URL = DEFAULT_SETTINGS['GLOBAL']['BASE_URL']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL  = '/media/'
+MEDIA_URL = '/media/'
 
 # Application definition
 
@@ -148,23 +153,23 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
-        'DIRS': [ os.path.join(BASE_DIR, "templates") ],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'OPTIONS': {
             'debug': DEBUG,
             'context_processors':
                 (
-                'django.contrib.auth.context_processors.auth',
-                'django.template.context_processors.debug',
-                'django.template.context_processors.i18n',
-                'django.template.context_processors.media',
-                'django.template.context_processors.static',
-                'django.template.context_processors.tz',
-                'django.template.context_processors.csrf',
-                'django.template.context_processors.request',
-                'django.contrib.messages.context_processors.messages',
-                'sekizai.context_processors.sekizai',
-                'cms.context_processors.cms_settings',
-                'django_settings_export.settings_export'
+                    'django.contrib.auth.context_processors.auth',
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.i18n',
+                    'django.template.context_processors.media',
+                    'django.template.context_processors.static',
+                    'django.template.context_processors.tz',
+                    'django.template.context_processors.csrf',
+                    'django.template.context_processors.request',
+                    'django.contrib.messages.context_processors.messages',
+                    'sekizai.context_processors.sekizai',
+                    'cms.context_processors.cms_settings',
+                    'django_settings_export.settings_export'
                 )
         }
     },
@@ -179,7 +184,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-## Has to be allocated to an empty array to show the toolbar on /?edit because of the update of django cms
+# Has to be allocated to an empty array to show the toolbar on /?edit because of the update of django cms
 CMS_INTERNAL_IPS = []
 
 CMS_PLACEHOLDER_CACHE = False
@@ -187,17 +192,16 @@ CMS_PAGE_CACHE = False
 CMS_PLUGIN_CACHE = False
 CMS_CACHE_DURATION = 0
 
-#CACHES = {
+# CACHES = {
 #    'default': {
 #        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
 #        'LOCATION': 'cache_table',
 #    }
-#}
+# }
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
-from os import environ
 DJANGO_DEBUG = bool(environ.get('DJANGO_DEBUG', False))
 
 if DJANGO_DEBUG:
@@ -259,10 +263,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 THUMBNAIL_ALIASES = {
     '': {
-        'small'  : {'size' : (50,   50), 'crop' : True, 'quality' : 100},
-        'medium' : {'size' : (300, 300), 'crop' : True, 'quality' : 100},
-        'large'  : {'size' : (500, 500), 'crop' : True, 'quality' : 100},
-        'icon'   : {'size' : ( 16,  16), 'crop' : True, 'quality' : 100},
+        'small': {'size': (50,   50), 'crop': True, 'quality': 100},
+        'medium': {'size': (300, 300), 'crop': True, 'quality': 100},
+        'large': {'size': (500, 500), 'crop': True, 'quality': 100},
+        'icon': {'size': (16,  16), 'crop': True, 'quality': 100},
     },
 }
 
