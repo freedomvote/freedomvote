@@ -36,11 +36,11 @@ def v1(request):
         if Statistic.objects.filter(politician=x).exists():
             p = {
                 'id':                      x.id,
-                'first_name':              x.first_name if x.image else None,
-                'last_name':               x.last_name if x.image else None,
+                'first_name':              x.first_name if x.first_name else None,
+                'last_name':               x.last_name if x.last_name else None,
                 'is_member_of_parliament': x.is_member_of_parliament,
                 'image':                   x.image.url if x.image else None,
-                'state':                   x.state.name if x.state else None,
+                'state':                   x.state.name if x.state.name else None,
                 'past_contributions':      x.past_contributions,
                 'future_plans':            x.future_plans,
                 'answers':                 []
