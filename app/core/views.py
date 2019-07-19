@@ -187,10 +187,13 @@ def share_view(request):
     }
 
     for k, v in request.GET.items():
-        cookie_name, variable_name = split('_', k, maxsplit=1) 
-        # V can be a float or int in a string and since we can not
-        # parse a float in a string to int we did it this way
-        cookies[cookie_name][variable_name] = int(float(v))
+        if '_' in k:
+            cookie_name, variable_name = split('_', k, maxsplit=1) 
+            # V can be a float or int in a string and since we can not
+            # parse a float in a string to int we did it this way
+            cookies[cookie_name][variable_name] = int(float(v))
+        else:
+            continue
 
     set_cookie(response, 'answers', cookies['answers'], 30)
     set_cookie(response, 'statistics', cookies['statistics'], 30)
