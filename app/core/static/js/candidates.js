@@ -340,12 +340,7 @@ new Vue({
           function(data) {
             let i = currentUrl.searchParams.get('category') > 0 ? 1 : 0
 
-            this.results = _.sortBy(data, [
-              function(x) {
-                return x.statistic.summary[i].value.negative
-              },
-              Math.random
-            ])
+            this.results = _.sortBy(data, [Math.random])
 
             this.loading = false
           }.bind(this)
