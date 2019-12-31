@@ -6,7 +6,7 @@ django-cms==3.6.0
 easy-thumbnails==2.6
 html5lib==1.0.1 
 djangocms_text_ckeditor==3.7.0
-django-meta==1.5.0
+django-meta==1.6.0
 django-piwik==0.1
 django-colorfield==0.1.15
 djangorestframework==3.9.2
