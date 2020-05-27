@@ -2,7 +2,7 @@ django==1.11.24 # pyup: >=1.11,<1.12
 django-modeltranslation==0.13
 pillow==5.4.1
 psycopg2-binary==2.7.7
-django-cms==3.6.0
+django-cms==3.7.3
 easy-thumbnails==2.6
 html5lib==1.0.1 
 djangocms_text_ckeditor==3.7.0
