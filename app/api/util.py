@@ -15,6 +15,6 @@ def get_model_translations(object, attribute):
     """
     languages = get_setting_languages()
     return {
-        language: getattr(object, '%s_%s' % (attribute, language)) or ''
+        language: getattr(object, "%s_%s" % (attribute, language)) or ""
         for language in languages
     }

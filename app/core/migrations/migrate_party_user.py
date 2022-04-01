@@ -8,17 +8,24 @@ from random import *
 
 
 def generate_password(length=12):
-    characters = string.ascii_letters + '#@+-&%()?!*' + string.digits
-    return ''.join(choice(characters) for x in range(length))
+    characters = string.ascii_letters + "#@+-&%()?!*" + string.digits
+    return "".join(choice(characters) for x in range(length))
+
 
 def add_user_for_parties(apps, schema_editor):
-    Party = apps.get_model('core', 'Party')
+    Party = apps.get_model("core", "Party")
 
     parties = Party.objects.all()
 
     for party in parties:
-        username_raw = re.sub('ö', 'oe', re.sub('ü', 'ue', re.sub('ä', 'ae', party.shortname.encode('utf8').lower())))
-        username = re.sub('[^a-zA-Z]', '', username_raw)
+        username_raw = re.sub(
+            "ö",
+            "oe",
+            re.sub(
+                "ü", "ue", re.sub("ä", "ae", party.shortname.encode("utf8").lower())
+            ),
+        )
+        username = re.sub("[^a-zA-Z]", "", username_raw)
 
         password = generate_password()
 
@@ -28,11 +35,8 @@ def add_user_for_parties(apps, schema_editor):
         else:
             continue
 
-class Migration(migrations.Migration):
-    dependencies = [
-        ('core', '0004_politician_user')
-    ]
 
-    operations = [
-        migrations.RunPython(add_user_for_parties)
-    ]
+class Migration(migrations.Migration):
+    dependencies = [("core", "0004_politician_user")]
+
+    operations = [migrations.RunPython(add_user_for_parties)]
