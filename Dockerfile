@@ -1,8 +1,8 @@
 FROM python:3.6
 ENV PYTHONUNBUFFERED 1
 
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
-&& apt-get update && apt-get install -y gettext postgresql-client nodejs npm\
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+&& apt-get update && apt-get install -y gettext postgresql-client nodejs \
 && wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -P /usr/bin \
 && chmod +x /usr/bin/wait-for-it.sh
 
