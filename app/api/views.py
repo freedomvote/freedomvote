@@ -1,7 +1,5 @@
 from core.models import Politician, Question, Statistic, Answer, Category
 from django.http import JsonResponse
-from django.utils.encoding import force_text
-from django.core.serializers.json import DjangoJSONEncoder
 from api import util, serializers
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from rest_framework.filters import SearchFilter

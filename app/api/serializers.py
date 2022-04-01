@@ -4,7 +4,7 @@ from rest_framework import serializers
 from core import models
 from easy_thumbnails.files import get_thumbnailer
 from core.views import politician_statistic_view
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 
 class PoliticianSerializer(serializers.ModelSerializer):

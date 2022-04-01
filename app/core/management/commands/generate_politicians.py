@@ -1,4 +1,4 @@
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 from django.db import transaction
 from core.models import Politician
@@ -12,9 +12,9 @@ class Command(BaseCommand):
         parser.add_argument("amount", help="amount of polticians to generate")
 
     def handle(self, *args, **options):
-        try:
-            count = int(options["amount"])
-        except:
+        count = int(options["amount"])
+
+        if not count:
             count = 1
 
         try:

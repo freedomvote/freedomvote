@@ -34,21 +34,32 @@ class Migration(migrations.Migration):
                         verbose_name="unique_key",
                     ),
                 ),
-                ("user", models.OneToOneField(to=settings.AUTH_USER_MODEL)),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
             model_name="answer",
             name="politician",
             field=models.ForeignKey(
-                related_name="answers", verbose_name="politician", to="core.Politician"
+                on_delete=models.CASCADE,
+                related_name="answers",
+                verbose_name="politician",
+                to="core.Politician",
             ),
         ),
         migrations.AlterField(
             model_name="link",
             name="politician",
             field=models.ForeignKey(
-                related_name="links", verbose_name="politician", to="core.Politician"
+                on_delete=models.CASCADE,
+                related_name="links",
+                verbose_name="politician",
+                to="core.Politician",
             ),
         ),
     ]

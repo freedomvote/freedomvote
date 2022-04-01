@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
 from django.dispatch import receiver
 from django.db.models.signals import post_save
@@ -12,7 +12,7 @@ import os
 
 def generate_url():
     key = base64.urlsafe_b64encode(os.urandom(16))[:20]
-    return key
+    return key.decode("utf-8")
 
 
 class State(models.Model):
@@ -55,7 +55,7 @@ class Category(models.Model):
 
 
 class Politician(models.Model):
-    user = models.ForeignKey(User, verbose_name=_("user"))
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("user"))
     first_name = models.CharField(
         max_length=100, blank=True, null=True, verbose_name=_("first_name")
     )
@@ -77,7 +77,9 @@ class Politician(models.Model):
         max_length=20, verbose_name=_("unique_key"), default=generate_url
     )
     state = models.ManyToManyField(State, blank=True, verbose_name=_("state"))
-    party = models.ForeignKey(Party, null=True, blank=True, verbose_name=_("party"))
+    party = models.ForeignKey(
+        Party, on_delete=models.CASCADE, null=True, blank=True, verbose_name=_("party")
+    )
     party_other = models.CharField(
         max_length=50, null=True, blank=True, verbose_name=_("party_other")
     )
@@ -150,7 +152,10 @@ class Politician(models.Model):
 
 class Link(models.Model):
     politician = models.ForeignKey(
-        Politician, verbose_name=_("politician"), related_name="links"
+        Politician,
+        on_delete=models.CASCADE,
+        verbose_name=_("politician"),
+        related_name="links",
     )
     url = models.URLField(verbose_name=_("url"))
 
@@ -162,7 +167,9 @@ class Link(models.Model):
 class Question(models.Model):
     preferred_answer = models.IntegerField(verbose_name=_("preferred_answer"))
     question_number = models.IntegerField(verbose_name=_("question_number"))
-    category = models.ForeignKey(Category, verbose_name=_("category"))
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, verbose_name=_("category")
+    )
     text = models.TextField(verbose_name=_("text"))
     description = models.TextField(null=True, blank=True, verbose_name=_("description"))
 
@@ -173,9 +180,14 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, verbose_name=_("question"))
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE, verbose_name=_("question")
+    )
     politician = models.ForeignKey(
-        Politician, verbose_name=_("politician"), related_name="answers"
+        Politician,
+        on_delete=models.CASCADE,
+        verbose_name=_("politician"),
+        related_name="answers",
     )
     agreement_level = models.IntegerField(verbose_name=_("agreement_level"))
     note = models.TextField(verbose_name=_("note"))
@@ -186,8 +198,12 @@ class Answer(models.Model):
 
 
 class Statistic(models.Model):
-    politician = models.ForeignKey(Politician, verbose_name=_("politician"))
-    category = models.ForeignKey(Category, verbose_name=_("category"))
+    politician = models.ForeignKey(
+        Politician, on_delete=models.CASCADE, verbose_name=_("politician")
+    )
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, verbose_name=_("category")
+    )
     value = models.IntegerField(verbose_name=_("value"))
 
     @classmethod
