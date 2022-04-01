@@ -228,7 +228,11 @@ class Migration(migrations.Migration):
                 (
                     "party",
                     models.ForeignKey(
-                        verbose_name="party", blank=True, to="core.Party", null=True
+                        on_delete=models.CASCADE,
+                        verbose_name="party",
+                        blank=True,
+                        to="core.Party",
+                        null=True,
                     ),
                 ),
             ],
@@ -264,7 +268,11 @@ class Migration(migrations.Migration):
                 ("text_it", models.TextField(null=True, verbose_name="text")),
                 (
                     "category",
-                    models.ForeignKey(verbose_name="category", to="core.Category"),
+                    models.ForeignKey(
+                        on_delete=models.CASCADE,
+                        verbose_name="category",
+                        to="core.Category",
+                    ),
                 ),
             ],
             options={
@@ -320,11 +328,19 @@ class Migration(migrations.Migration):
                 ("value", models.FloatField(verbose_name="value")),
                 (
                     "category",
-                    models.ForeignKey(verbose_name="category", to="core.Category"),
+                    models.ForeignKey(
+                        on_delete=models.CASCADE,
+                        verbose_name="category",
+                        to="core.Category",
+                    ),
                 ),
                 (
                     "politician",
-                    models.ForeignKey(verbose_name="politician", to="core.Politician"),
+                    models.ForeignKey(
+                        on_delete=models.CASCADE,
+                        verbose_name="politician",
+                        to="core.Politician",
+                    ),
                 ),
             ],
             options={
@@ -337,32 +353,48 @@ class Migration(migrations.Migration):
             model_name="politician",
             name="state",
             field=models.ForeignKey(
-                verbose_name="state", blank=True, to="core.State", null=True
+                on_delete=models.CASCADE,
+                verbose_name="state",
+                blank=True,
+                to="core.State",
+                null=True,
             ),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name="link",
             name="politician",
-            field=models.ForeignKey(verbose_name="politician", to="core.Politician"),
+            field=models.ForeignKey(
+                on_delete=models.CASCADE,
+                verbose_name="politician",
+                to="core.Politician",
+            ),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name="link",
             name="type",
-            field=models.ForeignKey(verbose_name="type", to="core.LinkType"),
+            field=models.ForeignKey(
+                on_delete=models.CASCADE, verbose_name="type", to="core.LinkType"
+            ),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name="answer",
             name="politician",
-            field=models.ForeignKey(verbose_name="politician", to="core.Politician"),
+            field=models.ForeignKey(
+                on_delete=models.CASCADE,
+                verbose_name="politician",
+                to="core.Politician",
+            ),
             preserve_default=True,
         ),
         migrations.AddField(
             model_name="answer",
             name="question",
-            field=models.ForeignKey(verbose_name="question", to="core.Question"),
+            field=models.ForeignKey(
+                on_delete=models.CASCADE, verbose_name="question", to="core.Question"
+            ),
             preserve_default=True,
         ),
     ]

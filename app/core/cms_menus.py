@@ -1,7 +1,7 @@
 from menus.base import Menu, NavigationNode, Modifier
 from menus.menu_pool import menu_pool
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.conf import settings
 from datetime import datetime
 

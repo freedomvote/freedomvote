@@ -131,7 +131,10 @@ INSTALLED_APPS = (
     "django_filters",
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -164,6 +167,9 @@ TEMPLATES = [
                 "cms.context_processors.cms_settings",
                 "django_settings_export.settings_export",
             ),
+            "libraries": {
+                "staticfiles": "django.templatetags.static",
+            },
         },
     },
 ]
@@ -289,3 +295,5 @@ DEFAULT_FROM_EMAIL = DEFAULT_SETTINGS["EMAIL"]["FROM"]
 CANDIDATE_LIST_SHOW_AFTER = datetime.strptime(
     DEFAULT_SETTINGS["APP"]["CANDIDATE_LIST_SHOW_AFTER"], "%Y-%m-%d"
 )
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

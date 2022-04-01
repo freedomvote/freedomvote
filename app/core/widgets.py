@@ -12,12 +12,7 @@ class ImagePreviewFileInput(ClearableFileInput):
 
         self.template_name = "core/custom_file_input.html"
 
-    def render(
-        self,
-        name,
-        value,
-        attrs=None,
-    ):
+    def render(self, name, value, attrs=None, renderer=None):
 
         substitutions = {
             "clear_checkbox_label": self.clear_checkbox_label,

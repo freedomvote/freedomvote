@@ -17,7 +17,10 @@ class Migration(migrations.Migration):
             model_name="politician",
             name="user",
             field=models.ForeignKey(
-                default=1, verbose_name="user", to=settings.AUTH_USER_MODEL
+                default=1,
+                on_delete=models.CASCADE,
+                verbose_name="user",
+                to=settings.AUTH_USER_MODEL,
             ),
             preserve_default=False,
         ),
