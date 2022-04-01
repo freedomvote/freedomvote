@@ -7,13 +7,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', 'add_core_statistic_indexes'),
+        ("core", "add_core_statistic_indexes"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='politician',
-            old_name='unique_url',
-            new_name='unique_key'
+            model_name="politician", old_name="unique_url", new_name="unique_key"
         ),
     ]

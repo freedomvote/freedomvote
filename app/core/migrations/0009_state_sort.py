@@ -7,13 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0008_auto_20180110_1256'),
+        ("core", "0008_auto_20180110_1256"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='state',
-            name='sort',
+            model_name="state",
+            name="sort",
             field=models.PositiveIntegerField(default=0),
         ),
     ]
