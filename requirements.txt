@@ -1,5 +1,5 @@
 django==3.2.12
-django-modeltranslation==0.17.5
+django-modeltranslation==0.18.3
 pillow==9.0.1
 psycopg2-binary==2.9.3
 django-cms==3.10.0
