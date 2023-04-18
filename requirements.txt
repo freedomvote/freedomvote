@@ -13,5 +13,5 @@ djangorestframework==3.13.1
 django-filter==2.4.0
 flup6==1.1.1
 django-settings-export==1.2.1
-sqlparse==0.4.2
+sqlparse==0.4.4
 uwsgi==2.0.20
