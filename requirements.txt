@@ -1,7 +1,7 @@
 django==3.2.12
 django-modeltranslation==0.17.5
 pillow==9.0.1
-psycopg2-binary==2.9.3
+psycopg2-binary==2.9.8
 django-cms==3.10.0
 easy-thumbnails==2.8.1
 html5lib==1.1
