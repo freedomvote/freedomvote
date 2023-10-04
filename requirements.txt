@@ -5,7 +5,7 @@ psycopg2-binary==2.9.3
 django-cms==3.10.0
 easy-thumbnails==2.8.1
 html5lib==1.1
-djangocms_text_ckeditor==4.0.0
+djangocms_text_ckeditor==5.1.4
 django-meta==2.0.0
 django-piwik==0.1
 django-colorfield==0.6.3
