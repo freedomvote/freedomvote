@@ -9,7 +9,7 @@ djangocms_text_ckeditor==4.0.0
 django-meta==2.0.0
 django-piwik==0.1
 django-colorfield==0.6.3
-djangorestframework==3.13.1
+djangorestframework==3.15.0
 django-filter==2.4.0
 flup6==1.1.1
 django-settings-export==1.2.1
